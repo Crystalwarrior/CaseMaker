@@ -1,0 +1,558 @@
+[gd_resource type="Resource" load_steps=64 format=2]
+
+[ext_resource path="res://addons/dialog_plugin/Resources/TimelineResource.gd" type="Script" id=1]
+[ext_resource path="res://addons/dialog_plugin/Resources/Events/TextEvent/TextEvent.gd" type="Script" id=2]
+
+[sub_resource type="Resource" id=1]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=2]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=3]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=4]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=5]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=6]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=7]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=8]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=9]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=10]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=11]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=12]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=13]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=14]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=15]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=16]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=17]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=18]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=19]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=20]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=21]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=22]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=23]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=24]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=25]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=26]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=27]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=28]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=29]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=30]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=31]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=32]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=33]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=34]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=35]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=36]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=37]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=38]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=39]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=40]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=41]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=42]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=43]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=44]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=45]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=46]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=47]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=48]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=49]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=50]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=51]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=52]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=53]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=54]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=55]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=56]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=57]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=58]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=59]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=60]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[sub_resource type="Resource" id=61]
+resource_name = "TextEvent"
+script = ExtResource( 2 )
+skip = false
+text = ""
+text_speed = 0.02
+continue_previous_text = false
+translation_key = "__SAME_AS_TEXT__"
+
+[resource]
+script = ExtResource( 1 )
+events = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ) ]
+_related_characters = [  ]

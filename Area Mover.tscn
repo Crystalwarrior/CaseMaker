@@ -1,0 +1,134 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://res/Background/lobby.png" type="Texture" id=1]
+[ext_resource path="res://res/Background/bluecorp.png" type="Texture" id=2]
+[ext_resource path="res://res/Background/studio.png" type="Texture" id=3]
+
+[node name="Area Mover" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 244.0
+margin_bottom = 55.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lobby" type="Button" parent="VBoxContainer"]
+margin_right = 237.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 0, 62 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Lobby"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 230.0
+margin_bottom = 55.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Lobby/HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 64, 48 )
+rect_clip_content = true
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 7
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Lobby/HBoxContainer"]
+margin_left = 68.0
+margin_right = 223.0
+margin_bottom = 48.0
+mouse_filter = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+bbcode_text = "[center]Defendant's Lobby[/center]
+That's the place where I'm needed."
+text = "Defendant's Lobby
+That's the place where I'm needed."
+
+[node name="Bluecorp" type="Button" parent="VBoxContainer"]
+margin_top = 66.0
+margin_right = 237.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 62 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Bluecorp"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 230.0
+margin_bottom = 55.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Bluecorp/HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 64, 48 )
+rect_clip_content = true
+mouse_filter = 2
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 7
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Bluecorp/HBoxContainer"]
+margin_left = 68.0
+margin_right = 223.0
+margin_bottom = 48.0
+mouse_filter = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+bbcode_text = "[center]BlueCorp Offices[/center]
+Where sleazy rich people hang out."
+text = "BlueCorp Offices
+Where sleazy rich people hang out."
+
+[node name="Studio" type="Button" parent="VBoxContainer"]
+margin_top = 132.0
+margin_right = 237.0
+margin_bottom = 194.0
+rect_min_size = Vector2( 0, 62 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Studio"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 230.0
+margin_bottom = 55.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Studio/HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 64, 48 )
+rect_clip_content = true
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 7
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Studio/HBoxContainer"]
+margin_left = 68.0
+margin_right = 223.0
+margin_bottom = 48.0
+mouse_filter = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+bbcode_text = "[center]Studio[/center]
+Film makers work their magic around here."
+text = "Studio
+Film makers work their magic around here."
