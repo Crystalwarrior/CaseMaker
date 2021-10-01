@@ -2,7 +2,6 @@ tool
 extends Control
 
 const DialogUtil = preload("res://addons/dialog_plugin/Core/DialogUtil.gd")
-const TranslationDB = preload("res://addons/dialog_plugin/Core/DialogDatabase.gd").Translations
 const TranslationService = preload("res://addons/dialog_plugin/Other/translation_service/translation_service.gd")
 
 const EventsDisplayer = preload("res://addons/dialog_plugin/Editor/Views/timeline_editor/events_displayer.gd")
@@ -60,8 +59,7 @@ func _clips_input() -> bool:
 
 
 func save_resource() -> void:
-	if timeline_events_container_node.modified:
-		call_deferred("_deferred_save")
+	call_deferred("_deferred_save")
 
 
 func _deferred_save(_descarted_value=null) -> void:

@@ -1,5 +1,6 @@
 tool
-class_name DialogQuestionEvent
+
+#class_name DialogQuestionEvent
 extends DialogLogicEvent
 
 # - - - - - - - - - -
@@ -43,7 +44,7 @@ func execute(caller:DialogBaseNode) -> void:
 
 
 func _on_option_selected(option) -> void:
-	var timeline:DialogTimelineResource = options.get(option, null)
+	var timeline:DialogTimelineResource = options.get(option, null) as DialogTimelineResource
 	_old_timeline = _caller.timeline
 	
 	if timeline and not(timeline.events.empty()):
@@ -65,3 +66,8 @@ func _get_property_list() -> Array:
 	var options_property:Dictionary = DialogUtil.get_property_dict("options", TYPE_DICTIONARY, PROPERTY_HINT_NONE, "" ,PROPERTY_USAGE_NOEDITOR|PROPERTY_USAGE_SCRIPT_VARIABLE)
 	_p.append(options_property)
 	return _p
+
+
+func _get(property: String):
+	if property == "options_fixed_type":
+		return "DialogTimelineResource"
