@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/Testimony.gd" type="Script" id=1]
 [ext_resource path="res://src/Dialog/Dialog.tscn" type="PackedScene" id=2]
@@ -13,112 +13,27 @@
 [ext_resource path="res://src/TestScene.gd" type="Script" id=11]
 [ext_resource path="res://res/Music/1-05 Logic and Trick.ogg" type="AudioStream" id=12]
 [ext_resource path="res://src/VolumeSlider.gd" type="Script" id=13]
+[ext_resource path="res://Main.gd" type="Script" id=14]
+[ext_resource path="res://res/Background/bluecorp.png" type="Texture" id=15]
+[ext_resource path="res://res/Background/lobby.png" type="Texture" id=16]
+[ext_resource path="res://res/Background/studio.png" type="Texture" id=17]
 
-[sub_resource type="Animation" id=1]
-resource_name = "def"
-tracks/0/type = "value"
-tracks/0/path = NodePath("scrollbg:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "def-pro"
-length = 0.5
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("scrollbg:offset")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5 ),
-"transitions": PoolRealArray( 1.5, 0.5, 1.5 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -520, 0 ), Vector2( -1040, 0 ) ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "def-wit"
-length = 0.5
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("scrollbg:offset")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5 ),
-"transitions": PoolRealArray( 1.5, 0.5, 1.5 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -360, 0 ), Vector2( -520, 0 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-tracks/0/type = "value"
-tracks/0/path = NodePath("scrollbg:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -1040, 0 ) ]
-}
-
-[sub_resource type="Animation" id=5]
-resource_name = "pro-wit"
-length = 0.5
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("scrollbg:offset")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5 ),
-"transitions": PoolRealArray( 1.5, 0.5, 1.5 ),
-"update": 0,
-"values": [ Vector2( -1040, 0 ), Vector2( -680, 0 ), Vector2( -520, 0 ) ]
-}
-
-[sub_resource type="Animation" id=6]
-tracks/0/type = "value"
-tracks/0/path = NodePath("scrollbg:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -520, 0 ) ]
-}
-
-[node name="TestScene" type="Node2D"]
-script = ExtResource( 11 )
-timeline_name = "res://dialog_files/timelines/test.tres"
-DialogNode_path = NodePath("HUD/Dialog")
-
-[node name="Testimony" type="Node" parent="."]
-script = ExtResource( 1 )
+[node name="Main" type="Node2D"]
+script = ExtResource( 14 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Dialog" parent="HUD" instance=ExtResource( 2 )]
+[node name="TestScene" type="Control" parent="HUD"]
+focus_mode = 2
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+timeline_name = "res://dialog_files/timelines/test.tres"
+DialogNode_path = NodePath("Dialog")
+CharactersNode_path = NodePath("../../Characters")
+
+[node name="Dialog" parent="HUD/TestScene" instance=ExtResource( 2 )]
 margin_top = 116.0
 margin_bottom = 192.0
 
@@ -137,63 +52,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Toggle Showname" type="Button" parent="HUD"]
-visible = false
-margin_left = 66.0
-margin_top = 195.0
-margin_right = 197.0
-margin_bottom = 217.0
+[node name="Color" type="Button" parent="HUD"]
+margin_left = 196.0
+margin_top = 196.0
+margin_right = 250.0
+margin_bottom = 218.0
 custom_styles/hover = ExtResource( 10 )
 custom_styles/pressed = ExtResource( 6 )
 custom_styles/disabled = ExtResource( 9 )
 custom_styles/normal = ExtResource( 7 )
 custom_fonts/font = ExtResource( 8 )
-text = "Toggle Showname"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Woosh" type="Button" parent="HUD"]
-margin_left = 199.0
-margin_top = 195.0
-margin_right = 253.0
-margin_bottom = 217.0
-custom_styles/hover = ExtResource( 10 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/disabled = ExtResource( 9 )
-custom_styles/normal = ExtResource( 7 )
-custom_fonts/font = ExtResource( 8 )
-text = "Woosh"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="FlipX" type="Button" parent="HUD"]
-margin_left = 18.0
-margin_top = 195.0
-margin_right = 62.0
-margin_bottom = 217.0
-custom_styles/hover = ExtResource( 10 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/disabled = ExtResource( 9 )
-custom_styles/normal = ExtResource( 7 )
-custom_fonts/font = ExtResource( 8 )
-text = "Flip X"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="FlipY" type="Button" parent="HUD"]
-margin_left = 66.0
-margin_top = 195.0
-margin_right = 111.0
-margin_bottom = 217.0
-custom_styles/hover = ExtResource( 10 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/disabled = ExtResource( 9 )
-custom_styles/normal = ExtResource( 7 )
-custom_fonts/font = ExtResource( 8 )
-text = "Flip Y"
+text = "Colors!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -293,72 +162,106 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="scrollbg" type="Sprite" parent="."]
-texture = ExtResource( 3 )
-centered = false
+[node name="ColorPicker" type="ColorPicker" parent="HUD"]
+visible = false
+margin_left = 11.0
+margin_top = 158.0
+margin_right = 319.0
+margin_bottom = 620.0
+rect_scale = Vector2( 0.5, 0.5 )
 __meta__ = {
-"_edit_lock_": true
+"_edit_use_anchors_": false
 }
 
-[node name="Characters" type="Node2D" parent="."]
+[node name="fx" type="CanvasModulate" parent="."]
 
-[node name="Desks" type="Node2D" parent="."]
+[node name="Testimony" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="court" type="Node2D" parent="Background"]
+visible = false
+
+[node name="scrollbg" type="Sprite" parent="Background/court"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Desks" type="Node2D" parent="Background/court"]
+z_index = 1
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="desk_def" type="Sprite" parent="Desks"]
+[node name="desk_def" type="Sprite" parent="Background/court/Desks"]
 position = Vector2( 0, 148 )
 texture = ExtResource( 4 )
 centered = false
 
-[node name="desk_wit" type="Sprite" parent="Desks"]
+[node name="desk_wit" type="Sprite" parent="Background/court/Desks"]
 position = Vector2( 520, 158 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="desk_pro" type="Sprite" parent="Desks"]
+[node name="desk_pro" type="Sprite" parent="Background/court/Desks"]
 position = Vector2( 1040, 148 )
 texture = ExtResource( 4 )
 centered = false
 flip_h = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/def = SubResource( 1 )
-anims/def-pro = SubResource( 2 )
-anims/def-wit = SubResource( 3 )
-anims/pro = SubResource( 4 )
-anims/pro-wit = SubResource( 5 )
-anims/wit = SubResource( 6 )
-
-[node name="def" type="ReferenceRect" parent="."]
+[node name="def" type="ReferenceRect" parent="Background/court"]
 margin_right = 256.0
 margin_bottom = 192.0
+mouse_filter = 2
 border_width = 2.0
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="wit" type="ReferenceRect" parent="."]
+[node name="wit" type="ReferenceRect" parent="Background/court"]
 margin_left = 521.0
 margin_right = 777.0
 margin_bottom = 192.0
+mouse_filter = 2
 border_width = 2.0
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="pro" type="ReferenceRect" parent="."]
+[node name="pro" type="ReferenceRect" parent="Background/court"]
 margin_left = 1040.0
 margin_right = 1296.0
 margin_bottom = 192.0
+mouse_filter = 2
 border_width = 2.0
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="bluecorp" type="Node2D" parent="Background"]
+visible = false
+
+[node name="bg" type="Sprite" parent="Background/bluecorp"]
+texture = ExtResource( 15 )
+centered = false
+
+[node name="lobby" type="Node2D" parent="Background"]
+visible = false
+
+[node name="bg" type="Sprite" parent="Background/lobby"]
+texture = ExtResource( 16 )
+centered = false
+
+[node name="studio" type="Node2D" parent="Background"]
+
+[node name="bg" type="Sprite" parent="Background/studio"]
+texture = ExtResource( 17 )
+centered = false
+
+[node name="Characters" type="Node2D" parent="."]
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
@@ -366,10 +269,7 @@ autoplay = true
 bus = "Music"
 
 [connection signal="pressed" from="HUD/Next" to="." method="_on_Next_pressed"]
-[connection signal="pressed" from="HUD/Toggle Showname" to="." method="_on_Toggle_Showname_pressed"]
-[connection signal="pressed" from="HUD/Woosh" to="." method="_on_Woosh_pressed"]
-[connection signal="pressed" from="HUD/FlipX" to="." method="_on_FlipX_pressed"]
-[connection signal="pressed" from="HUD/FlipY" to="." method="_on_FlipY_pressed"]
+[connection signal="pressed" from="HUD/Color" to="." method="_on_Color_pressed"]
 [connection signal="mouse_exited" from="HUD/VolumeControl/VolumeMasterSlider" to="HUD/VolumeControl/VolumeMasterSlider" method="release_focus"]
 [connection signal="value_changed" from="HUD/VolumeControl/VolumeMasterSlider" to="HUD/VolumeControl/VolumeMasterSlider" method="_on_value_changed"]
 [connection signal="mouse_exited" from="HUD/VolumeControl/VolumeBlipSlider" to="HUD/VolumeControl/VolumeBlipSlider" method="release_focus"]
@@ -378,3 +278,4 @@ bus = "Music"
 [connection signal="value_changed" from="HUD/VolumeControl/VolumeSfxSlider" to="HUD/VolumeControl/VolumeSfxSlider" method="_on_value_changed"]
 [connection signal="mouse_exited" from="HUD/VolumeControl/VolumeMusicSlider" to="HUD/VolumeControl/VolumeMusicSlider" method="release_focus"]
 [connection signal="value_changed" from="HUD/VolumeControl/VolumeMusicSlider" to="HUD/VolumeControl/VolumeMusicSlider" method="_on_value_changed"]
+[connection signal="color_changed" from="HUD/ColorPicker" to="." method="_on_ColorPicker_color_changed"]

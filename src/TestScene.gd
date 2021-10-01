@@ -1,19 +1,20 @@
-extends DialogBaseNode
+extends DialogBoxNode
 
 var expression = ""
-var current_char
+var current_char = ""
 
 var chars = []
 
-onready var characters = $Characters
-onready var dialog = $HUD/Dialog
+## NodePath that refers to the Characters
+export(NodePath) var CharactersNode_path:NodePath
+
+onready var characters := get_node_or_null(CharactersNode_path)
 
 func _ready() -> void:
 	preload_characters()
-	dialog.connect("text_displayed", self, "_on_text_displayed")
+	DialogNode.connect("text_displayed", self, "_on_text_displayed")
 	_set_nodes_default_values()
-	start_timeline()
-
+	call_deferred("start_timeline")
 
 func preload_characters():
 	var dir = Directory.new()
@@ -110,34 +111,3 @@ func _on_event_start(_event):
 func _on_event_finished(_event, go_to_next_event=false):
 	._on_event_finished(_event, go_to_next_event)
 	print(_event.resource_name, ' - ', go_to_next_event)
-
-
-func _on_Next_pressed():
-	var a = InputEventAction.new()
-	a.action = "ui_accept"
-	a.pressed = true
-	Input.parse_input_event(a)
-	yield(get_tree(),"idle_frame")
-	a.pressed = false
-	Input.parse_input_event(a)
-
-
-func _on_Toggle_Showname_pressed():
-	dialog.get_node("ShownamePanel").visible = not dialog.get_node("ShownamePanel").visible
-
-
-func _on_Woosh_pressed():
-	if $AnimationPlayer.current_animation == "" or $AnimationPlayer.current_animation_position == 0:
-		$AnimationPlayer.play("def-pro")
-	else:
-		$AnimationPlayer.play_backwards("def-pro")
-
-
-func _on_FlipX_pressed():
-	var sprite = current_char.get_node("Sprite")
-	sprite.flip_h = not sprite.flip_h
-
-
-func _on_FlipY_pressed():
-	var sprite = current_char.get_node("Sprite")
-	sprite.flip_v = not sprite.flip_v
