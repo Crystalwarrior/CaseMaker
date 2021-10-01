@@ -16,3 +16,12 @@ func _on_Next_pressed():
 
 func _on_Color_pressed():
 	$HUD/ColorPicker.visible = not $HUD/ColorPicker.visible
+
+
+func _on_TestScene_custom_signal(value):
+	var args = value.split(';')
+	if args[0] == 'anim':
+		if len(args) >= 3 and args[2] == 'r':
+			$AnimationPlayer.play_backwards(args[1])
+		else:
+			$AnimationPlayer.play(args[1])

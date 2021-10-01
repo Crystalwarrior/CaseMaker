@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/Testimony.gd" type="Script" id=1]
 [ext_resource path="res://src/Dialog/Dialog.tscn" type="PackedScene" id=2]
@@ -17,6 +17,21 @@
 [ext_resource path="res://res/Background/bluecorp.png" type="Texture" id=15]
 [ext_resource path="res://res/Background/lobby.png" type="Texture" id=16]
 [ext_resource path="res://res/Background/studio.png" type="Texture" id=17]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/path = NodePath("fx:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 14 )
@@ -268,6 +283,10 @@ stream = ExtResource( 12 )
 autoplay = true
 bus = "Music"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fade = SubResource( 1 )
+
+[connection signal="custom_signal" from="HUD/TestScene" to="." method="_on_TestScene_custom_signal"]
 [connection signal="pressed" from="HUD/Next" to="." method="_on_Next_pressed"]
 [connection signal="pressed" from="HUD/Color" to="." method="_on_Color_pressed"]
 [connection signal="mouse_exited" from="HUD/VolumeControl/VolumeMasterSlider" to="HUD/VolumeControl/VolumeMasterSlider" method="release_focus"]

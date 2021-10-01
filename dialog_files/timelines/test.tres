@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=35 format=2]
+[gd_resource type="Resource" load_steps=41 format=2]
 
 [ext_resource path="res://addons/dialog_plugin/Resources/TimelineResource.gd" type="Script" id=1]
 [ext_resource path="res://addons/dialog_plugin/Resources/Events/TextEvent/TextEvent.gd" type="Script" id=2]
@@ -9,6 +9,12 @@
 [ext_resource path="res://addons/dialog_plugin/Resources/Events/CharacterEvent/JoinEvent/CharacterJoinEvent.gd" type="Script" id=7]
 [ext_resource path="res://addons/dialog_plugin/Resources/Events/CharacterEvent/LeaveEvent/CharacterLeaveEvent.gd" type="Script" id=8]
 [ext_resource path="res://addons/dialog_plugin/Resources/Events/LogicEvent/JumpToEvent/JumpToEvent.gd" type="Script" id=9]
+[ext_resource path="res://addons/dialog_plugin/Resources/Events/LogicEvent/EmitSignalEvent/EmitSignalEvent.gd" type="Script" id=10]
+
+[sub_resource type="Resource" id=26]
+script = ExtResource( 10 )
+custom_value = "anim;fade;r"
+skip = false
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 4 )
@@ -63,6 +69,11 @@ character = ExtResource( 3 )
 selected_portrait = 2
 skip = true
 
+[sub_resource type="Resource" id=27]
+script = ExtResource( 10 )
+custom_value = "anim;fade"
+skip = false
+
 [sub_resource type="Resource" id=7]
 resource_name = "TextEvent"
 script = ExtResource( 2 )
@@ -87,6 +98,11 @@ text = "Bruh"
 text_speed = 0.02
 continue_previous_text = false
 translation_key = "__SAME_AS_TEXT__"
+skip = false
+
+[sub_resource type="Resource" id=28]
+script = ExtResource( 10 )
+custom_value = "anim;fade;r"
 skip = false
 
 [sub_resource type="Resource" id=10]
@@ -212,6 +228,17 @@ translation_key = "__SAME_AS_TEXT__"
 character = SubResource( 23 )
 skip = false
 
+[sub_resource type="Resource" id=29]
+script = ExtResource( 10 )
+custom_value = "anim;fade"
+skip = true
+
+[sub_resource type="Resource" id=30]
+resource_name = "WaitTimeEvent"
+script = ExtResource( 5 )
+wait_time = 1.0
+skip = true
+
 [sub_resource type="Resource" id=25]
 resource_name = "JumpToEvent"
 script = ExtResource( 9 )
@@ -220,5 +247,5 @@ skip = true
 
 [resource]
 script = ExtResource( 1 )
-events = [ SubResource( 2 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 24 ), SubResource( 25 ) ]
+events = [ SubResource( 26 ), SubResource( 2 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 27 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 28 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 24 ), SubResource( 29 ), SubResource( 30 ), SubResource( 25 ) ]
 _related_characters = [ ExtResource( 3 ) ]
