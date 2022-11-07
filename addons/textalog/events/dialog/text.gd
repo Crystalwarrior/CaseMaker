@@ -8,6 +8,7 @@ var translation_key:String = "" setget set_translation_key
 var text:String = "" setget set_text
 export(bool) var continue_previous_text:bool = false setget enable_text_ammend
 export(float, 0.01, 1.0, 0.01) var text_speed:float = 0.04 setget set_text_speed
+export(int, "on repeat", "never", "always") var skip_setting:int = 0 setget set_skip_setting
 
 
 # Audio
@@ -43,6 +44,11 @@ func set_text(value:String) -> void:
 
 func set_text_speed(value:float) -> void:
 	text_speed = value
+	emit_changed()
+
+
+func set_skip_setting(value:int) -> void:
+	skip_setting = value
 	emit_changed()
 
 
@@ -126,7 +132,7 @@ func set_audio_bus(value:String) -> void:
 ##########
 
 func _show_text() -> void:
-	event_node.show()
+	get_event_node().show()
 	_dialog_manager.display_text()
 
 
@@ -149,7 +155,7 @@ func _prepare_text_to_show() -> void:
 
 
 func _configure_display_name() -> void:
-	var name_node:Label = event_node.name_node
+	var name_node:Label = get_event_node().name_node
 	if not is_instance_valid(name_node):
 		return
 	
@@ -183,12 +189,12 @@ func _on_text_displayed() -> void:
 
 
 func _execute() -> void:
-	event_node = event_node as DialogNode
-	if not is_instance_valid(event_node):
+	var node = get_event_node() as DialogNode
+	if not is_instance_valid(node):
 		finish()
 		return
 	
-	_dialog_manager = event_node.dialog_manager as DialogManager
+	_dialog_manager = node.dialog_manager as DialogManager
 	if not is_instance_valid(_dialog_manager):
 		finish()
 		return

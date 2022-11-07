@@ -63,7 +63,7 @@ func _update_values() -> void:
 		option_button.connect("option_selected", self, "emit_signal", ["timeline_selected", options[option]])
 		options_container.add_child(option_button)
 	
-	_desc_container_node.hint_tooltip = hint
+#	_desc_container_node.hint_tooltip = hint
 
 
 func _show_options() -> void:
