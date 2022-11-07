@@ -16,12 +16,7 @@
 [ext_resource path="res://res/UI/styles/button2_normal.tres" type="StyleBox" id=14]
 [ext_resource path="res://src/Characters/Phoenix.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/Characters/Edgeworth.tscn" type="PackedScene" id=16]
-
-[sub_resource type="Theme" id=6]
-Button/styles/disabled = ExtResource( 11 )
-Button/styles/hover = ExtResource( 12 )
-Button/styles/normal = ExtResource( 14 )
-Button/styles/pressed = ExtResource( 13 )
+[ext_resource path="res://res/UI/themes/AATheme.tres" type="Theme" id=17]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -35,7 +30,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1168, 96 ) ]
+"values": [ Vector2( 128, 96 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -186,7 +181,7 @@ centered = false
 position = Vector2( 1040, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="World"]
-position = Vector2( 1168, 96 )
+position = Vector2( 128, 96 )
 current = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
@@ -196,7 +191,7 @@ margin_left = 95.0
 margin_top = 170.0
 margin_right = 157.0
 margin_bottom = 190.0
-theme = SubResource( 6 )
+theme = ExtResource( 17 )
 text = "PanTest"
 
 [node name="Color" type="Button" parent="HUD"]
