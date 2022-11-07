@@ -1,35 +1,14 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://res/UI/showname.png" type="Texture" id=1]
-[ext_resource path="res://res/UI/dialog.png" type="Texture" id=2]
+[ext_resource path="res://res/UI/styles/namebox.tres" type="StyleBox" id=1]
+[ext_resource path="res://res/UI/styles/dialogbox.tres" type="StyleBox" id=2]
 [ext_resource path="res://res/Fonts/textfont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://res/Fonts/Ace_Name_Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://src/Dialog/Dialog.gd" type="Script" id=5]
 [ext_resource path="res://res/Sounds/blipmale.wav" type="AudioStream" id=6]
 [ext_resource path="res://res/UI/chat_arrow.png" type="Texture" id=7]
-
-[sub_resource type="StyleBoxTexture" id=1]
-content_margin_left = 10.0
-content_margin_top = 4.0
-content_margin_bottom = 9.0
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 9, 9 )
-margin_left = 4.0
-margin_right = 4.0
-margin_top = 4.0
-margin_bottom = 4.0
-modulate_color = Color( 1, 1, 1, 0.576471 )
-
-[sub_resource type="StyleBoxTexture" id=2]
-content_margin_top = 1.0
-content_margin_bottom = 0.0
-texture = ExtResource( 1 )
-region_rect = Rect2( 0, 0, 9, 9 )
-margin_left = 4.0
-margin_right = 4.0
-margin_top = 4.0
-margin_bottom = 4.0
-modulate_color = Color( 1, 1, 1, 0.576471 )
+[ext_resource path="res://src/Dialog/BlipPlayer.gd" type="Script" id=8]
+[ext_resource path="res://res/UI/themes/AATheme.tres" type="Theme" id=9]
 
 [sub_resource type="DynamicFont" id=3]
 size = 8
@@ -56,24 +35,17 @@ tracks/0/keys = {
 [node name="Dialog" type="Control"]
 margin_right = 256.0
 margin_bottom = 76.0
+theme = ExtResource( 9 )
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-TextNode_path = NodePath("DialogPanel/RichTextLabel")
-NameNode_path = NodePath("ShownamePanel/Label")
-NextIndicator_path = NodePath("NextIndicator")
-TextTimer_path = NodePath("Timer")
-BlipSound_path = NodePath("BlipSound")
+text_timer_path = NodePath("Timer")
+text_node_path = NodePath("DialogPanel/RichTextLabel")
+blip_player_path = NodePath("BlipPlayer")
 
 [node name="DialogPanel" type="PanelContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 12.0
-custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+custom_styles/panel = ExtResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="DialogPanel"]
 margin_left = 10.0
@@ -91,7 +63,7 @@ __meta__ = {
 margin_right = 9.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 9, 0 )
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -117,22 +89,15 @@ margin_left = -13.0
 margin_top = -20.0
 margin_right = -1.0
 margin_bottom = -11.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="arrow" type="TextureRect" parent="NextIndicator"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -10.0
+margin_left = -9.0
 margin_top = -9.0
-margin_right = -1.0
 texture = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NextIndicator"]
 autoplay = "next"
@@ -140,8 +105,9 @@ anims/next = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="BlipSound" type="AudioStreamPlayer" parent="."]
+[node name="BlipPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 bus = "Blips"
+script = ExtResource( 8 )
 
 [connection signal="timeout" from="Timer" to="." method="_update_displayed_text"]

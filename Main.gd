@@ -25,3 +25,7 @@ func _on_TestScene_custom_signal(value):
 			$AnimationPlayer.play_backwards(args[1])
 		else:
 			$AnimationPlayer.play(args[1])
+
+
+func _on_Button_pressed():
+	$AnimationPlayer.play("camera_def_to_pro")

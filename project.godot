@@ -40,11 +40,6 @@ _global_script_classes=[ {
 "path": "res://addons/event_system_plugin/events/call_from.gd"
 }, {
 "base": "Event",
-"class": "EventChangeTimeline",
-"language": "GDScript",
-"path": "res://addons/event_system_plugin/events/change_timeline.gd"
-}, {
-"base": "Event",
 "class": "EventCharacterChangeExpression",
 "language": "GDScript",
 "path": "res://addons/textalog/events/character/change_expression.gd"
@@ -67,7 +62,7 @@ _global_script_classes=[ {
 "base": "Event",
 "class": "EventCondition",
 "language": "GDScript",
-"path": "res://addons/event_system_plugin/events/condition.gd"
+"path": "res://addons/event_system_plugin/events/new_condition.gd"
 }, {
 "base": "Event",
 "class": "EventDialogChoice",
@@ -85,14 +80,14 @@ _global_script_classes=[ {
 "path": "res://addons/event_system_plugin/events/emit_signal.gd"
 }, {
 "base": "Event",
+"class": "EventGoTo",
+"language": "GDScript",
+"path": "res://addons/event_system_plugin/events/goto.gd"
+}, {
+"base": "Event",
 "class": "EventHide",
 "language": "GDScript",
 "path": "res://addons/event_system_plugin/events/hide.gd"
-}, {
-"base": "Event",
-"class": "EventJumpToEvent",
-"language": "GDScript",
-"path": "res://addons/event_system_plugin/events/jump_to.gd"
 }, {
 "base": "Node",
 "class": "EventManager",
@@ -141,7 +136,6 @@ _global_script_class_icons={
 "DialogNode": "",
 "Event": "res://addons/event_system_plugin/assets/icons/timeline_icon.png",
 "EventCall": "",
-"EventChangeTimeline": "",
 "EventCharacterChangeExpression": "",
 "EventCharacterJoin": "",
 "EventCharacterLeave": "",
@@ -150,8 +144,8 @@ _global_script_class_icons={
 "EventDialogChoice": "",
 "EventDialogText": "",
 "EventEmitSignal": "",
+"EventGoTo": "",
 "EventHide": "",
-"EventJumpToEvent": "",
 "EventManager": "",
 "EventSet": "",
 "EventShow": "",
@@ -165,12 +159,16 @@ _global_script_class_icons={
 [application]
 
 config/name="Case Maker"
-run/main_scene="res://src/TestScene.tscn"
+run/main_scene="res://src/Main.tscn"
 config/icon="res://icon.png"
 
 [display]
 
-window/size/width=800
+window/size/width=256
+window/size/height=192
+window/size/test_width=512
+window/size/test_height=384
+window/stretch/mode="2d"
 
 [editor_plugins]
 
