@@ -1,4 +1,5 @@
 .import/
+.godot/
 res/Characters/
 res/Background/
 res/Evidence/

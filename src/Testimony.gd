@@ -31,10 +31,10 @@ func present():
 func set_statement_visible(var idx, var tog = true):
 	pass
 
-func set_press_timeline(var timeline:DialogTimelineResource):
+func set_press_timeline(var timeline):
 	pass
 
-func set_present_timeline(var timeline:DialogTimelineResource):
+func set_present_timeline(var timeline):
 	pass
 
 func new_statement():
