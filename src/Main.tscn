@@ -1,6 +1,5 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://res/Fonts/textfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
 [ext_resource path="res://src/VolumeSlider.gd" type="Script" id=3]
 [ext_resource path="res://res/Background/Courtroom/courtroomfullDS.png" type="Texture" id=4]
@@ -10,15 +9,15 @@
 [ext_resource path="res://res/Background/lobby.png" type="Texture" id=8]
 [ext_resource path="res://res/Background/bluecorp.png" type="Texture" id=9]
 [ext_resource path="res://res/Background/studio.png" type="Texture" id=10]
-[ext_resource path="res://res/UI/styles/button2_disabled.tres" type="StyleBox" id=11]
-[ext_resource path="res://res/UI/styles/button2_hover.tres" type="StyleBox" id=12]
-[ext_resource path="res://res/UI/styles/button2_pressed.tres" type="StyleBox" id=13]
-[ext_resource path="res://res/UI/styles/button2_normal.tres" type="StyleBox" id=14]
 [ext_resource path="res://src/Characters/Phoenix.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/Characters/Edgeworth.tscn" type="PackedScene" id=16]
 [ext_resource path="res://res/UI/themes/AATheme.tres" type="Theme" id=17]
+[ext_resource path="res://res/Background/Courtroom/judgestand.png" type="Texture" id=18]
+[ext_resource path="res://res/Background/Courtroom/helperstand.png" type="Texture" id=19]
+[ext_resource path="res://src/Characters/Judge.tscn" type="PackedScene" id=20]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=8]
+resource_name = "cam_def"
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("World/Camera2D:position")
@@ -33,8 +32,72 @@ tracks/0/keys = {
 "values": [ Vector2( 128, 96 ) ]
 }
 
+[sub_resource type="Animation" id=9]
+resource_name = "cam_hld"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("World/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 128, -96 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "cam_jud"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("World/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 648, -96 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "cam_pro"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("World/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1168, 96 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "cam_wit"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("World/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 648, 96 ) ]
+}
+
 [sub_resource type="Animation" id=3]
-resource_name = "camera_def_to_pro"
+resource_name = "pan_def_to_pro"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("World/Camera2D:position")
@@ -43,14 +106,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 0.3, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 0.25, 1 ),
 "update": 0,
-"values": [ Vector2( 128, 96 ), Vector2( 1168, 96 ) ]
+"values": [ Vector2( 128, 96 ), Vector2( 210, 96 ), Vector2( 1168, 96 ) ]
 }
 
 [sub_resource type="Animation" id=5]
-resource_name = "camera_def_to_wit"
+resource_name = "pan_def_to_wit"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("World/Camera2D:position")
@@ -59,16 +122,48 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 0.3, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 0.3, 1 ),
 "update": 0,
-"values": [ Vector2( 128, 96 ), Vector2( 648, 96 ) ]
+"values": [ Vector2( 128, 96 ), Vector2( 210, 96 ), Vector2( 648, 96 ) ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=6]
+resource_name = "pan_pro_to_def"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("World/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 0.25, 1 ),
+"update": 0,
+"values": [ Vector2( 1168, 96 ), Vector2( 1086, 96 ), Vector2( 128, 96 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "pan_pro_to_wit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("World/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 0.25, 1 ),
+"update": 0,
+"values": [ Vector2( 1168, 96 ), Vector2( 1086, 96 ), Vector2( 648, 96 ) ]
+}
+
+[sub_resource type="Animation" id=14]
 resource_name = "fade"
 tracks/0/type = "value"
-tracks/0/path = NodePath("World/fx:color")
+tracks/0/path = NodePath("fx:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -80,10 +175,10 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=15]
 resource_name = "unfade"
 tracks/0/type = "value"
-tracks/0/path = NodePath("World/fx:color")
+tracks/0/path = NodePath("fx:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -99,8 +194,6 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="World" type="Node2D" parent="."]
-
-[node name="fx" type="CanvasModulate" parent="World"]
 
 [node name="Background" type="Node2D" parent="World"]
 
@@ -132,9 +225,25 @@ texture = ExtResource( 5 )
 centered = false
 flip_h = true
 
+[node name="Judgestand" type="Sprite" parent="World/Background/court"]
+position = Vector2( 520, -192 )
+texture = ExtResource( 18 )
+centered = false
+
+[node name="Helperstand" type="Sprite" parent="World/Background/court"]
+position = Vector2( 0, -192 )
+texture = ExtResource( 19 )
+centered = false
+
 [node name="def" type="ReferenceRect" parent="World/Background/court"]
 margin_right = 256.0
 margin_bottom = 192.0
+mouse_filter = 2
+border_width = 2.0
+
+[node name="hld" type="ReferenceRect" parent="World/Background/court"]
+margin_top = -192.0
+margin_right = 256.0
 mouse_filter = 2
 border_width = 2.0
 
@@ -149,6 +258,13 @@ border_width = 2.0
 margin_left = 1040.0
 margin_right = 1296.0
 margin_bottom = 192.0
+mouse_filter = 2
+border_width = 2.0
+
+[node name="jud" type="ReferenceRect" parent="World/Background/court"]
+margin_left = 520.0
+margin_top = -192.0
+margin_right = 776.0
 mouse_filter = 2
 border_width = 2.0
 
@@ -180,31 +296,41 @@ centered = false
 [node name="Edgeworth" parent="World/Characters" instance=ExtResource( 16 )]
 position = Vector2( 1040, 0 )
 
+[node name="Judge" parent="World/Characters" instance=ExtResource( 20 )]
+position = Vector2( 520, -192 )
+
 [node name="Camera2D" type="Camera2D" parent="World"]
 position = Vector2( 128, 96 )
 current = true
 
+[node name="CameraAnimPlayer" type="AnimationPlayer" parent="World"]
+root_node = NodePath("../..")
+anims/cam_def = SubResource( 8 )
+anims/cam_hld = SubResource( 9 )
+anims/cam_jud = SubResource( 10 )
+anims/cam_pro = SubResource( 11 )
+anims/cam_wit = SubResource( 12 )
+anims/pan_def_to_pro = SubResource( 3 )
+anims/pan_def_to_wit = SubResource( 5 )
+anims/pan_pro_to_def = SubResource( 6 )
+anims/pan_pro_to_wit = SubResource( 7 )
+
+[node name="fx" type="CanvasModulate" parent="."]
+color = Color( 0.890196, 0.890196, 0.890196, 1 )
+
+[node name="ScreenAnimPlayer" type="AnimationPlayer" parent="fx"]
+root_node = NodePath("../..")
+anims/fade = SubResource( 14 )
+anims/unfade = SubResource( 15 )
+
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="PanTest" type="Button" parent="HUD"]
-margin_left = 95.0
-margin_top = 170.0
-margin_right = 157.0
-margin_bottom = 190.0
+margin_left = 194.0
+margin_right = 256.0
+margin_bottom = 22.0
 theme = ExtResource( 17 )
 text = "PanTest"
-
-[node name="Color" type="Button" parent="HUD"]
-margin_left = 196.0
-margin_top = 196.0
-margin_right = 250.0
-margin_bottom = 218.0
-custom_fonts/font = ExtResource( 1 )
-custom_styles/hover = ExtResource( 12 )
-custom_styles/pressed = ExtResource( 13 )
-custom_styles/disabled = ExtResource( 11 )
-custom_styles/normal = ExtResource( 14 )
-text = "Colors!"
 
 [node name="VolumeControl" type="Control" parent="HUD"]
 margin_left = 19.0
@@ -298,31 +424,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorPicker" type="ColorPicker" parent="HUD"]
-visible = false
-margin_left = 47.0
-margin_top = 194.0
-margin_right = 355.0
-margin_bottom = 656.0
-rect_scale = Vector2( 0.5, 0.5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 autoplay = true
 bus = "Music"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 2 )
-anims/camera_def_to_pro = SubResource( 3 )
-anims/camera_def_to_wit = SubResource( 5 )
-anims/fade = SubResource( 1 )
-anims/unfade = SubResource( 4 )
-
 [connection signal="pressed" from="HUD/PanTest" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="HUD/Color" to="." method="_on_Color_pressed"]
 [connection signal="mouse_exited" from="HUD/VolumeControl/VolumeMasterSlider" to="HUD/VolumeControl/VolumeMasterSlider" method="release_focus"]
 [connection signal="value_changed" from="HUD/VolumeControl/VolumeMasterSlider" to="HUD/VolumeControl/VolumeMasterSlider" method="_on_value_changed"]
 [connection signal="mouse_exited" from="HUD/VolumeControl/VolumeBlipSlider" to="HUD/VolumeControl/VolumeBlipSlider" method="release_focus"]
@@ -331,4 +438,3 @@ anims/unfade = SubResource( 4 )
 [connection signal="value_changed" from="HUD/VolumeControl/VolumeSfxSlider" to="HUD/VolumeControl/VolumeSfxSlider" method="_on_value_changed"]
 [connection signal="mouse_exited" from="HUD/VolumeControl/VolumeMusicSlider" to="HUD/VolumeControl/VolumeMusicSlider" method="release_focus"]
 [connection signal="value_changed" from="HUD/VolumeControl/VolumeMusicSlider" to="HUD/VolumeControl/VolumeMusicSlider" method="_on_value_changed"]
-[connection signal="color_changed" from="HUD/ColorPicker" to="." method="_on_ColorPicker_color_changed"]

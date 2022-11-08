@@ -2,7 +2,7 @@
 
 [ext_resource path="res://res/Characters/Judge/judge-normal(b).tres" type="Animation" id=1]
 [ext_resource path="res://res/Characters/Judge/judge-normal(a).tres" type="Animation" id=2]
-[ext_resource path="res://res/Characters/Judge/judge-normal(b)/6.png" type="Texture" id=3]
+[ext_resource path="res://res/Characters/Judge/judge-normal(a)/0.png" type="Texture" id=3]
 
 [node name="Judge" type="Node2D"]
 
@@ -11,5 +11,6 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "judge-normal(a)"
 anims/judge-normal(a) = ExtResource( 2 )
 anims/judge-normal(b) = ExtResource( 1 )
