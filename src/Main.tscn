@@ -17,7 +17,7 @@
 [ext_resource path="res://src/Characters/Judge.tscn" type="PackedScene" id=20]
 
 [sub_resource type="Animation" id=8]
-resource_name = "cam_def"
+resource_name = "def"
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("World/Camera2D:position")
@@ -32,72 +32,8 @@ tracks/0/keys = {
 "values": [ Vector2( 128, 96 ) ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "cam_hld"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("World/Camera2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 128, -96 ) ]
-}
-
-[sub_resource type="Animation" id=10]
-resource_name = "cam_jud"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("World/Camera2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 648, -96 ) ]
-}
-
-[sub_resource type="Animation" id=11]
-resource_name = "cam_pro"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("World/Camera2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1168, 96 ) ]
-}
-
-[sub_resource type="Animation" id=12]
-resource_name = "cam_wit"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("World/Camera2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 648, 96 ) ]
-}
-
 [sub_resource type="Animation" id=3]
-resource_name = "pan_def_to_pro"
+resource_name = "def_to_pro"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("World/Camera2D:position")
@@ -113,7 +49,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=5]
-resource_name = "pan_def_to_wit"
+resource_name = "def_to_wit"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("World/Camera2D:position")
@@ -128,8 +64,56 @@ tracks/0/keys = {
 "values": [ Vector2( 128, 96 ), Vector2( 210, 96 ), Vector2( 648, 96 ) ]
 }
 
+[sub_resource type="Animation" id=9]
+resource_name = "hld"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("World/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 128, -96 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "jud"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("World/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 648, -96 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "pro"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("World/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1168, 96 ) ]
+}
+
 [sub_resource type="Animation" id=6]
-resource_name = "pan_pro_to_def"
+resource_name = "pro_to_def"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("World/Camera2D:position")
@@ -145,7 +129,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=7]
-resource_name = "pan_pro_to_wit"
+resource_name = "pro_to_wit"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("World/Camera2D:position")
@@ -158,6 +142,22 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 0.25, 1 ),
 "update": 0,
 "values": [ Vector2( 1168, 96 ), Vector2( 1086, 96 ), Vector2( 648, 96 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "wit"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("World/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 648, 96 ) ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -300,23 +300,22 @@ position = Vector2( 1040, 0 )
 position = Vector2( 520, -192 )
 
 [node name="Camera2D" type="Camera2D" parent="World"]
-position = Vector2( 128, 96 )
+position = Vector2( 1168, 96 )
 current = true
 
 [node name="CameraAnimPlayer" type="AnimationPlayer" parent="World"]
 root_node = NodePath("../..")
-anims/cam_def = SubResource( 8 )
-anims/cam_hld = SubResource( 9 )
-anims/cam_jud = SubResource( 10 )
-anims/cam_pro = SubResource( 11 )
-anims/cam_wit = SubResource( 12 )
-anims/pan_def_to_pro = SubResource( 3 )
-anims/pan_def_to_wit = SubResource( 5 )
-anims/pan_pro_to_def = SubResource( 6 )
-anims/pan_pro_to_wit = SubResource( 7 )
+anims/def = SubResource( 8 )
+anims/def_to_pro = SubResource( 3 )
+anims/def_to_wit = SubResource( 5 )
+anims/hld = SubResource( 9 )
+anims/jud = SubResource( 10 )
+anims/pro = SubResource( 11 )
+anims/pro_to_def = SubResource( 6 )
+anims/pro_to_wit = SubResource( 7 )
+anims/wit = SubResource( 12 )
 
 [node name="fx" type="CanvasModulate" parent="."]
-color = Color( 0.890196, 0.890196, 0.890196, 1 )
 
 [node name="ScreenAnimPlayer" type="AnimationPlayer" parent="fx"]
 root_node = NodePath("../..")
@@ -325,12 +324,13 @@ anims/unfade = SubResource( 15 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="PanTest" type="Button" parent="HUD"]
-margin_left = 194.0
-margin_right = 256.0
+[node name="ButtonTest" type="Button" parent="HUD"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -83.0
 margin_bottom = 22.0
 theme = ExtResource( 17 )
-text = "PanTest"
+text = "ButtonTest"
 
 [node name="VolumeControl" type="Control" parent="HUD"]
 margin_left = 19.0
@@ -429,7 +429,6 @@ stream = ExtResource( 7 )
 autoplay = true
 bus = "Music"
 
-[connection signal="pressed" from="HUD/PanTest" to="." method="_on_Button_pressed"]
 [connection signal="mouse_exited" from="HUD/VolumeControl/VolumeMasterSlider" to="HUD/VolumeControl/VolumeMasterSlider" method="release_focus"]
 [connection signal="value_changed" from="HUD/VolumeControl/VolumeMasterSlider" to="HUD/VolumeControl/VolumeMasterSlider" method="_on_value_changed"]
 [connection signal="mouse_exited" from="HUD/VolumeControl/VolumeBlipSlider" to="HUD/VolumeControl/VolumeBlipSlider" method="release_focus"]
