@@ -21,7 +21,7 @@
 
 [resource]
 resource_name = "pointing(b)"
-length = 2.379999999999999
+length = 2.38
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
@@ -30,7 +30,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.15, 0.30, 0.45, 0.60, 0.66, 0.74, 0.80, 0.88, 1.03, 1.18, 1.33, 1.48, 1.63, 1.78, 1.93, 2.08, 2.23 ),
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.66, 0.74, 0.8, 0.88, 1.03, 1.18, 1.33, 1.48, 1.63, 1.78, 1.93, 2.08, 2.23 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ]
