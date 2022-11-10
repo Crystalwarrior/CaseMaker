@@ -195,7 +195,7 @@ func _get_current_character() -> String:
 	var _current_character = _text[min(_text_length, _text_visible_characters)]
 	return _current_character
 
-func _init() -> void:
+func _ready() -> void:
 	text_timer = get_node_or_null(text_timer_path)
 	text_timer.connect("timeout", self, "_update_displayed_text")
 

@@ -4,8 +4,8 @@ enum BlipStrategy {NO_BLIP, BLIP_ONCE, BLIP_LOOP}
 
 var _blip_samples:Array = [] setget set_blip_samples
 var _blip_space_samples:Array = [] setget set_blip_space_samples
-var _blip_strategy:int = BlipStrategy.NO_BLIP setget set_blip_strategy
-var _blip_rate:int = 1 setget set_blip_rate
+var _blip_strategy:int = BlipStrategy.BLIP_LOOP setget set_blip_strategy
+var _blip_rate:int = 2 setget set_blip_rate
 var _blip_force:bool = true setget force_blip
 var _blip_map:bool = false setget map_blip_to_letter
 var _blip_bus:String = "Master" setget set_audio_bus
