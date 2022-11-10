@@ -1,0 +1,49 @@
+[gd_resource type="Animation" load_steps=31 format=2]
+
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/20.png" type="Texture" id=1]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/25.png" type="Texture" id=2]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/27.png" type="Texture" id=3]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/24.png" type="Texture" id=4]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/26.png" type="Texture" id=5]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/29.png" type="Texture" id=6]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/23.png" type="Texture" id=7]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/21.png" type="Texture" id=8]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/28.png" type="Texture" id=9]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/22.png" type="Texture" id=10]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/2.png" type="Texture" id=11]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/4.png" type="Texture" id=12]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/1.png" type="Texture" id=13]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/3.png" type="Texture" id=14]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/5.png" type="Texture" id=15]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/6.png" type="Texture" id=16]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/7.png" type="Texture" id=17]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/8.png" type="Texture" id=18]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/9.png" type="Texture" id=19]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/10.png" type="Texture" id=20]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/11.png" type="Texture" id=21]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/12.png" type="Texture" id=22]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/13.png" type="Texture" id=23]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/0.png" type="Texture" id=24]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/14.png" type="Texture" id=25]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/16.png" type="Texture" id=26]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/17.png" type="Texture" id=27]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/18.png" type="Texture" id=28]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/19.png" type="Texture" id=29]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-coffeed(b)/15.png" type="Texture" id=30]
+
+[resource]
+resource_name = "coffeed(b)"
+length = 3.62
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.13, 0.26, 0.39, 0.52, 0.65, 0.78, 0.91, 1.04, 1.17, 1.3, 1.43, 1.54, 1.55, 1.68, 1.69, 1.8, 1.93, 2.06, 2.19, 2.32, 2.45, 2.58, 2.71, 2.84, 2.97, 3.1, 3.23, 3.36, 3.49 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 24 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 9 ), ExtResource( 6 ) ]
+}

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/1-05 Logic and Trick.ogg-cde71ca084a324268f4bc6f4917f0929.oggstr"
+
+[deps]
+
+source_file="res://res/Music/1-05 Logic and Trick.ogg"
+dest_files=[ "res://.import/1-05 Logic and Trick.ogg-cde71ca084a324268f4bc6f4917f0929.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0.55
