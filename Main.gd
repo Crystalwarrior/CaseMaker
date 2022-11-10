@@ -62,9 +62,15 @@ func _on_ButtonTest_pressed():
 	$World/CameraAnimPlayer.play("pro_to_def")
 	dialog.display_text()
 	dialog.set_text("Back to me baby")
+	yield(get_tree().create_timer(1.25), "timeout")
+	
+	# Objection bubble
+	$SFXPlayer.set_stream(load("res://res/Sounds/objection.wav"))
+	$SFXPlayer.play()
+	$HUD/Bubble/AnimationPlayer.play("objection")
+	yield(get_tree().create_timer(0.7), "timeout")
 	
 	# Swap pos to judge, make judge fart
-	yield(get_tree().create_timer(1.25), "timeout")
 	$World/CameraAnimPlayer.play("jud")
 	current_char = $World/Characters/Judge/AnimationPlayer
 	post_anim = "judge-normal(a)"
