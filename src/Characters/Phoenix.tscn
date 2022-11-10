@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://res/Characters/Phoenix/phoenix-normal(a).tres" type="Animation" id=1]
 [ext_resource path="res://res/Characters/Phoenix/phoenix-thinking(a).tres" type="Animation" id=2]
@@ -13,10 +13,21 @@
 [ext_resource path="res://res/Characters/Phoenix/phoenix-sheepish(b).tres" type="Animation" id=11]
 [ext_resource path="res://res/Characters/Phoenix/phoenix-sheepish(a).tres" type="Animation" id=12]
 [ext_resource path="res://res/Characters/Phoenix/phoenix-sweating(a).tres" type="Animation" id=13]
-[ext_resource path="res://res/Characters/Phoenix/phoenix-normal(a)/0.png" type="Texture" id=14]
+[ext_resource path="res://res/Characters/Phoenix/phoenix-sheepish(a)/0.png" type="Texture" id=14]
 [ext_resource path="res://res/Characters/Phoenix/phoenix-handsondesk(a).tres" type="Animation" id=15]
 [ext_resource path="res://res/Characters/Phoenix/phoenix-handsondesk(b).tres" type="Animation" id=16]
 [ext_resource path="res://res/Sounds/deskslam.wav" type="AudioStream" id=17]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b).tres" type="Animation" id=18]
+[ext_resource path="res://res/Characters/Phoenix/headshake.tres" type="Animation" id=19]
+[ext_resource path="res://res/Characters/Phoenix/nod.tres" type="Animation" id=20]
+[ext_resource path="res://res/Characters/Phoenix/objection.tres" type="Animation" id=21]
+[ext_resource path="res://res/Characters/Phoenix/damage.tres" type="Animation" id=22]
+[ext_resource path="res://res/Characters/Phoenix/zoom(a).tres" type="Animation" id=23]
+[ext_resource path="res://res/Characters/Phoenix/pointing(b).tres" type="Animation" id=24]
+[ext_resource path="res://res/Characters/Phoenix/pointing(a).tres" type="Animation" id=25]
+[ext_resource path="res://res/Characters/Phoenix/document(b).tres" type="Animation" id=26]
+[ext_resource path="res://res/Characters/Phoenix/document(a).tres" type="Animation" id=27]
+[ext_resource path="res://res/Characters/Phoenix/superobjection.tres" type="Animation" id=28]
 
 [node name="Phoenix" type="Node2D"]
 
@@ -30,17 +41,28 @@ anims/coffeed(a) = ExtResource( 7 )
 anims/coffeed(b) = ExtResource( 6 )
 anims/confident(a) = ExtResource( 10 )
 anims/confident(b) = ExtResource( 8 )
+anims/damage = ExtResource( 22 )
 anims/deskslam = ExtResource( 5 )
+anims/document(a) = ExtResource( 27 )
+anims/document(b) = ExtResource( 26 )
 anims/handsondesk(a) = ExtResource( 15 )
 anims/handsondesk(b) = ExtResource( 16 )
+anims/headshake = ExtResource( 19 )
+anims/nod = ExtResource( 20 )
 anims/normal(a) = ExtResource( 1 )
 anims/normal(b) = ExtResource( 3 )
+anims/objection = ExtResource( 21 )
+anims/pointing(a) = ExtResource( 25 )
+anims/pointing(b) = ExtResource( 24 )
 anims/sheepish(a) = ExtResource( 12 )
 anims/sheepish(b) = ExtResource( 11 )
+anims/superobjection = ExtResource( 28 )
 anims/sweating(a) = ExtResource( 13 )
 anims/sweating(b) = ExtResource( 9 )
 anims/thinking(a) = ExtResource( 2 )
 anims/thinking(b) = ExtResource( 4 )
+anims/zoom(a) = ExtResource( 23 )
+anims/zoom(b) = ExtResource( 18 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )

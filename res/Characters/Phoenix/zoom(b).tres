@@ -1,0 +1,41 @@
+[gd_resource type="Animation" load_steps=23 format=2]
+
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/9.png" type="Texture" id=1]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/4.png" type="Texture" id=2]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/14.png" type="Texture" id=3]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/6.png" type="Texture" id=4]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/7.png" type="Texture" id=5]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/8.png" type="Texture" id=6]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/11.png" type="Texture" id=7]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/15.png" type="Texture" id=8]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/16.png" type="Texture" id=9]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/18.png" type="Texture" id=10]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/20.png" type="Texture" id=11]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/21.png" type="Texture" id=12]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/17.png" type="Texture" id=13]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/19.png" type="Texture" id=14]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/2.png" type="Texture" id=15]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/10.png" type="Texture" id=16]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/5.png" type="Texture" id=17]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/13.png" type="Texture" id=18]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/3.png" type="Texture" id=19]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/0.png" type="Texture" id=20]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/1.png" type="Texture" id=21]
+[ext_resource path="res://res/Characters/Phoenix/zoom(b)/12.png" type="Texture" id=22]
+
+[resource]
+resource_name = "zoom(b)"
+length = 3.21
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.16, 0.32, 0.48, 0.64, 0.8, 0.96, 1.12, 1.28, 1.34, 1.39, 1.45, 1.61, 1.77, 1.93, 2.09, 2.25, 2.41, 2.57, 2.73, 2.89, 3.05 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 2 ), ExtResource( 17 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 1 ), ExtResource( 16 ), ExtResource( 7 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 12 ) ]
+}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://src/ShakeCamera2D.gd" type="Script" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -6,20 +6,87 @@
 [ext_resource path="res://res/Background/Courtroom/courtroomfullDS.png" type="Texture" id=4]
 [ext_resource path="res://res/Background/Courtroom/desk_benches.png" type="Texture" id=5]
 [ext_resource path="res://res/Background/Courtroom/desk_witness.png" type="Texture" id=6]
-[ext_resource path="res://res/Music/1-05 Logic and Trick.ogg" type="AudioStream" id=7]
 [ext_resource path="res://res/Background/lobby.png" type="Texture" id=8]
 [ext_resource path="res://res/Background/bluecorp.png" type="Texture" id=9]
 [ext_resource path="res://res/Background/studio.png" type="Texture" id=10]
 [ext_resource path="res://src/Dialog/Dialog.tscn" type="PackedScene" id=11]
-[ext_resource path="res://bubble-objection.png" type="Texture" id=12]
-[ext_resource path="res://bubble-holdit.png" type="Texture" id=13]
-[ext_resource path="res://bubble-takethat.png" type="Texture" id=14]
+[ext_resource path="res://res/bubble-objection.png" type="Texture" id=12]
+[ext_resource path="res://res/bubble-holdit.png" type="Texture" id=13]
+[ext_resource path="res://res/bubble-takethat.png" type="Texture" id=14]
 [ext_resource path="res://src/Characters/Phoenix.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/Characters/Edgeworth.tscn" type="PackedScene" id=16]
 [ext_resource path="res://res/UI/themes/AATheme.tres" type="Theme" id=17]
 [ext_resource path="res://res/Background/Courtroom/judgestand.png" type="Texture" id=18]
 [ext_resource path="res://res/Background/Courtroom/helperstand.png" type="Texture" id=19]
 [ext_resource path="res://src/Characters/Judge.tscn" type="PackedScene" id=20]
+[ext_resource path="res://res/speedlines.png" type="Texture" id=21]
+[ext_resource path="res://src/MusicPlayer.gd" type="Script" id=22]
+
+[sub_resource type="Animation" id=23]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 256, 192 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "def"
+length = 0.8
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 256, 192 ), Rect2( 512, 0, 256, 192 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 256, 192 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "pro"
+length = 0.8
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Rect2( 512, 0, 256, 192 ), Rect2( 0, 0, 256, 192 ) ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "def"
@@ -370,6 +437,31 @@ script = ExtResource( 2 )
 
 [node name="World" type="Node2D" parent="."]
 
+[node name="def_speedlines" type="Sprite" parent="World"]
+visible = false
+texture = ExtResource( 21 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 192 )
+
+[node name="SpeedlinesPlayer" type="AnimationPlayer" parent="World/def_speedlines"]
+autoplay = "def"
+anims/RESET = SubResource( 23 )
+anims/def = SubResource( 24 )
+
+[node name="pro_speedlines" type="Sprite" parent="World"]
+visible = false
+position = Vector2( 1040, 0 )
+texture = ExtResource( 21 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 192 )
+
+[node name="SpeedlinesPlayer" type="AnimationPlayer" parent="World/pro_speedlines"]
+autoplay = "pro"
+anims/RESET = SubResource( 25 )
+anims/pro = SubResource( 26 )
+
 [node name="Background" type="Node2D" parent="World"]
 
 [node name="court" type="Node2D" parent="World/Background"]
@@ -523,6 +615,7 @@ margin_right = 128.0
 margin_bottom = 192.0
 
 [node name="Dialog" parent="HUD" instance=ExtResource( 11 )]
+visible = false
 margin_top = 116.0
 margin_bottom = 192.0
 
@@ -530,7 +623,8 @@ margin_bottom = 192.0
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -83.0
-margin_bottom = 22.0
+margin_top = 192.0
+margin_bottom = 214.0
 theme = ExtResource( 17 )
 text = "ButtonTest"
 
@@ -639,9 +733,8 @@ anims/objection = SubResource( 20 )
 anims/takethat = SubResource( 21 )
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
-autoplay = true
 bus = "Music"
+script = ExtResource( 22 )
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
 
