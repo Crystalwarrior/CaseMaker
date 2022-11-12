@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/1.png-9eeb3ea018647fd1dbc3ca3095e20b6d.stex"
+path="res://.import/3.png-c76f2a5a65738b15a5ea72b56e35390f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://superobjection/1.png"
-dest_files=[ "res://.import/1.png-9eeb3ea018647fd1dbc3ca3095e20b6d.stex" ]
+source_file="res://res/Characters/Phoenix/superobjection/3.png"
+dest_files=[ "res://.import/3.png-c76f2a5a65738b15a5ea72b56e35390f.stex" ]
 
 [params]
 
