@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://res/Characters/Edgeworth/edgeworth-normal(a)/0.png" type="Texture" id=1]
+[ext_resource path="res://res/Characters/Edgeworth/edgeworth-smirk(b)/0.png" type="Texture" id=1]
 [ext_resource path="res://res/Characters/Edgeworth/edgeworth-damage.tres" type="Animation" id=2]
 [ext_resource path="res://res/Characters/Edgeworth/edgeworth-normal(b).tres" type="Animation" id=3]
 [ext_resource path="res://res/Characters/Edgeworth/edgeworth-confident(b).tres" type="Animation" id=4]

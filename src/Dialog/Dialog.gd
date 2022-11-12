@@ -1,6 +1,5 @@
 extends Control
 
-
 ## Emmited when the text is fully displayed
 signal text_displayed
 ## Emmited eveytime that a character is displayed
