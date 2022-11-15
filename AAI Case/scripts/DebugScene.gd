@@ -17,10 +17,16 @@ var confrontation_scene
 var cw_scene
 var luke_scene
 
-var complicated
+var current_character
+var emote
 
-# textbox
-onready var dialog_box = $TopScreen/AAIDialogBox
+onready var dialog = $TopScreen/AAIDialogBox
+
+onready var scene_dialog = [
+	["This is a line of text I'm using to test.", "normal"],
+	["This is a secondary line of text I am using to test.", "crossed"],
+	["Here is the final line of text I'm using to test.", "aha"]
+]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,19 +46,19 @@ func _ready():
 	
 	###########################################
 	
-	complicated = [
-		[funcref(dialog_box, "display_text"), ["There were two ways to open that door.", "crossed"]],
-		[funcref(dialog_box, "display_text"), ["The first was by opening the door with the master key.", "crossed"]],
-		[funcref(dialog_box, "display_text"), ["The second... was with the crowbar.", "aha"]],
-		[funcref(self, "luke_talk"), []],
-		[funcref(self, "back_to_cw"), []]
-	]
-	
-	dialog_box.visible = true
-	dialog_box.change_character(cw_scene, "Crystalwarrior")
-	_on_NextButton_pressed()
-	
-	dialog_box.connect("text_displayed", self, "_on_TextDisplayed")
+	dialog.visible = true
+	current_character = cw_scene
+	dialog.change_character(current_character, "Crystalwarrior")
+
+	# post_anim = "normal(a)"
+	# current_char.play("normal(b)")
+	# yield(get_tree().create_timer(1.25), "timeout")
+	# post_anim = "confident(a)"
+	# current_char.play("confident(b)")
+	# $SFXPlayer.set_stream(load("res://res/Sounds/damage1.wav"))
+	# $SFXPlayer.play()
+	# dialog.add_text(" AND dad!")
+	# dialog.display_text()
 
 func initializeBackground(confrontation_scene_path, background_image_path, starting_position):
 	confrontation_scene = load(confrontation_scene_path).instance()
@@ -69,16 +75,6 @@ func pan_to_rival():
 
 func pan_to_def():
 	confrontation_scene.pan_to_position(ConfrontationPositions.DEF, pan_fast)
-
-func luke_talk():
-	snap_to_rival()
-	dialog_box.change_character(luke_scene, luke_scene.nametag)
-	dialog_box.display_text("The crowbar?", "normal")
-	
-func back_to_cw():
-	snap_to_def()
-	dialog_box.change_character(cw_scene, cw_scene.nametag)
-	dialog_box.display_text("Not only that, but...", "normal")
 	
 var text_index = 0
 
@@ -87,17 +83,13 @@ var arg_index = 1
 
 # display next text
 func _on_NextButton_pressed():
-	var function = complicated[text_index]
+	var current_dialog = scene_dialog[text_index]
+	var text = current_dialog[0]
+	var emote = current_dialog[1]
+	dialog.display_text(text, emote)
 	
-	var func_reference = function[func_index]
-	var args = function[arg_index]
-	
-	if(args.size() > 0):
-		func_reference.call_funcv(args)
-	else:
-		func_reference.call_func()
-	
-func _on_TextDisplayed():
 	text_index += 1
-	if(text_index >= complicated.size()):
+	if(text_index >= scene_dialog.size()):
 		text_index = 0
+
+

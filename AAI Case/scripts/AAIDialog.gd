@@ -6,11 +6,10 @@ var dialog
 var name_tag
 var blip_player
 
-# string with no (a)'s or (b)'s attached to it
-var current_emote
-
 const TXT_SPD = 0.04
 const BLIP_RATE = 2
+
+var speaking_char_scene
 
 func _ready():
 	dialog = $Dialog
@@ -20,19 +19,33 @@ func _ready():
 	blip_player.set_blip_rate(BLIP_RATE)
 	blip_player.set_blip_samples([load("res://res/Sounds/blipmale.wav")])
 
-func change_character(character_name):
-	if(name_tag.text != character_name):
-		if(character_name.length() < 1):
-			name_tag.visible = false
-		else:
-			if(!name_tag.visible):
-				name_tag.visible = true
-				
-			name_tag.text = character_name
-
-func display_text(text:String):
+func change_character(character_scene):
+	var character_name = ""
+	
+	if(character_scene != null):
+		character_name = character_scene.nametag
+		
+		if(!name_tag.visible):
+			name_tag.visible = true
+		
+		name_tag.text = character_name
+		speaking_char_scene = character_scene
+		
+	else:
+		name_tag.visible = false
+		speaking_char_scene = null
+		
+		
+func display_text(text, emote):
+	if(speaking_char_scene != null):
+		speaking_char_scene.make_character_talk(emote)
+	
 	dialog.set_text(text)
 	dialog.display_text()
+	yield(self, "text_displayed")
+	
+	if(speaking_char_scene != null):
+		speaking_char_scene.make_character_idle(emote)
 
 func _on_Dialog_text_displayed():
 	emit_signal("text_displayed")

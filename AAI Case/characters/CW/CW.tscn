@@ -21,7 +21,7 @@
 [ext_resource path="res://AAI Case/characters/CW/cw_raw/(b)zoom.tres" type="Animation" id=19]
 [ext_resource path="res://AAI Case/characters/CW/cw_raw/(a)oof.tres" type="Animation" id=20]
 [ext_resource path="res://AAI Case/characters/CW/cw_raw/oof.tres" type="Animation" id=21]
-[ext_resource path="res://AAI Case/characters/CW/cw_raw/(a)OBJECTION/0.png" type="Texture" id=22]
+[ext_resource path="res://AAI Case/characters/CW/cw_raw/(a)crossed/0.png" type="Texture" id=22]
 
 [node name="CW" type="Node2D"]
 script = ExtResource( 1 )

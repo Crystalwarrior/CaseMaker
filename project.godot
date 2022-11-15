@@ -9,10 +9,10 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
-"class": "DialogEvent",
+"base": "Resource",
+"class": "SaveGame",
 "language": "GDScript",
-"path": "res://AAI Case/scene_event_classes/DialogEvent.gd"
+"path": "res://Data/SaveGame.gd"
 }, {
 "base": "Camera2D",
 "class": "ShakeCamera2D",
@@ -20,21 +20,20 @@ _global_script_classes=[ {
 "path": "res://src/ShakeCamera2D.gd"
 } ]
 _global_script_class_icons={
-"DialogEvent": "",
+"SaveGame": "",
 "ShakeCamera2D": ""
 }
 
 [application]
 
 config/name="Case Maker"
-run/main_scene="res://AAI Case/DebugScene.tscn"
+run/main_scene="res://AAI Case/BasicSceneTest.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 ConfrontationPositions="*res://AAI Case/scripts/ConfrontationPositions.gd"
 CharacterFactory="*res://AAI Case/scripts/CharacterFactory.gd"
-CharacterEffectEnums="*res://AAI Case/scene_event_classes/CharacterEffectEnums.gd"
 
 [display]
 

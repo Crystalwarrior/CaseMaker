@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/[AAI] Confrontation ~ Presto 2009.ogg-9a0d78f6aadfa44e621c8d021ebc12b4.oggstr"
+
+[deps]
+
+source_file="res://AAI Case/music/[AAI] Confrontation ~ Presto 2009.ogg"
+dest_files=[ "res://.import/[AAI] Confrontation ~ Presto 2009.ogg-9a0d78f6aadfa44e621c8d021ebc12b4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

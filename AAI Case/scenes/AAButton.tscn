@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://AAI Case/scenes/AAButton.gd" type="Script" id=1]
+
+[node name="AAButton" type="Control"]
+margin_right = 256.0
+margin_bottom = 181.0
+rect_min_size = Vector2( 256, 192 )
+script = ExtResource( 1 )
+
+[node name="MainButton" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 256, 192 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = ">"
+
+[connection signal="pressed" from="MainButton" to="." method="_on_MainButton_pressed"]

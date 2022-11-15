@@ -4,7 +4,7 @@ onready var animation_player = $AnimationPlayer
 onready var character_sprite = $Sprite
 
 # the character's showname
-var nametag
+export(String) var nametag
 
 # constants
 const FADE_IN_OUT_SPD = 0.25
