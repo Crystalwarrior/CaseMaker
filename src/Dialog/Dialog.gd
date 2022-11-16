@@ -17,6 +17,7 @@ export(bool) var text_fit_content_height:bool = false
 export(bool) var text_show_scroll_at_end:bool = true
 
 export(NodePath) var text_timer_path
+export(NodePath) var blip_timer_path
 export(NodePath) var text_node_path
 export(NodePath) var blip_player_path
 export(NodePath) var next_indicator_path
@@ -24,6 +25,7 @@ export(NodePath) var next_indicator_path
 ## The node that actually displays the text
 var text_node:RichTextLabel setget ,get_text_node
 var text_timer:Timer
+var blip_timer:Timer
 var blip_player:AudioStreamPlayer
 var next_indicator:Control
 
@@ -40,6 +42,8 @@ func display_all_text() -> void:
 ## Starts displaying the text setted by [method set_text]
 func display_text() -> void:
 	text_timer.start(text_speed)
+	blip_timer.start(blip_player._blip_rate)
+	
 
 
 ## Set the text that this node will display. Call [method display_text]
@@ -110,6 +114,8 @@ func _update_displayed_text() -> void:
 	
 	if text_node.visible_characters >= text_node.get_total_character_count()-1:
 		text_timer.stop()
+		blip_timer.stop()
+		
 		_char_position = text_node.get_total_character_count()
 		emit_signal("text_displayed")
 		
@@ -194,10 +200,17 @@ func _get_current_character() -> String:
 	var _current_character = _text[min(_text_length, _text_visible_characters)]
 	return _current_character
 
+func _debug_timeout():
+	blip_player.play_blip(_get_current_character())
+	blip_timer.start(blip_player._blip_rate)
+		
+
 func _ready() -> void:
 	text_timer = get_node_or_null(text_timer_path)
+	blip_timer = get_node_or_null(blip_timer_path)
 	text_timer.connect("timeout", self, "_update_displayed_text")
-
+	blip_timer.connect("timeout", self, "_debug_timeout")
+	
 	text_node = get_node_or_null(text_node_path)
 
 	var scroll := text_node.get_v_scroll()

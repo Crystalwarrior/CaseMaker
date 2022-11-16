@@ -38,6 +38,7 @@ margin_bottom = 76.0
 theme = ExtResource( 9 )
 script = ExtResource( 5 )
 text_timer_path = NodePath("Timer")
+blip_timer_path = NodePath("BlipTimer")
 text_node_path = NodePath("DialogPanel/RichTextLabel")
 blip_player_path = NodePath("BlipPlayer")
 
@@ -103,7 +104,8 @@ anims/next = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="BlipTimer" type="Timer" parent="."]
+
 [node name="BlipPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-bus = "Blips"
 script = ExtResource( 8 )
