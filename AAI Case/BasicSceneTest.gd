@@ -35,11 +35,7 @@ var testimony_end_index = 0
 onready var scene_events = [
 	[
 		[ funcref(self, "snap_to_CW"), []],
-		[ funcref(dialog_box, "display_text"), ["Testing...", "crossed"]],
-		DEFAULT_IS_SEEN
-	],
-	[
-		[ funcref(dialog_box, "display_text"), ["That's what you claimed about\nthe evidence earlier as well...", "crossed"]],
+		[ funcref(dialog_box, "display_text"), ["With THIS line of dialog,\nI'll win the battle.", "crossed"]],
 		DEFAULT_IS_SEEN
 	],
 	[
@@ -139,7 +135,7 @@ onready var press4 = [
 
 onready var testimony1 = [
 	[
-		[ funcref(dialog_box, "display_text"), ["[color=#00FF00]But thanks to that, you didn't\nnotice the bloody letters his\nbody was hiding.[/color]", "normal"]],
+		[ funcref(dialog_box, "display_text"), ["[color=#00FF00]Behold, the first statement.[/color]", "normal"]],
 		[ funcref(aa_testimony_btns, "set_press_conversation"), [press1]],
 		DEFAULT_IS_SEEN
 	],

@@ -5,8 +5,7 @@ enum BlipStrategy {NO_BLIP, BLIP_ONCE, BLIP_LOOP}
 var _blip_samples:Array = [] setget set_blip_samples
 var _blip_space_samples:Array = [] setget set_blip_space_samples
 var _blip_strategy:int = BlipStrategy.BLIP_LOOP setget set_blip_strategy
-# var _blip_rate:int = 2 setget set_blip_rate
-var _blip_rate = 2
+var _blip_rate:int = 2 setget set_blip_rate
 var _blip_force:bool = true setget force_blip
 var _blip_map:bool = false setget map_blip_to_letter
 var _blip_bus:String = "Master" setget set_audio_bus
@@ -28,33 +27,27 @@ func _on_character_displayed(character:String) -> void:
 	match _blip_strategy:
 		BlipStrategy.BLIP_LOOP:
 			
-			pass
-			#if _blip_counter % _blip_rate == 0:
-			#	if character in " " or character.strip_escapes().empty():
-			#		_blip_sample = get_space_blip_sample()
-			#		_blip(_blip_sample)
-			#		_blip_counter = 0
-			#		return
+			if _blip_counter % _blip_rate == 0:
+				if character in " " or character.strip_escapes().empty():
+					_blip_sample = get_space_blip_sample()
+					_blip(_blip_sample)
+					_blip_counter = 0
+					return
 				
-			#	_blip_sample = get_blip_sample(character)
+				_blip_sample = get_blip_sample(character)
 				
-			#	if not self.is_playing() or _blip_force:
-			#		_blip(_blip_sample)
+				if not self.is_playing() or _blip_force:
+					_blip(_blip_sample)
 			
-			# _blip_counter += 1
+			_blip_counter += 1
 				
 			
 		BlipStrategy.BLIP_ONCE:
-			pass
-			#if _already_played:
-			#	return
-			#_blip_sample = get_blip_sample()
-			#_blip(_blip_sample)
-			#_already_played = true
-
-
-func play_blip(character):
-	_blip(get_blip_sample(character))
+			if _already_played:
+				return
+			_blip_sample = get_blip_sample()
+			_blip(_blip_sample)
+			_already_played = true
 
 
 func _blip(with_sound:AudioStream) -> void:
@@ -85,8 +78,9 @@ func set_audio_bus(bus:String) -> void:
 	_blip_bus = bus
 
 
-func set_blip_rate_old(value:int) -> void:
+func set_blip_rate(value:int) -> void:
 	_blip_rate = max(1, value)
+
 
 func force_blip(value:bool) -> void:
 	_blip_force = value
@@ -104,7 +98,6 @@ func get_blip_sample(for_char:String="") -> AudioStream:
 	if _blip_map:
 		
 		pass
-		
 	var _limit = max(_blip_samples.size()-1, 0)
 	blip_sample = _blip_samples[_generator.randi_range(0, _limit)] as AudioStream
 	return blip_sample

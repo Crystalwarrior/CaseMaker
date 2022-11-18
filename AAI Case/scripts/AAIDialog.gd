@@ -6,9 +6,8 @@ var dialog
 var name_tag
 var blip_player
 
-const TXT_SPD = 0.035
-const BLIP_RATE = 0.0785
-# const BLIP_RATE = 0.075
+const TXT_SPD = 0.04
+const BLIP_RATE = 2
 
 var speaking_char_scene
 
@@ -17,8 +16,8 @@ func _ready():
 	name_tag = $Dialog/ShownamePanel/Label
 	blip_player = $Dialog/BlipPlayer
 	dialog.text_speed = TXT_SPD
-	blip_player._blip_rate = BLIP_RATE
-	blip_player.set_blip_samples([load("res://AAI Case/sfx/aai_male.wav")])
+	blip_player.set_blip_rate(BLIP_RATE)
+	blip_player.set_blip_samples([load("res://res/Sounds/blipmale.wav")])
 
 func change_character(character_scene):
 	var character_name = ""
