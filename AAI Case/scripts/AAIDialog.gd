@@ -6,7 +6,7 @@ var dialog
 var name_tag
 var blip_player
 
-const TXT_SPD = 0.04
+const TXT_SPD = 0.035
 const BLIP_RATE = 2
 
 var speaking_char_scene
@@ -17,13 +17,17 @@ func _ready():
 	blip_player = $Dialog/BlipPlayer
 	dialog.text_speed = TXT_SPD
 	blip_player.set_blip_rate(BLIP_RATE)
-	blip_player.set_blip_samples([load("res://res/Sounds/blipmale.wav")])
+	blip_player.set_blip_samples([load("res://AAI Case/sfx/blips/aai_male.wav")])
 
 func change_character(character_scene):
-	var character_name = ""
-	
 	if(character_scene != null):
-		character_name = character_scene.nametag
+		
+		# no need to change anything if the character is the same
+		if(speaking_char_scene != null and \
+		 	character_scene.nametag == speaking_char_scene.nametag):
+			return
+		
+		var character_name = character_scene.nametag
 		
 		if(!name_tag.visible):
 			name_tag.visible = true

@@ -105,5 +105,5 @@ anims/next = SubResource( 4 )
 
 [node name="BlipPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-bus = "Blips"
+volume_db = -2.0
 script = ExtResource( 8 )
