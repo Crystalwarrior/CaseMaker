@@ -32,7 +32,6 @@ func fade_in_out(fade_value:float):
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", fade_value, FADE_IN_OUT_SPD)
 
-
 # -- Animations -- 
 
 # all idle emotes have an (a) in front of them

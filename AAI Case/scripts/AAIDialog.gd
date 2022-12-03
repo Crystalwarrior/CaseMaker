@@ -6,7 +6,7 @@ var dialog
 var name_tag
 var blip_player
 
-const TXT_SPD = 0.035
+const TXT_SPD = 0.04
 const BLIP_RATE = 2
 
 var speaking_char_scene

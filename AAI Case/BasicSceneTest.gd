@@ -17,11 +17,6 @@ var array_progress_tracker = 0
 const TIMEOUT_VALUE = 0.8
 const PAN_SPEED = 0.7
 
-# testimony variables
-var in_testimony = false
-var testimony_start_index = 0
-var testimony_end_index = 0
-
 # input = { "text": "text", "desc": "desc" }
 onready var evidence_dict = {
 	"id" : 1,
@@ -31,6 +26,7 @@ onready var evidence_dict = {
 
 func _ready():
 	dialog_box = $CanvasLayer/AAIDialogBox
+	evidence.add_evidence(evidence_dict)
 	
 	add_character_speaking(CW, "crossed","With THIS line of dialog,\nI'll win the battle.")
 	add_snap_to_pos(background, ConfrontationPositions.RIVAL)
@@ -41,8 +37,27 @@ func _ready():
 	add_snap_to_pos(background, ConfrontationPositions.RIVAL)
 	add_character_speaking(Luke, "normal", "\"Well\" nothing.\nTime for a cross-examination.")
 	
+	var statement1 = make_character_speaking(Luke, "normal","[color=00FF00]This is the first statement.[/color]")
+	var statement2 = make_character_speaking(Luke, "normal","[color=00FF00]This is the second statement.[/color]")
+	var statement3 = make_character_speaking(Luke, "normal","[color=00FF00]This is statement number 3.[/color]")
+	var statement4 = make_character_speaking(Luke, "normal","[color=00FF00]This is statement number 4.[/color]")
+	
+	var statement1full = [
+		statement1
+	]
+	
+	var press1 = [	
+		make_snap_to_pos(background, ConfrontationPositions.DEF),
+		make_character_speaking(CW, "normal","Is this the first press?"),
+		make_snap_to_pos(background, ConfrontationPositions.RIVAL),
+		make_character_speaking(Luke, "normal","It is."),
+		make_snap_to_pos(background, ConfrontationPositions.DEF),
+		make_character_speaking(CW, "normal","Next statement.")
+	]
+	
+	add_statement_to_testimony(statement1full, press1)
+	
 	aa_button.connect("request_command", self, "_on_Command_Request")
-	evidence.add_evidence(evidence_dict)
 	
 	process_first_command()
 
@@ -53,14 +68,6 @@ func hold_it_CW():
 	$CanvasLayer/Bubble/AnimationPlayer.play("holdit")
 
 # helper functions
-func snap_to_CW():
-	background.snap_to_position(ConfrontationPositions.DEF)
-	dialog_box.change_character(CW)
-	
-func snap_to_Luke():
-	background.snap_to_position(ConfrontationPositions.RIVAL)
-	dialog_box.change_character(Luke)
-	
 func pan_to_CW():
 	background.pan_to_position(ConfrontationPositions.DEF)
 	dialog_box.change_character(CW)
@@ -75,7 +82,6 @@ func toggle_btn_visibility():
 
 func toggle_dialog_visibility():
 	dialog_box.visible = !dialog_box.visible
-
 
 # scene management functions
 func increment_tracker():
