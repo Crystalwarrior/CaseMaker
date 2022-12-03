@@ -44,7 +44,7 @@ var dialog_box
 
 func make_snap_to_pos(background, position):
 	var background_snap = {
-		"command_type": CommandType.SCREEN_SNAP,
+		"func": funcref(self, "screen_snap"),
 		"background": background,
 		"position": position
 	}
@@ -54,7 +54,7 @@ func make_snap_to_pos(background, position):
 
 func make_character_speaking(character, emote_string, text):
 	var speaking_command = {
-		"command_type": CommandType.DIALOG_SPEAKING,
+		"func": funcref(self, "display_text"),
 		"character": character,
 		"emote": emote_string,
 		"text": text,
@@ -79,7 +79,7 @@ func add_character_speaking(character, emote_string, text):
 # statement is a collection of commands
 func add_statement_to_testimony(statement, press_convo):
 	var statement_command = {
-		"command_type": CommandType.T_STATEMENT,
+		"func": funcref(self, "do_testimony_statement"),
 		"statement": statement,
 		"press_convo": press_convo
 	}
@@ -98,32 +98,16 @@ func process_command():
 	can_accept_commands = false
 	
 	var command = command_array[current_index]
-	var command_type = command["command_type"]
-	handle_command(command, command_type)
-
-func handle_command(command, command_type):			
-	match command_type:
-		CommandType.DIALOG_SPEAKING:
-			display_text(command)
-			
-		CommandType.SCREEN_SNAP:
-			screen_snap(command)
-			
-		CommandType.SHOUT_BUBBLE:
-			pass
-			
-		CommandType.T_STATEMENT:
-			if(!in_testimony):
-				in_testimony = true
-				testimony_start = 0
-				do_testimony_statement(command)
-				
+	command["func"].call_funcv([command])
 
 
 func do_testimony_statement(command):
+	if(!in_testimony):
+		in_testimony = true
+		testimony_start = 0
 	press_convo = command["press_convo"]
 	var statement = command["statement"] # this is a dialog command
-	handle_command(statement, statement["command_type"])
+	statement["func"].call_funcv([statement])
 
 
 func display_text(command):
@@ -132,16 +116,16 @@ func display_text(command):
 	var text = command["text"]
 	var emote = command["emote"]
 	var is_seen = command["is_seen"]
-			
+
 	dialog_box.change_character(character)
 	dialog_box.display_text(text, emote)
-			
+
 	# if we're seeing this text for the first time, hold until it's completed
 	if(!is_seen):
 		yield(dialog_box, "text_displayed")
 		yield(get_tree().create_timer(0.25), "timeout")
 		command["is_seen"] = true
-	
+
 	can_accept_commands = true
 
 func screen_snap(command):
