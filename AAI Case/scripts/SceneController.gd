@@ -2,16 +2,8 @@ extends Node
 
 signal end_reached()
 signal end_press_reached()
+signal accept_commands_changed(toggle)
 
-enum CommandType {
-	DIALOG_SPEAKING, 
-	DIALOG_THINKING, 
-	SHOUT_BUBBLE,
-	SCREEN_PAN,
-	SCREEN_SNAP,
-	T_STATEMENT,
-	T_END_STATEMENT
-}
 
 # the point where we start, and the point where we end
 var current_index = 0
@@ -77,7 +69,7 @@ func add_character_speaking(character, emote_string, text):
 
 
 # statement is a collection of commands
-func add_statement_to_testimony(statement, press_convo):
+func add_statement_to_testimony(statement, press_convo = []):
 	var statement_command = {
 		"func": funcref(self, "do_testimony_statement"),
 		"statement": statement,
@@ -95,7 +87,7 @@ func process_first_command():
 
 func process_command():
 	# no new commands when one is processing
-	can_accept_commands = false
+	set_accept_commands(false)
 	
 	var command = command_array[current_index]
 	command["func"].call_funcv([command])
@@ -126,18 +118,23 @@ func display_text(command):
 		yield(get_tree().create_timer(0.25), "timeout")
 		command["is_seen"] = true
 
-	can_accept_commands = true
+	set_accept_commands(true)
 
 func screen_snap(command):
 	var background = command["background"]
 	var position = command["position"]
 			
 	background.snap_to_position(position)
-	can_accept_commands = true
+	set_accept_commands(true)
 	
 	# we have to do this in reverse to avoid infinite loop
 	current_index += 1
 	process_command()
+
+
+func end_reached():
+	emit_signal("end_reached")
+
 
 func _on_Left_Testimony_Button_Press():
 	if(current_index - 1 >= testimony_start):
@@ -152,4 +149,9 @@ func _on_Command_Request():
 		current_index += 1
 		
 		if(current_index == command_array.size()):
-			emit_signal("end_reached")
+			end_reached()
+
+
+func set_accept_commands(tog: bool):
+	can_accept_commands = tog
+	emit_signal("accept_commands_changed", can_accept_commands)

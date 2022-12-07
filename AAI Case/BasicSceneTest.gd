@@ -37,16 +37,18 @@ func _ready():
 	add_snap_to_pos(background, ConfrontationPositions.RIVAL)
 	add_character_speaking(Luke, "normal", "\"Well\" nothing.\nTime for a cross-examination.")
 	
+	aa_button.connect("request_command", self, "_on_Command_Request")
+	self.connect("accept_commands_changed", aa_button, "_set_enabled")
+	
+	process_first_command()
+
+func start_testimony():
 	var statement1 = make_character_speaking(Luke, "normal","[color=00FF00]This is the first statement.[/color]")
 	var statement2 = make_character_speaking(Luke, "normal","[color=00FF00]This is the second statement.[/color]")
 	var statement3 = make_character_speaking(Luke, "normal","[color=00FF00]This is statement number 3.[/color]")
 	var statement4 = make_character_speaking(Luke, "normal","[color=00FF00]This is statement number 4.[/color]")
-	
-	var statement1full = [
-		statement1
-	]
-	
-	var press1 = [	
+
+	var press1 = [
 		make_snap_to_pos(background, ConfrontationPositions.DEF),
 		make_character_speaking(CW, "normal","Is this the first press?"),
 		make_snap_to_pos(background, ConfrontationPositions.RIVAL),
@@ -55,12 +57,10 @@ func _ready():
 		make_character_speaking(CW, "normal","Next statement.")
 	]
 	
-	add_statement_to_testimony(statement1full, press1)
-	
-	aa_button.connect("request_command", self, "_on_Command_Request")
-	
-	process_first_command()
-
+	add_statement_to_testimony([statement1], press1)
+	add_statement_to_testimony([statement2])
+	add_statement_to_testimony([statement3])
+	add_statement_to_testimony([statement4])
 
 func hold_it_CW():
 	$SFXPlayer.set_stream(load("res://AAI Case/sfx/cw_holdit.wav"))
@@ -89,14 +89,12 @@ func increment_tracker():
 
 
 func _on_Command_Array_Finished():
-	match(array_progress_tracker):
-		1:
-			aa_button.disconnect("end_reached", self, "_on_Command_Array_Finished")
-			toggle_btn_visibility()
-			
-			#aa_testimony_btns.set_command_array(testimony1)
-			aa_testimony_btns.connect("show_press_dialog", self, "_on_Show_Press_Dialog")
-			aa_testimony_btns.connect("show_present_menu", self, "_on_Show_Present_Dialog")
+	aa_button.disconnect("end_reached", self, "_on_Command_Array_Finished")
+	toggle_btn_visibility()
+	
+	#aa_testimony_btns.set_command_array(testimony1)
+	aa_testimony_btns.connect("show_press_dialog", self, "_on_Show_Press_Dialog")
+	aa_testimony_btns.connect("show_present_menu", self, "_on_Show_Present_Dialog")
 
 
 func _on_Show_Press_Dialog():
