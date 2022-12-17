@@ -1,35 +1,33 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://AAI Case/evidence/EvidenceMenu.gd" type="Script" id=1]
+[ext_resource path="res://res/Evidence/badge.png" type="Texture" id=2]
 
 [node name="EvidenceMenu" type="Control"]
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-margin_right = 256.0
-margin_bottom = 192.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 48.0
 rect_min_size = Vector2( 256, 192 )
 
-[node name="EvidenceANDDescriptions" type="VBoxContainer" parent="PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 249.0
 margin_bottom = 233.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/EvidenceANDDescriptions"]
-margin_right = 242.0
-margin_bottom = 44.0
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/EvidenceANDDescriptions/VBoxContainer"]
+[node name="Header" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 margin_right = 242.0
 margin_bottom = 20.0
 
-[node name="BackButton" type="Button" parent="PanelContainer/EvidenceANDDescriptions/VBoxContainer/HBoxContainer"]
+[node name="BackButton" type="Button" parent="PanelContainer/VBoxContainer/Header"]
 unique_name_in_owner = true
 margin_right = 42.0
 margin_bottom = 20.0
@@ -37,9 +35,8 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Back"
 
-[node name="Present" type="Button" parent="PanelContainer/EvidenceANDDescriptions/VBoxContainer/HBoxContainer"]
+[node name="Present" type="Button" parent="PanelContainer/VBoxContainer/Header"]
 unique_name_in_owner = true
-visible = false
 margin_left = 46.0
 margin_right = 107.0
 margin_bottom = 20.0
@@ -47,26 +44,32 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Present"
 
-[node name="EvidenceButtons" type="VBoxContainer" parent="PanelContainer/EvidenceANDDescriptions/VBoxContainer"]
-unique_name_in_owner = true
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer"]
 margin_top = 24.0
 margin_right = 242.0
-margin_bottom = 44.0
-rect_min_size = Vector2( 0, 20 )
+margin_bottom = 226.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="EvidenceDescriptions" type="VBoxContainer" parent="PanelContainer/EvidenceANDDescriptions"]
-margin_top = 48.0
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollContainer"]
 margin_right = 242.0
-margin_bottom = 226.0
-rect_min_size = Vector2( 195, 178 )
-size_flags_horizontal = 7
-size_flags_vertical = 6
+margin_bottom = 96.0
+size_flags_horizontal = 3
 
-[node name="EvidenceDesc" type="Label" parent="PanelContainer/EvidenceANDDescriptions/EvidenceDescriptions"]
-unique_name_in_owner = true
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_right = 242.0
-margin_bottom = 178.0
-size_flags_vertical = 7
+margin_bottom = 96.0
 
-[connection signal="pressed" from="PanelContainer/EvidenceANDDescriptions/VBoxContainer/HBoxContainer/Present" to="." method="_on_Present_pressed"]
+[node name="Envelope" type="TextureRect" parent="PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_right = 96.0
+margin_bottom = 96.0
+texture = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 100.0
+margin_right = 242.0
+margin_bottom = 96.0
+size_flags_horizontal = 3
+text = "This is the Evidence Description."
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Header/Present" to="." method="_on_Present_pressed"]

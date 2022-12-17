@@ -1,7 +1,7 @@
 extends Control
 onready var back_button = $"%BackButton"
 onready var present_button = $"%Present"
-onready var evidence_buttons = $"%EvidenceButtons"
+onready var evidence_buttons = $"%Evidence"
 onready var evidence_description = $"%EvidenceDesc"
 onready var evidence_scene = "res://AAI Case/evidence/EvidenceScene.tscn"
 
@@ -17,7 +17,7 @@ func add_evidence(evidence_dict):
 	init_evidence_scene.evidence_id = evidence_dict["id"]
 	init_evidence_scene.evidence_description = evidence_dict["desc"]
 	init_evidence_scene.connect("display_evidence_description", self, "_on_Display_Evidence_Desc")
-	evidence_buttons.add_child(init_evidence_scene)
+#	evidence_buttons.add_child(init_evidence_scene)
 
 func set_present_visibility(visibility):
 	present_button.visibility = true

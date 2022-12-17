@@ -69,11 +69,12 @@ func add_character_speaking(character, emote_string, text):
 
 
 # statement is a collection of commands
-func add_statement_to_testimony(statement, press_convo = []):
+func add_statement_to_testimony(statement, press_convo = [], present_convo = []):
 	var statement_command = {
 		"func": funcref(self, "do_testimony_statement"),
 		"statement": statement,
-		"press_convo": press_convo
+		"press_convo": press_convo,
+		"present_convo": present_convo,
 	}
 	
 	testimony.append(statement_command)
