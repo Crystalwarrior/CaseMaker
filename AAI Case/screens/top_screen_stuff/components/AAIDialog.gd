@@ -10,7 +10,7 @@ onready var nametag = $Dialog/ShownamePanel/Label
 onready var nametag_label = $Dialog/ShownamePanel
 onready var blip_player = $Dialog/BlipPlayer
 
-const TXT_SPD = 0.045
+const TXT_SPD = 0.04
 const BLIP_RATE = 2
 
 func _ready():
