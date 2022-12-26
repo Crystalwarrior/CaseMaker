@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://res/UI/styles/namebox.tres" type="StyleBox" id=1]
 [ext_resource path="res://res/UI/styles/dialogbox.tres" type="StyleBox" id=2]
@@ -29,6 +29,24 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 0 ), Vector2( 2, 0 ), Vector2( 3, 0 ), Vector2( 2, 0 ), Vector2( 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "next"
+length = 0.3
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("arrow:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
 "values": [ Vector2( 3, 0 ), Vector2( 2, 0 ), Vector2( 1, 0 ), Vector2( 0, 0 ), Vector2( 1, 0 ), Vector2( 2, 0 ) ]
 }
 
@@ -40,6 +58,8 @@ script = ExtResource( 5 )
 text_timer_path = NodePath("Timer")
 text_node_path = NodePath("DialogPanel/RichTextLabel")
 blip_player_path = NodePath("BlipPlayer")
+next_indicator_path = NodePath("RightIndicator")
+next_indicator_left_path = NodePath("LeftIndicator")
 
 [node name="DialogPanel" type="PanelContainer" parent="."]
 anchor_right = 1.0
@@ -78,7 +98,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NextIndicator" type="ReferenceRect" parent="."]
+[node name="RightIndicator" type="ReferenceRect" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -88,18 +108,45 @@ margin_top = -20.0
 margin_right = -1.0
 margin_bottom = -11.0
 
-[node name="arrow" type="TextureRect" parent="NextIndicator"]
+[node name="arrow" type="TextureRect" parent="RightIndicator"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -9.0
+margin_left = -12.0
 margin_top = -9.0
+margin_right = -3.0
 texture = ExtResource( 7 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="NextIndicator"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RightIndicator"]
 autoplay = "next"
 anims/next = SubResource( 4 )
+
+[node name="LeftIndicator" type="ReferenceRect" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -254.0
+margin_top = -20.0
+margin_right = -242.0
+margin_bottom = -11.0
+
+[node name="arrow" type="TextureRect" parent="LeftIndicator"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -10.0
+margin_top = -9.0
+margin_right = -1.0
+texture = ExtResource( 7 )
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LeftIndicator"]
+autoplay = "next"
+anims/next = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]
 

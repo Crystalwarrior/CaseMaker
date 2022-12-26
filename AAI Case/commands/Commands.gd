@@ -1,0 +1,16 @@
+extends Node
+
+enum CommandType { 
+	DIALOG, 
+	FADE_MINIS_IN, 
+	FADE_MINIS_OUT, 
+	FADE_BIG_CHAR_IN, 
+	FADE_BIG_CHAR_OUT,
+	BIG_SPEAK,
+	TESTIMONY,
+	SNAP_BG,
+	PAN_BG,
+	CHAR_VISIBLE 
+}
+
+

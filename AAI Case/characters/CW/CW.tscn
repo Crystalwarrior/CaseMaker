@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://AAI Case/scripts/AAIChar.gd" type="Script" id=1]
+[ext_resource path="res://AAI Case/characters/AAIChar.gd" type="Script" id=1]
 [ext_resource path="res://AAI Case/characters/CW/cw_raw/(a)crossed.tres" type="Animation" id=2]
 [ext_resource path="res://AAI Case/characters/CW/cw_raw/(b)oof.tres" type="Animation" id=3]
 [ext_resource path="res://AAI Case/characters/CW/cw_raw/(b)normal.tres" type="Animation" id=4]

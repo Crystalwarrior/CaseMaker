@@ -1,41 +1,27 @@
 extends Node
 
+const CW_NAMETAG = "Crystalwarrior"
+const LUKE_NAMETAG = "Luke"
+
 # preloaded scenes
 const CW_SCENE = preload("res://AAI Case/characters/CW/CW.tscn")
 const LUKE_SCENE = preload("res://AAI Case/characters/Luke/Luke.tscn")
 
-# scene instances
-var cw
-var luke
-
-# persistant instance of characters using singleton pattern
-func make_CW_scene():
-	if(cw == null):
-		cw = CW_SCENE.instance()
-		cw.nametag = "Crystalwarrior"
+const CW_MINI = preload("res://AAI Case/characters/CW/CWMini.tscn")
+const LUKE_MINI = preload("res://AAI Case/characters/Luke/LukeMini.tscn")
+	
+func make_cw(fadeout: bool = false, emote: String = "normal"):
+	var cw = CharacterFactory.CW_SCENE.instance()
+	cw.nametag = CharacterFactory.CW_NAMETAG
+	cw.init_fade = fadeout
+	cw.init_emote = emote
 	
 	return cw
 
-func make_Luke_scene():
-	if(luke == null):
-		luke = LUKE_SCENE.instance()
-		luke.nametag = "Luke"
+func make_luke(fadeout: bool = false, emote: String = "normal"):
+	var luke = CharacterFactory.LUKE_SCENE.instance()
+	luke.nametag = CharacterFactory.LUKE_NAMETAG
+	luke.init_fade = fadeout
+	luke.init_emote = emote
 	
 	return luke
-
-# clear up space for characters we aren't using
-# in specific scenes
-func unload_characters():
-	# to be implemented
-	pass
-
-# we are using persistant instances, meaning that all
-# changes we make in other classes affect the scenes
-# stored in this one, this should reset any changes we'd make to them
-func reset_all_character_properties():
-	reset_character_status(cw)
-	reset_character_status(luke)
-
-func reset_character_status(character):
-	character.reset_character_properties()
-	

@@ -20,12 +20,29 @@ export(NodePath) var text_timer_path
 export(NodePath) var text_node_path
 export(NodePath) var blip_player_path
 export(NodePath) var next_indicator_path
+export(NodePath) var next_indicator_left_path
 
 ## The node that actually displays the text
 var text_node:RichTextLabel setget ,get_text_node
 var text_timer:Timer
 var blip_player:AudioStreamPlayer
 var next_indicator:Control
+var next_indicator_left:Control
+
+
+func _ready() -> void:
+	text_timer = get_node_or_null(text_timer_path)
+	text_timer.connect("timeout", self, "_update_displayed_text")
+
+	text_node = get_node_or_null(text_node_path)
+
+	var scroll := text_node.get_v_scroll()
+	if Engine.editor_hint:
+		connect("draw", text_node, "set", ["bbcode_text", _DEFATULT_STRING])
+	
+	blip_player = get_node_or_null(blip_player_path)
+	next_indicator = get_node_or_null(next_indicator_path)
+	next_indicator_left = get_node_or_null(next_indicator_left_path)
 
 
 ## Calling this method will make to all text to be visible inmediatly
@@ -193,16 +210,3 @@ func _get_current_character() -> String:
 	var _text_visible_characters = clamp(_char_position, 0, _text_length)
 	var _current_character = _text[min(_text_length, _text_visible_characters)]
 	return _current_character
-
-func _ready() -> void:
-	text_timer = get_node_or_null(text_timer_path)
-	text_timer.connect("timeout", self, "_update_displayed_text")
-
-	text_node = get_node_or_null(text_node_path)
-
-	var scroll := text_node.get_v_scroll()
-	if Engine.editor_hint:
-		connect("draw", text_node, "set", ["bbcode_text", _DEFATULT_STRING])
-	
-	blip_player = get_node_or_null(blip_player_path)
-	next_indicator = get_node_or_null(next_indicator_path)

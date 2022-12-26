@@ -9,6 +9,36 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Reference",
+"class": "BGMoveCommand",
+"language": "GDScript",
+"path": "res://AAI Case/commands/bg_move_command.gd"
+}, {
+"base": "Node",
+"class": "CommandProcessor",
+"language": "GDScript",
+"path": "res://AAI Case/commands/CommandProcessor.gd"
+}, {
+"base": "Reference",
+"class": "DialogCommand",
+"language": "GDScript",
+"path": "res://AAI Case/commands/dialog_command.gd"
+}, {
+"base": "Reference",
+"class": "DialogSpeakCommand",
+"language": "GDScript",
+"path": "res://AAI Case/commands/dialog_speak_command.gd"
+}, {
+"base": "Reference",
+"class": "FadeBigCommand",
+"language": "GDScript",
+"path": "res://AAI Case/commands/fade_big_command.gd"
+}, {
+"base": "Node",
+"class": "FadeOutMiniCommand",
+"language": "GDScript",
+"path": "res://AAI Case/commands/fade_minis.gd"
+}, {
 "base": "Resource",
 "class": "SaveGame",
 "language": "GDScript",
@@ -18,22 +48,41 @@ _global_script_classes=[ {
 "class": "ShakeCamera2D",
 "language": "GDScript",
 "path": "res://src/ShakeCamera2D.gd"
+}, {
+"base": "Reference",
+"class": "TestimonyCommand",
+"language": "GDScript",
+"path": "res://AAI Case/commands/testimony.gd"
+}, {
+"base": "Reference",
+"class": "VisibleCommand",
+"language": "GDScript",
+"path": "res://AAI Case/commands/visible_command.gd"
 } ]
 _global_script_class_icons={
+"BGMoveCommand": "",
+"CommandProcessor": "",
+"DialogCommand": "",
+"DialogSpeakCommand": "",
+"FadeBigCommand": "",
+"FadeOutMiniCommand": "",
 "SaveGame": "",
-"ShakeCamera2D": ""
+"ShakeCamera2D": "",
+"TestimonyCommand": "",
+"VisibleCommand": ""
 }
 
 [application]
 
 config/name="Case Maker"
-run/main_scene="res://AAI Case/BasicSceneTest.tscn"
+run/main_scene="res://AAI Case/The Burnstigation/BurnstigationTop.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-ConfrontationPositions="*res://AAI Case/scripts/ConfrontationPositions.gd"
 CharacterFactory="*res://AAI Case/scripts/CharacterFactory.gd"
+Commands="*res://AAI Case/commands/Commands.gd"
+MusicMaster="*res://AAI Case/scripts/MusicMaster.gd"
 
 [display]
 

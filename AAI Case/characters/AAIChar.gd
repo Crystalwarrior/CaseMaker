@@ -4,13 +4,21 @@ onready var animation_player = $AnimationPlayer
 onready var character_sprite = $Sprite
 
 # the character's showname
-export(String) var nametag
+var nametag
+
+var init_fade
+var init_emote
 
 # constants
-const FADE_IN_OUT_SPD = 0.25
+const FADE_IN_OUT_SPD = 0.125
 const FADE_IN = 255
 const FADE_OUT = 0
 
+func _ready():
+	if(init_fade):
+		fade_out()
+	
+	make_character_idle(init_emote)
 
 # -- Sprite Effects --
 
@@ -23,14 +31,14 @@ func reset_character_properties():
 
 # change character opacity
 func fade_in():
-	fade_in_out(FADE_IN)
+	fade_in_out(Color8(255,255,255,FADE_IN))
 
 func fade_out():
-	fade_in_out(FADE_OUT)
+	fade_in_out(Color8(255,255,255,FADE_OUT))
 
-func fade_in_out(fade_value:float):
+func fade_in_out(fade_value):
 	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", fade_value, FADE_IN_OUT_SPD)
+	tween.tween_property(self, "modulate", fade_value, FADE_IN_OUT_SPD)
 
 # -- Animations -- 
 

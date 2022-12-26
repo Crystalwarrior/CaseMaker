@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://AAI Case/scenes/AAButton.gd" type="Script" id=1]
+[ext_resource path="res://AAI Case/screens/bottom_screen_stuff/components/AAButton.gd" type="Script" id=1]
 
 [node name="AAButton" type="Control"]
 margin_right = 256.0

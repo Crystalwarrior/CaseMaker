@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://AAI Case/scripts/ConfrontationBG.gd" type="Script" id=1]
-
-[node name="ConfrontationBG" type="TextureRect"]
-margin_right = 768.0
-margin_bottom = 192.0
-script = ExtResource( 1 )
