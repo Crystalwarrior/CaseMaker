@@ -9,4 +9,4 @@ func _on_MainButton_pressed():
 	emit_signal("request_command")
 
 func _set_enabled(tog):
-	button.set_disabled(!tog)
+	button.disabled = !tog

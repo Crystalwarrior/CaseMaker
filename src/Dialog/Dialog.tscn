@@ -5,7 +5,7 @@
 [ext_resource path="res://res/Fonts/textfont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://res/Fonts/Ace_Name_Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://src/Dialog/Dialog.gd" type="Script" id=5]
-[ext_resource path="res://res/Sounds/blipmale.wav" type="AudioStream" id=6]
+[ext_resource path="res://AAI Case/sfx/blipmale.wav" type="AudioStream" id=6]
 [ext_resource path="res://res/UI/chat_arrow.png" type="Texture" id=7]
 [ext_resource path="res://src/Dialog/BlipPlayer.gd" type="Script" id=8]
 [ext_resource path="res://res/UI/themes/AATheme.tres" type="Theme" id=9]

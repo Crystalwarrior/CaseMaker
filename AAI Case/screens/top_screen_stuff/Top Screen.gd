@@ -1,12 +1,16 @@
 extends Control
 
+signal anim_finished()
+
 export(Texture) var background_texture
 
 var dialog
 var background
 var mini_characters
+var popups
 var timer
 var music
+var sfx
 
 func _ready():
 	mini_characters = $MiniCharacters
@@ -14,8 +18,9 @@ func _ready():
 	dialog = $Dialog/AAIDialogBox
 	timer = $Timer
 	music = $AudioStreamPlayer
+	sfx = $SFXPlayer
 	background.texture = background_texture
-	
+	popups = $Popups/Bubble
 
 # change the X offset
 func set_bg_offset(offset: int):
@@ -67,6 +72,12 @@ func change_big_character_visible(nametag: String, visibility: bool):
 	var character = get_big_char_by_nametag(nametag)
 	character.visible = visibility
 
+func play_pre_animation(nametag: String, pre_anim: String):
+	var character = get_big_char_by_nametag(nametag)
+	character.play_animation(pre_anim)
+	yield(character.animation_player, "animation_finished")
+	emit_signal("anim_finished")
+
 func pan_over_bg(pos: float):
 	var panning_tween = create_tween()
 	panning_tween.tween_property(background, "rect_position:x", pos, 0.35)
@@ -82,3 +93,18 @@ func get_big_char_by_nametag(nametag: String):
 			character = child
 			break
 	return character
+
+func play_holdit():
+	popups.hold_it()
+	yield(popups, "anim_finished")
+	emit_signal("anim_finished")
+
+func play_objection():
+	popups.objection()
+	yield(popups, "anim_finished")
+	emit_signal("anim_finished")
+
+func play_take_that():
+	popups.take_that()
+	yield(popups, "anim_finished")
+	emit_signal("anim_finished")

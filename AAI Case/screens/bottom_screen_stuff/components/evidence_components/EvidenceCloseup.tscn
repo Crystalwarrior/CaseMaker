@@ -1,0 +1,179 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://res/Fonts/textfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://res/Fonts/ARIAL.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://AAI Case/screens/bottom_screen_stuff/components/evidence_components/EvidenceCloseup.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+resource_local_to_scene = true
+size = 11
+font_data = ExtResource( 2 )
+
+[node name="EvidenceCloseup" type="Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -192.0
+margin_right = 256.0
+rect_min_size = Vector2( 256, 192 )
+script = ExtResource( 3 )
+
+[node name="Background" type="Panel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 256, 192 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DescBg" type="Panel" parent="."]
+modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+margin_left = 4.0
+margin_top = 98.0
+margin_right = 253.0
+margin_bottom = 157.0
+rect_min_size = Vector2( 249, 59 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="NDBG" type="Panel" parent="."]
+modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+margin_left = 96.0
+margin_top = 23.0
+margin_right = 233.0
+margin_bottom = 94.0
+
+[node name="NameDescBg" type="Panel" parent="."]
+modulate = Color( 0.360784, 0.980392, 0.996078, 1 )
+margin_left = 97.0
+margin_top = 43.0
+margin_right = 232.0
+margin_bottom = 93.0
+
+[node name="NameBG" type="Panel" parent="."]
+modulate = Color( 0.890196, 0.956863, 0.498039, 1 )
+margin_left = 97.0
+margin_top = 24.0
+margin_right = 232.0
+margin_bottom = 42.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -192.0
+margin_right = 256.0
+rect_min_size = Vector2( 256, 192 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PresentButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+margin_right = 256.0
+margin_bottom = 20.0
+disabled = true
+
+[node name="TopDescription" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 256.0
+margin_bottom = 94.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ev_Left" type="Button" parent="VBoxContainer/TopDescription"]
+unique_name_in_owner = true
+margin_right = 20.0
+margin_bottom = 70.0
+text = "<"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EvidenceImage" type="TextureRect" parent="VBoxContainer/TopDescription"]
+unique_name_in_owner = true
+margin_left = 24.0
+margin_right = 94.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 70, 70 )
+
+[node name="EvDesc1Container" type="VBoxContainer" parent="VBoxContainer/TopDescription"]
+margin_left = 98.0
+margin_right = 232.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EvName" type="RichTextLabel" parent="VBoxContainer/TopDescription/EvDesc1Container"]
+unique_name_in_owner = true
+margin_right = 134.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 134, 20 )
+size_flags_horizontal = 3
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Evidence Name[/center]"
+text = "Evidence Name"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EvDesc1" type="RichTextLabel" parent="VBoxContainer/TopDescription/EvDesc1Container"]
+unique_name_in_owner = true
+margin_top = 24.0
+margin_right = 134.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 2 )
+text = "This is a set of sample text meant to represent the first evidence description."
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ev_Right" type="Button" parent="VBoxContainer/TopDescription"]
+margin_left = 236.0
+margin_right = 256.0
+margin_bottom = 70.0
+text = ">"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EvDescMarginBox" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 98.0
+margin_right = 256.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 256, 94 )
+custom_constants/margin_right = 9
+custom_constants/margin_left = 9
+custom_constants/margin_bottom = 9
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EvDesc2" type="RichTextLabel" parent="VBoxContainer/EvDescMarginBox"]
+unique_name_in_owner = true
+margin_left = 9.0
+margin_right = 247.0
+margin_bottom = 85.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+text = "This is a set of sample text. Meant to represent an evidence description."
+fit_content_height = true
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="pressed" from="VBoxContainer/TopDescription/Ev_Left" to="." method="_on_Ev_Left_pressed"]
+[connection signal="pressed" from="VBoxContainer/TopDescription/Ev_Right" to="." method="_on_Ev_Right_pressed"]

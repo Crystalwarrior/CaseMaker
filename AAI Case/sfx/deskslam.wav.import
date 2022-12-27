@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/whack.wav-9b61cacfb799cb687f6e1eda6ce2c1be.sample"
+path="res://.import/deskslam.wav-0d414a510c8851208e369b255961b633.sample"
 
 [deps]
 
-source_file="res://res/Sounds/whack.wav"
-dest_files=[ "res://.import/whack.wav-9b61cacfb799cb687f6e1eda6ce2c1be.sample" ]
+source_file="res://AAI Case/sfx/deskslam.wav"
+dest_files=[ "res://.import/deskslam.wav-0d414a510c8851208e369b255961b633.sample" ]
 
 [params]
 

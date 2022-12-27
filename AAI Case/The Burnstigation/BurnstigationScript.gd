@@ -1,13 +1,14 @@
 extends Node
 
 var scenes = [
-	preload("res://AAI Case/screens/scenes/1. Intro.tscn"),
-	preload("res://AAI Case/screens/scenes/2. Testimony1.tscn")
+	preload("res://AAI Case/The Burnstigation/scenes/1. Intro.tscn"),
+	preload("res://AAI Case/The Burnstigation/scenes/2. Testimony1.tscn")
 ]
 
 var index = -1
 
 func _ready():
+	# PersistentObjects.evidence_holder = EvidenceHolder.new()
 	change_scene()
 
 func change_scene():

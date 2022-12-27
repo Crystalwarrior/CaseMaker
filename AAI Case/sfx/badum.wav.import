@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/realization.wav-74ee271000d39b6d0b3c36eed1d5fd6d.sample"
+path="res://.import/badum.wav-1401f61d7dd73d999da0ca51441d6054.sample"
 
 [deps]
 
-source_file="res://res/Sounds/realization.wav"
-dest_files=[ "res://.import/realization.wav-74ee271000d39b6d0b3c36eed1d5fd6d.sample" ]
+source_file="res://AAI Case/sfx/badum.wav"
+dest_files=[ "res://.import/badum.wav-1401f61d7dd73d999da0ca51441d6054.sample" ]
 
 [params]
 

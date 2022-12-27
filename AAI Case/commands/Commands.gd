@@ -2,6 +2,7 @@ extends Node
 
 enum CommandType { 
 	DIALOG, 
+	DIALOG_ADD, 
 	FADE_MINIS_IN, 
 	FADE_MINIS_OUT, 
 	FADE_BIG_CHAR_IN, 
@@ -10,7 +11,9 @@ enum CommandType {
 	TESTIMONY,
 	SNAP_BG,
 	PAN_BG,
-	CHAR_VISIBLE 
+	CHAR_VISIBLE,
+	POPUP,
+	PRE_ANIM
 }
 
 

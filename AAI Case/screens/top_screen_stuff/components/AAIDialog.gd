@@ -13,6 +13,9 @@ onready var blip_player = $Dialog/BlipPlayer
 const TXT_SPD = 0.04
 const BLIP_RATE = 2
 
+var _lvis
+var _rvis
+
 func _ready():
 	# default values on initialization
 	dialog.text_speed = TXT_SPD
@@ -37,11 +40,31 @@ func set_left_arrow_visible(visibility: bool):
 	if(dialog.next_indicator_left.visible != visibility):
 		dialog.next_indicator_left.visible = visibility
 
+func toggle_arrows_visible(visibility: bool):
+	if(!visibility):
+		_lvis = dialog.next_indicator.visible
+		_rvis = dialog.next_indicator_left.visible
+		
+		dialog.next_indicator.visible = false
+		dialog.next_indicator_left.visible = false
+	
+	else:
+		dialog.next_indicator.visible = _lvis
+		dialog.next_indicator_left.visible = _rvis
+		
+
 func display_text(text):
 	if(!self.visible):
 		self.visible = true
 	
 	dialog.set_text(text)
+	dialog.display_text()
+
+func display_add_text(text):
+	if(!self.visible):
+		self.visible = true
+	
+	dialog.add_text(text)
 	dialog.display_text()
 
 func _on_Dialog_text_displayed():

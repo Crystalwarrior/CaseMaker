@@ -16,7 +16,7 @@
 [ext_resource path="res://res/Characters/Edgeworth/edgeworth-thinking(b).tres" type="Animation" id=14]
 [ext_resource path="res://res/Characters/Edgeworth/edgeworth-document(b).tres" type="Animation" id=15]
 [ext_resource path="res://res/Characters/Edgeworth/edgeworth-normal(a).tres" type="Animation" id=16]
-[ext_resource path="res://res/Sounds/deskslam.wav" type="AudioStream" id=17]
+[ext_resource path="res://AAI Case/sfx/deskslam.wav" type="AudioStream" id=17]
 [ext_resource path="res://res/Characters/Edgeworth/edgeworth-bow(a).tres" type="Animation" id=18]
 [ext_resource path="res://res/Characters/Edgeworth/edgeworth-pointing(a).tres" type="Animation" id=19]
 [ext_resource path="res://res/Characters/Edgeworth/edgeworth-handondesk(b).tres" type="Animation" id=20]
@@ -24,6 +24,7 @@
 [ext_resource path="res://res/Characters/Edgeworth/edgeworth-objection.tres" type="Animation" id=22]
 [ext_resource path="res://res/Characters/Edgeworth/edgeworth-shrug.tres" type="Animation" id=23]
 [ext_resource path="res://res/Characters/Edgeworth/edgeworth-strained(a).tres" type="Animation" id=24]
+
 
 [node name="Edgeworth" type="Node2D"]
 

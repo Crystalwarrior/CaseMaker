@@ -2,7 +2,8 @@
 
 [ext_resource path="res://addons/textalog/resources/character_class/character_class.gd" type="Script" id=1]
 [ext_resource path="res://res/Characters/Phoenix/button_normal.png" type="Texture" id=2]
-[ext_resource path="res://res/Sounds/blipmale.wav" type="AudioStream" id=3]
+[ext_resource path="res://AAI Case/sfx/blipmale.wav" type="AudioStream" id=3]
+
 
 [resource]
 resource_name = "Phoenix"

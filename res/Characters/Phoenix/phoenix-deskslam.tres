@@ -6,7 +6,8 @@
 [ext_resource path="res://res/Characters/Phoenix/phoenix-deskslam/5.png" type="Texture" id=4]
 [ext_resource path="res://res/Characters/Phoenix/phoenix-deskslam/4.png" type="Texture" id=5]
 [ext_resource path="res://res/Characters/Phoenix/phoenix-deskslam/1.png" type="Texture" id=6]
-[ext_resource path="res://res/Sounds/deskslam.wav" type="AudioStream" id=7]
+[ext_resource path="res://AAI Case/sfx/deskslam.wav" type="AudioStream" id=7]
+
 
 [resource]
 resource_name = "deskslam"

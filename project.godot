@@ -30,6 +30,16 @@ _global_script_classes=[ {
 "path": "res://AAI Case/commands/dialog_speak_command.gd"
 }, {
 "base": "Reference",
+"class": "Evidence",
+"language": "GDScript",
+"path": "res://AAI Case/evidence/Evidence.gd"
+}, {
+"base": "Node",
+"class": "EvidenceHolder",
+"language": "GDScript",
+"path": "res://AAI Case/evidence/EvidenceHolder.gd"
+}, {
+"base": "Reference",
 "class": "FadeBigCommand",
 "language": "GDScript",
 "path": "res://AAI Case/commands/fade_big_command.gd"
@@ -38,6 +48,16 @@ _global_script_classes=[ {
 "class": "FadeOutMiniCommand",
 "language": "GDScript",
 "path": "res://AAI Case/commands/fade_minis.gd"
+}, {
+"base": "Reference",
+"class": "PopupCommand",
+"language": "GDScript",
+"path": "res://AAI Case/commands/popup.gd"
+}, {
+"base": "Reference",
+"class": "PreAnimCommand",
+"language": "GDScript",
+"path": "res://AAI Case/commands/pre_animation.gd"
 }, {
 "base": "Resource",
 "class": "SaveGame",
@@ -64,8 +84,12 @@ _global_script_class_icons={
 "CommandProcessor": "",
 "DialogCommand": "",
 "DialogSpeakCommand": "",
+"Evidence": "",
+"EvidenceHolder": "",
 "FadeBigCommand": "",
 "FadeOutMiniCommand": "",
+"PopupCommand": "",
+"PreAnimCommand": "",
 "SaveGame": "",
 "ShakeCamera2D": "",
 "TestimonyCommand": "",
@@ -75,7 +99,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Case Maker"
-run/main_scene="res://AAI Case/The Burnstigation/BurnstigationTop.tscn"
+run/main_scene="res://AAI Case/The Burnstigation/scenes/2. Testimony1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -83,6 +107,7 @@ config/icon="res://icon.png"
 CharacterFactory="*res://AAI Case/scripts/CharacterFactory.gd"
 Commands="*res://AAI Case/commands/Commands.gd"
 MusicMaster="*res://AAI Case/scripts/MusicMaster.gd"
+PersistentObjects="*res://AAI Case/scripts/PersistentObjects.gd"
 
 [display]
 
@@ -96,7 +121,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/dialog_plugin/plugin.cfg", "res://addons/dialog_plugin/plugin_editor_manager/character_editor/plugin.cfg", "res://addons/dialog_plugin/plugin_editor_manager/timeline_editor/plugin.cfg", "res://addons/dialog_plugin/plugin_editor_manager/variable_editor/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [global]
 

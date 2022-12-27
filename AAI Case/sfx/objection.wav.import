@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/objection.wav-43e4202663b98cd027ae97a80f01e5ac.sample"
+path="res://.import/objection.wav-2c6294437de1cab792e661dd523e26f7.sample"
 
 [deps]
 
-source_file="res://res/Sounds/objection.wav"
-dest_files=[ "res://.import/objection.wav-43e4202663b98cd027ae97a80f01e5ac.sample" ]
+source_file="res://AAI Case/sfx/objection.wav"
+dest_files=[ "res://.import/objection.wav-2c6294437de1cab792e661dd523e26f7.sample" ]
 
 [params]
 

@@ -17,3 +17,9 @@ func _on_PressBtn_pressed():
 
 func _on_PresentBtn_pressed():
 	emit_signal("present")
+
+func _set_enabled(tog):
+	$VBoxContainer/Press_Present/PresentBtn.disabled = !tog
+	$VBoxContainer/Press_Present/PressBtn.disabled = !tog
+	$VBoxContainer/Left_Right/LeftButton.disabled = !tog
+	$VBoxContainer/Left_Right/RightButton.disabled = !tog

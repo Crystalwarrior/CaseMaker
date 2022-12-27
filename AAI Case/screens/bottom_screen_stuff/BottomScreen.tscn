@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://AAI Case/screens/bottom_screen_stuff/components/AAButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://AAI Case/screens/bottom_screen_stuff/components/TestimonyButtons.tscn" type="PackedScene" id=2]
 [ext_resource path="res://AAI Case/screens/bottom_screen_stuff/BottomScreen.gd" type="Script" id=3]
+[ext_resource path="res://AAI Case/screens/bottom_screen_stuff/components/EvidenceMenus.tscn" type="PackedScene" id=4]
 
 [node name="BottomScreen" type="Control"]
 margin_right = 256.0
@@ -22,3 +23,6 @@ anchor_right = 0.0
 anchor_bottom = 1.0
 margin_top = -192.0
 margin_right = 256.0
+
+[node name="EvidenceStuff" parent="." instance=ExtResource( 4 )]
+visible = false

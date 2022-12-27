@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/damage1.wav-a6dbfc4f8fc18d52343b15ce9f18553b.sample"
+path="res://.import/realization.wav-3b92e4a17ca9731ef218cfc2c4ad4777.sample"
 
 [deps]
 
-source_file="res://res/Sounds/damage1.wav"
-dest_files=[ "res://.import/damage1.wav-a6dbfc4f8fc18d52343b15ce9f18553b.sample" ]
+source_file="res://AAI Case/sfx/realization.wav"
+dest_files=[ "res://.import/realization.wav-3b92e4a17ca9731ef218cfc2c4ad4777.sample" ]
 
 [params]
 
