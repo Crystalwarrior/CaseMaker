@@ -18,9 +18,12 @@ var _rvis
 
 func _ready():
 	# default values on initialization
+	set_text_speed_to_default()
+	blip_player.set_blip_samples([male_blips])
+
+func set_text_speed_to_default():
 	dialog.text_speed = TXT_SPD
 	blip_player.set_blip_rate(BLIP_RATE)
-	blip_player.set_blip_samples([male_blips])
 
 # change nametag of character speaking
 func change_nametag(nametag_text: String):
