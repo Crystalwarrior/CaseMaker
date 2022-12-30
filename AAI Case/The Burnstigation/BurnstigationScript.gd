@@ -2,7 +2,8 @@ extends Node
 
 var scenes = [
 	preload("res://AAI Case/The Burnstigation/scenes/1. Intro.tscn"),
-	preload("res://AAI Case/The Burnstigation/scenes/2. Testimony1.tscn")
+	preload("res://AAI Case/The Burnstigation/scenes/2. Investigation 1.tscn"),
+	preload("res://AAI Case/The Burnstigation/scenes/3. Testimony1.tscn")
 ]
 
 var index = -1

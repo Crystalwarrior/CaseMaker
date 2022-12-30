@@ -10,20 +10,12 @@ onready var nametag = $Dialog/ShownamePanel/Label
 onready var nametag_label = $Dialog/ShownamePanel
 onready var blip_player = $Dialog/BlipPlayer
 
-const TXT_SPD = 0.04
-const BLIP_RATE = 2
 
 var _lvis
 var _rvis
 
 func _ready():
-	# default values on initialization
-	set_text_speed_to_default()
-	blip_player.set_blip_samples([male_blips])
-
-func set_text_speed_to_default():
-	dialog.text_speed = TXT_SPD
-	blip_player.set_blip_rate(BLIP_RATE)
+	blip_player.blip_sound = male_blips
 
 # change nametag of character speaking
 func change_nametag(nametag_text: String):

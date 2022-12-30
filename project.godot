@@ -99,7 +99,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Case Maker"
-run/main_scene="res://AAI Case/The Burnstigation/scenes/2. Testimony1.tscn"
+run/main_scene="res://AAI Case/The Burnstigation/BurnstigationTop.tscn"
 config/icon="res://icon.png"
 
 [autoload]
