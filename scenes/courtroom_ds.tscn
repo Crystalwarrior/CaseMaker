@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://ti5yud2rrnot"]
+
+[ext_resource type="Texture2D" uid="uid://daageeyolbi7l" path="res://assets/backgrounds/courtroom/courtroomfullDS.png" id="1_8cuiw"]
+[ext_resource type="Texture2D" uid="uid://cc11j8bigpmv6" path="res://assets/backgrounds/courtroom/courtroomoverview.png" id="2_ujbue"]
+[ext_resource type="Texture2D" uid="uid://c05lvynikkoqa" path="res://assets/backgrounds/courtroom/helperstand.png" id="3_gfk17"]
+[ext_resource type="Texture2D" uid="uid://bwnlegvuqg2c3" path="res://assets/backgrounds/courtroom/judgestand.png" id="4_sl2hc"]
+[ext_resource type="Texture2D" uid="uid://nimuq87fexuu" path="res://assets/backgrounds/courtroom/desk_benches.png" id="5_rsf5d"]
+[ext_resource type="Texture2D" uid="uid://00pqcyugwv2p" path="res://assets/backgrounds/courtroom/desk_witness.png" id="6_4ftpo"]
+
+[node name="CourtroomDS" type="Node2D"]
+
+[node name="full" type="Sprite2D" parent="."]
+position = Vector2(648, 96)
+texture = ExtResource("1_8cuiw")
+
+[node name="zoomout" type="Sprite2D" parent="."]
+position = Vector2(944, 304)
+texture = ExtResource("2_ujbue")
+
+[node name="codef" type="Sprite2D" parent="."]
+position = Vector2(128, 304)
+texture = ExtResource("3_gfk17")
+
+[node name="copro" type="Sprite2D" parent="."]
+position = Vector2(400, 304)
+texture = ExtResource("3_gfk17")
+flip_h = true
+
+[node name="Judgestand" type="Sprite2D" parent="."]
+position = Vector2(672, 304)
+texture = ExtResource("4_sl2hc")
+
+[node name="desks" type="Node2D" parent="."]
+position = Vector2(648, 96)
+
+[node name="desk_def" type="Sprite2D" parent="desks"]
+position = Vector2(-520, 74)
+texture = ExtResource("5_rsf5d")
+
+[node name="desk_wit" type="Sprite2D" parent="desks"]
+position = Vector2(0, 79)
+texture = ExtResource("6_4ftpo")
+
+[node name="desk_pro" type="Sprite2D" parent="desks"]
+position = Vector2(520, 74)
+texture = ExtResource("5_rsf5d")
+flip_h = true

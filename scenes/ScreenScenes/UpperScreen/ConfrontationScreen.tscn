@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://o014t0ve6be8"]
+
+[ext_resource type="Script" path="res://scenes/ScreenScenes/UpperScreen/ConfrontationScreen.gd" id="1_6kxfj"]
+[ext_resource type="Texture2D" uid="uid://sln8nji0ctv4" path="res://Art Assets/Backgrounds/detentioncenter.png" id="2_hkfgd"]
+[ext_resource type="Script" path="res://scenes/ScreenScenes/UpperScreen/Background.gd" id="2_imsik"]
+[ext_resource type="PackedScene" uid="uid://c2aekiuvsvmxj" path="res://scenes/Dialog/DialogBox.tscn" id="3_h7lsh"]
+[ext_resource type="Script" path="res://scenes/ScreenScenes/UpperScreen/CharacterContainer.gd" id="4_2dsje"]
+[ext_resource type="PackedScene" uid="uid://dpsblssy6fu6b" path="res://Art Assets/Characters/Edgeworth/Edgeworth.tscn" id="5_j5q0d"]
+
+[node name="ConfrontationScreen" type="Control"]
+custom_minimum_size = Vector2(256, 192)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 192.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_6kxfj")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(256, 192)
+layout_mode = 1
+offset_left = -33.0
+offset_right = 799.0
+offset_bottom = 192.0
+pivot_offset = Vector2(33, 0)
+texture = ExtResource("2_hkfgd")
+script = ExtResource("2_imsik")
+
+[node name="CharacterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(256, 192)
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 192.0
+script = ExtResource("4_2dsje")
+
+[node name="Edgeworth" parent="CharacterContainer" instance=ExtResource("5_j5q0d")]
+unique_name_in_owner = true
+
+[node name="DialogBox" parent="." instance=ExtResource("3_h7lsh")]
+unique_name_in_owner = true
+metadata/_edit_lock_ = true

@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2aekiuvsvmxj"]
+
+[ext_resource type="Script" path="res://scenes/Dialog/DialogBox.gd" id="1_cc5yw"]
+[ext_resource type="AudioStream" uid="uid://coi23da85koq4" path="res://scenes/Dialog/blipmale.wav" id="4_i5iln"]
+[ext_resource type="Script" path="res://scenes/Dialog/BlipPlayer.gd" id="5_54xdw"]
+[ext_resource type="Script" path="res://scenes/Dialog/TimerNode.gd" id="7_q6bxy"]
+[ext_resource type="PackedScene" uid="uid://damwjajlvml1h" path="res://scenes/Dialog/DialogContainer.tscn" id="8_5ictp"]
+
+[node name="DialogBox" type="Control"]
+custom_minimum_size = Vector2(256, 192)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 192.0
+script = ExtResource("1_cc5yw")
+
+[node name="BlipPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_i5iln")
+volume_db = -15.0
+script = ExtResource("5_54xdw")
+
+[node name="TimerNode" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.1
+one_shot = true
+script = ExtResource("7_q6bxy")
+
+[node name="DialogContainer" parent="." instance=ExtResource("8_5ictp")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_top = 135.0
+offset_bottom = 192.0
+
+[connection signal="timeout" from="TimerNode" to="TimerNode" method="_on_timeout"]
