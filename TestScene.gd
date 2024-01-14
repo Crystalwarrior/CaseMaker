@@ -14,6 +14,10 @@ func _ready():
 	scene_commands = [ 
 		create_scene_command("Edgeworth", 
 		"normal",
+		"{adv}Let's just hope he doesn't\nsay anything...{p 0.5} Unfortunate.",
+		"Edgeworth"),
+		create_scene_command("Edgeworth", 
+		"normal",
 		"{adv}Why of all places did the\n{e hmm}murder occur in my office?",
 		"Edgeworth"),
 		create_scene_command("Edgeworth", 
@@ -22,7 +26,7 @@ func _ready():
 		"Not Edgeworth"),
 		create_scene_command("Edgeworth", 
 		"normal",
-		"{nov}This is a story how I did your mom.{p} It's a long story so {spd_slow}{s}buckle {s}up.{p}{p}{p}{spd_normal} So, first, I met your mom and fuck it I'm bored {spd_fast}lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem lorem ipsum lorem lorem lorem lorem lorem lorem ",
+		"{nov}This is a story how I did your mom.{p 0.2} It's a long story so {spd_slow}{s}buckle {s}up.{p 1.0}{spd_normal} So, first, I met your mom and fuck it I'm bored {spd_fast}lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem lorem ipsum lorem lorem lorem lorem lorem lorem ",
 		"LOOK MA, NOVEL MODE"),
 	]
 	
@@ -30,9 +34,7 @@ func _ready():
 	scene_manager.get_dialog_box().text_shown.connect(_on_text_shown)
 	scene_manager.set_scene_commands(scene_commands)
 	
-	next_button.disabled = true
-	
-	scene_manager.run_next_command()
+	next_button.disabled = false
 
 func create_scene_command(nametag, animation, text, showname) -> SceneCommand:
 	var command = SceneCommand.new()

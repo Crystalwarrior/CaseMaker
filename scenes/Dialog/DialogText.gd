@@ -86,7 +86,7 @@ func reveal_character():
 		command_processor.process_command(index-1)
 
 func get_current_character() -> String:
-	return text_label.text[text_label.visible_characters - 1]
+	return text_label.text[text_label.visible_characters]
 
 func is_processing_command() -> bool:
 	return command_processor.is_processing
