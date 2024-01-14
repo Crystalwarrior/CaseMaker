@@ -7,7 +7,7 @@ signal spd_typewriter()
 
 signal eff_flash()
 signal eff_shake()
-signal eff_pause(pause_amount:float)
+signal eff_pause(pause_amount:String)
 
 signal new_emote(emote:String)
 
@@ -59,7 +59,6 @@ var signal_dict:Dictionary = {
 }
 
 func handle_effect(cmd:String, param:String = ""):
-	print(cmd)
 	var cmd_signal = signal_dict[cmd]
 	if(param == ""):
 		cmd_signal.emit()

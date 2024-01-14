@@ -7,7 +7,7 @@ extends Control
 signal text_shown()
 signal unpause()
 
-const PAUSE_AMT = 0.2
+const PAUSE_AMT = 1.0
 
 var pause:bool = false
 
@@ -90,7 +90,7 @@ func display_text(text:String, showname:String = "", is_male:bool = true):
 
 func _on_pause_called(pause_string:String):
 	pause = true
-	text_timer.start(PAUSE_AMT * pause_string.to_int())
+	text_timer.start(PAUSE_AMT * pause_string.to_float())
 	await text_timer.timeout
 	pause = false
 	unpause.emit()
