@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cv3c7l65x530u"
-path="res://.godot/imported/blipfemale.wav-fe8f1e6b222f21de016af8893a0b5e6e.sample"
+uid="uid://coi23da85koq4"
+path="res://.godot/imported/blipmale.wav-0e8fb2b9f78fe749c793d574675193c3.sample"
 
 [deps]
 
-source_file="res://scenes/Dialog/blipfemale.wav"
-dest_files=["res://.godot/imported/blipfemale.wav-fe8f1e6b222f21de016af8893a0b5e6e.sample"]
+source_file="res://assets/sounds/blipmale.wav"
+dest_files=["res://.godot/imported/blipmale.wav-0e8fb2b9f78fe749c793d574675193c3.sample"]
 
 [params]
 

@@ -2,7 +2,7 @@ extends Node
 
 signal timed_out()
 
-const TYPEWRITER = 0.15
+const TYPEWRITER = 0.08
 const SLOW = 0.06
 const NORMAL = 0.03
 const FAST = 0.015

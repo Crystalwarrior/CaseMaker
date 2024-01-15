@@ -1,5 +1,6 @@
 class_name CmdValues
 
+signal spd(to:String)
 signal spd_fast()
 signal spd_normal()
 signal spd_slow()
@@ -17,16 +18,19 @@ signal sound_sfx(effect)
 signal adv_mode()
 signal nov_mode()
 
+signal blip(sound:String)
+
 # text speed
 const FAST = "fast"
 const NORMAL = "normal"
 const SLOW = "slow"
 const TYPEWRITER = "typewriter"
 
-var SPD_SLOW = "spd_" + SLOW
-var SPD_NORM = "spd_" + NORMAL
-var SPD_FAST = "spd_" + FAST
-var SPD_TYPE = "spd_" + TYPEWRITER
+var SPD = "spd"
+var SPD_SLOW = SPD + "_" + SLOW
+var SPD_NORM = SPD + "_" + NORMAL
+var SPD_FAST = SPD + "_" + FAST
+var SPD_TYPE = SPD + "_" + TYPEWRITER
 
 # effects
 const FLASH = "f"
@@ -44,6 +48,8 @@ const SFX = "sfx"
 const ADV = "adv"
 const NOV = "nov"
 
+const BLIP = "blip"
+
 var signal_dict:Dictionary = {
 	FLASH : eff_flash,
 	SHAKE : eff_shake,
@@ -51,11 +57,14 @@ var signal_dict:Dictionary = {
 	EMOTE : new_emote,
 	MUSIC : sound_music,
 	SFX : sound_sfx,
+	SPD : spd,
 	SPD_SLOW : spd_slow,
 	SPD_NORM : spd_normal,
 	SPD_FAST : spd_fast,
+	SPD_TYPE : spd_typewriter,
 	ADV : adv_mode,
-	NOV : nov_mode
+	NOV : nov_mode,
+	BLIP : blip
 }
 
 func handle_effect(cmd:String, param:String = ""):

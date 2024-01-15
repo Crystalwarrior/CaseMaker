@@ -79,14 +79,14 @@ func reveal_character():
 	text_label.visible_characters += 1
 	var index = text_label.visible_characters
 	
-	if(index == text_label.text.length()):
+	if(index == text_label.get_parsed_text().length()):
 		text_displayed = true
 		command_processor.end_command_processing()
 	else:
 		command_processor.process_command(index-1)
 
 func get_current_character() -> String:
-	return text_label.text[text_label.visible_characters]
+	return text_label.get_parsed_text()[text_label.visible_characters]
 
 func is_processing_command() -> bool:
 	return command_processor.is_processing

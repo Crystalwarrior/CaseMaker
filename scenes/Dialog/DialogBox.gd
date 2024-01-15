@@ -8,6 +8,11 @@ signal text_shown()
 signal unpause()
 
 const PAUSE_AMT = 1.0
+const BLIPMALE_STREAM: AudioStream = preload("res://assets/sounds/blipmale.wav")
+const BLIPFEMALE_STREAM: AudioStream = preload("res://assets/sounds/blipfemale.wav")
+const BLIPTYPEWRITER_STREAM: AudioStream = preload("res://assets/sounds/typewriter.wav")
+const BLIPSANS_STREAM: AudioStream = preload("res://assets/sounds/sans.wav")
+
 
 var pause:bool = false
 
@@ -15,13 +20,9 @@ var blip_rate: int = 2
 
 var blip_counter: int = 0
 
-func adv():
-	dialog_container.size = Vector2(256, 57)
-	dialog_container.position = Vector2(0, 135)
 
-func nov():
-	dialog_container.size = Vector2(256, 182)
-	dialog_container.position = Vector2(0, 10)
+func set_speed(spd:float):
+	text_timer.current_spd = spd
 
 
 func set_fast():
@@ -44,10 +45,21 @@ func set_typewriter():
 	text_timer.set_typewriter()
 
 
+func adv():
+	dialog_container.size = Vector2(256, 57)
+	dialog_container.position = Vector2(0, 135)
+
+
+func nov():
+	dialog_container.size = Vector2(256, 182)
+	dialog_container.position = Vector2(0, 10)
+
+
 func _ready():
 	var cmd_value_instance = CommandValues.instance()
 	cmd_value_instance.eff_pause.connect(_on_pause_called)
 	
+	cmd_value_instance.spd.connect(set_speed)
 	cmd_value_instance.spd_fast.connect(set_fast)
 	cmd_value_instance.spd_normal.connect(set_normal)
 	cmd_value_instance.spd_slow.connect(set_slow)
@@ -55,11 +67,29 @@ func _ready():
 	
 	cmd_value_instance.adv_mode.connect(adv)
 	cmd_value_instance.nov_mode.connect(nov)
+	
+	cmd_value_instance.blip.connect(set_blipsound)
 
-func display_text(text:String, showname:String = "", is_male:bool = true):
+
+func set_blipsound(blip_string:String):
+	print(blip_string)
+	var new_stream: AudioStream
+	if blip_string == "male":
+		new_stream = BLIPMALE_STREAM
+	elif blip_string == "female":
+		new_stream = BLIPFEMALE_STREAM
+	elif blip_string == "typewriter":
+		new_stream = BLIPTYPEWRITER_STREAM
+	elif blip_string == "sans":
+		new_stream = BLIPSANS_STREAM
+	else:
+		new_stream = load(blip_string)
+	blip_player.set_stream(new_stream)
+
+
+func display_text(text:String, showname:String = ""):
 	dialog_container.set_text_to_show(text)
 	dialog_container.set_showname_text(showname)
-	blip_player.set_blip_sound(is_male)
 	blip_counter = 1
 	%DEBUG.clear()
 	%DEBUG.text = ""
@@ -85,7 +115,7 @@ func display_text(text:String, showname:String = "", is_male:bool = true):
 		text_timer.start_timer()
 		await text_timer.timed_out
 	
-	text_timer.set_normal()
+	set_normal()
 	text_shown.emit()
 
 func _on_pause_called(pause_string:String):

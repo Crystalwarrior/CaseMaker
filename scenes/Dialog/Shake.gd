@@ -20,6 +20,6 @@ func get_shake_position() -> Vector2:
 	return default_position + get_shake_amount()
 
 func shake(node:Node):
-	shake_amount = 5
+	shake_amount = 2
 	await node.get_tree().create_timer(SHAKE_TIME).timeout
 	shake_amount = 0
