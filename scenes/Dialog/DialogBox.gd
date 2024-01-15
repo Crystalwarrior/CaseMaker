@@ -72,7 +72,6 @@ func _ready():
 
 
 func set_blipsound(blip_string:String):
-	print(blip_string)
 	var new_stream: AudioStream
 	if blip_string == "male":
 		new_stream = BLIPMALE_STREAM
