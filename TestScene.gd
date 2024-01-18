@@ -73,6 +73,7 @@ func _on_text_shown():
 	
 
 func _on_next_button_pressed():
+	next_button.scale = Vector2(0.9, 0.9)
 	next_button.disabled = true
 	chat_arrow.visible = false
 	big_arrow.visible = false
@@ -82,3 +83,5 @@ func _on_next_button_pressed():
 		scene_manager.set_scene_commands(scene_commands)
 	dink_player.play()
 	scene_manager.run_next_command()
+	await get_tree().create_timer(0.05).timeout
+	next_button.scale = Vector2(1, 1)
