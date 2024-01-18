@@ -23,6 +23,8 @@ CommandValues="*res://scenes/Dialog/CommandValues.gd"
 
 window/size/viewport_width=256
 window/size/viewport_height=384
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [rendering]
 

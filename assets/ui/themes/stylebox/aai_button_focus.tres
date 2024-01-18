@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bg2u3xberpjou"]
+
+[ext_resource type="Texture2D" uid="uid://blocjialg2l4y" path="res://assets/ui/aai-button-focus.png" id="1_pu1m3"]
+
+[resource]
+texture = ExtResource("1_pu1m3")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+draw_center = false

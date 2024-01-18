@@ -1,6 +1,7 @@
 extends Node2D
 @onready var next_button = get_node("%NextButton")
 @onready var chat_arrow = get_node("%ChatArrow")
+@onready var big_arrow = get_node("%BigArrow")
 @onready var flash = preload("res://scenes/ScreenScenes/UpperScreen/Effects/FlashEffect.tscn")
 @onready var dink_player = $NextButton/AudioStreamPlayer
 
@@ -68,11 +69,13 @@ func _on_text_shown():
 		return
 	next_button.disabled = false
 	chat_arrow.visible = true
+	big_arrow.visible = true
 	
 
 func _on_next_button_pressed():
 	next_button.disabled = true
 	chat_arrow.visible = false
+	big_arrow.visible = false
 	
 	if(scene_manager.scene_finished):
 		scene_manager.scene_finished = false

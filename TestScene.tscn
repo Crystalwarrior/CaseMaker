@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://kv6pxmfyclh1"]
+[gd_scene load_steps=15 format=3 uid="uid://kv6pxmfyclh1"]
 
 [ext_resource type="Script" path="res://TestScene.gd" id="1_j7ny0"]
 [ext_resource type="PackedScene" uid="uid://o014t0ve6be8" path="res://scenes/ScreenScenes/UpperScreen/ConfrontationScreen.tscn" id="2_m22fg"]
+[ext_resource type="Texture2D" uid="uid://53q1jwxccl18" path="res://assets/ui/AAIBackdrop.png" id="2_xtrnu"]
 [ext_resource type="AudioStream" uid="uid://bmqv5uwjq5bsu" path="res://assets/sounds/dink.wav" id="3_kjug2"]
 [ext_resource type="Texture2D" uid="uid://b8tcjpep1oehl" path="res://assets/ui/chat_arrow.png" id="3_kt5s3"]
+[ext_resource type="StyleBox" uid="uid://cqgewfvjrakjj" path="res://assets/ui/themes/stylebox/aai_button_normal.tres" id="4_gc0ro"]
+[ext_resource type="StyleBox" uid="uid://fmvq2do153tv" path="res://assets/ui/themes/stylebox/aai_button_pressed.tres" id="5_k8l7n"]
+[ext_resource type="Texture2D" uid="uid://tp78e24s2uf4" path="res://assets/ui/big_arrow.png" id="8_q2yrr"]
+[ext_resource type="Texture2D" uid="uid://l2x5aouu1du0" path="res://assets/ui/border.png" id="10_1h2bf"]
 
 [sub_resource type="Animation" id="Animation_wxv1m"]
 resource_name = "next"
@@ -28,8 +33,39 @@ _data = {
 "next": SubResource("Animation_wxv1m")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2mee1"]
+
+[sub_resource type="Animation" id="Animation_50b6q"]
+resource_name = "next"
+length = 0.366668
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-6.0, 6.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_80vhx"]
+_data = {
+"next": SubResource("Animation_50b6q")
+}
+
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_j7ny0")
+
+[node name="AaiBackdrop" type="TextureRect" parent="."]
+offset_top = 192.0
+offset_right = 256.0
+offset_bottom = 384.0
+texture = ExtResource("2_xtrnu")
 
 [node name="UpperScreen" parent="." instance=ExtResource("2_m22fg")]
 unique_name_in_owner = true
@@ -54,9 +90,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -15.0
+offset_left = -9.0
 offset_top = -16.0
-offset_right = -6.0
 offset_bottom = -7.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -70,14 +105,54 @@ autoplay = "next"
 
 [node name="NextButton" type="Button" parent="."]
 unique_name_in_owner = true
-offset_left = 31.0
-offset_top = 212.0
-offset_right = 231.0
-offset_bottom = 311.0
-text = ">"
+offset_left = 17.0
+offset_top = 233.0
+offset_right = 241.0
+offset_bottom = 345.0
+theme_override_styles/normal = ExtResource("4_gc0ro")
+theme_override_styles/hover = ExtResource("4_gc0ro")
+theme_override_styles/pressed = ExtResource("5_k8l7n")
+theme_override_styles/disabled = ExtResource("4_gc0ro")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2mee1")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NextButton"]
 stream = ExtResource("3_kjug2")
+
+[node name="BigArrowAnchor" type="Control" parent="NextButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BigArrow" type="Sprite2D" parent="NextButton/BigArrowAnchor"]
+unique_name_in_owner = true
+position = Vector2(-6, 0)
+texture = ExtResource("8_q2yrr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NextButton/BigArrowAnchor/BigArrow"]
+libraries = {
+"": SubResource("AnimationLibrary_80vhx")
+}
+autoplay = "next"
+
+[node name="LowerBorder" type="TextureRect" parent="."]
+offset_top = 368.0
+offset_right = 256.0
+offset_bottom = 384.0
+texture = ExtResource("10_1h2bf")
+stretch_mode = 1
+
+[node name="UpperBorder" type="TextureRect" parent="."]
+offset_top = 192.0
+offset_right = 256.0
+offset_bottom = 208.0
+texture = ExtResource("10_1h2bf")
+stretch_mode = 1
+flip_v = true
 
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
 
