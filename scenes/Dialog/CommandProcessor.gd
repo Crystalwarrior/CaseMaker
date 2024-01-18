@@ -43,7 +43,7 @@ func remove_string(string: String, removal: String) -> String:
 	var length = removal.length()
 	var i = 0
 
-	while i < string.length() - length:
+	while i < string.length():
 		var piece = ''
 		var j = i
 

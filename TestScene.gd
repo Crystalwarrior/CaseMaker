@@ -1,5 +1,6 @@
 extends Node2D
 @onready var next_button = get_node("%NextButton")
+@onready var chat_arrow = get_node("%ChatArrow")
 @onready var flash = preload("res://scenes/ScreenScenes/UpperScreen/Effects/FlashEffect.tscn")
 @onready var dink_player = $NextButton/AudioStreamPlayer
 
@@ -15,7 +16,7 @@ func _ready():
 	scene_commands = [ 
 		create_scene_command("", 
 		"",
-		"{adv}{blip sans}watch out sans is here{p 0.5} *kills*{p 2.0}. ",
+		"{adv}{blip sans}watch out sans is here {p 0.5}*kills*{p 2.0}...",
 		"",
 		false),
 		create_scene_command("", 
@@ -66,13 +67,15 @@ func _on_text_shown():
 		scene_manager.run_next_command()
 		return
 	next_button.disabled = false
+	chat_arrow.visible = true
+	
 
 func _on_next_button_pressed():
 	next_button.disabled = true
+	chat_arrow.visible = false
 	
 	if(scene_manager.scene_finished):
 		scene_manager.scene_finished = false
 		scene_manager.set_scene_commands(scene_commands)
 	dink_player.play()
 	scene_manager.run_next_command()
-	scene_manager.dialog_box.blip_counter = 0

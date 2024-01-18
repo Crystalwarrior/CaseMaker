@@ -113,10 +113,10 @@ func next_letter():
 	if (!dialog_container.is_processing_command()):
 		var skip_char = current_char in [" ", "\n"]
 		if (not skip_char):
-			blip_counter = (blip_counter + 1) % blip_rate
 			if(blip_counter == 0):
 				blip = true
 				blip_player.play()
+			blip_counter = (blip_counter + 1) % blip_rate
 	if blip:
 		%DEBUG.push_color(Color.GREEN)
 	%DEBUG.add_text(current_char)
@@ -142,7 +142,7 @@ func set_blipsound(blip_string:String):
 func display_text(text:String, showname:String = ""):
 	dialog_container.set_text_to_show(text)
 	dialog_container.set_showname_text(showname)
-	blip_counter = 1
+	blip_counter = 0
 	%DEBUG.clear()
 	%DEBUG.text = ""
 	speed_counter = 0

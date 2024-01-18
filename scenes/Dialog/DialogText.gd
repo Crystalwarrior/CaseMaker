@@ -78,15 +78,19 @@ func set_text_to_show(text_to_show:String):
 func reveal_character():
 	if Engine.is_editor_hint():
 		return
+
+	# This does the job, though there's probably a smarter way to handle it
+	if text_label.visible_characters == 0:
+		command_processor.process_command(0)
+
 	text_label.visible_characters += 1
-	var index = text_label.visible_characters
-	
-	if(index == text_label.get_parsed_text().length()):
+	command_processor.process_command(text_label.visible_characters)
+
+	var length = text_label.get_parsed_text().length()
+	if(text_label.visible_characters == length):
 		text_displayed = true
 		is_text_displayed.emit()
 		command_processor.end_command_processing()
-	else:
-		command_processor.process_command(index-1)
 
 func get_current_character() -> String:
 	return text_label.get_parsed_text()[text_label.visible_characters-1]
