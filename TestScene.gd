@@ -1,6 +1,7 @@
 extends Node2D
 @onready var next_button = get_node("%NextButton")
 @onready var flash = preload("res://scenes/ScreenScenes/UpperScreen/Effects/FlashEffect.tscn")
+@onready var dink_player = $NextButton/AudioStreamPlayer
 
 var upper_screen
 var scene_commands: Array
@@ -14,7 +15,12 @@ func _ready():
 	scene_commands = [ 
 		create_scene_command("", 
 		"",
-		"{adv}{blip typewriter}{spd_typewriter}[center][color=green]12:00 AM\nYour Mom's House\nBedroom",
+		"{adv}{blip sans}watch out sans is here{p 0.5} *kills*{p 2.0}. ",
+		"",
+		false),
+		create_scene_command("", 
+		"",
+		"{adv}{blip typewriter}{spd_typewriter}[center][color=green]August 3, 9:47 AM\nDistrict Court\nDefendant Lobby No. 2",
 		""),
 		create_scene_command("Edgeworth", 
 		"normal",
@@ -40,13 +46,14 @@ func _ready():
 	
 	next_button.disabled = false
 
-func create_scene_command(nametag, animation, text, showname) -> SceneCommand:
+func create_scene_command(nametag, animation, text, showname, wait_for_input = true) -> SceneCommand:
 	var command = SceneCommand.new()
 	
 	command.character_name = nametag
 	command.character_animation = animation
 	command.text_for_scene = text
 	command.showname_for_scene = showname
+	command.wait_for_input = wait_for_input
 	
 	return command
 
@@ -54,6 +61,10 @@ func _on_flash():
 	upper_screen.add_child(flash.instantiate())
 
 func _on_text_shown():
+	if(not scene_manager.scene_commands[scene_manager.current_command].wait_for_input):
+		await get_tree().process_frame
+		scene_manager.run_next_command()
+		return
 	next_button.disabled = false
 
 func _on_next_button_pressed():
@@ -62,5 +73,6 @@ func _on_next_button_pressed():
 	if(scene_manager.scene_finished):
 		scene_manager.scene_finished = false
 		scene_manager.set_scene_commands(scene_commands)
-		
+	dink_player.play()
 	scene_manager.run_next_command()
+	scene_manager.dialog_box.blip_counter = 0

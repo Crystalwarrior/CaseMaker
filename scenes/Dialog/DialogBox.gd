@@ -13,6 +13,21 @@ const BLIPFEMALE_STREAM: AudioStream = preload("res://assets/sounds/blipfemale.w
 const BLIPTYPEWRITER_STREAM: AudioStream = preload("res://assets/sounds/typewriter.wav")
 const BLIPSANS_STREAM: AudioStream = preload("res://assets/sounds/sans.wav")
 
+# Text Speed constants
+# 1 letter every 5 frames
+const TEXT_SPEED_TYPEWRITER: float = 0.08
+# 1 letter every 3 frames
+const TEXT_SPEED_SLOW: float = 0.05
+# 1 letter every 2 frames
+const TEXT_SPEED_NORMAL: float = 0.03
+# 1 letter every 1 frame
+const TEXT_SPEED_FAST: float = 0.015
+# 2 letters every 1 frame
+const TEXT_SPEED_RAPID: float = 0.008
+
+var current_spd:float = TEXT_SPEED_NORMAL
+var speed_counter: float = 0.0
+var process_dialog: bool = false
 
 var pause:bool = false
 
@@ -21,28 +36,33 @@ var blip_rate: int = 2
 var blip_counter: int = 0
 
 
-func set_speed(spd:float):
-	text_timer.current_spd = spd
+func set_speed(spd:String):
+	current_spd = spd.to_float()
+
+
+func set_rapid():
+	blip_rate = 4
+	current_spd = TEXT_SPEED_RAPID
 
 
 func set_fast():
 	blip_rate = 3
-	text_timer.set_fast()
+	current_spd = TEXT_SPEED_FAST
 
 
 func set_normal():
 	blip_rate = 2
-	text_timer.set_normal()
+	current_spd = TEXT_SPEED_NORMAL
 
 
 func set_slow():
 	blip_rate = 2
-	text_timer.set_slow()
+	current_spd = TEXT_SPEED_SLOW
 
 
 func set_typewriter():
 	blip_rate = 2
-	text_timer.set_typewriter()
+	current_spd = TEXT_SPEED_TYPEWRITER
 
 
 func adv():
@@ -71,6 +91,39 @@ func _ready():
 	cmd_value_instance.blip.connect(set_blipsound)
 
 
+func _process(delta):
+	if(process_dialog and not dialog_container.text_displayed):
+		if(pause):
+			return
+		speed_counter += delta
+		if speed_counter < current_spd:
+			return
+		var count: int = int(speed_counter / current_spd)
+		while (current_spd == 0 or count > 0) and process_dialog:
+			count -= 1
+			next_letter()
+		speed_counter = 0
+
+
+func next_letter():
+	dialog_container.reveal_character()
+
+	var current_char = dialog_container.get_current_character()
+	var blip = false
+	if (!dialog_container.is_processing_command()):
+		var skip_char = current_char in [" ", "\n"]
+		if (not skip_char):
+			blip_counter = (blip_counter + 1) % blip_rate
+			if(blip_counter == 0):
+				blip = true
+				blip_player.play()
+	if blip:
+		%DEBUG.push_color(Color.GREEN)
+	%DEBUG.add_text(current_char)
+	if blip:
+		%DEBUG.pop()
+
+
 func set_blipsound(blip_string:String):
 	var new_stream: AudioStream
 	if blip_string == "male":
@@ -92,30 +145,13 @@ func display_text(text:String, showname:String = ""):
 	blip_counter = 1
 	%DEBUG.clear()
 	%DEBUG.text = ""
-	while(!dialog_container.text_displayed):
-		var current_char = dialog_container.get_current_character()
-		
-		if(pause):
-			await unpause
-		var blip = false
-		if (!dialog_container.is_processing_command()):
-			var skip_char = current_char in [" ", "\n"]
-			if (not skip_char):
-				if(blip_counter == 0):
-					blip = true
-					blip_player.play()
-				blip_counter = (blip_counter + 1) % blip_rate
-		if blip:
-			%DEBUG.push_color(Color.GREEN)
-		%DEBUG.add_text(current_char)
-		if blip:
-			%DEBUG.pop()
-		dialog_container.reveal_character()
-		text_timer.start_timer()
-		await text_timer.timed_out
-	
+	speed_counter = 0
+	process_dialog = true
+	await dialog_container.is_text_displayed
+	process_dialog = false
 	set_normal()
 	text_shown.emit()
+
 
 func _on_pause_called(pause_string:String):
 	pause = true

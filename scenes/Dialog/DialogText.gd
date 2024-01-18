@@ -10,6 +10,8 @@ var command_processor:CommandProcessor
 var text_displayed: bool = false
 var shake_effect: ShakeEffect
 
+signal is_text_displayed()
+
 var _old_text = ""
 
 func _init():
@@ -64,13 +66,13 @@ func set_text_to_show(text_to_show:String):
 		return
 	if not text_label:
 		return
-	text_label.visible_characters = 0
 	
 	for character in text_to_show:
 		command_processor.add_command_char(character)
 	
 	text_to_show = command_processor.remove_commands_from_string(text_to_show)
 	text_label.set_text(text_to_show)
+	text_label.visible_characters = 0
 	text_displayed = false
 
 func reveal_character():
@@ -81,12 +83,13 @@ func reveal_character():
 	
 	if(index == text_label.get_parsed_text().length()):
 		text_displayed = true
+		is_text_displayed.emit()
 		command_processor.end_command_processing()
 	else:
 		command_processor.process_command(index-1)
 
 func get_current_character() -> String:
-	return text_label.get_parsed_text()[text_label.visible_characters]
+	return text_label.get_parsed_text()[text_label.visible_characters-1]
 
 func is_processing_command() -> bool:
 	return command_processor.is_processing

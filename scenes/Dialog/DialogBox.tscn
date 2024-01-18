@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2aekiuvsvmxj"]
+[gd_scene load_steps=5 format=3 uid="uid://c2aekiuvsvmxj"]
 
 [ext_resource type="Script" path="res://scenes/Dialog/DialogBox.gd" id="1_cc5yw"]
 [ext_resource type="AudioStream" uid="uid://coi23da85koq4" path="res://assets/sounds/blipmale.wav" id="4_i5iln"]
 [ext_resource type="FontFile" uid="uid://bpmqn2kw4vgn4" path="res://assets/fonts/igiari-cyrillic-plus.ttf" id="6_3nclk"]
-[ext_resource type="Script" path="res://scenes/Dialog/TimerNode.gd" id="7_q6bxy"]
 [ext_resource type="PackedScene" uid="uid://damwjajlvml1h" path="res://scenes/Dialog/DialogContainer.tscn" id="8_5ictp"]
 
 [node name="DialogBox" type="Control"]
@@ -17,13 +16,11 @@ script = ExtResource("1_cc5yw")
 [node name="BlipPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("4_i5iln")
-volume_db = -15.0
 
 [node name="TimerNode" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 0.1
 one_shot = true
-script = ExtResource("7_q6bxy")
 
 [node name="DialogContainer" parent="." instance=ExtResource("8_5ictp")]
 unique_name_in_owner = true
@@ -49,7 +46,5 @@ fit_content = true
 scroll_active = false
 scroll_following = true
 visible_characters_behavior = 1
-
-[connection signal="timeout" from="TimerNode" to="TimerNode" method="_on_timeout"]
 
 [editable path="DialogContainer"]
