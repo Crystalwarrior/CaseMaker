@@ -13,11 +13,15 @@ config_version=5
 config/name="Case Maker"
 run/main_scene="res://TestScene.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [autoload]
 
 CommandValues="*res://scenes/Dialog/CommandValues.gd"
+
+[blockflow]
+
+settings/commands/custom_commands=["res://addons/textalog/commands/command_character.gd", "res://addons/textalog/commands/command_choice.gd", "res://addons/textalog/commands/command_choice_list.gd", "res://addons/textalog/commands/command_dialog.gd", "res://addons/textalog/commands/command_testimony.gd", "res://addons/textalog/commands/command_testimony_statement.gd"]
 
 [display]
 
@@ -25,6 +29,10 @@ window/size/viewport_width=256
 window/size/viewport_height=384
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/blockflow/plugin.cfg", "res://addons/textalog/plugin.cfg")
 
 [rendering]
 

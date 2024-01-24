@@ -1,4 +1,4 @@
-class_name CommandProcessor
+class_name TextCommandProcessor
 
 var is_processing:bool = false
 var command_processed:bool = false

@@ -52,6 +52,8 @@ func run_next_command():
 		scene_finished = true
 
 func _on_mid_sentence_emote_change(emote:String):
+	if scene_commands.is_empty():
+		return
 	var character_name = scene_commands[current_command].character_name
 	if(characters.has(character_name)):
 		characters[character_name].set_animation(emote)

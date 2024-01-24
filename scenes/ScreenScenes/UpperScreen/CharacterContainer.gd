@@ -1,4 +1,4 @@
-extends CenterContainer
+extends Node2D
 
 var shake_effect: ShakeEffect
 	

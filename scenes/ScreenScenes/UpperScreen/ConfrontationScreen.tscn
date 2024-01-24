@@ -28,11 +28,7 @@ pivot_offset = Vector2(33, 0)
 texture = ExtResource("2_hkfgd")
 script = ExtResource("2_imsik")
 
-[node name="CharacterContainer" type="CenterContainer" parent="."]
-custom_minimum_size = Vector2(256, 192)
-layout_mode = 0
-offset_right = 256.0
-offset_bottom = 192.0
+[node name="CharacterContainer" type="Node2D" parent="."]
 script = ExtResource("4_2dsje")
 
 [node name="Edgeworth" parent="CharacterContainer" instance=ExtResource("5_j5q0d")]
@@ -40,4 +36,3 @@ unique_name_in_owner = true
 
 [node name="DialogBox" parent="." instance=ExtResource("3_h7lsh")]
 unique_name_in_owner = true
-metadata/_edit_lock_ = true

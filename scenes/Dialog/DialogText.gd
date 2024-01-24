@@ -6,7 +6,7 @@ extends Control
 @onready var text_label: RichTextLabel = %DialogTextLabel
 @onready var showname_margin: Control = %ShownameMargin
 @onready var showname_label: RichTextLabel = %ShownameText
-var command_processor:CommandProcessor
+var command_processor:TextCommandProcessor
 var text_displayed: bool = false
 var shake_effect: ShakeEffect
 
@@ -17,7 +17,7 @@ var _old_text = ""
 func _init():
 	if Engine.is_editor_hint():
 		return
-	command_processor = CommandProcessor.new()
+	command_processor = TextCommandProcessor.new()
 
 func _process(_delta):
 	# Showname stuff
@@ -87,13 +87,16 @@ func reveal_character():
 	command_processor.process_command(text_label.visible_characters)
 
 	var length = text_label.get_parsed_text().length()
-	if(text_label.visible_characters == length):
+	if(text_label.visible_characters == length or length <= 0):
 		text_displayed = true
 		is_text_displayed.emit()
 		command_processor.end_command_processing()
 
 func get_current_character() -> String:
-	return text_label.get_parsed_text()[text_label.visible_characters-1]
+	var parsed_text = text_label.get_parsed_text()
+	if parsed_text.length() <= 0:
+		return ""
+	return parsed_text[text_label.visible_characters-1]
 
 func is_processing_command() -> bool:
 	return command_processor.is_processing
