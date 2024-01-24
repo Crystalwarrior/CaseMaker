@@ -69,7 +69,7 @@ var signal_dict:Dictionary = {
 
 func handle_effect(cmd:String, param:String = ""):
 	var cmd_signal = signal_dict[cmd]
-	if(param == ""):
+	if(param == "" and cmd != PAUSE):
 		cmd_signal.emit()
 	else:
 		cmd_signal.emit(param)

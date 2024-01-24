@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://kv6pxmfyclh1"]
+[gd_scene load_steps=19 format=3 uid="uid://kv6pxmfyclh1"]
 
 [ext_resource type="Script" path="res://TestScene.gd" id="1_j7ny0"]
 [ext_resource type="PackedScene" uid="uid://o014t0ve6be8" path="res://scenes/ScreenScenes/UpperScreen/ConfrontationScreen.tscn" id="2_m22fg"]
 [ext_resource type="Script" path="res://addons/blockflow/command_processor.gd" id="2_rnwqy"]
 [ext_resource type="Texture2D" uid="uid://53q1jwxccl18" path="res://assets/ui/AAIBackdrop.png" id="2_xtrnu"]
-[ext_resource type="Resource" uid="uid://bea2l2h4y55v7" path="res://timelines/test.tres" id="3_e4gja"]
+[ext_resource type="Resource" uid="uid://b2uvbyr3l6a84" path="res://timelines/aa_case1/lobby.tres" id="3_ehm5p"]
 [ext_resource type="AudioStream" uid="uid://bmqv5uwjq5bsu" path="res://assets/sounds/dink.wav" id="3_kjug2"]
 [ext_resource type="Texture2D" uid="uid://b8tcjpep1oehl" path="res://assets/ui/chat_arrow.png" id="3_kt5s3"]
 [ext_resource type="StyleBox" uid="uid://cqgewfvjrakjj" path="res://assets/ui/themes/stylebox/aai_button_normal.tres" id="4_gc0ro"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://scenes/NextButton.gd" id="8_0oq68"]
 [ext_resource type="Texture2D" uid="uid://tp78e24s2uf4" path="res://assets/ui/big_arrow.png" id="8_q2yrr"]
 [ext_resource type="Texture2D" uid="uid://l2x5aouu1du0" path="res://assets/ui/border.png" id="10_1h2bf"]
+[ext_resource type="AudioStream" uid="uid://cb485p8r1fh2e" path="res://assets/music/bgm008.ogg" id="13_ssudg"]
 
 [sub_resource type="Animation" id="Animation_wxv1m"]
 resource_name = "next"
@@ -67,7 +68,7 @@ script = ExtResource("1_j7ny0")
 [node name="CommandProcessor" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_rnwqy")
-initial_collection = ExtResource("3_e4gja")
+initial_collection = ExtResource("3_ehm5p")
 command_node_fallback_path = NodePath("..")
 
 [node name="UpperScreen" parent="." instance=ExtResource("2_m22fg")]
@@ -128,6 +129,7 @@ script = ExtResource("8_0oq68")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NextButton"]
 stream = ExtResource("3_kjug2")
+bus = &"ui"
 
 [node name="BigArrowAnchor" type="Control" parent="NextButton"]
 layout_mode = 1
@@ -164,6 +166,10 @@ offset_bottom = 208.0
 texture = ExtResource("10_1h2bf")
 stretch_mode = 1
 flip_v = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_ssudg")
+bus = &"music"
 
 [connection signal="collection_finished" from="CommandProcessor" to="." method="_on_command_processor_collection_finished"]
 [connection signal="collection_started" from="CommandProcessor" to="." method="_on_command_processor_collection_started"]

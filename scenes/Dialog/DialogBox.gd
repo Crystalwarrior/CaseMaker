@@ -113,7 +113,7 @@ func next_letter():
 	if (!dialog_container.is_processing_command()):
 		var skip_char = current_char in [" ", "\n"]
 		if (not skip_char):
-			if(blip_counter == 0):
+			if(blip_counter == 0 and not current_char.is_empty()):
 				blip = true
 				blip_player.play()
 			blip_counter = (blip_counter + 1) % blip_rate
@@ -155,6 +155,8 @@ func display_text(text:String, showname:String = ""):
 
 func _on_pause_called(pause_string:String):
 	pause = true
+	if pause_string == "":
+		pause_string = "0.2"
 	text_timer.start(PAUSE_AMT * pause_string.to_float())
 	await text_timer.timeout
 	pause = false

@@ -16,6 +16,7 @@ script = ExtResource("1_cc5yw")
 [node name="BlipPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("4_i5iln")
+bus = &"blips"
 
 [node name="TimerNode" type="Timer" parent="."]
 unique_name_in_owner = true

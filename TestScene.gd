@@ -25,9 +25,7 @@ func _ready():
 
 func next():
 	get_window().gui_release_focus()
-	#if not waiting_on_input:
-		#dialogbox.skip()
-
+	# TODO: implement skipping
 	if not finished:
 		if not command_processor.main_collection:
 			command_processor.start()
@@ -58,12 +56,7 @@ func set_waiting_on_input(tog: bool):
 func dialog(showname: String = "", text: String = "", additive: bool = false, letter_delay: float = 0.03) -> void:
 	dialog_box.current_spd = letter_delay
 	dialog_box.display_text(text, showname)
-	#TODO: implement additive
-	#dialog_box.set_showname(showname)
-	#if additive:
-		#dialog_box.add_msg(text)
-	#else:
-		#dialog_box.set_msg(text)
+	#TODO: implement additive text boxes
 
 
 func _on_flash():
@@ -76,7 +69,6 @@ func _on_command_processor_collection_started(collection):
 
 func _on_command_processor_collection_finished(collection):
 	finished = true
-	command_processor.start()
 
 
 func _on_command_processor_command_started(command):
