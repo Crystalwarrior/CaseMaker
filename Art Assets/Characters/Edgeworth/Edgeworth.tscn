@@ -91,10 +91,10 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fa7vb"]
 _data = {
 "RESET": SubResource("Animation_aolwg"),
-"hmm(a)": SubResource("Animation_drd6g"),
-"hmm(b)": SubResource("Animation_jlg4h"),
-"normal(a)": SubResource("Animation_j3nxe"),
-"normal(b)": SubResource("Animation_0ip1k")
+"hmm_idle": SubResource("Animation_drd6g"),
+"hmm_talk": SubResource("Animation_jlg4h"),
+"normal_idle": SubResource("Animation_j3nxe"),
+"normal_talk": SubResource("Animation_0ip1k")
 }
 
 [node name="Edgeworth" type="Node2D"]
@@ -110,7 +110,7 @@ region_rect = Rect2(33, 21, 128, 182)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
-autoplay = "hmm(a)"
 libraries = {
 "": SubResource("AnimationLibrary_fa7vb")
 }
+autoplay = "hmm_idle"

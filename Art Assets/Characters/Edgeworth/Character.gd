@@ -8,8 +8,8 @@ var is_talking:bool = false
 
 func set_animation(animation_name:String):
 	if(animation_name != ""):
-		idle = animation_name + "(a)"
-		talking = animation_name + "(b)"
+		idle = animation_name + "_idle"
+		talking = animation_name + "_talk"
 		
 		if(is_talking):
 			talk()
