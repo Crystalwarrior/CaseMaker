@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://rihiiw6jw7jy"]
+
+[ext_resource type="Texture2D" uid="uid://c780y5bmww6t5" path="res://assets/ui/aa-button-pressed.png" id="1_moiot"]
+
+[resource]
+texture = ExtResource("1_moiot")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0

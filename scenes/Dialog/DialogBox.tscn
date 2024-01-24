@@ -43,5 +43,3 @@ fit_content = true
 scroll_active = false
 scroll_following = true
 visible_characters_behavior = 1
-
-[editable path="DialogContainer"]
