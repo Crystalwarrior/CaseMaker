@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://kv6pxmfyclh1"]
+[gd_scene load_steps=25 format=3 uid="uid://kv6pxmfyclh1"]
 
 [ext_resource type="Script" path="res://TestScene.gd" id="1_j7ny0"]
 [ext_resource type="PackedScene" uid="uid://o014t0ve6be8" path="res://scenes/ScreenScenes/UpperScreen/ConfrontationScreen.tscn" id="2_m22fg"]
@@ -8,14 +8,15 @@
 [ext_resource type="AudioStream" uid="uid://bmqv5uwjq5bsu" path="res://assets/sounds/dink.wav" id="3_kjug2"]
 [ext_resource type="Texture2D" uid="uid://b8tcjpep1oehl" path="res://assets/ui/chat_arrow.png" id="3_kt5s3"]
 [ext_resource type="Texture2D" uid="uid://byq6bt4gditfg" path="res://assets/ui/aa-backdrop.png" id="7_4jnjv"]
-[ext_resource type="StyleBox" uid="uid://eybfpl53y1yq" path="res://assets/ui/themes/stylebox/aa/aa_button_normal.tres" id="7_bb1rf"]
 [ext_resource type="Script" path="res://scenes/NextButton.gd" id="8_0oq68"]
+[ext_resource type="StyleBox" uid="uid://l8w1f1bjbfhv" path="res://assets/ui/themes/stylebox/aa/aa_button2_normal.tres" id="8_5wr7w"]
 [ext_resource type="Texture2D" uid="uid://tp78e24s2uf4" path="res://assets/ui/big_arrow.png" id="8_q2yrr"]
-[ext_resource type="StyleBox" uid="uid://rihiiw6jw7jy" path="res://assets/ui/themes/stylebox/aa/aa_button_pressed.tres" id="8_r8vxh"]
+[ext_resource type="StyleBox" uid="uid://cstrmyv4s56bj" path="res://assets/ui/themes/stylebox/aa/aa_button2_pressed.tres" id="9_cur6n"]
 [ext_resource type="Texture2D" uid="uid://l2x5aouu1du0" path="res://assets/ui/border.png" id="10_1h2bf"]
 [ext_resource type="Texture2D" uid="uid://b5prit6hnemaj" path="res://assets/ui/phoenix_overlay.png" id="11_xitg4"]
 [ext_resource type="AudioStream" uid="uid://cb485p8r1fh2e" path="res://assets/music/bgm008.ogg" id="13_ssudg"]
 [ext_resource type="Texture2D" uid="uid://0e6jpnupfv5n" path="res://assets/ui/scanlines.png" id="14_5pxxa"]
+[ext_resource type="Theme" uid="uid://b5nk0n700x2ge" path="res://assets/ui/themes/aa.tres" id="14_yadad"]
 
 [sub_resource type="Animation" id="Animation_wxv1m"]
 resource_name = "next"
@@ -65,6 +66,8 @@ _data = {
 "next": SubResource("Animation_50b6q")
 }
 
+[sub_resource type="Theme" id="Theme_c5dk2"]
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7kejb"]
 blend_mode = 1
 
@@ -113,39 +116,45 @@ libraries = {
 }
 autoplay = "next"
 
-[node name="AaiBackdrop" type="TextureRect" parent="."]
-visible = false
+[node name="BottomScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 offset_top = 192.0
 offset_right = 256.0
 offset_bottom = 384.0
+
+[node name="AaiBackdrop" type="TextureRect" parent="BottomScreen"]
+visible = false
+offset_right = 256.0
+offset_bottom = 192.0
 texture = ExtResource("2_xtrnu")
 
-[node name="AaBackgdrop" type="TextureRect" parent="."]
-offset_top = 192.0
+[node name="AaBackgdrop" type="TextureRect" parent="BottomScreen"]
 offset_right = 256.0
-offset_bottom = 384.0
+offset_bottom = 192.0
 texture = ExtResource("7_4jnjv")
 
-[node name="NextButton" type="Button" parent="."]
+[node name="NextButton" type="Button" parent="BottomScreen"]
 unique_name_in_owner = true
+visible = false
 modulate = Color(1.502, 1.502, 1.502, 0.784)
 offset_left = 17.0
-offset_top = 233.0
+offset_top = 41.0
 offset_right = 241.0
-offset_bottom = 345.0
+offset_bottom = 153.0
 pivot_offset = Vector2(112, 56)
-theme_override_styles/normal = ExtResource("7_bb1rf")
-theme_override_styles/hover = ExtResource("7_bb1rf")
-theme_override_styles/pressed = ExtResource("8_r8vxh")
-theme_override_styles/disabled = ExtResource("7_bb1rf")
+theme_override_styles/normal = ExtResource("8_5wr7w")
+theme_override_styles/hover = ExtResource("8_5wr7w")
+theme_override_styles/pressed = ExtResource("9_cur6n")
+theme_override_styles/disabled = ExtResource("8_5wr7w")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2mee1")
 script = ExtResource("8_0oq68")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NextButton"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BottomScreen/NextButton"]
 stream = ExtResource("3_kjug2")
 bus = &"ui"
 
-[node name="PhoenixOverlay" type="TextureRect" parent="NextButton"]
+[node name="PhoenixOverlay" type="TextureRect" parent="BottomScreen/NextButton"]
 modulate = Color(1, 1, 1, 0.376471)
 layout_mode = 0
 offset_left = 2.0
@@ -155,7 +164,7 @@ offset_bottom = 110.0
 mouse_filter = 2
 texture = ExtResource("11_xitg4")
 
-[node name="BigArrowAnchor" type="Control" parent="NextButton"]
+[node name="BigArrowAnchor" type="Control" parent="BottomScreen/NextButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -165,37 +174,73 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BigArrow" type="Sprite2D" parent="NextButton/BigArrowAnchor"]
+[node name="BigArrow" type="Sprite2D" parent="BottomScreen/NextButton/BigArrowAnchor"]
 unique_name_in_owner = true
 position = Vector2(-6, 0)
 texture = ExtResource("8_q2yrr")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="NextButton/BigArrowAnchor/BigArrow"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BottomScreen/NextButton/BigArrowAnchor/BigArrow"]
 libraries = {
 "": SubResource("AnimationLibrary_80vhx")
 }
 autoplay = "next"
 
-[node name="Scanlines" type="TextureRect" parent="."]
+[node name="ChoiceContainer" type="ScrollContainer" parent="BottomScreen"]
+clip_contents = false
+layout_mode = 2
+anchor_top = -1.0
+anchor_bottom = -1.0
+offset_left = 15.0
+offset_top = 239.0
+offset_right = 248.0
+offset_bottom = 354.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BottomScreen/ChoiceContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("14_yadad")
+theme_override_constants/separation = 17
+
+[node name="Button" type="Button" parent="BottomScreen/ChoiceContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c5dk2")
+text = "Mia Fey"
+
+[node name="Button2" type="Button" parent="BottomScreen/ChoiceContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c5dk2")
+text = "Cinder Block"
+
+[node name="Button3" type="Button" parent="BottomScreen/ChoiceContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c5dk2")
+text = "Cindy Stone"
+
+[node name="Button4" type="Button" parent="BottomScreen/ChoiceContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c5dk2")
+text = "Boobs McGee"
+
+[node name="Scanlines" type="TextureRect" parent="BottomScreen"]
 modulate = Color(1, 1, 1, 0.247059)
 material = SubResource("CanvasItemMaterial_7kejb")
-offset_top = 192.0
 offset_right = 256.0
-offset_bottom = 384.0
+offset_bottom = 192.0
 mouse_filter = 2
 texture = ExtResource("14_5pxxa")
 
-[node name="LowerBorder" type="TextureRect" parent="."]
-offset_top = 368.0
+[node name="LowerBorder" type="TextureRect" parent="BottomScreen"]
+offset_top = 176.0
 offset_right = 256.0
-offset_bottom = 384.0
+offset_bottom = 192.0
 texture = ExtResource("10_1h2bf")
 stretch_mode = 1
 
-[node name="UpperBorder" type="TextureRect" parent="."]
-offset_top = 192.0
+[node name="UpperBorder" type="TextureRect" parent="BottomScreen"]
 offset_right = 256.0
-offset_bottom = 208.0
+offset_bottom = 16.0
 texture = ExtResource("10_1h2bf")
 stretch_mode = 1
 flip_v = true
@@ -208,7 +253,7 @@ bus = &"music"
 [connection signal="collection_started" from="CommandProcessor" to="." method="_on_command_processor_collection_started"]
 [connection signal="command_finished" from="CommandProcessor" to="." method="_on_command_processor_command_finished"]
 [connection signal="command_started" from="CommandProcessor" to="." method="_on_command_processor_command_started"]
-[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="BottomScreen/NextButton" to="." method="_on_next_button_pressed"]
 
 [editable path="UpperScreen"]
 [editable path="UpperScreen/DialogBox"]
