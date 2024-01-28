@@ -1,11 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://o014t0ve6be8"]
+[gd_scene load_steps=11 format=3 uid="uid://o014t0ve6be8"]
 
 [ext_resource type="Script" path="res://scenes/ScreenScenes/UpperScreen/ConfrontationScreen.gd" id="1_6kxfj"]
 [ext_resource type="PackedScene" uid="uid://c2aekiuvsvmxj" path="res://scenes/Dialog/DialogBox.tscn" id="3_h7lsh"]
 [ext_resource type="Texture2D" uid="uid://bdg3mp3xp75mj" path="res://assets/backgrounds/courtroomHall.png" id="4_ccitq"]
 [ext_resource type="Script" path="res://scenes/ScreenScenes/UpperScreen/Shake2D.gd" id="4_p1b8u"]
 [ext_resource type="PackedScene" uid="uid://dpsblssy6fu6b" path="res://Art Assets/Characters/Edgeworth/Edgeworth.tscn" id="5_j5q0d"]
+[ext_resource type="Script" path="res://scenes/ScreenScenes/UpperScreen/ColorFade.gd" id="6_8sm7n"]
 [ext_resource type="Texture2D" uid="uid://dpkw2gp7ntdog" path="res://Art Assets/Characters/mia_test.png" id="7_sbdny"]
+
+[sub_resource type="Animation" id="Animation_fcfn3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ypxr2"]
 resource_name = "fade"
@@ -21,21 +37,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_fcfn3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3vube"]
@@ -79,5 +80,16 @@ libraries = {
 "": SubResource("AnimationLibrary_3vube")
 }
 
+[node name="ColorFade" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("6_8sm7n")
+
 [node name="DialogBox" parent="." instance=ExtResource("3_h7lsh")]
 unique_name_in_owner = true
+visible = false

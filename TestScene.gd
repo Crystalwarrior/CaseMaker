@@ -24,7 +24,7 @@ func _ready():
 
 
 func next():
-	get_window().gui_release_focus()
+	#get_window().gui_release_focus()
 	# TODO: implement skipping
 	if not finished:
 		if not command_processor.main_collection:
@@ -47,8 +47,7 @@ func create_scene_command(nametag, animation, text, showname, wait_for_input = t
 
 func set_waiting_on_input(tog: bool):
 	waiting_on_input = tog
-
-	next_button.disabled = not waiting_on_input
+	next_button.disable(not waiting_on_input)
 	chat_arrow.visible = waiting_on_input
 	big_arrow.visible = waiting_on_input
 
@@ -57,6 +56,10 @@ func dialog(showname: String = "", text: String = "", additive: bool = false, le
 	dialog_box.current_spd = letter_delay
 	dialog_box.display_text(text, showname)
 	#TODO: implement additive text boxes
+
+
+func set_dialog_visible(toggle: bool = true):
+	dialog_box.set_visible(toggle)
 
 
 func _on_flash():
@@ -80,9 +83,9 @@ func _on_command_processor_command_finished(command):
 	set_waiting_on_input(command_is_dialog)
 
 
-func _on_next_button_pressed():
-	next()
-
-
 func _on_text_shown():
 	dialog_finished.emit()
+
+
+func _on_next_button_down():
+	next()
