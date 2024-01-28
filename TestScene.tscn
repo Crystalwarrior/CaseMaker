@@ -159,16 +159,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_r33mk")
 keep_pressed_outside = true
 script = ExtResource("8_0oq68")
 
-[node name="PhoenixOverlay" type="TextureRect" parent="BottomScreen/NextButton"]
-modulate = Color(1, 1, 1, 0.298039)
-layout_mode = 0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 221.0
-offset_bottom = 110.0
-mouse_filter = 2
-texture = ExtResource("11_xitg4")
-
 [node name="Panel" type="Panel" parent="BottomScreen/NextButton"]
 unique_name_in_owner = true
 clip_contents = true
@@ -181,6 +171,16 @@ grow_vertical = 2
 pivot_offset = Vector2(112, 56)
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("8_5wr7w")
+
+[node name="PhoenixOverlay" type="TextureRect" parent="BottomScreen/NextButton/Panel"]
+modulate = Color(1, 1, 1, 0.298039)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 221.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("11_xitg4")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BottomScreen/NextButton"]
 stream = ExtResource("3_kjug2")
