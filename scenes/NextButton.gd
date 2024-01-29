@@ -47,5 +47,5 @@ func play_animation():
 	interrupt_animation()
 	panel.add_theme_stylebox_override("panel", panel_pressed)
 	animation_tween = create_tween()
-	animation_tween.tween_property(panel, "scale", Vector2(0.9, 0.9), 0.075)
+	animation_tween.tween_property(panel, "scale", Vector2(0.95, 0.95), 0.075)
 	animation_tween.finished.connect(_animation_finished)
