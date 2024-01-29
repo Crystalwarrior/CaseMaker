@@ -6,6 +6,7 @@ extends Control
 @onready var text_label: RichTextLabel = %DialogTextLabel
 @onready var showname_margin: Control = %ShownameMargin
 @onready var showname_label: Label = %ShownameText
+@onready var chat_arrow: TextureRect = %ChatArrow
 var command_processor:TextCommandProcessor
 var text_displayed: bool = false
 var shake_effect: ShakeEffect

@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dl303liy0wd0s"
-path="res://.godot/imported/sans.wav-15aeec4366b170eb071098585643074f.sample"
+uid="uid://cb3vkei87k85x"
+path="res://.godot/imported/bleep.wav-9a4afe3ab6f152add08735ca7f2a8305.sample"
 
 [deps]
 
-source_file="res://assets/sounds/sans.wav"
-dest_files=["res://.godot/imported/sans.wav-15aeec4366b170eb071098585643074f.sample"]
+source_file="res://assets/sounds/ui/bleep.wav"
+dest_files=["res://.godot/imported/bleep.wav-9a4afe3ab6f152add08735ca7f2a8305.sample"]
 
 [params]
 

@@ -48,9 +48,8 @@ _data = {
 [node name="ConfrontationScreen" type="Control"]
 custom_minimum_size = Vector2(256, 192)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 256.0
-offset_bottom = 192.0
+anchor_right = 1.0
+anchor_bottom = 0.5
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_6kxfj")

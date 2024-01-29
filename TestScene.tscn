@@ -1,95 +1,20 @@
-[gd_scene load_steps=39 format=3 uid="uid://kv6pxmfyclh1"]
+[gd_scene load_steps=8 format=3 uid="uid://kv6pxmfyclh1"]
 
 [ext_resource type="Script" path="res://TestScene.gd" id="1_j7ny0"]
 [ext_resource type="PackedScene" uid="uid://o014t0ve6be8" path="res://scenes/ScreenScenes/UpperScreen/ConfrontationScreen.tscn" id="2_m22fg"]
 [ext_resource type="Script" path="res://addons/blockflow/command_processor.gd" id="2_rnwqy"]
-[ext_resource type="Texture2D" uid="uid://53q1jwxccl18" path="res://assets/ui/AAIBackdrop.png" id="2_xtrnu"]
 [ext_resource type="Resource" uid="uid://b2uvbyr3l6a84" path="res://timelines/aa_case1/lobby.tres" id="3_ehm5p"]
-[ext_resource type="AudioStream" uid="uid://bmqv5uwjq5bsu" path="res://assets/sounds/dink.wav" id="3_kjug2"]
-[ext_resource type="Texture2D" uid="uid://b8tcjpep1oehl" path="res://assets/ui/chat_arrow.png" id="3_kt5s3"]
-[ext_resource type="Texture2D" uid="uid://byq6bt4gditfg" path="res://assets/ui/aa-backdrop.png" id="7_4jnjv"]
-[ext_resource type="Script" path="res://scenes/NextButton.gd" id="8_0oq68"]
-[ext_resource type="StyleBox" uid="uid://l8w1f1bjbfhv" path="res://assets/ui/themes/stylebox/aa/aa_button2_normal.tres" id="8_5wr7w"]
-[ext_resource type="Texture2D" uid="uid://tp78e24s2uf4" path="res://assets/ui/big_arrow.png" id="8_q2yrr"]
-[ext_resource type="Texture2D" uid="uid://qekn7rvrt6mf" path="res://assets/ui/border.png" id="10_1h2bf"]
-[ext_resource type="Texture2D" uid="uid://b5prit6hnemaj" path="res://assets/ui/phoenix_overlay.png" id="11_xitg4"]
+[ext_resource type="PackedScene" uid="uid://dk35s1lwj1pmj" path="res://scenes/ScreenScenes/bottom_screen.tscn" id="4_0dqr4"]
 [ext_resource type="AudioStream" uid="uid://cb485p8r1fh2e" path="res://assets/music/bgm008.ogg" id="13_ssudg"]
-[ext_resource type="Texture2D" uid="uid://0e6jpnupfv5n" path="res://assets/ui/scanlines.png" id="14_5pxxa"]
-[ext_resource type="Texture2D" uid="uid://64xnmk3y8qev" path="res://assets/ui/evidence_slip.png" id="14_dsmej"]
-[ext_resource type="Texture2D" uid="uid://bx3ii28ifdmnn" path="res://assets/ui/profiles_slip.png" id="14_vc28a"]
-[ext_resource type="Theme" uid="uid://b5nk0n700x2ge" path="res://assets/ui/themes/aa.tres" id="14_yadad"]
-[ext_resource type="Texture2D" uid="uid://xq68l60srdk3" path="res://assets/ui/item_border.png" id="15_io1th"]
-[ext_resource type="Texture2D" uid="uid://bwsk2r0suklpy" path="res://assets/ui/button_backdrop.png" id="16_o0nlp"]
-[ext_resource type="Texture2D" uid="uid://60lfnpiygpij" path="res://assets/ui/courtrecord_button.png" id="17_07cuv"]
-[ext_resource type="Texture2D" uid="uid://fjmlhlh63byp" path="res://assets/ui/courtrecord_button_pressed.png" id="18_vp6jf"]
-[ext_resource type="Texture2D" uid="uid://cpufi0vdvk3wk" path="res://assets/ui/evidence_button.png" id="19_6nroy"]
-[ext_resource type="Texture2D" uid="uid://b3vhfde0byt0a" path="res://assets/ui/evidence_button_pressed.png" id="20_huqcc"]
-[ext_resource type="Texture2D" uid="uid://cq4puwqd644yi" path="res://assets/ui/profiles_button.png" id="22_eeh3f"]
-[ext_resource type="Texture2D" uid="uid://5mauias5djw5" path="res://assets/ui/profiles_button_pressed.png" id="23_taus1"]
 [ext_resource type="Texture2D" uid="uid://dl3iwbxfn2fm1" path="res://reference/DeSmuME_0.9.13_x64_htMjweMyh3.png" id="27_u2u0t"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_14rk6"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_87owq"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8u4dw"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5275j"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r33mk"]
-
-[sub_resource type="Animation" id="Animation_50b6q"]
-resource_name = "next"
-length = 0.366668
-loop_mode = 1
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-6.0, 6.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_80vhx"]
-_data = {
-"next": SubResource("Animation_50b6q")
-}
-
-[sub_resource type="Theme" id="Theme_c5dk2"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7kejb"]
-blend_mode = 1
-
-[sub_resource type="Animation" id="Animation_wxv1m"]
-resource_name = "next"
-length = 0.366668
-loop_mode = 1
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7vi7h"]
-_data = {
-"next": SubResource("Animation_wxv1m")
-}
-
-[node name="TestScene" type="Node2D"]
+[node name="TestScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_j7ny0")
 
 [node name="CommandProcessor" type="Node" parent="."]
@@ -98,249 +23,16 @@ script = ExtResource("2_rnwqy")
 initial_collection = ExtResource("3_ehm5p")
 command_node_fallback_path = NodePath("..")
 
-[node name="BottomScreen" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_top = 192.0
-offset_right = 256.0
-offset_bottom = 384.0
-
-[node name="AaiBackdrop" type="TextureRect" parent="BottomScreen"]
-visible = false
-layout_mode = 0
-offset_right = 256.0
-offset_bottom = 192.0
-texture = ExtResource("2_xtrnu")
-
-[node name="AaBackgdrop" type="TextureRect" parent="BottomScreen"]
-layout_mode = 0
-offset_right = 256.0
-offset_bottom = 192.0
-texture = ExtResource("7_4jnjv")
-
-[node name="NextButton" type="Button" parent="BottomScreen"]
+[node name="BottomScreen" parent="." instance=ExtResource("4_0dqr4")]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.776471)
-layout_mode = 0
-offset_left = 16.0
-offset_top = 40.0
-offset_right = 240.0
-offset_bottom = 152.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_14rk6")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_87owq")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_8u4dw")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_5275j")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_r33mk")
-keep_pressed_outside = true
-script = ExtResource("8_0oq68")
-
-[node name="Panel" type="Panel" parent="BottomScreen/NextButton"]
-unique_name_in_owner = true
-clip_contents = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(112, 56)
-mouse_filter = 2
-theme_override_styles/panel = ExtResource("8_5wr7w")
-
-[node name="PhoenixOverlay" type="TextureRect" parent="BottomScreen/NextButton/Panel"]
-modulate = Color(1, 1, 1, 0.298039)
-layout_mode = 0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 221.0
-offset_bottom = 110.0
-mouse_filter = 2
-texture = ExtResource("11_xitg4")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BottomScreen/NextButton"]
-stream = ExtResource("3_kjug2")
-bus = &"ui"
-
-[node name="BigArrowAnchor" type="Control" parent="BottomScreen/NextButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="BigArrow" type="Sprite2D" parent="BottomScreen/NextButton/BigArrowAnchor"]
-unique_name_in_owner = true
-position = Vector2(-6, 0)
-texture = ExtResource("8_q2yrr")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BottomScreen/NextButton/BigArrowAnchor/BigArrow"]
-libraries = {
-"": SubResource("AnimationLibrary_80vhx")
-}
-autoplay = "next"
-
-[node name="ChoiceContainer" type="ScrollContainer" parent="BottomScreen"]
-visible = false
-clip_contents = false
-layout_mode = 2
-anchor_top = -1.0
-anchor_bottom = -1.0
-offset_left = 15.0
-offset_top = 239.0
-offset_right = 248.0
-offset_bottom = 354.0
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="BottomScreen/ChoiceContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("14_yadad")
-theme_override_constants/separation = 17
-
-[node name="Button" type="Button" parent="BottomScreen/ChoiceContainer/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_c5dk2")
-text = "Mia Fey"
-
-[node name="Button2" type="Button" parent="BottomScreen/ChoiceContainer/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_c5dk2")
-text = "Cinder Block"
-
-[node name="Button3" type="Button" parent="BottomScreen/ChoiceContainer/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_c5dk2")
-text = "Cindy Stone"
-
-[node name="Button4" type="Button" parent="BottomScreen/ChoiceContainer/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_c5dk2")
-text = "Boobs McGee"
-
-[node name="Scanlines" type="TextureRect" parent="BottomScreen"]
-modulate = Color(1, 1, 1, 0.247059)
-material = SubResource("CanvasItemMaterial_7kejb")
-layout_mode = 0
-offset_right = 256.0
-offset_bottom = 192.0
-mouse_filter = 2
-texture = ExtResource("14_5pxxa")
-
-[node name="EvidenceSlip" type="TextureRect" parent="BottomScreen"]
-visible = false
-layout_mode = 0
-offset_right = 256.0
-offset_bottom = 32.0
-texture = ExtResource("14_dsmej")
-
-[node name="ProfilesSlip" type="TextureRect" parent="BottomScreen"]
-visible = false
-layout_mode = 0
-offset_right = 256.0
-offset_bottom = 32.0
-texture = ExtResource("14_vc28a")
-
-[node name="LowerBorder" type="TextureRect" parent="BottomScreen"]
-layout_mode = 0
-offset_top = 176.0
-offset_right = 256.0
-offset_bottom = 192.0
-texture = ExtResource("10_1h2bf")
-stretch_mode = 1
-flip_v = true
-
-[node name="UpperBorder" type="TextureRect" parent="BottomScreen"]
-layout_mode = 0
-offset_right = 256.0
-offset_bottom = 18.0
-texture = ExtResource("10_1h2bf")
-stretch_mode = 1
-
-[node name="ItemBorder" type="TextureRect" parent="BottomScreen"]
-visible = false
-layout_mode = 0
-offset_right = 256.0
-offset_bottom = 18.0
-texture = ExtResource("15_io1th")
-
-[node name="ButtonBackdrop" type="NinePatchRect" parent="BottomScreen"]
-offset_left = 177.0
-offset_right = 269.0
-offset_bottom = 32.0
-texture = ExtResource("16_o0nlp")
-patch_margin_left = 14
-patch_margin_right = 14
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-
-[node name="CourtRecordButton" type="TextureButton" parent="BottomScreen"]
-layout_mode = 0
-offset_left = 177.0
-offset_right = 256.0
-offset_bottom = 30.0
-toggle_mode = true
-texture_normal = ExtResource("17_07cuv")
-texture_pressed = ExtResource("18_vp6jf")
-
-[node name="EvidenceButton" type="TextureButton" parent="BottomScreen"]
-visible = false
-layout_mode = 0
-offset_left = 177.0
-offset_right = 256.0
-offset_bottom = 30.0
-toggle_mode = true
-texture_normal = ExtResource("19_6nroy")
-texture_pressed = ExtResource("20_huqcc")
-
-[node name="ProfilesButton" type="TextureButton" parent="BottomScreen"]
-visible = false
-layout_mode = 0
-offset_left = 177.0
-offset_right = 256.0
-offset_bottom = 30.0
-toggle_mode = true
-texture_normal = ExtResource("22_eeh3f")
-texture_pressed = ExtResource("23_taus1")
+anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
 
 [node name="UpperScreen" parent="." instance=ExtResource("2_m22fg")]
 unique_name_in_owner = true
-
-[node name="ChatArrowAnchor" type="Control" parent="UpperScreen/DialogBox/DialogContainer" index="3"]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -15.0
-offset_top = -16.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="ChatArrow" type="TextureRect" parent="UpperScreen/DialogBox/DialogContainer/ChatArrowAnchor"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -9.0
-offset_top = -16.0
-offset_bottom = -7.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("3_kt5s3")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UpperScreen/DialogBox/DialogContainer/ChatArrowAnchor/ChatArrow"]
-libraries = {
-"": SubResource("AnimationLibrary_7vi7h")
-}
-autoplay = "next"
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_ssudg")
@@ -348,6 +40,7 @@ bus = &"music"
 
 [node name="0127-PhoenixWright-AceAttorney(u)(legacy)21289" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_right = 256.0
 offset_bottom = 384.0
 texture = ExtResource("27_u2u0t")
@@ -356,8 +49,3 @@ texture = ExtResource("27_u2u0t")
 [connection signal="collection_started" from="CommandProcessor" to="." method="_on_command_processor_collection_started"]
 [connection signal="command_finished" from="CommandProcessor" to="." method="_on_command_processor_command_finished"]
 [connection signal="command_started" from="CommandProcessor" to="." method="_on_command_processor_command_started"]
-[connection signal="button_down" from="BottomScreen/NextButton" to="." method="_on_next_button_down"]
-
-[editable path="UpperScreen"]
-[editable path="UpperScreen/DialogBox"]
-[editable path="UpperScreen/DialogBox/DialogContainer"]

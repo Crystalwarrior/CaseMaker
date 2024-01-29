@@ -1,0 +1,9 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://bk5faw63xmoyp"]
+
+[ext_resource type="FontFile" uid="uid://bpmqn2kw4vgn4" path="res://assets/fonts/igiari-cyrillic-plus.ttf" id="1_0yrtf"]
+
+[resource]
+base_font = ExtResource("1_0yrtf")
+spacing_glyph = -1
+spacing_space = -2
+spacing_top = -2

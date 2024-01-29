@@ -1,7 +1,6 @@
-extends Node2D
-@onready var next_button = get_node("%NextButton")
-@onready var chat_arrow = get_node("%ChatArrow")
-@onready var big_arrow = get_node("%BigArrow")
+extends Control
+@onready var bottom_screen = get_node("%BottomScreen")
+@onready var next_button = bottom_screen.get_node("%NextButton")
 @onready var flash = preload("res://scenes/ScreenScenes/UpperScreen/Effects/FlashEffect.tscn")
 
 @onready var upper_screen = get_node("%UpperScreen")
@@ -21,6 +20,8 @@ func _ready():
 	scene_manager = upper_screen.create_scene_manager()
 	dialog_box = scene_manager.get_dialog_box()
 	dialog_box.text_shown.connect(_on_text_shown)
+	
+	next_button.connect("button_down", _on_next_button_down)
 
 
 func next():
@@ -48,8 +49,7 @@ func create_scene_command(nametag, animation, text, showname, wait_for_input = t
 func set_waiting_on_input(tog: bool):
 	waiting_on_input = tog
 	next_button.disable(not waiting_on_input)
-	chat_arrow.visible = waiting_on_input
-	big_arrow.visible = waiting_on_input
+	upper_screen.set_chat_arrow_visible(waiting_on_input)
 
 
 func dialog(showname: String = "", text: String = "", additive: bool = false, letter_delay: float = 0.03) -> void:

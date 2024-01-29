@@ -3,15 +3,16 @@ extends Control
 @onready var blip_player: AudioStreamPlayer = get_node("%BlipPlayer")
 @onready var text_timer: Timer = get_node("%TimerNode")
 @onready var dialog_container: Control = get_node("%DialogContainer")
+@onready var chat_arrow: TextureRect = dialog_container.get_node("%ChatArrow")
 
 signal text_shown()
 signal unpause()
 
 const PAUSE_AMT = 1.0
-const BLIPMALE_STREAM: AudioStream = preload("res://assets/sounds/blipmale.wav")
-const BLIPFEMALE_STREAM: AudioStream = preload("res://assets/sounds/blipfemale.wav")
-const BLIPTYPEWRITER_STREAM: AudioStream = preload("res://assets/sounds/typewriter.wav")
-const BLIPSANS_STREAM: AudioStream = preload("res://assets/sounds/sans.wav")
+const BLIPMALE_STREAM: AudioStream = preload("res://assets/sounds/blips/male.wav")
+const BLIPFEMALE_STREAM: AudioStream = preload("res://assets/sounds/blips/female.wav")
+const BLIPTYPEWRITER_STREAM: AudioStream = preload("res://assets/sounds/blips/typewriter.wav")
+const BLIPSANS_STREAM: AudioStream = preload("res://assets/sounds/blips/sans.wav")
 
 # Text Speed constants
 # 1 letter every 5 frames

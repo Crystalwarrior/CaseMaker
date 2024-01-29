@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bmqv5uwjq5bsu"
-path="res://.godot/imported/dink.wav-cf6e3ff37794ea36f338a40b2ef3c621.sample"
+uid="uid://coi23da85koq4"
+path="res://.godot/imported/male.wav-ec2303e7b98cab7eb40b5459aab855b3.sample"
 
 [deps]
 
-source_file="res://assets/sounds/dink.wav"
-dest_files=["res://.godot/imported/dink.wav-cf6e3ff37794ea36f338a40b2ef3c621.sample"]
+source_file="res://assets/sounds/blips/male.wav"
+dest_files=["res://.godot/imported/male.wav-ec2303e7b98cab7eb40b5459aab855b3.sample"]
 
 [params]
 

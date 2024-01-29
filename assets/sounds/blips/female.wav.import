@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cv3c7l65x530u"
-path="res://.godot/imported/blipfemale.wav-7021fed71797cc55956c7ab2ed418978.sample"
+path="res://.godot/imported/female.wav-c7bc4d8f36a136c2f09788ccc021062a.sample"
 
 [deps]
 
-source_file="res://assets/sounds/blipfemale.wav"
-dest_files=["res://.godot/imported/blipfemale.wav-7021fed71797cc55956c7ab2ed418978.sample"]
+source_file="res://assets/sounds/blips/female.wav"
+dest_files=["res://.godot/imported/female.wav-c7bc4d8f36a136c2f09788ccc021062a.sample"]
 
 [params]
 

@@ -2,6 +2,7 @@ extends Button
 
 @onready var dink_player = $AudioStreamPlayer
 @onready var panel = $Panel
+@onready var big_arrow = %BigArrow
 
 var panel_normal = preload("res://assets/ui/themes/stylebox/aa/aa_button2_normal.tres")
 var panel_pressed = preload("res://assets/ui/themes/stylebox/aa/aa_button2_pressed.tres")
@@ -31,6 +32,7 @@ func _animation_finished():
 
 func disable(toggle: bool = true):
 	disabled = toggle
+	big_arrow.visible = not disabled
 
 
 func interrupt_animation():

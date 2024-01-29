@@ -1,10 +1,77 @@
-[gd_scene load_steps=6 format=3 uid="uid://damwjajlvml1h"]
+[gd_scene load_steps=11 format=3 uid="uid://damwjajlvml1h"]
 
 [ext_resource type="Script" path="res://scenes/Dialog/DialogText.gd" id="1_q40jj"]
 [ext_resource type="Texture2D" uid="uid://dcojgc1arpe5r" path="res://assets/ui/dialog.png" id="3_wixsg"]
 [ext_resource type="FontFile" uid="uid://cqcf0wo4uxqvi" path="res://assets/fonts/Ace-Name.ttf" id="4_ff7wu"]
 [ext_resource type="Texture2D" uid="uid://bylfwn5tcu0hs" path="res://assets/ui/showname.png" id="4_pphs8"]
 [ext_resource type="FontFile" uid="uid://bpmqn2kw4vgn4" path="res://assets/fonts/igiari-cyrillic-plus.ttf" id="5_uya2w"]
+[ext_resource type="Texture2D" uid="uid://b8tcjpep1oehl" path="res://assets/ui/chat_arrow.png" id="6_wwy5q"]
+[ext_resource type="Texture2D" uid="uid://c5048fl1jox6" path="res://assets/ui/chat_auto.png" id="7_wh8kl"]
+
+[sub_resource type="Animation" id="Animation_wxv1m"]
+resource_name = "next"
+length = 0.366668
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_wwy5q")]
+}
+
+[sub_resource type="Animation" id="Animation_w84s1"]
+resource_name = "auto"
+length = 0.001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_wh8kl")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7vi7h"]
+_data = {
+"auto": SubResource("Animation_w84s1"),
+"next": SubResource("Animation_wxv1m")
+}
 
 [node name="DialogContainer" type="Control"]
 layout_mode = 3
@@ -15,14 +82,13 @@ script = ExtResource("1_q40jj")
 metadata/_edit_group_ = true
 
 [node name="DialogGroup" type="CanvasGroup" parent="."]
-self_modulate = Color(1, 1, 1, 0.501961)
+self_modulate = Color(1, 1, 1, 0.627451)
 
 [node name="DialogBoxContainer" type="Control" parent="DialogGroup"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 135.0
 offset_right = 256.0
-offset_bottom = 191.0
+offset_bottom = 56.0
 
 [node name="DialogBox" type="NinePatchRect" parent="DialogGroup/DialogBoxContainer"]
 unique_name_in_owner = true
@@ -30,8 +96,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -135.0
-offset_bottom = -134.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_wixsg")
@@ -45,9 +110,9 @@ axis_stretch_vertical = 1
 [node name="ShownameBox" type="NinePatchRect" parent="DialogGroup/DialogBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 1
-offset_top = -145.0
-offset_right = 40.0
-offset_bottom = -132.0
+offset_top = -10.0
+offset_right = 42.0
+offset_bottom = 3.0
 texture = ExtResource("4_pphs8")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -60,18 +125,18 @@ axis_stretch_vertical = 1
 unique_name_in_owner = true
 layout_mode = 1
 offset_top = -10.0
-offset_right = 40.0
+offset_right = 42.0
 offset_bottom = 3.0
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_right = 2
 
 [node name="ShownameText" type="Label" parent="ShownameMargin"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(24, 13)
+custom_minimum_size = Vector2(37, 13)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_ff7wu")
 theme_override_font_sizes/font_size = 8
-text = "DEBUG"
+text = "Phoenix"
 horizontal_alignment = 1
 
 [node name="DialogText" type="MarginContainer" parent="."]
@@ -95,3 +160,37 @@ text = "[color=6db6f7](DEBUG)"
 scroll_active = false
 scroll_following = true
 visible_characters_behavior = 1
+
+[node name="ChatArrowAnchor" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ChatArrow" type="TextureRect" parent="ChatArrowAnchor"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -16.0
+offset_right = -6.0
+offset_bottom = -7.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("6_wwy5q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ChatArrowAnchor/ChatArrow"]
+libraries = {
+"": SubResource("AnimationLibrary_7vi7h")
+}
+autoplay = "next"

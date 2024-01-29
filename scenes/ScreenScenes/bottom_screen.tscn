@@ -1,0 +1,891 @@
+[gd_scene load_steps=46 format=3 uid="uid://dk35s1lwj1pmj"]
+
+[ext_resource type="Script" path="res://scenes/ScreenScenes/bottom_screen.gd" id="1_jnl3y"]
+[ext_resource type="Texture2D" uid="uid://53q1jwxccl18" path="res://assets/ui/AAIBackdrop.png" id="1_p337t"]
+[ext_resource type="Texture2D" uid="uid://byq6bt4gditfg" path="res://assets/ui/aa-backdrop.png" id="2_j221b"]
+[ext_resource type="Script" path="res://scenes/NextButton.gd" id="3_8keps"]
+[ext_resource type="StyleBox" uid="uid://l8w1f1bjbfhv" path="res://assets/ui/themes/stylebox/aa/aa_button2_normal.tres" id="4_rdshr"]
+[ext_resource type="Texture2D" uid="uid://b5prit6hnemaj" path="res://assets/ui/phoenix_overlay.png" id="5_opaqf"]
+[ext_resource type="AudioStream" uid="uid://bmqv5uwjq5bsu" path="res://assets/sounds/ui/dink.wav" id="6_wgtyi"]
+[ext_resource type="Texture2D" uid="uid://tp78e24s2uf4" path="res://assets/ui/big_arrow.png" id="7_8r1xb"]
+[ext_resource type="Theme" uid="uid://b5nk0n700x2ge" path="res://assets/ui/themes/aa.tres" id="8_digaq"]
+[ext_resource type="Texture2D" uid="uid://0e6jpnupfv5n" path="res://assets/ui/scanlines.png" id="9_nnifa"]
+[ext_resource type="Texture2D" uid="uid://meofwv1toikh" path="res://assets/ui/evi_list_bg.png" id="10_20701"]
+[ext_resource type="Texture2D" uid="uid://64xnmk3y8qev" path="res://assets/ui/evidence_slip.png" id="10_fy5ti"]
+[ext_resource type="Texture2D" uid="uid://bx3ii28ifdmnn" path="res://assets/ui/profiles_slip.png" id="11_0hrul"]
+[ext_resource type="Texture2D" uid="uid://mmfk5fa87x2d" path="res://assets/ui/evi_spot.png" id="11_5ktt5"]
+[ext_resource type="Texture2D" uid="uid://qekn7rvrt6mf" path="res://assets/ui/border.png" id="12_6egur"]
+[ext_resource type="Texture2D" uid="uid://bfkij1rw66vbx" path="res://assets/evidence/test_evidence.png" id="12_55abk"]
+[ext_resource type="Texture2D" uid="uid://xq68l60srdk3" path="res://assets/ui/item_border.png" id="13_m2d8k"]
+[ext_resource type="Texture2D" uid="uid://dglrv7w5tpxoe" path="res://assets/ui/evi_bg.png" id="13_u7m4e"]
+[ext_resource type="Texture2D" uid="uid://bwsk2r0suklpy" path="res://assets/ui/button_backdrop.png" id="14_ai2ub"]
+[ext_resource type="Texture2D" uid="uid://cc2o36lc7kor8" path="res://assets/ui/eviname_bg.png" id="14_jwsae"]
+[ext_resource type="FontVariation" uid="uid://bk5faw63xmoyp" path="res://assets/fonts/ui.tres" id="15_3ly27"]
+[ext_resource type="Texture2D" uid="uid://60lfnpiygpij" path="res://assets/ui/courtrecord_button.png" id="15_s026p"]
+[ext_resource type="Texture2D" uid="uid://fjmlhlh63byp" path="res://assets/ui/courtrecord_button_pressed.png" id="16_rot6t"]
+[ext_resource type="Texture2D" uid="uid://cpufi0vdvk3wk" path="res://assets/ui/evidence_button.png" id="17_m8mui"]
+[ext_resource type="Texture2D" uid="uid://b3vhfde0byt0a" path="res://assets/ui/evidence_button_pressed.png" id="18_6w0y4"]
+[ext_resource type="Texture2D" uid="uid://cq4puwqd644yi" path="res://assets/ui/profiles_button.png" id="19_kc76s"]
+[ext_resource type="Texture2D" uid="uid://5mauias5djw5" path="res://assets/ui/profiles_button_pressed.png" id="20_wg18e"]
+[ext_resource type="AudioStream" uid="uid://cb3vkei87k85x" path="res://assets/sounds/ui/bleep.wav" id="22_yui8e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_14rk6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_87owq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8u4dw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5275j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r33mk"]
+
+[sub_resource type="Animation" id="Animation_50b6q"]
+resource_name = "next"
+length = 0.366668
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-6.0, 6.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_80vhx"]
+_data = {
+"next": SubResource("Animation_50b6q")
+}
+
+[sub_resource type="Theme" id="Theme_c5dk2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_do62l"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 14.0
+content_margin_bottom = 8.0
+texture = ExtResource("10_20701")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_205kr"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("11_5ktt5")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8s27k"]
+texture = ExtResource("13_u7m4e")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+draw_center = false
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rikhq"]
+texture = ExtResource("14_jwsae")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_gf2dm"]
+font = ExtResource("15_3ly27")
+font_color = Color(1, 0.682353, 0.0941176, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7kejb"]
+blend_mode = 1
+
+[sub_resource type="Animation" id="Animation_7l4w4"]
+resource_name = "RESET"
+length = 0.001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CourtRecordButton:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EvidenceButton:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CourtRecordButton:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CourtRecordButton:button_pressed")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("NextButton:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.776471)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("UpperBorder:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ItemBorder:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MouseBlocker:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("NextButton:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("NextButton:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [40.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("EvidenceSlip:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("EvidenceSlip:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("EvidenceScreen:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -192)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("EvidenceScreen:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("EvidenceScreen:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gs8rg"]
+resource_name = "court_record_pressed"
+length = 0.333335
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CourtRecordButton:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -30.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EvidenceButton:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CourtRecordButton:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EvidenceButton:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.166667, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-30.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CourtRecordButton:button_pressed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("EvidenceButton:button_pressed")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.166667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("NextButton:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.776471), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("UpperBorder:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.183333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ItemBorder:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.183333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("UIAudio")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("22_yui8e")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/9/use_blend = true
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("MouseBlocker:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("NextButton:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("NextButton:position:y")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [40.0, 136.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("EvidenceSlip:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0.2, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -32), Vector2(0, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("EvidenceSlip:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("EvidenceScreen:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0.2, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -64), Vector2(0, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("EvidenceScreen:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("EvidenceScreen:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0.2, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dtgt8"]
+_data = {
+"RESET": SubResource("Animation_7l4w4"),
+"court_record_pressed": SubResource("Animation_gs8rg")
+}
+
+[node name="BottomScreen" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jnl3y")
+
+[node name="AaiBackdrop" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_p337t")
+stretch_mode = 6
+
+[node name="AaBackgdrop" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_j221b")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="NextButton" type="Button" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.776471)
+layout_mode = 1
+offset_left = 16.0
+offset_top = 40.0
+offset_right = 240.0
+offset_bottom = 152.001
+theme_override_styles/normal = SubResource("StyleBoxEmpty_14rk6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_87owq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8u4dw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5275j")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r33mk")
+keep_pressed_outside = true
+script = ExtResource("3_8keps")
+
+[node name="Panel" type="Panel" parent="NextButton"]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(112, 56)
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("4_rdshr")
+
+[node name="PhoenixOverlay" type="TextureRect" parent="NextButton/Panel"]
+modulate = Color(1, 1, 1, 0.298039)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 221.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("5_opaqf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NextButton"]
+stream = ExtResource("6_wgtyi")
+bus = &"ui"
+
+[node name="BigArrowAnchor" type="Control" parent="NextButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BigArrow" type="Sprite2D" parent="NextButton/BigArrowAnchor"]
+unique_name_in_owner = true
+position = Vector2(-6, 0)
+texture = ExtResource("7_8r1xb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NextButton/BigArrowAnchor/BigArrow"]
+libraries = {
+"": SubResource("AnimationLibrary_80vhx")
+}
+autoplay = "next"
+
+[node name="ChoiceContainer" type="ScrollContainer" parent="."]
+visible = false
+clip_contents = false
+layout_mode = 2
+anchor_top = -1.0
+anchor_bottom = -1.0
+offset_left = 15.0
+offset_top = 239.0
+offset_right = 248.0
+offset_bottom = 354.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChoiceContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("8_digaq")
+theme_override_constants/separation = 17
+
+[node name="Button" type="Button" parent="ChoiceContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c5dk2")
+text = "Mia Fey"
+
+[node name="Button2" type="Button" parent="ChoiceContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c5dk2")
+text = "Cinder Block"
+
+[node name="Button3" type="Button" parent="ChoiceContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c5dk2")
+text = "Cindy Stone"
+
+[node name="Button4" type="Button" parent="ChoiceContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_c5dk2")
+text = "Boobs McGee"
+
+[node name="EvidenceScreen" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_top = -192.0
+offset_right = 256.0
+
+[node name="EvidenceContainer" type="PanelContainer" parent="EvidenceScreen"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 56.0
+offset_right = 234.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_do62l")
+
+[node name="EvidenceGrid" type="GridContainer" parent="EvidenceScreen/EvidenceContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 4
+
+[node name="1" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
+
+[node name="TestEvidence" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/1"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("12_55abk")
+expand_mode = 1
+
+[node name="Selected" type="Panel" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/1"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8s27k")
+
+[node name="2" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
+
+[node name="TestEvidence" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("12_55abk")
+expand_mode = 1
+
+[node name="Selected" type="Panel" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/2"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8s27k")
+
+[node name="3" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
+
+[node name="Selected" type="Panel" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/3"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8s27k")
+
+[node name="4" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
+
+[node name="Selected" type="Panel" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/4"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8s27k")
+
+[node name="5" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
+
+[node name="Selected" type="Panel" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/5"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8s27k")
+
+[node name="6" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
+
+[node name="Selected" type="Panel" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/6"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8s27k")
+
+[node name="7" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
+
+[node name="Selected" type="Panel" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/7"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8s27k")
+
+[node name="8" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
+
+[node name="Selected" type="Panel" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/8"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8s27k")
+
+[node name="EvidenceLabel" type="Label" parent="EvidenceScreen"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 36.0
+offset_right = 232.0
+offset_bottom = 56.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_rikhq")
+text = "Attorney's Badge"
+label_settings = SubResource("LabelSettings_gf2dm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scanlines" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.247059)
+material = SubResource("CanvasItemMaterial_7kejb")
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 192.0
+mouse_filter = 2
+texture = ExtResource("9_nnifa")
+stretch_mode = 1
+
+[node name="EvidenceSlip" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 32.0
+texture = ExtResource("10_fy5ti")
+
+[node name="ProfilesSlip" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 32.0
+texture = ExtResource("11_0hrul")
+
+[node name="LowerBorder" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 176.0
+offset_right = 256.0
+offset_bottom = 192.0
+texture = ExtResource("12_6egur")
+stretch_mode = 1
+flip_v = true
+
+[node name="UpperBorder" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 18.0
+texture = ExtResource("12_6egur")
+stretch_mode = 1
+
+[node name="ItemBorder" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 18.0
+texture = ExtResource("13_m2d8k")
+
+[node name="ButtonBackdrop" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 177.0
+offset_right = 269.0
+offset_bottom = 32.0
+texture = ExtResource("14_ai2ub")
+patch_margin_left = 14
+patch_margin_right = 14
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="CourtRecordButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 177.0
+offset_right = 256.0
+offset_bottom = 30.0
+toggle_mode = true
+texture_normal = ExtResource("15_s026p")
+texture_pressed = ExtResource("16_rot6t")
+
+[node name="EvidenceButton" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 177.0
+offset_right = 256.0
+offset_bottom = 30.0
+toggle_mode = true
+texture_normal = ExtResource("17_m8mui")
+texture_pressed = ExtResource("18_6w0y4")
+
+[node name="ProfilesButton" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 177.0
+offset_right = 256.0
+offset_bottom = 30.0
+toggle_mode = true
+texture_normal = ExtResource("19_kc76s")
+texture_pressed = ExtResource("20_wg18e")
+
+[node name="MouseBlocker" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dtgt8")
+}
+
+[node name="UIAudio" type="AudioStreamPlayer" parent="."]
+bus = &"ui"
+
+[connection signal="pressed" from="CourtRecordButton" to="." method="_on_court_record_button_pressed"]

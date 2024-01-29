@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c11oamjt2yu72"
-path="res://.godot/imported/typewriter.wav-6eb42bfc3f2c036270f2c52c5b8e6d38.sample"
+path="res://.godot/imported/typewriter.wav-dd318764f21aeb72fb98e3bc698c7e93.sample"
 
 [deps]
 
-source_file="res://assets/sounds/typewriter.wav"
-dest_files=["res://.godot/imported/typewriter.wav-6eb42bfc3f2c036270f2c52c5b8e6d38.sample"]
+source_file="res://assets/sounds/blips/typewriter.wav"
+dest_files=["res://.godot/imported/typewriter.wav-dd318764f21aeb72fb98e3bc698c7e93.sample"]
 
 [params]
 
