@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qekn7rvrt6mf"
-path="res://.godot/imported/border.png-c7d17796590d77faba430ac1bb389de0.ctex"
+uid="uid://20tfyht7koyb"
+path="res://.godot/imported/0127 - Phoenix Wright - Ace Attorney (U)(Legacy)__21289.png-a3a0baee14e7d88b72a799cdca968bf8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/border.png"
-dest_files=["res://.godot/imported/border.png-c7d17796590d77faba430ac1bb389de0.ctex"]
+source_file="res://reference/0127 - Phoenix Wright - Ace Attorney (U)(Legacy)__21289.png"
+dest_files=["res://.godot/imported/0127 - Phoenix Wright - Ace Attorney (U)(Legacy)__21289.png-a3a0baee14e7d88b72a799cdca968bf8.ctex"]
 
 [params]
 

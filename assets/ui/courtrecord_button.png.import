@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qekn7rvrt6mf"
-path="res://.godot/imported/border.png-c7d17796590d77faba430ac1bb389de0.ctex"
+uid="uid://60lfnpiygpij"
+path="res://.godot/imported/courtrecord_button.png-74b77fb2dc46997943f9819c3c3e23f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/border.png"
-dest_files=["res://.godot/imported/border.png-c7d17796590d77faba430ac1bb389de0.ctex"]
+source_file="res://assets/ui/courtrecord_button.png"
+dest_files=["res://.godot/imported/courtrecord_button.png-74b77fb2dc46997943f9819c3c3e23f1.ctex"]
 
 [params]
 
