@@ -4,6 +4,7 @@ extends Control
 @onready var text_timer: Timer = get_node("%TimerNode")
 @onready var dialog_container: Control = get_node("%DialogContainer")
 @onready var chat_arrow: TextureRect = dialog_container.get_node("%ChatArrow")
+@onready var select_your_answer: TextureRect = get_node("%SelectYourAnswer")
 
 signal text_shown()
 signal unpause()
@@ -36,6 +37,7 @@ var blip_rate: int = 2
 
 var blip_counter: int = 0
 
+var animation_tween: Tween
 
 func set_speed(spd:String):
 	current_spd = spd.to_float()
@@ -152,6 +154,21 @@ func display_text(text:String, showname:String = ""):
 	process_dialog = false
 	set_normal()
 	text_shown.emit()
+
+
+func select_answer_graphic(toggle: bool = true):
+	if animation_tween:
+		animation_tween.custom_step(9999)
+		animation_tween.kill()
+		dialog_container.position.y += select_your_answer.size.y
+		select_your_answer.position.y += select_your_answer.size.y
+	select_your_answer.set_visible(toggle)
+	if toggle:
+		animation_tween = create_tween()
+		animation_tween.tween_property(dialog_container, "position:y", \
+			dialog_container.position.y-select_your_answer.size.y, 0.4)
+		animation_tween.parallel().tween_property(select_your_answer, "position:y", \
+			select_your_answer.position.y-select_your_answer.size.y, 0.4)
 
 
 func _on_pause_called(pause_string:String):

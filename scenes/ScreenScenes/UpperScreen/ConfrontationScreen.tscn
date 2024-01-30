@@ -80,6 +80,7 @@ libraries = {
 }
 
 [node name="ColorFade" type="ColorRect" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -91,4 +92,3 @@ script = ExtResource("6_8sm7n")
 
 [node name="DialogBox" parent="." instance=ExtResource("3_h7lsh")]
 unique_name_in_owner = true
-visible = false

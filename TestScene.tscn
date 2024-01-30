@@ -23,16 +23,16 @@ script = ExtResource("2_rnwqy")
 initial_collection = ExtResource("3_ehm5p")
 command_node_fallback_path = NodePath("..")
 
+[node name="UpperScreen" parent="." instance=ExtResource("2_m22fg")]
+unique_name_in_owner = true
+layout_mode = 1
+
 [node name="BottomScreen" parent="." instance=ExtResource("4_0dqr4")]
 unique_name_in_owner = true
 layout_mode = 1
 anchor_top = 0.5
 anchor_bottom = 1.0
 metadata/_edit_use_anchors_ = true
-
-[node name="UpperScreen" parent="." instance=ExtResource("2_m22fg")]
-unique_name_in_owner = true
-layout_mode = 1
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_ssudg")
