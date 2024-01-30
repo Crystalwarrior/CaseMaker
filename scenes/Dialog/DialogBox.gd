@@ -160,8 +160,8 @@ func select_answer_graphic(toggle: bool = true):
 	if animation_tween:
 		animation_tween.custom_step(9999)
 		animation_tween.kill()
-		dialog_container.position.y += select_your_answer.size.y
-		select_your_answer.position.y += select_your_answer.size.y
+	if toggle and select_your_answer.visible:
+		return
 	select_your_answer.set_visible(toggle)
 	if toggle:
 		animation_tween = create_tween()
@@ -169,6 +169,9 @@ func select_answer_graphic(toggle: bool = true):
 			dialog_container.position.y-select_your_answer.size.y, 0.4)
 		animation_tween.parallel().tween_property(select_your_answer, "position:y", \
 			select_your_answer.position.y-select_your_answer.size.y, 0.4)
+	else:
+		dialog_container.position.y += select_your_answer.size.y
+		select_your_answer.position.y += select_your_answer.size.y
 
 
 func _on_pause_called(pause_string:String):

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://boa3oie1gfjmu"]
+
+[ext_resource type="Texture2D" uid="uid://blkmklinajpfp" path="res://assets/ui/checkmark.png" id="1_bggwk"]
+[ext_resource type="Theme" uid="uid://b5nk0n700x2ge" path="res://assets/ui/themes/aa.tres" id="1_kcn6x"]
+
+[node name="ChoiceButton" type="Button"]
+theme = ExtResource("1_kcn6x")
+toggle_mode = true
+text = "Choice"
+
+[node name="Checkmark" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 23.0
+offset_bottom = 22.0
+mouse_filter = 2
+texture = ExtResource("1_bggwk")

@@ -1,0 +1,676 @@
+[gd_resource type="Resource" script_class="CommandCollection" load_steps=50 format=3 uid="uid://b2uvbyr3l6a84"]
+
+[ext_resource type="Script" path="res://addons/textalog/commands/command_dialog.gd" id="1_pri7v"]
+[ext_resource type="Script" path="res://addons/blockflow/commands/command_call.gd" id="2_7m4qb"]
+[ext_resource type="AudioStream" uid="uid://cb485p8r1fh2e" path="res://assets/music/bgm008.ogg" id="3_yf3mm"]
+[ext_resource type="Script" path="res://addons/blockflow/commands/command_set.gd" id="4_6gjhf"]
+[ext_resource type="Script" path="res://addons/blockflow/commands/command_wait.gd" id="5_uc2u8"]
+[ext_resource type="Script" path="res://addons/blockflow/commands/command_animate.gd" id="6_d1b7r"]
+[ext_resource type="Script" path="res://addons/blockflow/commands/command_print.gd" id="7_phcgd"]
+[ext_resource type="Script" path="res://addons/blockflow/command_collection.gd" id="8_0rc1k"]
+
+[sub_resource type="Resource" id="Resource_jj2gc"]
+script = ExtResource("1_pri7v")
+showname = ""
+dialog = "{adv}{blip typewriter}[center][color=green]August 3, 9:47 AM
+District Court
+Defendant Lobby No. 2"
+additive = false
+text_speed = 2
+letter_delay = 0.08
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_as7w4"]
+script = ExtResource("1_pri7v")
+showname = ""
+dialog = ""
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = false
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = true
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_fqg3q"]
+script = ExtResource("2_7m4qb")
+method = "fadein"
+args = []
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("UpperScreen/ColorFade")
+collection = []
+
+[sub_resource type="Resource" id="Resource_136wp"]
+script = ExtResource("2_7m4qb")
+method = "set_stream"
+args = [ExtResource("3_yf3mm")]
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("MusicPlayer")
+collection = []
+metadata/__editor_override_property__ = false
+
+[sub_resource type="Resource" id="Resource_p0fle"]
+script = ExtResource("4_6gjhf")
+property = "stream"
+value_type = 24
+value = ExtResource("3_yf3mm")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_jyvpj"]
+script = ExtResource("2_7m4qb")
+method = "play"
+args = []
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("MusicPlayer")
+collection = []
+
+[sub_resource type="Resource" id="Resource_44hdp"]
+script = ExtResource("5_uc2u8")
+wait_for = 0
+wait_time = 2.4
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_dx04t"]
+script = ExtResource("6_d1b7r")
+animation = "court_record_available"
+custom_blend = -1.0
+custom_speed = 1.0
+play_backwards = false
+wait_until_finished = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("BottomScreen/AnimationPlayer")
+collection = []
+
+[sub_resource type="Resource" id="Resource_q22o8"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "{s}{blip male}[color=#6db6f7ff](Boy am I nervous!)[/color]"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_jei7c"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = ""
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_kt2s1"]
+script = ExtResource("5_uc2u8")
+wait_for = 0
+wait_time = 0.5
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_fugpg"]
+script = ExtResource("1_pri7v")
+showname = "Mia"
+dialog = "{blip female}Wright!"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_ywdks"]
+script = ExtResource("6_d1b7r")
+animation = "fade"
+custom_blend = -1.0
+custom_speed = 1.0
+play_backwards = false
+wait_until_finished = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("UpperScreen/CharacterContainer/MiaTest/AnimationPlayer")
+collection = []
+
+[sub_resource type="Resource" id="Resource_4hjoq"]
+script = ExtResource("5_uc2u8")
+wait_for = 0
+wait_time = 1.0
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_5l5eo"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "{blip male}Oh,{p} h-{p}hiya,{s} Chief."
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_r8jdm"]
+script = ExtResource("1_pri7v")
+showname = "Mia"
+dialog = "{blip female}Whew,{p}
+I'm glad I made it on time. "
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_m3i10"]
+script = ExtResource("1_pri7v")
+showname = "Mia"
+dialog = "Well,{p} I have to say Phoenix,{p} I'm impressed!"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_kpfpg"]
+script = ExtResource("1_pri7v")
+showname = "Mia"
+dialog = "Not everyone takes on a murder trial right off the bat like this."
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_i50t3"]
+script = ExtResource("1_pri7v")
+showname = "Mia"
+dialog = "It says a lot about{p}
+you... and your client as well. "
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_qoohk"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "{blip male}Um... thanks."
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_ote5x"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = ""
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_mgmm7"]
+script = ExtResource("5_uc2u8")
+wait_for = 0
+wait_time = 0.5
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_5s3ec"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "Actually, it's because I owe him a favor."
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_vflrd"]
+script = ExtResource("7_phcgd")
+comment = "todo: the rest of this lol"
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_b8w00"]
+script = ExtResource("1_pri7v")
+showname = "Mia"
+dialog = "A favor? You mean, you knew the defendant before this case?"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_acr1i"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "Yes. Actually, I kind of owe my current job to him. He's one of the reasons I became an attorney."
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_2vdmu"]
+script = ExtResource("1_pri7v")
+showname = "Mia"
+dialog = "Well, that's news to me!"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_3u36i"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "I want to help him out any way I can! I just... really want to help him, I owe him that much."
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_p6ops"]
+script = ExtResource("1_pri7v")
+showname = "???"
+dialog = "[color=#00ff00ff](It's over! My life, everything, it's all over!)[/color]"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_wxeb1"]
+script = ExtResource("1_pri7v")
+showname = "Mia"
+dialog = "... Isn't that your client screaming over there?"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_qvgg5"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "Yeah... that's him."
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_t1hvy"]
+script = ExtResource("1_pri7v")
+showname = "???"
+dialog = "[color=#00ff00ff](Death! Despair! Ohhhh! I'm gonna do it, I'm gonna die!!!)[/color]"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_5bjq5"]
+script = ExtResource("1_pri7v")
+showname = "Mia"
+dialog = "It sounds like he wants to die..."
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_q7n84"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "Um, yeah. *sigh*"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_4nii8"]
+script = ExtResource("1_pri7v")
+showname = "Butz"
+dialog = "Nick!!!"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_35l8h"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "Hey. Hey there, Larry."
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_6a6vl"]
+script = ExtResource("1_pri7v")
+showname = "Butz"
+dialog = "Dude, I'm so guilty!! Tell them I'm guilty!!! Gimme the death sentence! I ain't afraid to die!"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_ugvem"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "What!? What's wrong, Larry?"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_scnmy"]
+script = ExtResource("1_pri7v")
+showname = "Butz"
+dialog = "Oh, it's all over... I... I'm finished. Finished! I can't live in a world without her! I can't! Who... who took her away from me, Nick? Who did this!? Aww, Nick, ya gotta tell me! Who took my baby away!?"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_arbkl"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "(Hmm... The person responsible for your girlfriend's death? The newspapers say it was you...)"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_2qydy"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "My name is Phoenix Wright. Here's the story: My first case is a fairly simple one. A young woman was killed in her apartment. The guy they arrested was the unlucky sap dating her: Larry Butz... my best friend since grade school. Our school had a saying: \"When something smells, it's usually the Butz.\" In the 23 years I've known him, it's usually been true. He has a knack for getting himself in trouble. One thing I can say though: it's usually not his fault. He just has terrible luck. But I know better than anyone, that he's a good guy at heart. That and I owe him one. Which is why I took the case... to clear his name. And that's just what I'm going to do! "
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[resource]
+resource_name = "lobby.tres"
+script = ExtResource("8_0rc1k")
+collection = [SubResource("Resource_jj2gc"), SubResource("Resource_as7w4"), SubResource("Resource_fqg3q"), SubResource("Resource_136wp"), SubResource("Resource_p0fle"), SubResource("Resource_jyvpj"), SubResource("Resource_44hdp"), SubResource("Resource_dx04t"), SubResource("Resource_q22o8"), SubResource("Resource_jei7c"), SubResource("Resource_kt2s1"), SubResource("Resource_fugpg"), SubResource("Resource_ywdks"), SubResource("Resource_4hjoq"), SubResource("Resource_5l5eo"), SubResource("Resource_r8jdm"), SubResource("Resource_m3i10"), SubResource("Resource_kpfpg"), SubResource("Resource_i50t3"), SubResource("Resource_qoohk"), SubResource("Resource_ote5x"), SubResource("Resource_mgmm7"), SubResource("Resource_5s3ec"), SubResource("Resource_vflrd"), SubResource("Resource_b8w00"), SubResource("Resource_acr1i"), SubResource("Resource_2vdmu"), SubResource("Resource_3u36i"), SubResource("Resource_p6ops"), SubResource("Resource_wxeb1"), SubResource("Resource_qvgg5"), SubResource("Resource_t1hvy"), SubResource("Resource_5bjq5"), SubResource("Resource_q7n84"), SubResource("Resource_4nii8"), SubResource("Resource_35l8h"), SubResource("Resource_6a6vl"), SubResource("Resource_ugvem"), SubResource("Resource_scnmy"), SubResource("Resource_arbkl"), SubResource("Resource_2qydy")]

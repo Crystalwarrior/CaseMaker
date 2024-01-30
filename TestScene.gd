@@ -1,6 +1,7 @@
 extends Control
 @onready var bottom_screen = get_node("%BottomScreen")
-@onready var next_button = bottom_screen.get_node("%NextButton")
+@onready var next_button = bottom_screen.next_button
+@onready var choice_container = bottom_screen.choice_container
 @onready var flash = preload("res://scenes/ScreenScenes/UpperScreen/Effects/FlashEffect.tscn")
 
 @onready var upper_screen = get_node("%UpperScreen")
@@ -14,6 +15,7 @@ var scene_manager: SceneManager
 var dialog_box
 
 signal dialog_finished
+signal choice_selected(index)
 
 func _ready():
 	CommandValues.instance().eff_flash.connect(_on_flash)
@@ -22,6 +24,7 @@ func _ready():
 	dialog_box.text_shown.connect(_on_text_shown)
 	
 	next_button.connect("button_down", _on_next_button_down)
+	bottom_screen.choice_selected.connect(_on_choice_selected)
 
 
 func next():
@@ -62,6 +65,12 @@ func set_dialog_visible(toggle: bool = true):
 	dialog_box.set_visible(toggle)
 
 
+func multiple_choice(choices: PackedStringArray):
+	upper_screen.select_your_answer(true)
+	await get_tree().create_timer(0.4).timeout
+	bottom_screen.multiple_choice(choices)
+
+
 func _on_flash():
 	upper_screen.add_child(flash.instantiate())
 
@@ -89,3 +98,8 @@ func _on_text_shown():
 
 func _on_next_button_down():
 	next()
+
+
+func _on_choice_selected(index):
+	upper_screen.select_your_answer(false)
+	choice_selected.emit(index)
