@@ -102,10 +102,11 @@ func _process(delta):
 		if speed_counter < current_spd:
 			return
 		var count: int = int(speed_counter / current_spd)
-		while (current_spd == 0 or count > 0) and process_dialog:
+		while (current_spd == 0 or count > 0):
 			count -= 1
 			next_letter()
-		speed_counter = 0
+		# Lag compensation (in theory)
+		speed_counter = speed_counter - current_spd
 
 
 func next_letter():
@@ -120,11 +121,6 @@ func next_letter():
 				blip = true
 				blip_player.play()
 			blip_counter = (blip_counter + 1) % blip_rate
-	if blip:
-		%DEBUG.push_color(Color.GREEN)
-	%DEBUG.add_text(current_char)
-	if blip:
-		%DEBUG.pop()
 
 
 func set_blipsound(blip_string:String):

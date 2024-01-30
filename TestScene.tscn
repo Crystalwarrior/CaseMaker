@@ -1,12 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://kv6pxmfyclh1"]
+[gd_scene load_steps=11 format=3 uid="uid://kv6pxmfyclh1"]
 
 [ext_resource type="Script" path="res://TestScene.gd" id="1_j7ny0"]
 [ext_resource type="PackedScene" uid="uid://o014t0ve6be8" path="res://scenes/ScreenScenes/UpperScreen/ConfrontationScreen.tscn" id="2_m22fg"]
 [ext_resource type="Script" path="res://addons/blockflow/command_processor.gd" id="2_rnwqy"]
 [ext_resource type="Resource" uid="uid://hslhicnhfcxa" path="res://timelines/debug/choice_test.tres" id="3_4syon"]
 [ext_resource type="PackedScene" uid="uid://dk35s1lwj1pmj" path="res://scenes/ScreenScenes/bottom_screen.tscn" id="4_0dqr4"]
+[ext_resource type="FontFile" uid="uid://bpmqn2kw4vgn4" path="res://assets/fonts/igiari-cyrillic-plus.ttf" id="8_2jqp0"]
+[ext_resource type="Script" path="res://scenes/delta_label.gd" id="9_vpdrc"]
 [ext_resource type="AudioStream" uid="uid://cb485p8r1fh2e" path="res://assets/music/bgm008.ogg" id="13_ssudg"]
 [ext_resource type="Texture2D" uid="uid://dl3iwbxfn2fm1" path="res://reference/DeSmuME_0.9.13_x64_htMjweMyh3.png" id="27_u2u0t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pod4v"]
+font = ExtResource("8_2jqp0")
+font_color = Color(0, 1, 0, 1)
 
 [node name="TestScene" type="Control"]
 layout_mode = 3
@@ -44,6 +50,20 @@ layout_mode = 0
 offset_right = 256.0
 offset_bottom = 384.0
 texture = ExtResource("27_u2u0t")
+
+[node name="delta_label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -52.0
+offset_bottom = 16.0
+grow_horizontal = 0
+text = "00.000ms"
+label_settings = SubResource("LabelSettings_pod4v")
+clip_text = true
+script = ExtResource("9_vpdrc")
 
 [connection signal="collection_finished" from="CommandProcessor" to="." method="_on_command_processor_collection_finished"]
 [connection signal="collection_started" from="CommandProcessor" to="." method="_on_command_processor_collection_started"]

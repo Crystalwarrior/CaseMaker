@@ -1,11 +1,26 @@
-[gd_resource type="Resource" script_class="CommandCollection" load_steps=19 format=3 uid="uid://hslhicnhfcxa"]
+[gd_resource type="Resource" script_class="CommandCollection" load_steps=29 format=3 uid="uid://hslhicnhfcxa"]
 
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_call.gd" id="1_0g2xi"]
 [ext_resource type="Script" path="res://addons/textalog/commands/command_dialog.gd" id="1_04smc"]
+[ext_resource type="Script" path="res://addons/blockflow/commands/command_set.gd" id="1_kawqq"]
 [ext_resource type="Script" path="res://addons/blockflow/command_collection.gd" id="1_qfflg"]
 [ext_resource type="Script" path="res://addons/textalog/commands/command_choice.gd" id="2_05ybh"]
+[ext_resource type="Texture2D" uid="uid://0ov6kk3wmjr6" path="res://assets/backgrounds/castle.png" id="2_lv33n"]
 [ext_resource type="Script" path="res://addons/textalog/commands/command_choice_list.gd" id="3_2wnh8"]
+[ext_resource type="AudioStream" uid="uid://jliaijtutnfk" path="res://assets/music/bgm137.ogg" id="4_j3no3"]
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_goto.gd" id="5_3b3yk"]
+[ext_resource type="Script" path="res://addons/blockflow/commands/command_end.gd" id="5_xcq54"]
+
+[sub_resource type="Resource" id="Resource_4h4og"]
+script = ExtResource("1_kawqq")
+property = "texture"
+value_type = 24
+value = ExtResource("2_lv33n")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("UpperScreen/Background/CourtroomHall")
+collection = []
 
 [sub_resource type="Resource" id="Resource_u3sh2"]
 script = ExtResource("1_0g2xi")
@@ -17,28 +32,53 @@ background_color = 0
 target = NodePath("UpperScreen/ColorFade")
 collection = []
 
+[sub_resource type="Resource" id="Resource_hgdgb"]
+script = ExtResource("1_0g2xi")
+method = "set_stream"
+args = [ExtResource("4_j3no3")]
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("MusicPlayer")
+collection = []
+metadata/__editor_override_property__ = false
+
+[sub_resource type="Resource" id="Resource_udm53"]
+script = ExtResource("1_0g2xi")
+method = "play"
+args = []
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("MusicPlayer")
+collection = []
+
 [sub_resource type="Resource" id="Resource_q8nn7"]
 script = ExtResource("1_04smc")
-showname = "Phoenix"
-dialog = "Make Your Choice."
+showname = ""
+dialog = "{nov}{blip typewriter}Welcome, adventurer.
+You have chosen quite a perilous path.
+To surive, you must make choices that improve your chances at finding great treasures.
+If you fail, you're doomed.
+Are you prepared to make the journey?"
 additive = false
-text_speed = 0
-letter_delay = 0.03
+text_speed = 1
+letter_delay = 0.05
 wait_until_finished = true
 speaking_character = ""
 bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
 bookmark = &""
-continue_at_end = true
+continue_at_end = false
 background_color = 0
 target = NodePath("")
 collection = []
 
-[sub_resource type="Resource" id="Resource_05kda"]
+[sub_resource type="Resource" id="Resource_3lhtr"]
 script = ExtResource("1_04smc")
-showname = "Phoenix"
-dialog = "MIA FEY MOMENT"
+showname = ""
+dialog = "{nov}In front of you is a towering castle. The drawbridge is down and the moat is dry. However, you don't know if anyone is guarding it."
 additive = false
 text_speed = 0
 letter_delay = 0.03
@@ -53,19 +93,67 @@ background_color = 0
 target = NodePath("")
 collection = []
 
-[sub_resource type="Resource" id="Resource_1pofb"]
-script = ExtResource("2_05ybh")
-text = "Mia Fey"
+[sub_resource type="Resource" id="Resource_l8mb8"]
+script = ExtResource("1_04smc")
+showname = ""
+dialog = "{adv}What do you do?"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &"bridge"
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_05kda"]
+script = ExtResource("1_04smc")
+showname = ""
+dialog = "An arrow flies straight through your forehead.
+[center][shake][color=#ff0000ff]YOU'RE VERY MUCH DEAD.[/color][/shake][/center]"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_il042"]
+script = ExtResource("5_3b3yk")
+condition = ""
+use_bookmark = false
+command_index = 5
 bookmark = &""
 continue_at_end = true
 background_color = 0
 target = NodePath("")
-collection = [SubResource("Resource_05kda")]
+collection = []
+
+[sub_resource type="Resource" id="Resource_1pofb"]
+script = ExtResource("2_05ybh")
+text = "Enter by Bridge"
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = [SubResource("Resource_05kda"), SubResource("Resource_il042")]
 
 [sub_resource type="Resource" id="Resource_0vacx"]
 script = ExtResource("1_04smc")
-showname = "Phoenix"
-dialog = "CINDER BLOCK?!?!?!?"
+showname = ""
+dialog = "The surroundings are eerily quiet. You spot a glitter from one of the windows..."
 additive = false
 text_speed = 0
 letter_delay = 0.03
@@ -82,7 +170,7 @@ collection = []
 
 [sub_resource type="Resource" id="Resource_fr2lo"]
 script = ExtResource("2_05ybh")
-text = "Cinder Block"
+text = "Scout the Surroundings"
 bookmark = &""
 continue_at_end = true
 background_color = 0
@@ -91,8 +179,8 @@ collection = [SubResource("Resource_0vacx")]
 
 [sub_resource type="Resource" id="Resource_nt5oc"]
 script = ExtResource("1_04smc")
-showname = "Phoenix"
-dialog = "stone"
+showname = ""
+dialog = "As the moat is dry, it is effortless for you to descend and sneak under the bridge."
 additive = false
 text_speed = 0
 letter_delay = 0.03
@@ -103,45 +191,44 @@ highlight_speaker = false
 hide_dialog = false
 bookmark = &""
 continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_6nvqc"]
+script = ExtResource("1_04smc")
+showname = ""
+dialog = "Curiously, there is a cave, and you successfully make your way into the castle..."
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_rmv5d"]
+script = ExtResource("5_xcq54")
+bookmark = &""
+continue_at_end = true
 background_color = 0
 target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_3edt1"]
 script = ExtResource("2_05ybh")
-text = "Cindy Stone"
+text = "Sneak under Bridge"
 bookmark = &""
 continue_at_end = true
 background_color = 0
 target = NodePath("")
-collection = [SubResource("Resource_nt5oc")]
-
-[sub_resource type="Resource" id="Resource_1dd7f"]
-script = ExtResource("1_04smc")
-showname = "sans"
-dialog = "{blip sans}sans undertale"
-additive = false
-text_speed = 0
-letter_delay = 0.03
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = false
-bookmark = &""
-continue_at_end = false
-background_color = 0
-target = NodePath("")
-collection = []
-
-[sub_resource type="Resource" id="Resource_onoqf"]
-script = ExtResource("2_05ybh")
-text = "Sans Undertale"
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
-collection = [SubResource("Resource_1dd7f")]
+collection = [SubResource("Resource_nt5oc"), SubResource("Resource_6nvqc"), SubResource("Resource_rmv5d")]
 
 [sub_resource type="Resource" id="Resource_giina"]
 script = ExtResource("3_2wnh8")
@@ -149,13 +236,13 @@ bookmark = &""
 continue_at_end = true
 background_color = 0
 target = NodePath("")
-collection = [SubResource("Resource_1pofb"), SubResource("Resource_fr2lo"), SubResource("Resource_3edt1"), SubResource("Resource_onoqf")]
+collection = [SubResource("Resource_1pofb"), SubResource("Resource_fr2lo"), SubResource("Resource_3edt1")]
 
 [sub_resource type="Resource" id="Resource_bcer5"]
 script = ExtResource("5_3b3yk")
 condition = ""
-use_bookmark = false
-command_index = 0
+use_bookmark = true
+command_bookmark = "bridge"
 bookmark = &""
 continue_at_end = true
 background_color = 0
@@ -165,4 +252,4 @@ collection = []
 [resource]
 resource_name = "choice_test.tres"
 script = ExtResource("1_qfflg")
-collection = [SubResource("Resource_u3sh2"), SubResource("Resource_q8nn7"), SubResource("Resource_giina"), SubResource("Resource_bcer5")]
+collection = [SubResource("Resource_4h4og"), SubResource("Resource_u3sh2"), SubResource("Resource_hgdgb"), SubResource("Resource_udm53"), SubResource("Resource_q8nn7"), SubResource("Resource_3lhtr"), SubResource("Resource_l8mb8"), SubResource("Resource_giina"), SubResource("Resource_bcer5")]

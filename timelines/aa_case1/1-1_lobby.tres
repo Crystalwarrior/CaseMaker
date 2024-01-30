@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="CommandCollection" load_steps=50 format=3 uid="uid://b2uvbyr3l6a84"]
+[gd_resource type="Resource" script_class="CommandCollection" load_steps=48 format=3 uid="uid://b2uvbyr3l6a84"]
 
 [ext_resource type="Script" path="res://addons/textalog/commands/command_dialog.gd" id="1_pri7v"]
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_call.gd" id="2_7m4qb"]
 [ext_resource type="AudioStream" uid="uid://cb485p8r1fh2e" path="res://assets/music/bgm008.ogg" id="3_yf3mm"]
-[ext_resource type="Script" path="res://addons/blockflow/commands/command_set.gd" id="4_6gjhf"]
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_wait.gd" id="5_uc2u8"]
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_animate.gd" id="6_d1b7r"]
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_print.gd" id="7_phcgd"]
@@ -67,17 +66,6 @@ background_color = 0
 target = NodePath("MusicPlayer")
 collection = []
 metadata/__editor_override_property__ = false
-
-[sub_resource type="Resource" id="Resource_p0fle"]
-script = ExtResource("4_6gjhf")
-property = "stream"
-value_type = 24
-value = ExtResource("3_yf3mm")
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
-collection = []
 
 [sub_resource type="Resource" id="Resource_jyvpj"]
 script = ExtResource("2_7m4qb")
@@ -673,4 +661,4 @@ collection = []
 [resource]
 resource_name = "lobby.tres"
 script = ExtResource("8_0rc1k")
-collection = [SubResource("Resource_jj2gc"), SubResource("Resource_as7w4"), SubResource("Resource_fqg3q"), SubResource("Resource_136wp"), SubResource("Resource_p0fle"), SubResource("Resource_jyvpj"), SubResource("Resource_44hdp"), SubResource("Resource_dx04t"), SubResource("Resource_q22o8"), SubResource("Resource_jei7c"), SubResource("Resource_kt2s1"), SubResource("Resource_fugpg"), SubResource("Resource_ywdks"), SubResource("Resource_4hjoq"), SubResource("Resource_5l5eo"), SubResource("Resource_r8jdm"), SubResource("Resource_m3i10"), SubResource("Resource_kpfpg"), SubResource("Resource_i50t3"), SubResource("Resource_qoohk"), SubResource("Resource_ote5x"), SubResource("Resource_mgmm7"), SubResource("Resource_5s3ec"), SubResource("Resource_vflrd"), SubResource("Resource_b8w00"), SubResource("Resource_acr1i"), SubResource("Resource_2vdmu"), SubResource("Resource_3u36i"), SubResource("Resource_p6ops"), SubResource("Resource_wxeb1"), SubResource("Resource_qvgg5"), SubResource("Resource_t1hvy"), SubResource("Resource_5bjq5"), SubResource("Resource_q7n84"), SubResource("Resource_4nii8"), SubResource("Resource_35l8h"), SubResource("Resource_6a6vl"), SubResource("Resource_ugvem"), SubResource("Resource_scnmy"), SubResource("Resource_arbkl"), SubResource("Resource_2qydy")]
+collection = [SubResource("Resource_jj2gc"), SubResource("Resource_as7w4"), SubResource("Resource_fqg3q"), SubResource("Resource_136wp"), SubResource("Resource_jyvpj"), SubResource("Resource_44hdp"), SubResource("Resource_dx04t"), SubResource("Resource_q22o8"), SubResource("Resource_jei7c"), SubResource("Resource_kt2s1"), SubResource("Resource_fugpg"), SubResource("Resource_ywdks"), SubResource("Resource_4hjoq"), SubResource("Resource_5l5eo"), SubResource("Resource_r8jdm"), SubResource("Resource_m3i10"), SubResource("Resource_kpfpg"), SubResource("Resource_i50t3"), SubResource("Resource_qoohk"), SubResource("Resource_ote5x"), SubResource("Resource_mgmm7"), SubResource("Resource_5s3ec"), SubResource("Resource_vflrd"), SubResource("Resource_b8w00"), SubResource("Resource_acr1i"), SubResource("Resource_2vdmu"), SubResource("Resource_3u36i"), SubResource("Resource_p6ops"), SubResource("Resource_wxeb1"), SubResource("Resource_qvgg5"), SubResource("Resource_t1hvy"), SubResource("Resource_5bjq5"), SubResource("Resource_q7n84"), SubResource("Resource_4nii8"), SubResource("Resource_35l8h"), SubResource("Resource_6a6vl"), SubResource("Resource_ugvem"), SubResource("Resource_scnmy"), SubResource("Resource_arbkl"), SubResource("Resource_2qydy")]
