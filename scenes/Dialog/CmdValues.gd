@@ -27,11 +27,11 @@ const NORMAL = "normal"
 const SLOW = "slow"
 const TYPEWRITER = "typewriter"
 
-var SPD = "spd"
-var SPD_SLOW = SPD + "_" + SLOW
-var SPD_NORM = SPD + "_" + NORMAL
-var SPD_FAST = SPD + "_" + FAST
-var SPD_TYPE = SPD + "_" + TYPEWRITER
+const SPD = "spd"
+const SPD_SLOW = SPD + "_" + SLOW
+const SPD_NORM = SPD + "_" + NORMAL
+const SPD_FAST = SPD + "_" + FAST
+const SPD_TYPE = SPD + "_" + TYPEWRITER
 
 # effects
 const FLASH = "f"

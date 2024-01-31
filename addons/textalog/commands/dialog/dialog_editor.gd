@@ -1,23 +1,29 @@
 @tool
 extends Control
 
-@onready var text_edit: TextEdit = $VBoxContainer/TextEdit
+@onready var text_edit: TextEdit = %TextEdit
 
 @onready var dialog_box = %DialogBox
-@onready var color_picker_dialog = $ColorPickerDialog
-@onready var color_picker = $ColorPickerDialog/ColorPicker
+@onready var color_picker_dialog = %ColorPickerDialog
+@onready var color_picker = %ColorPicker
 
-@onready var button_bar = $VBoxContainer/ButtonBar
+@onready var button_bar = %ButtonBar
 
 var current_color_tag = ""
 
 var editor_command: Command
 
+var current_speed = 0.03
+var current_blip = "male"
+
 func set_command(command: Command):
 	editor_command = command
 	set_dialog(editor_command.dialog)
 	dialog_box.dialog_container.set_showname_text(editor_command.showname)
-	dialog_box.set_speed(editor_command.letter_delay)
+	current_speed = editor_command.letter_delay
+	dialog_box.set_speed(current_speed)
+	current_blip = editor_command.blip_sound
+	dialog_box.set_blipsound(current_blip)
 
 func set_dialog(text: String):
 	text_edit.text = text
@@ -85,6 +91,8 @@ func insert_color(tag: String, color: Color):
 
 
 func _on_play_button_pressed():
+	dialog_box.set_speed(current_speed)
+	dialog_box.set_blipsound(current_blip)
 	dialog_box.display_text(text_edit.text, editor_command.showname)
 
 
@@ -114,3 +122,38 @@ func _on_foreground_color_pressed():
 	color_picker_dialog.title = "Pick a foreground color"
 	color_picker_dialog.popup_centered()
 	current_color_tag = "fgcolor"
+
+
+func insert_text_command(cmd: String, param: String=""):
+	var params = " " + param if param != "" else ""
+	var insert_text = "{" + cmd + params + "}"
+	text_edit.begin_complex_operation()
+	for i in text_edit.get_caret_count():
+		text_edit.insert_text_at_caret(insert_text, i)
+	text_edit.end_complex_operation()
+	text_edit.grab_focus()
+
+
+func _on_option_button_item_selected(index):
+	var item_text = %spd_button.get_item_text(index)
+	var cmd = CmdValues.SPD
+	if item_text == "custom":
+		insert_text_command(cmd, "0.03")
+	else:
+		insert_text_command(cmd + "_" + item_text)
+
+
+func _on_shake_pressed():
+	insert_text_command(CmdValues.SHAKE)
+
+
+func _on_flash_pressed():
+	insert_text_command(CmdValues.FLASH)
+
+
+func _on_pause_pressed():
+	insert_text_command(CmdValues.PAUSE, "0.2")
+
+
+func _on_blip_pressed():
+	insert_text_command(CmdValues.BLIP, "male")
