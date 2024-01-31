@@ -1,3 +1,4 @@
+@tool
 extends Control
 
 @onready var blip_player: AudioStreamPlayer = get_node("%BlipPlayer")
@@ -49,7 +50,7 @@ func set_rapid():
 
 
 func set_fast():
-	blip_rate = 3
+	blip_rate = 4
 	current_spd = TEXT_SPEED_FAST
 
 
@@ -142,8 +143,6 @@ func display_text(text:String, showname:String = ""):
 	dialog_container.set_text_to_show(text)
 	dialog_container.set_showname_text(showname)
 	blip_counter = 0
-	%DEBUG.clear()
-	%DEBUG.text = ""
 	speed_counter = 0
 	process_dialog = true
 	await dialog_container.is_text_displayed

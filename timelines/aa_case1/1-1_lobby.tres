@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CommandCollection" load_steps=48 format=3 uid="uid://b2uvbyr3l6a84"]
+[gd_resource type="Resource" script_class="CommandCollection" load_steps=60 format=3 uid="uid://b2uvbyr3l6a84"]
 
 [ext_resource type="Script" path="res://addons/textalog/commands/command_dialog.gd" id="1_pri7v"]
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_call.gd" id="2_7m4qb"]
@@ -149,7 +149,7 @@ collection = []
 [sub_resource type="Resource" id="Resource_fugpg"]
 script = ExtResource("1_pri7v")
 showname = "Mia"
-dialog = "{blip female}Wright!"
+dialog = "{blip female}{f}Wright!"
 additive = false
 text_speed = 0
 letter_delay = 0.03
@@ -190,7 +190,7 @@ collection = []
 [sub_resource type="Resource" id="Resource_5l5eo"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
-dialog = "{blip male}Oh,{p} h-{p}hiya,{s} Chief."
+dialog = "{blip male}Oh,{p} h-{s}{p}hiya,{s} Chief."
 additive = false
 text_speed = 0
 letter_delay = 0.03
@@ -208,7 +208,7 @@ collection = []
 [sub_resource type="Resource" id="Resource_r8jdm"]
 script = ExtResource("1_pri7v")
 showname = "Mia"
-dialog = "{blip female}Whew,{p}
+dialog = "{blip female}Whew,{p 0.5}
 I'm glad I made it on time. "
 additive = false
 text_speed = 0
@@ -227,7 +227,7 @@ collection = []
 [sub_resource type="Resource" id="Resource_m3i10"]
 script = ExtResource("1_pri7v")
 showname = "Mia"
-dialog = "Well,{p} I have to say Phoenix,{p} I'm impressed!"
+dialog = "Well,{p 0.33} I have to say Phoenix,{p 0.33} I'm impressed!"
 additive = false
 text_speed = 0
 letter_delay = 0.03
@@ -263,7 +263,7 @@ collection = []
 [sub_resource type="Resource" id="Resource_i50t3"]
 script = ExtResource("1_pri7v")
 showname = "Mia"
-dialog = "It says a lot about{p}
+dialog = "It says a lot about{p 0.4}
 you... and your client as well. "
 additive = false
 text_speed = 0
@@ -328,7 +328,8 @@ collection = []
 [sub_resource type="Resource" id="Resource_5s3ec"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
-dialog = "Actually, it's because I owe him a favor."
+dialog = "Actually, it's because
+I owe him a favor."
 additive = false
 text_speed = 0
 letter_delay = 0.03
@@ -338,7 +339,7 @@ bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
 bookmark = &""
-continue_at_end = true
+continue_at_end = false
 background_color = 0
 target = NodePath("")
 collection = []
@@ -355,7 +356,25 @@ collection = []
 [sub_resource type="Resource" id="Resource_b8w00"]
 script = ExtResource("1_pri7v")
 showname = "Mia"
-dialog = "A favor? You mean, you knew the defendant before this case?"
+dialog = "A favor?"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_2ml4e"]
+script = ExtResource("1_pri7v")
+showname = "Mia"
+dialog = "You mean, you knew the defendant before this case?"
 additive = false
 text_speed = 0
 letter_delay = 0.03
@@ -373,7 +392,7 @@ collection = []
 [sub_resource type="Resource" id="Resource_acr1i"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
-dialog = "Yes. Actually, I kind of owe my current job to him. He's one of the reasons I became an attorney."
+dialog = "Yes."
 additive = false
 text_speed = 0
 letter_delay = 0.03
@@ -383,7 +402,45 @@ bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
 bookmark = &""
-continue_at_end = true
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_15tkm"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "Actually, I kind of owe
+my current job to him."
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_i471l"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "He's one of the reasons
+I became an attorney."
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
 background_color = 0
 target = NodePath("")
 collection = []
@@ -409,7 +466,8 @@ collection = []
 [sub_resource type="Resource" id="Resource_3u36i"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
-dialog = "I want to help him out any way I can! I just... really want to help him, I owe him that much."
+dialog = "I want to help him out
+any way I can!"
 additive = false
 text_speed = 0
 letter_delay = 0.03
@@ -419,7 +477,26 @@ bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
 bookmark = &""
-continue_at_end = true
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_qtkwu"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "I just... really want to help
+him. I owe him that much."
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
 background_color = 0
 target = NodePath("")
 collection = []
@@ -427,7 +504,7 @@ collection = []
 [sub_resource type="Resource" id="Resource_p6ops"]
 script = ExtResource("1_pri7v")
 showname = "???"
-dialog = "[color=#00ff00ff](It's over! My life, everything, it's all over!)[/color]"
+dialog = "[color=#00ff00ff](It's over!)[/color]"
 additive = false
 text_speed = 0
 letter_delay = 0.03
@@ -437,7 +514,26 @@ bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
 bookmark = &""
-continue_at_end = true
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_pumkr"]
+script = ExtResource("1_pri7v")
+showname = "???"
+dialog = "[color=#00ff00ff]My life, everything,
+it's all over!)[/color]"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
 background_color = 0
 target = NodePath("")
 collection = []
@@ -445,7 +541,26 @@ collection = []
 [sub_resource type="Resource" id="Resource_wxeb1"]
 script = ExtResource("1_pri7v")
 showname = "Mia"
-dialog = "... Isn't that your client screaming over there?"
+dialog = "..."
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_apuv7"]
+script = ExtResource("1_pri7v")
+showname = "Mia"
+dialog = "Isn't that your client{p 0.33}
+screaming over there?"
 additive = false
 text_speed = 0
 letter_delay = 0.03
@@ -473,7 +588,7 @@ bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
 bookmark = &""
-continue_at_end = true
+continue_at_end = false
 background_color = 0
 target = NodePath("")
 collection = []
@@ -481,7 +596,7 @@ collection = []
 [sub_resource type="Resource" id="Resource_t1hvy"]
 script = ExtResource("1_pri7v")
 showname = "???"
-dialog = "[color=#00ff00ff](Death! Despair! Ohhhh! I'm gonna do it, I'm gonna die!!!)[/color]"
+dialog = "[color=#00ff00ff](Death! Despair! Ohhhh!)[/color]"
 additive = false
 text_speed = 0
 letter_delay = 0.03
@@ -491,7 +606,25 @@ bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
 bookmark = &""
-continue_at_end = true
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_g0heb"]
+script = ExtResource("1_pri7v")
+showname = "???"
+dialog = "[color=#00ff00ff](I'm gonna do it, I'm gonna die!!!)[/color]"
+additive = false
+text_speed = 0
+letter_delay = 0.03
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
 background_color = 0
 target = NodePath("")
 collection = []
@@ -499,7 +632,8 @@ collection = []
 [sub_resource type="Resource" id="Resource_5bjq5"]
 script = ExtResource("1_pri7v")
 showname = "Mia"
-dialog = "It sounds like he wants to die..."
+dialog = "It sounds like
+he wants to die..."
 additive = false
 text_speed = 0
 letter_delay = 0.03
@@ -527,7 +661,7 @@ bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
 bookmark = &""
-continue_at_end = true
+continue_at_end = false
 background_color = 0
 target = NodePath("")
 collection = []
@@ -545,7 +679,7 @@ bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
 bookmark = &""
-continue_at_end = true
+continue_at_end = false
 background_color = 0
 target = NodePath("")
 collection = []
@@ -553,7 +687,8 @@ collection = []
 [sub_resource type="Resource" id="Resource_35l8h"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
-dialog = "Hey. Hey there, Larry."
+dialog = "Hey.
+Hey there, Larry."
 additive = false
 text_speed = 0
 letter_delay = 0.03
@@ -563,7 +698,7 @@ bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
 bookmark = &""
-continue_at_end = true
+continue_at_end = false
 background_color = 0
 target = NodePath("")
 collection = []
@@ -571,7 +706,8 @@ collection = []
 [sub_resource type="Resource" id="Resource_6a6vl"]
 script = ExtResource("1_pri7v")
 showname = "Butz"
-dialog = "Dude, I'm so guilty!! Tell them I'm guilty!!! Gimme the death sentence! I ain't afraid to die!"
+dialog = "Dude, I'm so guilty!!
+Tell them I'm guilty!!!"
 additive = false
 text_speed = 0
 letter_delay = 0.03
@@ -581,7 +717,26 @@ bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
 bookmark = &""
-continue_at_end = true
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_scbni"]
+script = ExtResource("1_pri7v")
+showname = "Butz"
+dialog = "Gimme the death sentence!
+I ain't afraid to die!"
+additive = false
+text_speed = 3
+letter_delay = 0.015
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
 background_color = 0
 target = NodePath("")
 collection = []
@@ -591,15 +746,15 @@ script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "What!? What's wrong, Larry?"
 additive = false
-text_speed = 0
-letter_delay = 0.03
+text_speed = 3
+letter_delay = 0.015
 wait_until_finished = true
 speaking_character = ""
 bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
 bookmark = &""
-continue_at_end = true
+continue_at_end = false
 background_color = 0
 target = NodePath("")
 collection = []
@@ -607,7 +762,8 @@ collection = []
 [sub_resource type="Resource" id="Resource_scnmy"]
 script = ExtResource("1_pri7v")
 showname = "Butz"
-dialog = "Oh, it's all over... I... I'm finished. Finished! I can't live in a world without her! I can't! Who... who took her away from me, Nick? Who did this!? Aww, Nick, ya gotta tell me! Who took my baby away!?"
+dialog = "Oh, it's all over...{p 0.33}
+I... I'm finished.{p 0.33}{spd_fast} Finished! "
 additive = false
 text_speed = 0
 letter_delay = 0.03
@@ -617,7 +773,64 @@ bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
 bookmark = &""
-continue_at_end = true
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_q74ct"]
+script = ExtResource("1_pri7v")
+showname = "Butz"
+dialog = "I can't live in a world
+without her!{p 0.33} I can't!"
+additive = false
+text_speed = 3
+letter_delay = 0.015
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_wukhk"]
+script = ExtResource("1_pri7v")
+showname = "Butz"
+dialog = "{spd_slow}Who...{p 0.33}{spd_normal} who took her away
+from me, Nick?{p 0.33}{spd_fast} Who did this!?"
+additive = false
+text_speed = 3
+letter_delay = 0.015
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_dd6wv"]
+script = ExtResource("1_pri7v")
+showname = "Butz"
+dialog = "Aww,{p} Nick,{p} ya gotta tell me!{p 0.33}
+Who took my baby away!?"
+additive = false
+text_speed = 3
+letter_delay = 0.015
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
 background_color = 0
 target = NodePath("")
 collection = []
@@ -625,17 +838,37 @@ collection = []
 [sub_resource type="Resource" id="Resource_arbkl"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
-dialog = "(Hmm... The person responsible for your girlfriend's death? The newspapers say it was you...)"
+dialog = "(Hmm... The person responsible
+for your girlfriend's death?)"
 additive = false
-text_speed = 0
-letter_delay = 0.03
+text_speed = 1
+letter_delay = 0.05
 wait_until_finished = true
 speaking_character = ""
 bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
 bookmark = &""
-continue_at_end = true
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_sxene"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "[color=#6bc6f7ff](The newspapers say
+{p 0.33}it was{p 0.33} [color=#f77339ff]you[/color]...)[/color]"
+additive = false
+text_speed = 1
+letter_delay = 0.05
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
 background_color = 0
 target = NodePath("")
 collection = []
@@ -653,7 +886,7 @@ bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
 bookmark = &""
-continue_at_end = true
+continue_at_end = false
 background_color = 0
 target = NodePath("")
 collection = []
@@ -661,4 +894,4 @@ collection = []
 [resource]
 resource_name = "lobby.tres"
 script = ExtResource("8_0rc1k")
-collection = [SubResource("Resource_jj2gc"), SubResource("Resource_as7w4"), SubResource("Resource_fqg3q"), SubResource("Resource_136wp"), SubResource("Resource_jyvpj"), SubResource("Resource_44hdp"), SubResource("Resource_dx04t"), SubResource("Resource_q22o8"), SubResource("Resource_jei7c"), SubResource("Resource_kt2s1"), SubResource("Resource_fugpg"), SubResource("Resource_ywdks"), SubResource("Resource_4hjoq"), SubResource("Resource_5l5eo"), SubResource("Resource_r8jdm"), SubResource("Resource_m3i10"), SubResource("Resource_kpfpg"), SubResource("Resource_i50t3"), SubResource("Resource_qoohk"), SubResource("Resource_ote5x"), SubResource("Resource_mgmm7"), SubResource("Resource_5s3ec"), SubResource("Resource_vflrd"), SubResource("Resource_b8w00"), SubResource("Resource_acr1i"), SubResource("Resource_2vdmu"), SubResource("Resource_3u36i"), SubResource("Resource_p6ops"), SubResource("Resource_wxeb1"), SubResource("Resource_qvgg5"), SubResource("Resource_t1hvy"), SubResource("Resource_5bjq5"), SubResource("Resource_q7n84"), SubResource("Resource_4nii8"), SubResource("Resource_35l8h"), SubResource("Resource_6a6vl"), SubResource("Resource_ugvem"), SubResource("Resource_scnmy"), SubResource("Resource_arbkl"), SubResource("Resource_2qydy")]
+collection = [SubResource("Resource_jj2gc"), SubResource("Resource_as7w4"), SubResource("Resource_fqg3q"), SubResource("Resource_136wp"), SubResource("Resource_jyvpj"), SubResource("Resource_44hdp"), SubResource("Resource_dx04t"), SubResource("Resource_q22o8"), SubResource("Resource_jei7c"), SubResource("Resource_kt2s1"), SubResource("Resource_fugpg"), SubResource("Resource_ywdks"), SubResource("Resource_4hjoq"), SubResource("Resource_5l5eo"), SubResource("Resource_r8jdm"), SubResource("Resource_m3i10"), SubResource("Resource_kpfpg"), SubResource("Resource_i50t3"), SubResource("Resource_qoohk"), SubResource("Resource_ote5x"), SubResource("Resource_mgmm7"), SubResource("Resource_5s3ec"), SubResource("Resource_vflrd"), SubResource("Resource_b8w00"), SubResource("Resource_2ml4e"), SubResource("Resource_acr1i"), SubResource("Resource_15tkm"), SubResource("Resource_i471l"), SubResource("Resource_2vdmu"), SubResource("Resource_3u36i"), SubResource("Resource_qtkwu"), SubResource("Resource_p6ops"), SubResource("Resource_pumkr"), SubResource("Resource_wxeb1"), SubResource("Resource_apuv7"), SubResource("Resource_qvgg5"), SubResource("Resource_t1hvy"), SubResource("Resource_g0heb"), SubResource("Resource_5bjq5"), SubResource("Resource_q7n84"), SubResource("Resource_4nii8"), SubResource("Resource_35l8h"), SubResource("Resource_6a6vl"), SubResource("Resource_scbni"), SubResource("Resource_ugvem"), SubResource("Resource_scnmy"), SubResource("Resource_q74ct"), SubResource("Resource_wukhk"), SubResource("Resource_dd6wv"), SubResource("Resource_arbkl"), SubResource("Resource_sxene"), SubResource("Resource_2qydy")]

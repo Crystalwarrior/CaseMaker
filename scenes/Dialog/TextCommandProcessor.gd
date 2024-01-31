@@ -1,3 +1,4 @@
+@tool
 class_name TextCommandProcessor
 
 var is_processing:bool = false
@@ -42,7 +43,6 @@ func remove_commands_from_string(full_text:String) -> String:
 func remove_string(string: String, removal: String) -> String:
 	var length = removal.length()
 	var i = 0
-
 	while i < string.length():
 		var piece = ''
 		var j = i

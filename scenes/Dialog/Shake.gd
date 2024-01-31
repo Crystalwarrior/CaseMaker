@@ -1,3 +1,4 @@
+@tool
 class_name ShakeEffect
 
 var shake_amount: float = 0

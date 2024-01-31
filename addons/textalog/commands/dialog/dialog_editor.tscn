@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://ctilnyafp01uw"]
 
 [ext_resource type="Script" path="res://addons/textalog/commands/dialog/dialog_editor.gd" id="1_jdxpf"]
-[ext_resource type="PackedScene" uid="uid://drtv4tdo7e08i" path="res://addons/textalog/scenes/dialog_box.tscn" id="2_qc1nv"]
+[ext_resource type="PackedScene" uid="uid://c2aekiuvsvmxj" path="res://scenes/Dialog/DialogBox.tscn" id="2_cojhd"]
 [ext_resource type="Texture2D" uid="uid://bnaun6p5vttqr" path="res://addons/textalog/commands/icons/bold.svg" id="3_sscjh"]
 [ext_resource type="Texture2D" uid="uid://dtyuq2rh62ef0" path="res://addons/textalog/commands/icons/italic.svg" id="4_mdvss"]
 [ext_resource type="Texture2D" uid="uid://c7n2wpa6lq2vk" path="res://addons/textalog/commands/icons/underline.svg" id="5_u3vta"]
@@ -38,6 +38,14 @@ grow_vertical = 2
 script = ExtResource("1_jdxpf")
 metadata/_edit_use_anchors_ = true
 
+[node name="DialogBox" parent="." instance=ExtResource("2_cojhd")]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+offset_top = -212.0
+offset_bottom = -20.0
+scale = Vector2(2, 2)
+
 [node name="DialogBar" type="HFlowContainer" parent="."]
 layout_mode = 2
 offset_right = 1280.0
@@ -46,18 +54,6 @@ offset_bottom = 31.0
 [node name="PlayButton" type="Button" parent="DialogBar"]
 layout_mode = 2
 text = "Play Message"
-
-[node name="DialogBox" parent="." instance=ExtResource("2_qc1nv")]
-layout_mode = 2
-anchors_preset = 0
-anchor_top = 0.0432222
-anchor_bottom = 0.372222
-offset_top = -0.119995
-offset_bottom = 0.000640869
-grow_vertical = 0
-
-[node name="Showname" parent="DialogBox" index="1"]
-offset_right = 357.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -209,5 +205,3 @@ offset_bottom = 588.0
 [connection signal="text_changed" from="VBoxContainer/TextEdit" to="." method="_on_text_edit_text_changed"]
 [connection signal="canceled" from="ColorPickerDialog" to="." method="_on_color_picker_dialog_canceled"]
 [connection signal="confirmed" from="ColorPickerDialog" to="." method="_on_color_picker_dialog_confirmed"]
-
-[editable path="DialogBox"]

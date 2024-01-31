@@ -1,3 +1,4 @@
+@tool
 class_name SceneCommand
 
 var character_name = ""

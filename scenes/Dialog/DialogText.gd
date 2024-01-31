@@ -16,17 +16,13 @@ signal is_text_displayed()
 var _old_text = ""
 
 func _init():
-	if Engine.is_editor_hint():
-		return
 	command_processor = TextCommandProcessor.new()
 
 func _process(_delta):
 	# Showname stuff
 	showname_box.global_position = showname_margin.global_position
-	var showname_offset := Vector2(0, -10)
-	showname_margin.global_position = self.global_position + showname_offset
 	if shake_effect:
-		showname_margin.global_position += shake_effect.get_shake_amount()
+		showname_margin.position += shake_effect.get_shake_amount()
 	showname_box.set_visible(showname_label.text != "")
 	if _old_text != text_label.text:
 		showname_margin.size = Vector2(0, 0)
@@ -40,8 +36,6 @@ func _process(_delta):
 func _ready():
 	resized.connect(_on_resized)
 	showname_margin.resized.connect(_on_showname_resized)
-	if Engine.is_editor_hint():
-		return
 	shake_effect = ShakeEffect.new()
 	shake_effect.initialize(position, _on_shake)
 
@@ -49,8 +43,6 @@ func _on_shake():
 	shake_effect.shake(self)
 
 func _on_resized():
-	if not dialog_box:
-		return
 	dialog_box.size = self.size
 
 func _on_showname_resized():
@@ -63,11 +55,9 @@ func set_showname_text(showname_text:String):
 	showname_label.text = showname_text
 
 func set_text_to_show(text_to_show:String):
-	if Engine.is_editor_hint():
-		return
 	if not text_label:
 		return
-	
+	command_processor.end_command_processing()
 	for character in text_to_show:
 		command_processor.add_command_char(character)
 	
@@ -77,9 +67,6 @@ func set_text_to_show(text_to_show:String):
 	text_displayed = false
 
 func reveal_character():
-	if Engine.is_editor_hint():
-		return
-
 	# This does the job, though there's probably a smarter way to handle it
 	if text_label.visible_characters == 0:
 		command_processor.process_command(0)

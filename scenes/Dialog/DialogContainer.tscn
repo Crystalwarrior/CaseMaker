@@ -1,12 +1,42 @@
-[gd_scene load_steps=11 format=3 uid="uid://damwjajlvml1h"]
+[gd_scene load_steps=12 format=3 uid="uid://damwjajlvml1h"]
 
 [ext_resource type="Script" path="res://scenes/Dialog/DialogText.gd" id="1_q40jj"]
+[ext_resource type="Theme" uid="uid://bviirlmyas1yd" path="res://assets/ui/themes/aa_dialog.tres" id="1_xplep"]
 [ext_resource type="Texture2D" uid="uid://dcojgc1arpe5r" path="res://assets/ui/dialog.png" id="3_wixsg"]
 [ext_resource type="FontFile" uid="uid://cqcf0wo4uxqvi" path="res://assets/fonts/Ace-Name.ttf" id="4_ff7wu"]
 [ext_resource type="Texture2D" uid="uid://bylfwn5tcu0hs" path="res://assets/ui/showname.png" id="4_pphs8"]
 [ext_resource type="FontFile" uid="uid://bpmqn2kw4vgn4" path="res://assets/fonts/igiari-cyrillic-plus.ttf" id="5_uya2w"]
 [ext_resource type="Texture2D" uid="uid://b8tcjpep1oehl" path="res://assets/ui/chat_arrow.png" id="6_wwy5q"]
 [ext_resource type="Texture2D" uid="uid://c5048fl1jox6" path="res://assets/ui/chat_auto.png" id="7_wh8kl"]
+
+[sub_resource type="Animation" id="Animation_w84s1"]
+resource_name = "auto"
+length = 0.001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_wh8kl")]
+}
 
 [sub_resource type="Animation" id="Animation_wxv1m"]
 resource_name = "next"
@@ -38,35 +68,6 @@ tracks/1/keys = {
 "values": [ExtResource("6_wwy5q")]
 }
 
-[sub_resource type="Animation" id="Animation_w84s1"]
-resource_name = "auto"
-length = 0.001
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("7_wh8kl")]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7vi7h"]
 _data = {
 "auto": SubResource("Animation_w84s1"),
@@ -78,6 +79,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 256.0
 offset_bottom = 57.0
+theme = ExtResource("1_xplep")
 script = ExtResource("1_q40jj")
 metadata/_edit_group_ = true
 
@@ -113,6 +115,7 @@ layout_mode = 1
 offset_top = -10.0
 offset_right = 42.0
 offset_bottom = 3.0
+pivot_offset = Vector2(0, 10)
 texture = ExtResource("4_pphs8")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -127,8 +130,11 @@ layout_mode = 1
 offset_top = -10.0
 offset_right = 42.0
 offset_bottom = 3.0
+pivot_offset = Vector2(0, 10)
 theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 0
 
 [node name="ShownameText" type="Label" parent="ShownameMargin"]
 unique_name_in_owner = true

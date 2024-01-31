@@ -58,7 +58,7 @@ script = ExtResource("1_04smc")
 showname = ""
 dialog = "{nov}{blip typewriter}Welcome, adventurer.
 You have chosen quite a perilous path.
-To surive, you must make choices that improve your chances at finding great treasures.
+To survive, you must make choices that improve your chances at finding great treasures.
 If you fail, you're doomed.
 Are you prepared to make the journey?"
 additive = false

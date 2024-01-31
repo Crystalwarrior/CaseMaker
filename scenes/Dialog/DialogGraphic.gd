@@ -1,3 +1,4 @@
+@tool
 extends TextureRect
 
 var shake_effect: ShakeEffect

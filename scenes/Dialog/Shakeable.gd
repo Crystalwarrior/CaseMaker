@@ -1,3 +1,4 @@
+@tool
 extends CanvasItem
 
 var shake_effect: ShakeEffect

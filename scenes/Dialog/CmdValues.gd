@@ -1,3 +1,4 @@
+@tool
 class_name CmdValues
 
 signal spd(to:String)

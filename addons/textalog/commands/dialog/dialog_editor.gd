@@ -3,7 +3,7 @@ extends Control
 
 @onready var text_edit: TextEdit = $VBoxContainer/TextEdit
 
-@onready var dialog_box = $DialogBox
+@onready var dialog_box = %DialogBox
 @onready var color_picker_dialog = $ColorPickerDialog
 @onready var color_picker = $ColorPickerDialog/ColorPicker
 
@@ -14,13 +14,13 @@ var current_color_tag = ""
 
 func set_dialog(text: String):
 	text_edit.text = text
-	dialog_box.dialog_label.text = text_edit.text
-	dialog_box.dialog_label.visible_characters = -1
+	dialog_box.dialog_container.set_text_to_show(text_edit.text)
+	dialog_box.dialog_container.text_label.visible_characters = -1
 
 
 func _on_text_edit_text_changed():
-	dialog_box.dialog_label.text = text_edit.text
-	dialog_box.dialog_label.visible_characters = -1
+	dialog_box.dialog_container.set_text_to_show(text_edit.text)
+	dialog_box.dialog_container.text_label.visible_characters = -1
 
 
 func insert_tag(tag: String, options: Variant =null, overwrite_tag = false):
@@ -78,7 +78,7 @@ func insert_color(tag: String, color: Color):
 
 
 func _on_play_button_pressed():
-	dialog_box.set_msg(text_edit.text)
+	dialog_box.display_text(text_edit.text)
 
 
 func _on_color_picker_dialog_confirmed():
