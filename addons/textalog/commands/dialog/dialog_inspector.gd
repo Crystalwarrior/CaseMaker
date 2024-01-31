@@ -30,7 +30,7 @@ class DialogEditorButton extends EditorProperty:
 	func _method_button_pressed() -> void:
 		dialog_editor_window.confirmed.connect(_method_selector_confirmed, CONNECT_ONE_SHOT)
 		dialog_editor_window.popup_centered(Vector2i(522, 522))
-		dialog_editor_window.dialog_editor.set_dialog(get_edited_object().dialog)
+		dialog_editor_window.dialog_editor.set_command(get_edited_object())
 
 	func _method_selector_confirmed() -> void:
 		get_edited_object().dialog = dialog_editor_window.dialog_editor.text_edit.text

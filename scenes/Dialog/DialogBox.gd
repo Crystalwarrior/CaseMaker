@@ -40,8 +40,8 @@ var blip_counter: int = 0
 
 var animation_tween: Tween
 
-func set_speed(spd:String):
-	current_spd = spd.to_float()
+func set_speed(spd):
+	current_spd = float(spd)
 
 
 func set_rapid():

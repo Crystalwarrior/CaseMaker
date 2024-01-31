@@ -11,6 +11,13 @@ extends Control
 
 var current_color_tag = ""
 
+var editor_command: Command
+
+func set_command(command: Command):
+	editor_command = command
+	set_dialog(editor_command.dialog)
+	dialog_box.dialog_container.set_showname_text(editor_command.showname)
+	dialog_box.set_speed(editor_command.letter_delay)
 
 func set_dialog(text: String):
 	text_edit.text = text
@@ -78,7 +85,7 @@ func insert_color(tag: String, color: Color):
 
 
 func _on_play_button_pressed():
-	dialog_box.display_text(text_edit.text)
+	dialog_box.display_text(text_edit.text, editor_command.showname)
 
 
 func _on_color_picker_dialog_confirmed():
