@@ -1,8 +1,11 @@
 @tool
 extends Control
 
+# showname_box and dialog_box are the visual panels behind the text.
+# They're parented to CanvasGroup becuase of transparency merging issues.
 @onready var dialog_box: Control = %DialogBox
 @onready var showname_box: Control = %ShownameBox
+
 @onready var text_label: RichTextLabel = %DialogTextLabel
 @onready var showname_margin: Control = %ShownameMargin
 @onready var showname_label: Label = %ShownameText
@@ -19,28 +22,27 @@ func _init():
 	command_processor = TextCommandProcessor.new()
 
 func _process(_delta):
-	# Showname stuff
-	showname_box.global_position = showname_margin.global_position
-	if shake_effect:
-		showname_margin.position += shake_effect.get_shake_amount()
-	showname_box.set_visible(showname_label.text != "")
 	if _old_text != text_label.text:
 		showname_margin.size = Vector2(0, 0)
 		_old_text = text_label.text
 
-	# Dialog stuff
+	showname_box.global_position = showname_margin.global_position
+	showname_box.set_visible(showname_label.text != "")
+
 	dialog_box.global_position = self.global_position
 	if shake_effect:
-		dialog_box.global_position += shake_effect.get_shake_amount()
+		dialog_box.position = shake_effect.get_shake_position()
+		showname_margin.position = shake_effect.get_shake_position() - showname_margin.pivot_offset
 
 func _ready():
 	resized.connect(_on_resized)
 	showname_margin.resized.connect(_on_showname_resized)
 	shake_effect = ShakeEffect.new()
-	shake_effect.initialize(position, _on_shake)
+	shake_effect.initialize(text_label.position, _on_shake)
 
 func _on_shake():
-	shake_effect.shake(self)
+	if shake_effect:
+		shake_effect.shake(self)
 
 func _on_resized():
 	dialog_box.size = self.size
@@ -58,11 +60,13 @@ func set_text_to_show(text_to_show:String):
 	if not text_label:
 		return
 	command_processor.end_command_processing()
-	for character in text_to_show:
-		command_processor.add_command_char(character)
 	
+	text_label.set_text(text_to_show)
+	for character in text_label.get_parsed_text():
+		command_processor.add_command_char(character)
 	text_to_show = command_processor.remove_commands_from_string(text_to_show)
 	text_label.set_text(text_to_show)
+	
 	text_label.visible_characters = 0
 	text_displayed = false
 
@@ -75,7 +79,7 @@ func reveal_character():
 	command_processor.process_command(text_label.visible_characters)
 
 	var length = text_label.get_parsed_text().length()
-	if(text_label.visible_characters == length or length <= 0):
+	if(text_label.visible_characters >= length or length <= 0):
 		text_displayed = true
 		is_text_displayed.emit()
 		command_processor.end_command_processing()

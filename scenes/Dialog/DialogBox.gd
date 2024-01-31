@@ -103,7 +103,7 @@ func _process(delta):
 		if speed_counter < current_spd:
 			return
 		var count: int = int(speed_counter / current_spd)
-		while (current_spd == 0 or count > 0):
+		while (current_spd == 0 or count > 0) and process_dialog:
 			count -= 1
 			next_letter()
 		# Lag compensation (in theory)
