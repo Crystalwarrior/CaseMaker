@@ -14,8 +14,7 @@ const PAUSE_AMT = 1.0
 const BLIPMALE_STREAM: AudioStream = preload("res://assets/sounds/blips/male.wav")
 const BLIPFEMALE_STREAM: AudioStream = preload("res://assets/sounds/blips/female.wav")
 const BLIPTYPEWRITER_STREAM: AudioStream = preload("res://assets/sounds/blips/typewriter.wav")
-const BLIPSANS_STREAM: AudioStream = preload("res://assets/sounds/blips/sans.wav")
-
+const BLIPFOLDER = "res://assets/sounds/blips/"
 # Text Speed constants
 # 1 letter every 5 frames
 const TEXT_SPEED_TYPEWRITER: float = 0.08
@@ -113,12 +112,10 @@ func next_letter():
 	dialog_container.reveal_character()
 
 	var current_char = dialog_container.get_current_character()
-	var blip = false
 	if (!dialog_container.is_processing_command()):
 		var skip_char = current_char in [" ", "\n"]
 		if (not skip_char):
 			if(blip_counter == 0 and not current_char.is_empty()):
-				blip = true
 				blip_player.play()
 			blip_counter = (blip_counter + 1) % blip_rate
 
@@ -131,10 +128,15 @@ func set_blipsound(blip_string:String):
 		new_stream = BLIPFEMALE_STREAM
 	elif blip_string == "typewriter":
 		new_stream = BLIPTYPEWRITER_STREAM
-	elif blip_string == "sans":
-		new_stream = BLIPSANS_STREAM
 	else:
-		new_stream = load(blip_string)
+		# Direct filepath to blip
+		if ResourceLoader.exists(blip_string, "AudioStream"):
+			new_stream = load(blip_string)
+		# Filename in the blips folder
+		elif ResourceLoader.exists(BLIPFOLDER + blip_string + ".wav", "AudioStream"):
+			new_stream = load(BLIPFOLDER + blip_string + ".wav")
+		else:
+			push_error("Blip sound ", new_stream, " not found!")
 	blip_player.set_stream(new_stream)
 
 

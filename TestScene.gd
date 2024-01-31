@@ -55,9 +55,11 @@ func set_waiting_on_input(tog: bool):
 	upper_screen.set_chat_arrow_visible(waiting_on_input)
 
 
-func dialog(showname: String = "", text: String = "", additive: bool = false, letter_delay: float = 0.03) -> void:
+func dialog(showname: String = "", text: String = "", additive: bool = false, letter_delay: float = 0.03, blip_sound = "male") -> void:
 	dialog_box.current_spd = letter_delay
 	dialog_box.display_text(text, showname)
+	if blip_sound:
+		dialog_box.set_blipsound(blip_sound)
 	#TODO: implement additive text boxes
 
 
