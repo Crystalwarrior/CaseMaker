@@ -36,7 +36,7 @@ const TEXT_SPEED: Array = [
 	0.08,
 	# 1 letter every 1 frame
 	# FAST
-	0.015,
+	0.017,
 	# 2 letters every 1 frame
 	# RAPID
 	0.008,
@@ -68,6 +68,13 @@ var _letter_delay:float = 0.03
 		emit_changed()
 	get:
 		return _letter_delay
+## The blip sound to use for this dialog box
+@export var blip_sound:String = "male":
+	set(value):
+		blip_sound = value
+		emit_changed()
+	get:
+		return blip_sound
 ## Pause the timeline until the dialog finishes showing.
 @export var wait_until_finished:bool = true:
 	set(value):
@@ -108,7 +115,7 @@ var _letter_delay:float = 0.03
 func _execution_steps() -> void:
 	command_started.emit()
 	target_node.set_dialog_visible(true)
-	target_node.dialog(showname, dialog, additive, letter_delay)
+	target_node.dialog(showname, dialog, additive, letter_delay, blip_sound)
 	if speaking_character:
 		var speaker = target_node.get_character(speaking_character)
 		if speaker:

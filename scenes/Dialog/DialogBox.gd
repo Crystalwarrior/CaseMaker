@@ -24,7 +24,7 @@ const TEXT_SPEED_SLOW: float = 0.05
 # 1 letter every 2 frames
 const TEXT_SPEED_NORMAL: float = 0.03
 # 1 letter every 1 frame
-const TEXT_SPEED_FAST: float = 0.015
+const TEXT_SPEED_FAST: float = 0.017
 # 2 letters every 1 frame
 const TEXT_SPEED_RAPID: float = 0.008
 
@@ -42,31 +42,30 @@ var animation_tween: Tween
 
 func set_speed(spd):
 	current_spd = float(spd)
+	if current_spd <= TEXT_SPEED_FAST:
+		blip_rate = 4
+	else:
+		blip_rate = 2
 
 
 func set_rapid():
-	blip_rate = 4
-	current_spd = TEXT_SPEED_RAPID
+	set_speed(TEXT_SPEED_RAPID)
 
 
 func set_fast():
-	blip_rate = 4
-	current_spd = TEXT_SPEED_FAST
+	set_speed(TEXT_SPEED_FAST)
 
 
 func set_normal():
-	blip_rate = 2
-	current_spd = TEXT_SPEED_NORMAL
+	set_speed(TEXT_SPEED_NORMAL)
 
 
 func set_slow():
-	blip_rate = 2
-	current_spd = TEXT_SPEED_SLOW
+	set_speed(TEXT_SPEED_SLOW)
 
 
 func set_typewriter():
-	blip_rate = 2
-	current_spd = TEXT_SPEED_TYPEWRITER
+	set_speed(TEXT_SPEED_TYPEWRITER)
 
 
 func adv():
