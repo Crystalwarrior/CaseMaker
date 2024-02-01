@@ -22,7 +22,7 @@ const TEXT_SPEED_TYPEWRITER: float = 0.08
 # 1 letter every 3 frames
 const TEXT_SPEED_SLOW: float = 0.05
 # 1 letter every 2 frames
-const TEXT_SPEED_NORMAL: float = 0.03
+const TEXT_SPEED_NORMAL: float = 0.034
 # 1 letter every 1 frame
 const TEXT_SPEED_FAST: float = 0.017
 # 2 letters every 1 frame

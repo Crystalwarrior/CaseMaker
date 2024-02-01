@@ -13,7 +13,7 @@ var current_color_tag = ""
 
 var editor_command: Command
 
-var current_speed = 0.03
+var current_speed = 0.034
 var current_blip = "male"
 
 
@@ -145,7 +145,7 @@ func _on_option_button_item_selected(index):
 	var item_text = %spd_button.get_item_text(index)
 	var cmd = CmdValues.SPD
 	if item_text == "custom":
-		insert_text_command(cmd, "0.03")
+		insert_text_command(cmd, "0.034")
 	else:
 		insert_text_command(cmd + "_" + item_text)
 

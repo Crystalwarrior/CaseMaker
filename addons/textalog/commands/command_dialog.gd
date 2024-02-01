@@ -27,7 +27,7 @@ extends Command
 const TEXT_SPEED: Array = [
 	# 1 letter every 2 frames
 	# NORMAL
-	0.03,
+	0.034,
 	# 1 letter every 3 frames
 	# SLOW
 	0.05,
@@ -55,9 +55,9 @@ enum TextSpeed {NORMAL, SLOW, TYPEWRITER, FAST, RAPID, INSTANT, CUSTOM}
 		emit_changed()
 	get:
 		return text_speed
-var _letter_delay:float = 0.03
+var _letter_delay:float = 0.034
 ## The amount of time text pauses for on each letter
-@export_range(0, 10.0) var letter_delay:float = 0.03:
+@export_range(0, 10.0) var letter_delay:float = 0.034:
 	set(value):
 		_letter_delay = value
 		var found = TEXT_SPEED.find(value)
