@@ -165,7 +165,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0.776471)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -554,7 +554,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0.166667, 0.333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.776471)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -850,7 +850,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0.333333, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.776471)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1028,7 +1028,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.166667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0.776471), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -1304,7 +1304,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.166667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0.776471), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1660,7 +1660,6 @@ stretch_mode = 6
 
 [node name="NextButton" type="Button" parent="."]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.776471)
 layout_mode = 1
 offset_left = 16.0
 offset_top = 40.0
@@ -1676,6 +1675,7 @@ script = ExtResource("3_8keps")
 
 [node name="Panel" type="Panel" parent="NextButton"]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.776471)
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
@@ -1713,6 +1713,7 @@ grow_vertical = 2
 
 [node name="BigArrow" type="Sprite2D" parent="NextButton/BigArrowAnchor"]
 unique_name_in_owner = true
+z_index = 1
 position = Vector2(-6, 0)
 texture = ExtResource("7_8r1xb")
 
