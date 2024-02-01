@@ -2,10 +2,11 @@
 extends Control
 
 @onready var blip_player: AudioStreamPlayer = get_node("%BlipPlayer")
-@onready var text_timer: Timer = get_node("%TimerNode")
 @onready var dialog_container: Control = get_node("%DialogContainer")
 @onready var chat_arrow: TextureRect = dialog_container.get_node("%ChatArrow")
 @onready var select_your_answer: TextureRect = get_node("%SelectYourAnswer")
+
+var text_timer: Timer
 
 signal text_shown()
 signal unpause()
@@ -42,7 +43,7 @@ var animation_tween: Tween
 func set_speed(spd):
 	current_spd = float(spd)
 	if current_spd <= TEXT_SPEED_FAST:
-		blip_rate = 4
+		blip_rate = 3
 	else:
 		blip_rate = 2
 
@@ -174,7 +175,11 @@ func _on_pause_called(pause_string:String):
 	pause = true
 	if pause_string == "":
 		pause_string = "0.2"
-	text_timer.start(PAUSE_AMT * pause_string.to_float())
+	text_timer = Timer.new()
+	text_timer.wait_time = PAUSE_AMT * pause_string.to_float()
+	text_timer.autostart = true
+	add_child(text_timer)
 	await text_timer.timeout
 	pause = false
 	unpause.emit()
+	text_timer.queue_free()

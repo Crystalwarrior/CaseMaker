@@ -11,5 +11,7 @@ func _ready():
 func _process(_delta):
 	self.position = shake_effect.get_shake_position()
 
-func _on_shake():
-	shake_effect.shake(self)
+func _on_shake(shake_amount:String):
+	if shake_amount == "":
+		shake_amount = "2.0"
+	shake_effect.shake(self, shake_amount.to_float())

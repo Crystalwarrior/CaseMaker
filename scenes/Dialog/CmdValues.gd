@@ -8,7 +8,7 @@ signal spd_slow()
 signal spd_typewriter()
 
 signal eff_flash()
-signal eff_shake()
+signal eff_shake(shake_amount:String)
 signal eff_pause(pause_amount:String)
 
 signal new_emote(emote:String)
@@ -70,7 +70,7 @@ var signal_dict:Dictionary = {
 
 func handle_effect(cmd:String, param:String = ""):
 	var cmd_signal = signal_dict[cmd]
-	if(param == "" and cmd != PAUSE):
+	if(param == "" and cmd != PAUSE and cmd != SHAKE):
 		cmd_signal.emit()
 	else:
 		cmd_signal.emit(param)

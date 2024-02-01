@@ -31,18 +31,28 @@ func _process(_delta):
 
 	dialog_box.global_position = self.global_position
 	if shake_effect:
-		dialog_box.position = shake_effect.get_shake_position()
-		showname_margin.position = shake_effect.get_shake_position() - showname_margin.pivot_offset
+		var shake_position = shake_effect.get_shake_position()
+		dialog_box.position = shake_position
+		showname_margin.position = shake_position - showname_margin.pivot_offset
 
 func _ready():
 	resized.connect(_on_resized)
 	showname_margin.resized.connect(_on_showname_resized)
+	# So we don't get the shake effect from, say, DialogEditor
+	if not Engine.is_editor_hint():
+		add_shake_effect()
+
+
+func add_shake_effect():
 	shake_effect = ShakeEffect.new()
 	shake_effect.initialize(text_label.position, _on_shake)
 
-func _on_shake():
+
+func _on_shake(shake_amount:String):
+	if shake_amount == "":
+		shake_amount = "2.0"
 	if shake_effect:
-		shake_effect.shake(self)
+		shake_effect.shake(self, shake_amount.to_float())
 
 func _on_resized():
 	dialog_box.size = self.size

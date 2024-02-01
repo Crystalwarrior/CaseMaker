@@ -16,6 +16,12 @@ var editor_command: Command
 var current_speed = 0.03
 var current_blip = "male"
 
+
+func _ready():
+	if dialog_box.dialog_container.shake_effect == null:
+		dialog_box.dialog_container.add_shake_effect()
+
+
 func set_command(command: Command):
 	editor_command = command
 	set_dialog(editor_command.dialog)
@@ -24,6 +30,7 @@ func set_command(command: Command):
 	dialog_box.set_speed(current_speed)
 	current_blip = editor_command.blip_sound
 	dialog_box.set_blipsound(current_blip)
+
 
 func set_dialog(text: String):
 	text_edit.text = text
