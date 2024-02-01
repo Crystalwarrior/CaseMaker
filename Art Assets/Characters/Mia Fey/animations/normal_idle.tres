@@ -1,0 +1,28 @@
+[gd_resource type="Animation" load_steps=10 format=3 uid="uid://cmoyms5ydfm50"]
+
+[ext_resource type="Texture2D" uid="uid://e43gdadp8rk1" path="res://Art Assets/Characters/Mia Fey/animations/normal_idle/0.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://blr6hnlkcx48s" path="res://Art Assets/Characters/Mia Fey/animations/normal_idle/1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dlf8uaqnekvkk" path="res://Art Assets/Characters/Mia Fey/animations/normal_idle/2.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bdohdmx5t1p81" path="res://Art Assets/Characters/Mia Fey/animations/normal_idle/3.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bw8v1opbgromd" path="res://Art Assets/Characters/Mia Fey/animations/normal_idle/4.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cfly2wy5aqcs7" path="res://Art Assets/Characters/Mia Fey/animations/normal_idle/5.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://dx801l6v8q50j" path="res://Art Assets/Characters/Mia Fey/animations/normal_idle/6.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://ckth36xjkyp4y" path="res://Art Assets/Characters/Mia Fey/animations/normal_idle/7.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bxibg1d6md2dq" path="res://Art Assets/Characters/Mia Fey/animations/normal_idle/8.png" id="9"]
+
+[resource]
+resource_name = "normal_idle"
+length = 6.52
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.25, 1.38, 1.48, 1.63, 3.79, 3.94, 4.04, 4.19),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1"), ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9")]
+}

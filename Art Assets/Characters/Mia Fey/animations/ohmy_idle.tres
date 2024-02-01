@@ -1,0 +1,32 @@
+[gd_resource type="Animation" load_steps=14 format=3 uid="uid://dgqwr4v2q27rs"]
+
+[ext_resource type="Texture2D" uid="uid://cxvtxkj8lk812" path="res://Art Assets/Characters/Mia Fey/animations/ohmy_idle/0.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://qs811y0wmqdx" path="res://Art Assets/Characters/Mia Fey/animations/ohmy_idle/1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dsrvlfxqnrb2v" path="res://Art Assets/Characters/Mia Fey/animations/ohmy_idle/2.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://btpdjx6r7j1cn" path="res://Art Assets/Characters/Mia Fey/animations/ohmy_idle/3.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://c8e3taie2wew5" path="res://Art Assets/Characters/Mia Fey/animations/ohmy_idle/4.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bjts0wdghfrag" path="res://Art Assets/Characters/Mia Fey/animations/ohmy_idle/5.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://bgckrvprtt7q4" path="res://Art Assets/Characters/Mia Fey/animations/ohmy_idle/6.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://c1yhw17u6qh6t" path="res://Art Assets/Characters/Mia Fey/animations/ohmy_idle/7.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://djxolrx6owlju" path="res://Art Assets/Characters/Mia Fey/animations/ohmy_idle/8.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://cuw27a0dckbdh" path="res://Art Assets/Characters/Mia Fey/animations/ohmy_idle/9.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://dlkmxqc27uxgf" path="res://Art Assets/Characters/Mia Fey/animations/ohmy_idle/10.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://bx25lifd7lrxq" path="res://Art Assets/Characters/Mia Fey/animations/ohmy_idle/11.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://l7m33jjpl5d7" path="res://Art Assets/Characters/Mia Fey/animations/ohmy_idle/12.png" id="13"]
+
+[resource]
+resource_name = "ohmy_idle"
+length = 6.34
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.25, 1.33, 1.39, 1.47, 3.63, 3.68, 3.73, 3.79, 3.85, 3.91, 3.96, 4.01),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1"), ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9"), ExtResource("10"), ExtResource("11"), ExtResource("12"), ExtResource("13")]
+}
