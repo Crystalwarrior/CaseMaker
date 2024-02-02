@@ -114,36 +114,14 @@ var _letter_delay:float = 0.034
 
 func _execution_steps() -> void:
 	command_started.emit()
-	target_node.set_dialog_visible(true)
-	target_node.dialog(showname, dialog, additive, letter_delay, blip_sound)
-	if speaking_character:
-		var speaker = target_node.get_character(speaking_character)
-		if speaker:
-			if bump_speaker:
-				speaker.bump()
-			for chara in target_node.get_characters():
-				if not highlight_speaker or chara == speaker:
-					chara.blackout(false, 0.25)
-				else:
-					chara.blackout(true, 0.25)
-			speaker.start_talking()
-			if target_node.is_connected("dialog_finished", speaker.stop_talking):
-				target_node.dialog_finished.disconnect(speaker.stop_talking)
-			target_node.dialog_finished.connect(speaker.stop_talking, CONNECT_ONE_SHOT)
-	if wait_until_finished and letter_delay > 0:
-		if target_node.is_connected("dialog_finished", dialog_finished):
-			target_node.dialog_finished.disconnect(dialog_finished)
-		target_node.dialog_finished.connect(
-			dialog_finished,
-			CONNECT_ONE_SHOT
-			)
-	else:
-		dialog_finished()
+	if not target_node.has_method(&"dialog"):
+		push_error("[Dialog Command]: target_node '%s' doesn't have 'dialog' method." % target_node)
+		return
+	# Pass over ourselves to let the target node handle everything else
+	target_node.dialog(self)
+	if not wait_until_finished:
+		go_to_next_command()
 
-func dialog_finished():
-	if hide_dialog:
-		target_node.set_dialog_visible(false)
-	command_finished.emit()
 
 func _get_name() -> StringName:
 	var prefix = ""

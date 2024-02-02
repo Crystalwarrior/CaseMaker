@@ -37,27 +37,25 @@ func next():
 			command_processor.go_to_next_command()
 
 
-func create_scene_command(nametag, animation, text, showname, wait_for_input = true) -> SceneCommand:
-	var command = SceneCommand.new()
-	
-	command.character_name = nametag	
-	command.character_animation = animation
-	command.text_for_scene = text
-	command.showname_for_scene = showname
-	command.wait_for_input = wait_for_input
-	
-	return command
-
-
 func set_waiting_on_input(tog: bool):
 	waiting_on_input = tog
 	next_button.disable(not waiting_on_input)
 	upper_screen.set_chat_arrow_visible(waiting_on_input)
 
 
-func dialog(showname: String = "", text: String = "", additive: bool = false, letter_delay: float = 0.034, blip_sound = "male") -> void:
+func dialog(dialog_command:Command) -> void:
+	var showname = dialog_command.showname
+	var dialog = dialog_command.dialog
+	var additive = dialog_command.additive
+	var letter_delay = dialog_command.letter_delay
+	var blip_sound = dialog_command.blip_sound
+	var wait_until_finished = dialog_command.wait_until_finished
+	var speaking_character = dialog_command.speaking_character
+	var bump_speaker = dialog_command.bump_speaker
+	var highlight_speaker = dialog_command.highlight_speaker
+	var hide_dialog = dialog_command.hide_dialog
 	dialog_box.current_spd = letter_delay
-	dialog_box.display_text(text, showname)
+	dialog_box.display_text(dialog, showname)
 	if blip_sound:
 		dialog_box.set_blipsound(blip_sound)
 	#TODO: implement additive text boxes
