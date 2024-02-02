@@ -46,19 +46,31 @@ func set_waiting_on_input(tog: bool):
 func dialog(dialog_command:Command) -> void:
 	var showname = dialog_command.showname
 	var dialog = dialog_command.dialog
-	var additive = dialog_command.additive
 	var letter_delay = dialog_command.letter_delay
 	var blip_sound = dialog_command.blip_sound
+	var hide_dialog = dialog_command.hide_dialog
 	var wait_until_finished = dialog_command.wait_until_finished
+
+	#TODO: use these for the characters
 	var speaking_character = dialog_command.speaking_character
 	var bump_speaker = dialog_command.bump_speaker
 	var highlight_speaker = dialog_command.highlight_speaker
-	var hide_dialog = dialog_command.hide_dialog
+
+	#TODO: implement additive text boxes
+	var additive = dialog_command.additive
+
 	dialog_box.current_spd = letter_delay
-	dialog_box.display_text(dialog, showname)
 	if blip_sound:
 		dialog_box.set_blipsound(blip_sound)
-	#TODO: implement additive text boxes
+	dialog_box.show()
+	dialog_box.display_text(dialog, showname)
+
+	# If we wait until finished, remember tell the timeline to continue
+	if wait_until_finished:
+		await dialog_finished
+		dialog_command.go_to_next_command()
+		if hide_dialog:
+			dialog_box.hide()
 
 
 func set_dialog_visible(toggle: bool = true):
