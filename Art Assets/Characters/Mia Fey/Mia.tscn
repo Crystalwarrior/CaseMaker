@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dt6c18aeo3wal"]
 
 [ext_resource type="Script" path="res://Art Assets/Characters/Character.gd" id="1_pk5q6"]
-[ext_resource type="Texture2D" uid="uid://cxvtxkj8lk812" path="res://Art Assets/Characters/Mia Fey/animations/ohmy_idle/0.png" id="2_f0s65"]
+[ext_resource type="Texture2D" uid="uid://e43gdadp8rk1" path="res://Art Assets/Characters/Mia Fey/animations/normal_idle/0.png" id="2_y0nb0"]
 [ext_resource type="AnimationLibrary" uid="uid://d83rpocmteoe" path="res://Art Assets/Characters/Mia Fey/animation_library.tres" id="4_slh1t"]
 
 [node name="Mia" type="Node2D"]
@@ -10,7 +10,7 @@ script = ExtResource("1_pk5q6")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-texture = ExtResource("2_f0s65")
+texture = ExtResource("2_y0nb0")
 centered = false
 region_rect = Rect2(20, 25, 110, 167)
 

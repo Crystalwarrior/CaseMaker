@@ -110,8 +110,8 @@ extends Command
 
 func _execution_steps() -> void:
 	command_started.emit()
-	if not target_node.has_method(&"dialog"):
-		push_error("[Dialog Command]: target_node '%s' doesn't have 'dialog' method." % target_node)
+	if not target_node.has_method(&"character"):
+		push_error("[Character Command]: target_node '%s' doesn't have 'character' method." % target_node)
 		return
 	# Pass over ourselves to let the target node handle everything else
 	target_node.character(self)
