@@ -97,7 +97,7 @@ _data = {
 "normal_talk": SubResource("Animation_0ip1k")
 }
 
-[node name="Edgeworth" type="Node2D"]
+[node name="Edgeworth" type="CanvasGroup"]
 texture_filter = 1
 script = ExtResource("1_m54rt")
 

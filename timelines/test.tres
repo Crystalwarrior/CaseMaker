@@ -11,8 +11,9 @@ dialog = "{adv}{blip male}[color=6db6f7](It's hard to believe that
 I've been away from my
 office for a whole month.)[/color]"
 additive = false
-text_speed = 0
+text_speed = 6
 letter_delay = 0.03
+blip_sound = "male"
 wait_until_finished = true
 speaking_character = ""
 bump_speaker = false
@@ -29,8 +30,9 @@ script = ExtResource("1_wg2e1")
 showname = ""
 dialog = "{blip sans}watch out sans is here {p 0.5}*kills*"
 additive = false
-text_speed = 0
+text_speed = 6
 letter_delay = 0.03
+blip_sound = "male"
 wait_until_finished = true
 speaking_character = ""
 bump_speaker = false
@@ -58,8 +60,9 @@ showname = "Mia"
 dialog = "{blip female}Let's just hope he doesn't
 say anything...{p 0.4} Unfortunate."
 additive = false
-text_speed = 0
+text_speed = 6
 letter_delay = 0.03
+blip_sound = "male"
 wait_until_finished = true
 speaking_character = ""
 bump_speaker = false
@@ -77,8 +80,9 @@ showname = "Edgeworth"
 dialog = "{blip male}Why of all places did the
 {e hmm}murder occur in my office?"
 additive = false
-text_speed = 0
+text_speed = 6
 letter_delay = 0.03
+blip_sound = "male"
 wait_until_finished = true
 speaking_character = ""
 bump_speaker = false
@@ -95,8 +99,9 @@ script = ExtResource("1_wg2e1")
 showname = "SANS UNDERTALE"
 dialog = "{blip sans}sans undertale eh heh heheheh eheheheheh"
 additive = false
-text_speed = 0
+text_speed = 6
 letter_delay = 0.03
+blip_sound = "male"
 wait_until_finished = true
 speaking_character = ""
 bump_speaker = false
@@ -114,8 +119,9 @@ showname = "LOOK MA, NOVEL MODE"
 dialog = "{nov}This is a story how I did your mom.{p 0.2} It's a long story so {spd_slow}{s}buckle {s}up.{p 1.0}{spd_normal}
 So, first, I met your mom and fuck it I'm bored {spd_fast}lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem lorem ipsum lorem lorem lorem lorem lorem"
 additive = false
-text_speed = 0
+text_speed = 6
 letter_delay = 0.03
+blip_sound = "male"
 wait_until_finished = true
 speaking_character = ""
 bump_speaker = false

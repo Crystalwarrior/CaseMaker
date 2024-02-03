@@ -137,7 +137,7 @@ func set_blipsound(blip_string:String):
 		elif ResourceLoader.exists(BLIPFOLDER + blip_string + ".wav", "AudioStream"):
 			new_stream = load(BLIPFOLDER + blip_string + ".wav")
 		else:
-			push_error("Blip sound ", new_stream, " not found!")
+			push_error("Blip sound ", blip_string, " not found!")
 	blip_player.set_stream(new_stream)
 
 

@@ -28,7 +28,7 @@ func _ready():
 
 
 func _animation_started(anim_name: StringName):
-	if anim_player.get_animation(anim_name).loop_mode != Animation.LOOP_NONE:
+	if anim_player.get_animation(anim_name).loop_mode == Animation.LOOP_NONE:
 		waiting_on_animations += 1
 
 
@@ -84,22 +84,22 @@ func fade(out: bool = false, duration: float = 1.0):
 	if fadetween:
 		fadetween.kill()
 	if duration <= 0:
-		modulate.a = 0 if out else 1
+		self_modulate.a = 0 if out else 1
 		return
 	fadetween = create_tween()
-	fadetween.tween_property(self, "modulate:a", 0 if out else 1, duration)
+	fadetween.tween_property(self, "self_modulate:a", 0 if out else 1, duration)
 	waiting_on_animations += 1
 	await fadetween.finished
 	_animation_finished()
 
 
 func fadeout(duration: float = 1.0):
-	self.modulate.a = 1.0
+	self.self_modulate.a = 1.0
 	fade(true, duration)
 
 
 func fadein(duration: float = 1.0):
-	self.modulate.a = 0.0
+	self.self_modulate.a = 0.0
 	fade(false, duration)
 
 

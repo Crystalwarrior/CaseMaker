@@ -1,7 +1,8 @@
 extends Control
 
 @onready var dialog_box = get_node("%DialogBox")
-@onready var color_fade = get_node("%ColorFade")
+@onready var background_fade = get_node("%BackgroundFade")
+@onready var foreground_fade = get_node("%ForegroundFade")
 @onready var character_container = get_node("%CharacterContainer")
 
 func create_scene_manager() -> SceneManager:
@@ -17,7 +18,7 @@ func set_chat_arrow_visible(toggle: bool = true):
 
 func select_your_answer(toggle: bool = true):
 	if toggle:
-		color_fade.fade(Color(0, 0, 0, 0.5), 0.4)
+		foreground_fade.fade(Color(0, 0, 0, 0.5), 0.4)
 	else:
-		color_fade.fadein(0.1)
+		foreground_fade.fadein(0.1)
 	dialog_box.select_answer_graphic(toggle)

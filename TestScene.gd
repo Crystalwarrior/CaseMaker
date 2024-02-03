@@ -8,6 +8,12 @@ extends Control
 
 @onready var command_processor: CommandProcessor = get_node("%CommandProcessor")
 
+@onready var music_player: AudioStreamPlayer = get_node("%MusicPlayer")
+@onready var sfx_player: AudioStreamPlayer = get_node("%SFXPlayer")
+
+const SFXFOLDER = "res://assets/sounds/general/"
+const MUSICFOLDER = "res://assets/music/"
+
 var finished: bool = false
 var waiting_on_input: bool = true
 
@@ -18,7 +24,9 @@ signal dialog_finished
 signal choice_selected(index)
 
 func _ready():
-	CommandValues.instance().eff_flash.connect(_on_flash)
+	CommandValues.instance().eff_flash.connect(eff_flash)
+	CommandValues.instance().sound_sfx.connect(play_sfx)
+	CommandValues.instance().sound_music.connect(play_music)
 	scene_manager = upper_screen.create_scene_manager()
 	dialog_box = scene_manager.get_dialog_box()
 	dialog_box.text_shown.connect(_on_text_shown)
@@ -141,25 +149,66 @@ func multiple_choice(choices: PackedStringArray):
 	bottom_screen.multiple_choice(choices)
 
 
-func _on_flash():
+func eff_flash():
 	upper_screen.add_child(flash.instantiate())
 
 
-func _on_command_processor_collection_started(collection):
+func play_sfx(sfx_string:String):
+	if sfx_string == "":
+		sfx_player.stop()
+		return
+	var new_stream: AudioStream
+	# Direct filepath to sfx
+	if ResourceLoader.exists(sfx_string, "AudioStream"):
+		new_stream = load(sfx_string)
+	var extension = ".wav"
+	if sfx_string.get_extension() != "":
+		extension = ""
+	# Filename in the blips folder
+	elif ResourceLoader.exists(SFXFOLDER + sfx_string + extension, "AudioStream"):
+		new_stream = load(SFXFOLDER + sfx_string + extension)
+	else:
+		push_error("SFX ", sfx_string, " not found!")
+	sfx_player.set_stream(new_stream)
+	sfx_player.play()
+
+
+func play_music(music_string:String = ""):
+	if music_string == "":
+		music_player.stop()
+		return
+	var new_stream: AudioStream
+	# Direct filepath to sfx
+	if ResourceLoader.exists(music_string, "AudioStream"):
+		new_stream = load(music_string)
+	var extension = ".ogg"
+	if music_string.get_extension() != "":
+		extension = ""
+	# Filename in the music folder
+	elif ResourceLoader.exists(MUSICFOLDER + music_string + extension, "AudioStream"):
+		new_stream = load(MUSICFOLDER + music_string + extension)
+	else:
+		push_error("Music ", music_string, " not found!")
+	# TODO: Crossfading, an actual music player
+	music_player.set_stream(new_stream)
+	music_player.play()
+
+
+func _on_command_processor_collection_started(_collection):
 	finished = false
 
 
-func _on_command_processor_collection_finished(collection):
+func _on_command_processor_collection_finished(_collection):
 	finished = true
 
 
-func _on_command_processor_command_started(command):
+func _on_command_processor_command_started(_command):
 	set_waiting_on_input(false)
 
 
 func _on_command_processor_command_finished(command):
-	var command_is_dialog = command.get_script().resource_path == "res://addons/textalog/commands/command_dialog.gd"
-	set_waiting_on_input(command_is_dialog)
+	var command_is_waiting = not command.continue_at_end
+	set_waiting_on_input(command_is_waiting)
 
 
 func _on_text_shown():

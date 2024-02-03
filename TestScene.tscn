@@ -41,8 +41,12 @@ anchor_bottom = 1.0
 metadata/_edit_use_anchors_ = true
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("13_ssudg")
 bus = &"music"
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 
 [node name="0127-PhoenixWright-AceAttorney(u)(legacy)21289" type="TextureRect" parent="."]
 visible = false

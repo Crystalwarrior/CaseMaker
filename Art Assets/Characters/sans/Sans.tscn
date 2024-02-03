@@ -1,0 +1,127 @@
+[gd_scene load_steps=9 format=3 uid="uid://nholet7cnebr"]
+
+[ext_resource type="Texture2D" uid="uid://thqkmemamy7m" path="res://Art Assets/Characters/sans/spr_sansb_legs.png" id="1_0s0n2"]
+[ext_resource type="Script" path="res://Art Assets/Characters/Character.gd" id="1_3ssbd"]
+[ext_resource type="Texture2D" uid="uid://ddnwxr5b3vx1c" path="res://Art Assets/Characters/sans/spr_sansb_torso/spr_sansb_torso_0.png" id="2_12tix"]
+[ext_resource type="Texture2D" uid="uid://dh3g474buiutr" path="res://Art Assets/Characters/sans/spr_sansb_face/spr_sansb_face_0.png" id="3_wowie"]
+
+[sub_resource type="Animation" id="Animation_elhj0"]
+resource_name = "normal"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite/face:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -56)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite/torso:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -31)]
+}
+
+[sub_resource type="Animation" id="Animation_p283s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite/face:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -56)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite/torso:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -31)]
+}
+
+[sub_resource type="Animation" id="Animation_es54m"]
+resource_name = "bouncy"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite/face:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.7, 1, 1.1, 1.3, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, -56), Vector2(-0.5, -56), Vector2(-0.5, -56.5), Vector2(-0.5, -57), Vector2(-0.5, -56.5), Vector2(0, -57), Vector2(0, -57.5), Vector2(0, -57), Vector2(0, -56.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite/torso:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.5, 0.7, 0.8, 0.9, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, -31), Vector2(0, -30.5), Vector2(-0.5, -31.5), Vector2(-1, -32), Vector2(-0.5, -32), Vector2(-0.5, -31.5), Vector2(-0.5, -31), Vector2(0, -31.5), Vector2(0, -32), Vector2(0.5, -32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iadp0"]
+_data = {
+"RESET": SubResource("Animation_p283s"),
+"bouncy": SubResource("Animation_es54m"),
+"normal": SubResource("Animation_elhj0")
+}
+
+[node name="Sans" type="CanvasGroup"]
+script = ExtResource("1_3ssbd")
+
+[node name="sprite" type="Node2D" parent="."]
+position = Vector2(128, 192)
+scale = Vector2(2, 2)
+
+[node name="legs" type="Sprite2D" parent="sprite"]
+position = Vector2(1, -12)
+texture = ExtResource("1_0s0n2")
+
+[node name="torso" type="Sprite2D" parent="sprite"]
+position = Vector2(0, -31)
+texture = ExtResource("2_12tix")
+
+[node name="face" type="Sprite2D" parent="sprite"]
+position = Vector2(0, -56)
+texture = ExtResource("3_wowie")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_iadp0")
+}
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+offset_right = 256.0
+offset_bottom = 192.0
+metadata/_edit_lock_ = true
