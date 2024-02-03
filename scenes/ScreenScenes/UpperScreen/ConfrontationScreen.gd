@@ -2,12 +2,14 @@ extends Control
 
 @onready var dialog_box = get_node("%DialogBox")
 @onready var color_fade = get_node("%ColorFade")
+@onready var character_container = get_node("%CharacterContainer")
 
 func create_scene_manager() -> SceneManager:
 	var scene_manager = SceneManager.new(dialog_box)
-	
-	scene_manager.add_char(get_node("%Edgeworth"), "Edgeworth")
-	
+
+	for character in character_container.get_children():
+		scene_manager.add_char(character, character.name)
+
 	return scene_manager
 
 func set_chat_arrow_visible(toggle: bool = true):

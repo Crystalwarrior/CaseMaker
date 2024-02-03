@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpkw2gp7ntdog"
-path="res://.godot/imported/mia_test.png-f3589bc1d71503c4fc56f92cee09d22c.ctex"
+uid="uid://bj28n1sjyb052"
+path="res://.godot/imported/0.png-8ffa40f859e7fe7c201068315e986b67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Characters/mia_test.png"
-dest_files=["res://.godot/imported/mia_test.png-f3589bc1d71503c4fc56f92cee09d22c.ctex"]
+source_file="res://Art Assets/Characters/Mia Fey/animations/smile_talk/0.png"
+dest_files=["res://.godot/imported/0.png-8ffa40f859e7fe7c201068315e986b67.ctex"]
 
 [params]
 

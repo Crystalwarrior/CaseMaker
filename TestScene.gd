@@ -50,9 +50,9 @@ func dialog(dialog_command:Command) -> void:
 	var blip_sound = dialog_command.blip_sound
 	var hide_dialog = dialog_command.hide_dialog
 	var wait_until_finished = dialog_command.wait_until_finished
+	var speaking_character = dialog_command.speaking_character
 
 	#TODO: use these for the characters
-	var speaking_character = dialog_command.speaking_character
 	var bump_speaker = dialog_command.bump_speaker
 	var highlight_speaker = dialog_command.highlight_speaker
 
@@ -64,13 +64,71 @@ func dialog(dialog_command:Command) -> void:
 		dialog_box.set_blipsound(blip_sound)
 	dialog_box.show()
 	dialog_box.display_text(dialog, showname)
+	
+	scene_manager.current_character = speaking_character
+	var char = scene_manager.get_char(speaking_character)
+	if char:
+		char.talk()
 
 	# If we wait until finished, remember tell the timeline to continue
 	if wait_until_finished:
 		await dialog_finished
+	if char:
+		char.no_talk()
+	if hide_dialog:
+		dialog_box.hide()
+	scene_manager.current_character = ""
+	if wait_until_finished:
 		dialog_command.go_to_next_command()
-		if hide_dialog:
-			dialog_box.hide()
+
+
+func character(character_command:Command) -> void:
+	var character: PackedScene = character_command.character
+	var character_name: String = character_command.character_name
+	var emote: String = character_command.emote
+	var delete: bool = character_command.delete
+	var add_position: bool = character_command.add_position
+	var to_position: Vector2 = character_command.to_position
+	var zoom_duration: float = character_command.zoom_duration
+	var flipped: bool = character_command.flipped
+	var flip_duration: float = character_command.flip_duration
+	var shaking:bool = character_command.shaking
+	var set_z_index:int = character_command.set_z_index
+	var wait_until_finished:bool = character_command.wait_until_finished
+	var fade_out:bool = character_command.fade_out
+	var fade_duration: float = character_command.fade_duration
+
+	var target = scene_manager.get_char(character_name)
+	if not target:
+		target = character.instantiate()
+		if character_name == "":
+			character_name = character.name
+		var existing_character = scene_manager.get_char(character_name)
+		if existing_character != null:
+			# Pretty silly we have to instantiate a packed scene to easily grab its data
+			target.queue_free()
+			target = existing_character
+		else:
+			upper_screen.character_container.add_child(target)
+			scene_manager.add_char(target, character_name)
+
+	if emote != "":
+		target.set_animation(emote, target.is_talking)
+	if shaking:
+		target.shake()
+	if fade_out:
+		target.fadeout(fade_duration)
+	else:
+		target.fadein(fade_duration)
+	target.z_index = set_z_index
+	target.flip_h(flipped, flip_duration)
+	target.move_to(to_position, Vector2(1, 1), zoom_duration, add_position)
+	# If we wait until finished, remember tell the timeline to continue
+	if wait_until_finished:
+		await target.animation_finished
+		character_command.go_to_next_command()
+	if delete:
+		scene_manager.remove_char(character_name)
 
 
 func set_dialog_visible(toggle: bool = true):

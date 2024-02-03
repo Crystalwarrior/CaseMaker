@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dpsblssy6fu6b"]
 
-[ext_resource type="Script" path="res://Art Assets/Characters/Edgeworth/Character.gd" id="1_m54rt"]
+[ext_resource type="Script" path="res://Art Assets/Characters/Character.gd" id="1_m54rt"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0md2m"]
 load_path = "res://.godot/imported/gksheet-miles(spoil).png-54284271e40330e0681da39a825f49c9.ctex"

@@ -1,7 +1,9 @@
-[gd_resource type="AnimationLibrary" load_steps=13 format=3 uid="uid://d83rpocmteoe"]
+[gd_resource type="AnimationLibrary" load_steps=15 format=3 uid="uid://d83rpocmteoe"]
 
 [ext_resource type="Animation" uid="uid://djpi6ad713kon" path="res://Art Assets/Characters/Mia Fey/animations/geez_idle.tres" id="6"]
 [ext_resource type="Animation" uid="uid://dj5nmiqmnmfv2" path="res://Art Assets/Characters/Mia Fey/animations/geez_talk.tres" id="7"]
+[ext_resource type="Animation" uid="uid://duh45td3mq7w4" path="res://Art Assets/Characters/Mia Fey/animations/smile_idle.tres" id="13_lbii8"]
+[ext_resource type="Animation" uid="uid://b6dxtnofk8gv6" path="res://Art Assets/Characters/Mia Fey/animations/smile_talk.tres" id="14_ips5h"]
 [ext_resource type="Animation" uid="uid://cmoyms5ydfm50" path="res://Art Assets/Characters/Mia Fey/animations/normal_idle.tres" id="25"]
 [ext_resource type="Animation" uid="uid://bl54ng4syrcly" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk.tres" id="26"]
 [ext_resource type="Animation" uid="uid://dgqwr4v2q27rs" path="res://Art Assets/Characters/Mia Fey/animations/ohmy_idle.tres" id="30"]
@@ -23,6 +25,8 @@ _data = {
 "ohmy_talk": ExtResource("31"),
 "sad_idle": ExtResource("42"),
 "sad_talk": ExtResource("43"),
+"smile_idle": ExtResource("13_lbii8"),
+"smile_talk": ExtResource("14_ips5h"),
 "stern_idle": ExtResource("44"),
 "stern_talk": ExtResource("45"),
 "wut_idle": ExtResource("50"),
