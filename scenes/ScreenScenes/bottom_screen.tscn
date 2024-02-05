@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://dk35s1lwj1pmj"]
+[gd_scene load_steps=61 format=3 uid="uid://dk35s1lwj1pmj"]
 
 [ext_resource type="Script" path="res://scenes/ScreenScenes/bottom_screen.gd" id="1_jnl3y"]
 [ext_resource type="Texture2D" uid="uid://53q1jwxccl18" path="res://assets/ui/AAIBackdrop.png" id="1_p337t"]
@@ -107,6 +107,9 @@ texture_margin_bottom = 2.0
 [sub_resource type="LabelSettings" id="LabelSettings_gf2dm"]
 font = ExtResource("15_3ly27")
 font_color = Color(1, 0.682353, 0.0941176, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_42r32"]
+font = ExtResource("15_3ly27")
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7kejb"]
 blend_mode = 1
@@ -1898,6 +1901,18 @@ offset_bottom = 56.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_rikhq")
 text = "Attorney's Badge"
 label_settings = SubResource("LabelSettings_gf2dm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PageLabel" type="Label" parent="EvidenceScreen"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 155.0
+offset_right = 172.0
+offset_bottom = 174.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_rikhq")
+text = "Page 1/1"
+label_settings = SubResource("LabelSettings_42r32")
 horizontal_alignment = 1
 vertical_alignment = 1
 
