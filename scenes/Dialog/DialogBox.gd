@@ -95,8 +95,11 @@ func _ready():
 
 
 func _process(delta):
-	if(process_dialog and not dialog_container.text_displayed):
+	if(process_dialog):
 		if(pause):
+			return
+		if dialog_container.text_displayed:
+			text_finished()
 			return
 		speed_counter += delta
 		if speed_counter < current_spd:
@@ -141,13 +144,18 @@ func set_blipsound(blip_string:String):
 	blip_player.set_stream(new_stream)
 
 
-func display_text(text:String, showname:String = ""):
-	dialog_container.set_text_to_show(text)
+func display_text(text:String, showname:String = "", additive:bool = false):
+	if additive:
+		dialog_container.add_text_to_show(text)
+	else:
+		dialog_container.set_text_to_show(text)
 	dialog_container.set_showname_text(showname)
 	blip_counter = 0
 	speed_counter = 0
 	process_dialog = true
-	await dialog_container.is_text_displayed
+
+
+func text_finished():
 	process_dialog = false
 	set_normal()
 	text_shown.emit()

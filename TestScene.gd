@@ -71,7 +71,7 @@ func dialog(dialog_command:Command) -> void:
 	if blip_sound:
 		dialog_box.set_blipsound(blip_sound)
 	dialog_box.show()
-	dialog_box.display_text(dialog, showname)
+	dialog_box.display_text(dialog, showname, additive)
 	
 	scene_manager.current_character = speaking_character
 	var char = scene_manager.get_char(speaking_character)

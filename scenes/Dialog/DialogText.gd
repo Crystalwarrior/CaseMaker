@@ -80,16 +80,28 @@ func set_text_to_show(text_to_show:String):
 	text_label.visible_characters = 0
 	text_displayed = false
 
-func reveal_character():
-	# This does the job, though there's probably a smarter way to handle it
-	if text_label.visible_characters == 0:
-		command_processor.process_command(0)
+func add_text_to_show(text_to_show:String):
+	if not text_label:
+		return
+	command_processor.end_command_processing()
 
-	text_label.visible_characters += 1
+	text_to_show = text_label.text + text_to_show
+	text_label.set_text(text_to_show)
+	for character in text_label.get_parsed_text():
+		command_processor.add_command_char(character)
+	text_to_show = command_processor.remove_commands_from_string(text_to_show)
+	text_label.set_text(text_to_show)
+
+	text_displayed = false
+
+func reveal_character():
 	command_processor.process_command(text_label.visible_characters)
+	text_label.visible_characters += 1
 
 	var length = text_label.get_parsed_text().length()
 	if(text_label.visible_characters >= length or length <= 0):
+		text_label.visible_characters = length
+		command_processor.process_command(text_label.visible_characters)
 		text_displayed = true
 		is_text_displayed.emit()
 		command_processor.end_command_processing()
