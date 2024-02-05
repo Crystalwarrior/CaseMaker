@@ -54,7 +54,6 @@ offset_right = 310.0
 offset_bottom = 588.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-clip_contents = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -251,6 +250,8 @@ metadata/_edit_use_anchors_ = true
 
 [connection signal="canceled" from="ColorPickerDialog" to="." method="_on_color_picker_dialog_canceled"]
 [connection signal="confirmed" from="ColorPickerDialog" to="." method="_on_color_picker_dialog_confirmed"]
+[connection signal="preset_added" from="ColorPickerDialog/ColorPicker" to="." method="_on_color_picker_preset_added"]
+[connection signal="preset_removed" from="ColorPickerDialog/ColorPicker" to="." method="_on_color_picker_preset_removed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/DialogBar/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/VBoxContainer/ButtonBar/Bold" to="." method="insert_tag" binds= ["b"]]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/VBoxContainer/ButtonBar/Italics" to="." method="insert_tag" binds= ["i"]]

@@ -1,6 +1,8 @@
 @tool
 extends Control
 
+const color_save_path = "res://addons/textalog/swatches.ini"
+
 @onready var text_edit: TextEdit = %TextEdit
 
 @onready var dialog_box = %DialogBox
@@ -20,6 +22,8 @@ var current_blip = "male"
 func _ready():
 	if dialog_box.dialog_container.shake_effect == null:
 		dialog_box.dialog_container.add_shake_effect()
+
+	load_color_presets()
 
 
 func set_command(command: Command):
@@ -164,3 +168,36 @@ func _on_pause_pressed():
 
 func _on_blip_pressed():
 	insert_text_command(CmdValues.BLIP, "male")
+
+
+func load_color_presets():
+	var config_file := ConfigFile.new()
+	var error := config_file.load(color_save_path)
+
+	if error:
+		print("An error happened while loading data: ", error)
+		return
+
+	var color_presets: PackedColorArray = config_file.get_value("", "colors", null)
+	for old_color in color_picker.get_presets():
+		color_picker.erase_preset(old_color)
+	for color in color_presets:
+		color_picker.add_preset(color)
+
+
+func save_color_presets():
+	var config_file := ConfigFile.new()
+
+	config_file.set_value("", "colors", color_picker.get_presets())
+
+	var error := config_file.save(color_save_path)
+	if error:
+		print("An error happened while saving data: ", error)
+
+
+func _on_color_picker_preset_added(_color):
+	save_color_presets()
+
+
+func _on_color_picker_preset_removed(_color):
+	save_color_presets()
