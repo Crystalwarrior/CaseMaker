@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dk35s1lwj1pmj"]
+[gd_scene load_steps=60 format=3 uid="uid://dk35s1lwj1pmj"]
 
 [ext_resource type="Script" path="res://scenes/ScreenScenes/bottom_screen.gd" id="1_jnl3y"]
 [ext_resource type="Texture2D" uid="uid://53q1jwxccl18" path="res://assets/ui/AAIBackdrop.png" id="1_p337t"]
@@ -19,9 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://qekn7rvrt6mf" path="res://assets/ui/border.png" id="12_6egur"]
 [ext_resource type="Texture2D" uid="uid://bfkij1rw66vbx" path="res://assets/evidence/test_evidence.png" id="12_55abk"]
 [ext_resource type="Texture2D" uid="uid://xq68l60srdk3" path="res://assets/ui/item_border.png" id="13_m2d8k"]
-[ext_resource type="Texture2D" uid="uid://dglrv7w5tpxoe" path="res://assets/ui/evi_bg.png" id="13_u7m4e"]
 [ext_resource type="Texture2D" uid="uid://bwsk2r0suklpy" path="res://assets/ui/button_backdrop.png" id="14_ai2ub"]
 [ext_resource type="Texture2D" uid="uid://cc2o36lc7kor8" path="res://assets/ui/eviname_bg.png" id="14_jwsae"]
+[ext_resource type="StyleBox" uid="uid://c8osgrjkb6ux3" path="res://assets/ui/themes/stylebox/aa/evi_selected.tres" id="14_ri1g3"]
 [ext_resource type="FontVariation" uid="uid://bk5faw63xmoyp" path="res://assets/fonts/ui.tres" id="15_3ly27"]
 [ext_resource type="Texture2D" uid="uid://60lfnpiygpij" path="res://assets/ui/courtrecord_button.png" id="15_s026p"]
 [ext_resource type="Texture2D" uid="uid://fjmlhlh63byp" path="res://assets/ui/courtrecord_button_pressed.png" id="16_rot6t"]
@@ -89,17 +89,13 @@ texture_margin_top = 1.0
 texture_margin_right = 1.0
 texture_margin_bottom = 1.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8s27k"]
-texture = ExtResource("13_u7m4e")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-draw_center = false
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_reu8e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tjkj7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lg57p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4vd4j"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rikhq"]
 texture = ExtResource("14_jwsae")
@@ -134,7 +130,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("EvidenceButton:visible")
+tracks/1/path = NodePath("ToProfilesButton:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -374,7 +370,7 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("ProfilesButton:visible")
+tracks/21/path = NodePath("ToEvidenceButton:visible")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
@@ -386,7 +382,7 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("EvidenceButton:position")
+tracks/22/path = NodePath("ToProfilesButton:position")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
@@ -398,7 +394,7 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("ProfilesButton:position")
+tracks/23/path = NodePath("ToEvidenceButton:position")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
@@ -422,7 +418,7 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("EvidenceButton:button_pressed")
+tracks/25/path = NodePath("ToProfilesButton:button_pressed")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
@@ -446,7 +442,7 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("ProfilesButton:button_pressed")
+tracks/27/path = NodePath("ToEvidenceButton:button_pressed")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
@@ -523,7 +519,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("EvidenceButton:position")
+tracks/2/path = NodePath("ToProfilesButton:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -754,7 +750,7 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("EvidenceButton:button_pressed")
+tracks/21/path = NodePath("ToProfilesButton:button_pressed")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
@@ -778,7 +774,7 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("ProfilesButton:position")
+tracks/23/path = NodePath("ToEvidenceButton:position")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
@@ -790,7 +786,7 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("ProfilesButton:button_pressed")
+tracks/24/path = NodePath("ToEvidenceButton:button_pressed")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
@@ -961,7 +957,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("EvidenceButton:visible")
+tracks/1/path = NodePath("ToProfilesButton:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -985,7 +981,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("EvidenceButton:position:y")
+tracks/3/path = NodePath("ToProfilesButton:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -1009,7 +1005,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("EvidenceButton:button_pressed")
+tracks/5/path = NodePath("ToProfilesButton:button_pressed")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -1377,7 +1373,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("EvidenceButton:visible")
+tracks/1/path = NodePath("ToProfilesButton:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1389,7 +1385,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ProfilesButton:visible")
+tracks/2/path = NodePath("ToEvidenceButton:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1401,7 +1397,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("EvidenceButton:position")
+tracks/3/path = NodePath("ToProfilesButton:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -1413,7 +1409,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("ProfilesButton:position")
+tracks/4/path = NodePath("ToEvidenceButton:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -1476,7 +1472,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("ProfilesButton:button_pressed")
+tracks/9/path = NodePath("ToEvidenceButton:button_pressed")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -1505,7 +1501,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("EvidenceButton:visible")
+tracks/1/path = NodePath("ToProfilesButton:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1517,7 +1513,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ProfilesButton:visible")
+tracks/2/path = NodePath("ToEvidenceButton:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1529,7 +1525,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("EvidenceButton:position")
+tracks/3/path = NodePath("ToProfilesButton:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -1541,7 +1537,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("ProfilesButton:position")
+tracks/4/path = NodePath("ToEvidenceButton:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -1604,7 +1600,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("EvidenceButton:button_pressed")
+tracks/9/path = NodePath("ToProfilesButton:button_pressed")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -1731,9 +1727,9 @@ layout_mode = 2
 anchor_top = -1.0
 anchor_bottom = -1.0
 offset_left = 15.0
-offset_top = 47.0
+offset_top = 239.0
 offset_right = 248.0
-offset_bottom = 162.001
+offset_bottom = 354.001
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 script = ExtResource("9_0f6by")
@@ -1790,91 +1786,108 @@ custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
 
-[node name="TestEvidence" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/1"]
+[node name="Button" type="Button" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/1"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_reu8e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tjkj7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lg57p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4vd4j")
+theme_override_styles/focus = ExtResource("14_ri1g3")
+
+[node name="TestEvidence" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/1/Button"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("12_55abk")
 expand_mode = 1
-
-[node name="Selected" type="Panel" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/1"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_8s27k")
 
 [node name="2" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
 
-[node name="TestEvidence" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/2"]
+[node name="Button" type="Button" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/2"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_reu8e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tjkj7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lg57p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4vd4j")
+theme_override_styles/focus = ExtResource("14_ri1g3")
+
+[node name="TestEvidence" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/2/Button"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("12_55abk")
 expand_mode = 1
-
-[node name="Selected" type="Panel" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/2"]
-visible = false
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_8s27k")
 
 [node name="3" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
 
-[node name="Selected" type="Panel" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/3"]
-visible = false
+[node name="Button" type="Button" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/3"]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_8s27k")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_reu8e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tjkj7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lg57p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4vd4j")
+theme_override_styles/focus = ExtResource("14_ri1g3")
+
+[node name="TestEvidence" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/3/Button"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("12_55abk")
+expand_mode = 1
 
 [node name="4" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
 
-[node name="Selected" type="Panel" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/4"]
-visible = false
+[node name="Button" type="Button" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/4"]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_8s27k")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_reu8e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tjkj7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lg57p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4vd4j")
+theme_override_styles/focus = ExtResource("14_ri1g3")
+
+[node name="TestEvidence" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/4/Button"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("12_55abk")
+expand_mode = 1
 
 [node name="5" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
 
-[node name="Selected" type="Panel" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/5"]
-visible = false
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_8s27k")
-
 [node name="6" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
-
-[node name="Selected" type="Panel" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/6"]
-visible = false
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_8s27k")
 
 [node name="7" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
 
-[node name="Selected" type="Panel" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/7"]
-visible = false
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_8s27k")
-
 [node name="8" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
-
-[node name="Selected" type="Panel" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/8"]
-visible = false
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_8s27k")
 
 [node name="EvidenceLabel" type="Label" parent="EvidenceScreen"]
 layout_mode = 0
@@ -1971,7 +1984,7 @@ toggle_mode = true
 texture_normal = ExtResource("15_s026p")
 texture_pressed = ExtResource("16_rot6t")
 
-[node name="EvidenceButton" type="TextureButton" parent="."]
+[node name="ToProfilesButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -1979,10 +1992,10 @@ offset_left = 177.0
 offset_right = 256.0
 offset_bottom = 30.0
 toggle_mode = true
-texture_normal = ExtResource("17_m8mui")
-texture_pressed = ExtResource("18_6w0y4")
+texture_normal = ExtResource("19_kc76s")
+texture_pressed = ExtResource("20_wg18e")
 
-[node name="ProfilesButton" type="TextureButton" parent="."]
+[node name="ToEvidenceButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -1990,8 +2003,8 @@ offset_left = 177.0
 offset_top = -30.0
 offset_right = 256.0
 toggle_mode = true
-texture_normal = ExtResource("19_kc76s")
-texture_pressed = ExtResource("20_wg18e")
+texture_normal = ExtResource("17_m8mui")
+texture_pressed = ExtResource("18_6w0y4")
 
 [node name="BackButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
