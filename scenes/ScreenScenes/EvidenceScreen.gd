@@ -20,8 +20,7 @@ func _ready():
 	page_left_button.pressed.connect(previous_page)
 	page_right_button.pressed.connect(next_page)
 
-	evidence_list = GameData.evidence_list
-	load_evidence()
+	load_evidence(GameData.evidence_list)
 
 
 func _on_evidence_pressed(evi_button):
@@ -45,6 +44,9 @@ func previous_page():
 	var result = wrapi(current_page -1, 0, get_page_count())
 	set_page(result)
 	focus_evidence(0)
+	#uncomment to focus on last index on the page
+	#var focus_index = get_page_end_index(current_page)
+	#focus_evidence(focus_index)
 
 
 func set_page(page: int):
@@ -70,7 +72,8 @@ func remove_evidence(evidence: Evidence):
 	load_evidence()
 
 
-func load_evidence():
+func load_evidence(evi_list: Array[Evidence] = evidence_list):
+	evidence_list = evi_list
 	var page_start_index = get_page_start_index()
 	for index: int in evidence_grid.get_child_count():
 		var evi_button: Button = evidence_grid.get_child(index)
@@ -105,8 +108,12 @@ func focus_evidence(index: int = -1):
 	evi.grab_focus()
 
 
-func get_page_start_index() -> int:
-	return evidence_grid.get_child_count() * current_page
+func get_page_start_index(page: int = current_page) -> int:
+	return evidence_grid.get_child_count() * page
+
+
+func get_page_end_index(page: int = current_page) -> int:
+	return min(evidence_grid.get_child_count()-1, get_page_end_index(current_page)-1)
 
 
 func get_page_count() -> int:

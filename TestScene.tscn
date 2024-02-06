@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://kv6pxmfyclh1"]
+[gd_scene load_steps=10 format=3 uid="uid://kv6pxmfyclh1"]
 
 [ext_resource type="Script" path="res://TestScene.gd" id="1_j7ny0"]
 [ext_resource type="PackedScene" uid="uid://o014t0ve6be8" path="res://scenes/ScreenScenes/UpperScreen/ConfrontationScreen.tscn" id="2_m22fg"]
@@ -8,7 +8,6 @@
 [ext_resource type="FontFile" uid="uid://bpmqn2kw4vgn4" path="res://assets/fonts/igiari-cyrillic-plus.ttf" id="8_2jqp0"]
 [ext_resource type="Script" path="res://scenes/delta_label.gd" id="9_vpdrc"]
 [ext_resource type="AudioStream" uid="uid://cb485p8r1fh2e" path="res://assets/music/bgm008.ogg" id="13_ssudg"]
-[ext_resource type="Texture2D" uid="uid://dl3iwbxfn2fm1" path="res://reference/DeSmuME_0.9.13_x64_htMjweMyh3.png" id="27_u2u0t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pod4v"]
 font = ExtResource("8_2jqp0")
@@ -47,13 +46,6 @@ bus = &"music"
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-
-[node name="0127-PhoenixWright-AceAttorney(u)(legacy)21289" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 256.0
-offset_bottom = 384.0
-texture = ExtResource("27_u2u0t")
 
 [node name="delta_label" type="Label" parent="."]
 visible = false
