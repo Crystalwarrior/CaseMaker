@@ -99,9 +99,8 @@ func reveal_character():
 	text_label.visible_characters += 1
 
 	var length = text_label.get_parsed_text().length()
-	if(text_label.visible_characters >= length or length <= 0):
+	if(text_label.visible_characters > length):
 		text_label.visible_characters = length
-		command_processor.process_command(text_label.visible_characters)
 		text_displayed = true
 		is_text_displayed.emit()
 		command_processor.end_command_processing()

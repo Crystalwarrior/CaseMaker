@@ -116,12 +116,11 @@ func next_letter():
 	dialog_container.reveal_character()
 
 	var current_char = dialog_container.get_current_character()
-	if (!dialog_container.is_processing_command()):
-		var skip_char = current_char in [" ", "\n"]
-		if (not skip_char):
-			if(blip_counter == 0 and not current_char.is_empty()):
-				blip_player.play()
-			blip_counter = (blip_counter + 1) % blip_rate
+	var skip_char = current_char in [" ", "\n"]
+	if (not skip_char):
+		if(blip_counter == 0 and not current_char.is_empty()):
+			blip_player.play()
+		blip_counter = (blip_counter + 1) % blip_rate
 
 
 func set_blipsound(blip_string:String):

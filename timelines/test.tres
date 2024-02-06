@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_b2naq"]
 script = ExtResource("1_wg2e1")
 showname = "Edgeworth"
-dialog = "[color=6db6f7](It's hard to believe that"
+dialog = "{p 1.5}[color=6db6f7](It's hard to believe that"
 additive = false
 text_speed = 0
 letter_delay = 0.034

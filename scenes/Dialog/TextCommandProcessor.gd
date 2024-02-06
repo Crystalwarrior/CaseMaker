@@ -41,22 +41,8 @@ func remove_commands_from_string(full_text:String) -> String:
 
 
 func remove_string(string: String, removal: String) -> String:
-	var length = removal.length()
-	var i = 0
-	while i < string.length():
-		var piece = ''
-		var j = i
-
-		while j < i + length:
-			piece += string[j]
-			j += 1
-
-		if piece == removal:
-			return string.substr(0, j - length) + string.substr(j)
-
-		i += 1
-
-	return string
+	var first_index = string.find(removal)
+	return string.erase(first_index, removal.length())
 
 
 func process_command(index:int):
