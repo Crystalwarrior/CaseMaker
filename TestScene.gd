@@ -110,7 +110,7 @@ func character(character_command:Command) -> void:
 	if not target:
 		target = character.instantiate()
 		if character_name == "":
-			character_name = character.name
+			character_name = target.name
 		var existing_character = scene_manager.get_char(character_name)
 		if existing_character != null:
 			# Pretty silly we have to instantiate a packed scene to easily grab its data
@@ -133,7 +133,8 @@ func character(character_command:Command) -> void:
 	target.move_to(to_position, Vector2(1, 1), zoom_duration, add_position)
 	# If we wait until finished, remember tell the timeline to continue
 	if wait_until_finished:
-		await target.animation_finished
+		if target.waiting_on_animations > 0:
+			await target.animation_finished
 		character_command.go_to_next_command()
 	if delete:
 		scene_manager.remove_char(character_name)

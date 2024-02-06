@@ -29,5 +29,5 @@ func get_dialog_box():
 func _on_mid_sentence_emote_change(emote:String):
 	if(characters.has(current_character)):
 		var character = characters[current_character]
-		character.set_animation(emote, character.is_talking)
+		character.set_animation(emote)
 

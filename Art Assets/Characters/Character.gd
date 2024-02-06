@@ -50,10 +50,9 @@ func _on_shake(shake_amount:String):
 	shake_effect.shake(self, shake_amount.to_float())
 
 
-func set_animation(animation_name:String, set_talking:bool = false):
+func set_animation(animation_name:String):
 	idle = animation_name
 	talking = ""
-	is_talking = set_talking
 
 	# Only set the Idle/Talking animations if those are actually present
 	# This allows us to play, say, an "Objection!" emote
@@ -69,15 +68,15 @@ func set_animation(animation_name:String, set_talking:bool = false):
 
 
 func no_talk():
+	is_talking = false
 	if(idle != ""):
 		anim_player.play(idle)
-		is_talking = false
 
 
 func talk():
+	is_talking = true
 	if(talking != ""):
 		anim_player.play(talking)
-		is_talking = true
 
 
 func fade(out: bool = false, duration: float = 1.0):

@@ -113,4 +113,4 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_fa7vb")
 }
-autoplay = "hmm_idle"
+autoplay = "normal_idle"
