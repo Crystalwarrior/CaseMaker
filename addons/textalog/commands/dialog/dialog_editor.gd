@@ -175,7 +175,7 @@ func load_color_presets():
 	var error := config_file.load(color_save_path)
 
 	if error:
-		print("An error happened while loading data: ", error)
+		print("Failed to load color picker presets for the Dialog Editor!")
 		return
 
 	var color_presets: PackedColorArray = config_file.get_value("", "colors", null)
@@ -190,9 +190,7 @@ func save_color_presets():
 
 	config_file.set_value("", "colors", color_picker.get_presets())
 
-	var error := config_file.save(color_save_path)
-	if error:
-		print("An error happened while saving data: ", error)
+	config_file.save(color_save_path)
 
 
 func _on_color_picker_preset_added(_color):
