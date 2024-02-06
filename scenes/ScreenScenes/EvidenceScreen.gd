@@ -4,26 +4,54 @@ extends Control
 @onready var page_label = %PageLabel
 @onready var audio_player = $AudioStreamPlayer
 @onready var evidence_label = %EvidenceLabel
+@onready var page_left_button = %PageLeft
+@onready var page_right_button = %PageRight
 
 var audio_focused: AudioStream = preload("res://assets/sounds/ui/selectblip.wav")
 
-var page = 1
+var evidence_list: Array[Evidence] = []
+var current_page = 0
+
+signal evidence_pressed
 
 
 func _ready():
 	connect_signals()
+	page_left_button.pressed.connect(previous_page)
+	page_right_button.pressed.connect(next_page)
+
+	evidence_list = GameData.evidence_list
 	load_evidence()
 
 
 func _on_evidence_pressed(evi_button):
-	print("fecal funny")
+	evidence_pressed.emit()
 
 
 func _on_evidence_focused(evi_button):
 	audio_player.stream = audio_focused
 	audio_player.play()
-	var evidence: Evidence = GameData.evidence_list[evi_button.get_index()]
+	var evidence: Evidence = evidence_list[get_page_start_index() + evi_button.get_index()]
 	evidence_label.text = evidence.name
+
+
+func next_page():
+	var result = wrapi(current_page + 1, 0, get_page_count())
+	set_page(result)
+	focus_evidence(0)
+
+
+func previous_page():
+	var result = wrapi(current_page -1, 0, get_page_count())
+	set_page(result)
+	focus_evidence(0)
+
+
+func set_page(page: int):
+	var old_page = current_page
+	current_page = page
+	if old_page != current_page:
+		load_evidence()
 
 
 func connect_signals():
@@ -32,12 +60,23 @@ func connect_signals():
 		evi_button.focus_entered.connect(_on_evidence_focused.bind(evi_button))
 
 
+func add_evidence(evidence: Evidence):
+	evidence_list.append(evidence)
+	load_evidence()
+
+
+func remove_evidence(evidence: Evidence):
+	evidence_list.erase(evidence)
+	load_evidence()
+
+
 func load_evidence():
+	var page_start_index = get_page_start_index()
 	for index: int in evidence_grid.get_child_count():
 		var evi_button: Button = evidence_grid.get_child(index)
 		
-		if index < GameData.evidence_list.size():
-			var evidence: Evidence = GameData.evidence_list[index]
+		if index < evidence_list.size() - page_start_index:
+			var evidence: Evidence = evidence_list[page_start_index + index]
 			evi_button.disabled = false
 			evi_button.focus_mode = Control.FOCUS_ALL
 			evi_button.get_node("Image").texture = evidence.image
@@ -46,16 +85,33 @@ func load_evidence():
 		evi_button.focus_mode = Control.FOCUS_NONE
 		evi_button.get_node("Image").texture = null
 	set_page_label()
+	
+	var multiple_pages: bool = get_page_count() > 1
+	page_label.set_visible(multiple_pages)
+	page_left_button.disable(not multiple_pages)
+	page_right_button.disable(not multiple_pages)
 
 
-func focus_first():
-	var evi = evidence_grid.get_child(0)
+func focus_evidence(index: int = -1):
+	if index == -1:
+		for evi_button: Button in evidence_grid.get_children():
+			if evi_button.has_focus():
+				evi_button.release_focus()
+				break
+		return
+	if index >= evidence_grid.get_child_count():
+		return
+	var evi = evidence_grid.get_child(index)
 	evi.grab_focus()
 
 
+func get_page_start_index() -> int:
+	return evidence_grid.get_child_count() * current_page
+
+
 func get_page_count() -> int:
-	return ceili(float(GameData.evidence_list.size()) / float(evidence_grid.get_child_count()))
+	return ceili(float(evidence_list.size()) / float(evidence_grid.get_child_count()))
 
 
 func set_page_label():
-	page_label.text = "Page " + str(page) + "/" + str(get_page_count())
+	page_label.text = "Page " + str(current_page+1) + "/" + str(get_page_count())

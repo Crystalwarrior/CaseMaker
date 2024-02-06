@@ -17,17 +17,17 @@ func _ready():
 
 func _on_court_record_button_pressed():
 	animation_player.play("court_record_pressed")
-	evidence_screen.focus_first()
+	evidence_screen.focus_evidence(0)
 
 
 func _on_profiles_button_pressed():
 	animation_player.play("to_profiles")
-	evidence_screen.focus_first()
+	evidence_screen.focus_evidence(0)
 
 
 func _on_evidence_button_pressed():
 	animation_player.play("to_evidence")
-	evidence_screen.focus_first()
+	evidence_screen.focus_evidence(0)
 
 
 func _on_back_button_pressed():
