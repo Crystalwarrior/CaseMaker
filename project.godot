@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 [autoload]
 
 CommandValues="*res://scenes/Dialog/CommandValues.gd"
+GameData="*res://scenes/game_data.gd"
 
 [blockflow]
 

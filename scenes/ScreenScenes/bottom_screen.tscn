@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://dk35s1lwj1pmj"]
+[gd_scene load_steps=58 format=3 uid="uid://dk35s1lwj1pmj"]
 
 [ext_resource type="Script" path="res://scenes/ScreenScenes/bottom_screen.gd" id="1_jnl3y"]
 [ext_resource type="Texture2D" uid="uid://53q1jwxccl18" path="res://assets/ui/AAIBackdrop.png" id="1_p337t"]
@@ -15,10 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://64xnmk3y8qev" path="res://assets/ui/evidence_slip.png" id="10_fy5ti"]
 [ext_resource type="Texture2D" uid="uid://bx3ii28ifdmnn" path="res://assets/ui/profiles_slip.png" id="11_0hrul"]
 [ext_resource type="PackedScene" uid="uid://boa3oie1gfjmu" path="res://scenes/ScreenScenes/BottomScreen/choice_button.tscn" id="11_01n1m"]
-[ext_resource type="Texture2D" uid="uid://mmfk5fa87x2d" path="res://assets/ui/evi_spot.png" id="11_5ktt5"]
 [ext_resource type="Texture2D" uid="uid://qekn7rvrt6mf" path="res://assets/ui/border.png" id="12_6egur"]
-[ext_resource type="Texture2D" uid="uid://bfkij1rw66vbx" path="res://assets/evidence/test_evidence.png" id="12_55abk"]
+[ext_resource type="Script" path="res://scenes/ScreenScenes/EvidenceScreen.gd" id="12_mlk36"]
+[ext_resource type="StyleBox" uid="uid://d1vcpnstikrox" path="res://assets/ui/themes/stylebox/aa/evi_blank.tres" id="13_271u7"]
 [ext_resource type="Texture2D" uid="uid://xq68l60srdk3" path="res://assets/ui/item_border.png" id="13_m2d8k"]
+[ext_resource type="StyleBox" uid="uid://bksvasl1yyfsj" path="res://assets/ui/themes/stylebox/aa/evi_backdrop.tres" id="13_mwmr1"]
 [ext_resource type="Texture2D" uid="uid://bwsk2r0suklpy" path="res://assets/ui/button_backdrop.png" id="14_ai2ub"]
 [ext_resource type="Texture2D" uid="uid://cc2o36lc7kor8" path="res://assets/ui/eviname_bg.png" id="14_jwsae"]
 [ext_resource type="StyleBox" uid="uid://c8osgrjkb6ux3" path="res://assets/ui/themes/stylebox/aa/evi_selected.tres" id="14_ri1g3"]
@@ -28,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://cpufi0vdvk3wk" path="res://assets/ui/evidence_button.png" id="17_m8mui"]
 [ext_resource type="Texture2D" uid="uid://b3vhfde0byt0a" path="res://assets/ui/evidence_button_pressed.png" id="18_6w0y4"]
 [ext_resource type="Texture2D" uid="uid://cq4puwqd644yi" path="res://assets/ui/profiles_button.png" id="19_kc76s"]
+[ext_resource type="StyleBox" uid="uid://cstrmyv4s56bj" path="res://assets/ui/themes/stylebox/aa/aa_button2_pressed.tres" id="20_fm0vx"]
 [ext_resource type="Texture2D" uid="uid://5mauias5djw5" path="res://assets/ui/profiles_button_pressed.png" id="20_wg18e"]
 [ext_resource type="AudioStream" uid="uid://cb3vkei87k85x" path="res://assets/sounds/ui/bleep.wav" id="22_yui8e"]
 [ext_resource type="Texture2D" uid="uid://dfm3tw8rh1mhf" path="res://assets/ui/back_button.png" id="26_ox0jx"]
@@ -77,25 +79,6 @@ texture_margin_left = 1.0
 texture_margin_top = 1.0
 texture_margin_right = 1.0
 texture_margin_bottom = 1.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_205kr"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-texture = ExtResource("11_5ktt5")
-texture_margin_left = 1.0
-texture_margin_top = 1.0
-texture_margin_right = 1.0
-texture_margin_bottom = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_reu8e"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tjkj7"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lg57p"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4vd4j"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rikhq"]
 texture = ExtResource("14_jwsae")
@@ -1664,6 +1647,7 @@ offset_left = 16.0
 offset_top = 40.0
 offset_right = 240.0
 offset_bottom = 152.003
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_14rk6")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_87owq")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_8u4dw")
@@ -1763,12 +1747,14 @@ text = "Sans Undertale"
 bus = &"ui"
 
 [node name="EvidenceScreen" type="Control" parent="."]
+unique_name_in_owner = true
 visible = false
 clip_contents = true
 anchors_preset = 0
 offset_top = -192.0
 offset_right = 256.0
 pivot_offset = Vector2(128, 96)
+script = ExtResource("12_mlk36")
 
 [node name="EvidenceContainer" type="PanelContainer" parent="EvidenceScreen"]
 layout_mode = 0
@@ -1779,120 +1765,190 @@ offset_bottom = 160.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_do62l")
 
 [node name="EvidenceGrid" type="GridContainer" parent="EvidenceScreen/EvidenceContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 4
 
-[node name="1" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
+[node name="1" type="Button" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
-
-[node name="Button" type="Button" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/1"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_reu8e")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_tjkj7")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_lg57p")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_4vd4j")
+focus_mode = 0
+theme_override_styles/normal = ExtResource("13_mwmr1")
+theme_override_styles/hover = ExtResource("13_mwmr1")
+theme_override_styles/pressed = ExtResource("13_mwmr1")
+theme_override_styles/disabled = ExtResource("13_271u7")
 theme_override_styles/focus = ExtResource("14_ri1g3")
+disabled = true
 
-[node name="TestEvidence" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/1/Button"]
+[node name="Image" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/1"]
 custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("12_55abk")
 expand_mode = 1
 
-[node name="2" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
+[node name="2" type="Button" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
-
-[node name="Button" type="Button" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/2"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_reu8e")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_tjkj7")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_lg57p")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_4vd4j")
+focus_mode = 0
+theme_override_styles/normal = ExtResource("13_mwmr1")
+theme_override_styles/hover = ExtResource("13_mwmr1")
+theme_override_styles/pressed = ExtResource("13_mwmr1")
+theme_override_styles/disabled = ExtResource("13_271u7")
 theme_override_styles/focus = ExtResource("14_ri1g3")
+disabled = true
 
-[node name="TestEvidence" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/2/Button"]
+[node name="Image" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/2"]
 custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("12_55abk")
 expand_mode = 1
 
-[node name="3" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
+[node name="3" type="Button" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
-
-[node name="Button" type="Button" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/3"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_reu8e")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_tjkj7")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_lg57p")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_4vd4j")
+focus_mode = 0
+theme_override_styles/normal = ExtResource("13_mwmr1")
+theme_override_styles/hover = ExtResource("13_mwmr1")
+theme_override_styles/pressed = ExtResource("13_mwmr1")
+theme_override_styles/disabled = ExtResource("13_271u7")
 theme_override_styles/focus = ExtResource("14_ri1g3")
+disabled = true
 
-[node name="TestEvidence" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/3/Button"]
+[node name="Image" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/3"]
 custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("12_55abk")
 expand_mode = 1
 
-[node name="4" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
+[node name="4" type="Button" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
-
-[node name="Button" type="Button" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/4"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_reu8e")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_tjkj7")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_lg57p")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_4vd4j")
+focus_mode = 0
+theme_override_styles/normal = ExtResource("13_mwmr1")
+theme_override_styles/hover = ExtResource("13_mwmr1")
+theme_override_styles/pressed = ExtResource("13_mwmr1")
+theme_override_styles/disabled = ExtResource("13_271u7")
 theme_override_styles/focus = ExtResource("14_ri1g3")
+disabled = true
 
-[node name="TestEvidence" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/4/Button"]
+[node name="Image" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/4"]
 custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("12_55abk")
 expand_mode = 1
 
-[node name="5" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
+[node name="5" type="Button" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
+focus_mode = 0
+theme_override_styles/normal = ExtResource("13_mwmr1")
+theme_override_styles/hover = ExtResource("13_mwmr1")
+theme_override_styles/pressed = ExtResource("13_mwmr1")
+theme_override_styles/disabled = ExtResource("13_271u7")
+theme_override_styles/focus = ExtResource("14_ri1g3")
+disabled = true
 
-[node name="6" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
+[node name="Image" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/5"]
 custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
 
-[node name="7" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
+[node name="6" type="Button" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
+focus_mode = 0
+theme_override_styles/normal = ExtResource("13_mwmr1")
+theme_override_styles/hover = ExtResource("13_mwmr1")
+theme_override_styles/pressed = ExtResource("13_mwmr1")
+theme_override_styles/disabled = ExtResource("13_271u7")
+theme_override_styles/focus = ExtResource("14_ri1g3")
+disabled = true
 
-[node name="8" type="PanelContainer" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
+[node name="Image" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/6"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="7" type="Button" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_205kr")
+focus_mode = 0
+theme_override_styles/normal = ExtResource("13_mwmr1")
+theme_override_styles/hover = ExtResource("13_mwmr1")
+theme_override_styles/pressed = ExtResource("13_mwmr1")
+theme_override_styles/disabled = ExtResource("13_271u7")
+theme_override_styles/focus = ExtResource("14_ri1g3")
+disabled = true
+
+[node name="Image" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/7"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="8" type="Button" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/normal = ExtResource("13_mwmr1")
+theme_override_styles/hover = ExtResource("13_mwmr1")
+theme_override_styles/pressed = ExtResource("13_mwmr1")
+theme_override_styles/disabled = ExtResource("13_271u7")
+theme_override_styles/focus = ExtResource("14_ri1g3")
+disabled = true
+
+[node name="Image" type="TextureRect" parent="EvidenceScreen/EvidenceContainer/EvidenceGrid/8"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
 
 [node name="EvidenceLabel" type="Label" parent="EvidenceScreen"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 25.0
 offset_top = 36.0
@@ -1905,6 +1961,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PageLabel" type="Label" parent="EvidenceScreen"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 84.0
 offset_top = 155.0
@@ -1915,6 +1972,35 @@ text = "Page 1/1"
 label_settings = SubResource("LabelSettings_42r32")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PageLeft" type="Button" parent="EvidenceScreen"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 56.0
+offset_right = 16.0
+offset_bottom = 152.0
+focus_mode = 0
+theme_override_styles/normal = ExtResource("4_rdshr")
+theme_override_styles/hover = ExtResource("4_rdshr")
+theme_override_styles/pressed = ExtResource("20_fm0vx")
+theme_override_styles/disabled = ExtResource("4_rdshr")
+theme_override_styles/focus = ExtResource("4_rdshr")
+
+[node name="PageRight" type="Button" parent="EvidenceScreen"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 240.0
+offset_top = 56.0
+offset_right = 256.0
+offset_bottom = 152.0
+focus_mode = 0
+theme_override_styles/normal = ExtResource("4_rdshr")
+theme_override_styles/hover = ExtResource("4_rdshr")
+theme_override_styles/pressed = ExtResource("20_fm0vx")
+theme_override_styles/disabled = ExtResource("4_rdshr")
+theme_override_styles/focus = ExtResource("4_rdshr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="EvidenceScreen"]
 
 [node name="Scanlines" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.247059)
@@ -1995,6 +2081,7 @@ layout_mode = 0
 offset_left = 177.0
 offset_top = -30.0
 offset_right = 256.0
+focus_mode = 0
 toggle_mode = true
 texture_normal = ExtResource("15_s026p")
 texture_pressed = ExtResource("16_rot6t")
@@ -2006,6 +2093,7 @@ layout_mode = 0
 offset_left = 177.0
 offset_right = 256.0
 offset_bottom = 30.0
+focus_mode = 0
 toggle_mode = true
 texture_normal = ExtResource("19_kc76s")
 texture_pressed = ExtResource("20_wg18e")
@@ -2017,6 +2105,7 @@ layout_mode = 0
 offset_left = 177.0
 offset_top = -30.0
 offset_right = 256.0
+focus_mode = 0
 toggle_mode = true
 texture_normal = ExtResource("17_m8mui")
 texture_pressed = ExtResource("18_6w0y4")
@@ -2028,6 +2117,7 @@ layout_mode = 0
 offset_top = 162.0
 offset_right = 79.0
 offset_bottom = 192.0
+focus_mode = 0
 toggle_mode = true
 texture_normal = ExtResource("26_ox0jx")
 texture_pressed = ExtResource("27_d8yn7")

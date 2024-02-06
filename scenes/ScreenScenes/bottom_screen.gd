@@ -3,6 +3,7 @@ extends Control
 @onready var next_button = %NextButton
 @onready var animation_player = $AnimationPlayer
 @onready var choice_container = %ChoiceContainer
+@onready var evidence_screen = %EvidenceScreen
 
 signal choice_selected(index)
 
@@ -16,14 +17,17 @@ func _ready():
 
 func _on_court_record_button_pressed():
 	animation_player.play("court_record_pressed")
+	evidence_screen.focus_first()
 
 
 func _on_profiles_button_pressed():
 	animation_player.play("to_profiles")
+	evidence_screen.focus_first()
 
 
 func _on_evidence_button_pressed():
 	animation_player.play("to_evidence")
+	evidence_screen.focus_first()
 
 
 func _on_back_button_pressed():
