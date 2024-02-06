@@ -61,13 +61,11 @@ func dialog(dialog_command:Command) -> void:
 	var hide_dialog = dialog_command.hide_dialog
 	var wait_until_finished = dialog_command.wait_until_finished
 	var speaking_character = dialog_command.speaking_character
+	var additive = dialog_command.additive
 
 	#TODO: use these for the characters
 	var bump_speaker = dialog_command.bump_speaker
 	var highlight_speaker = dialog_command.highlight_speaker
-
-	#TODO: implement additive text boxes
-	var additive = dialog_command.additive
 
 	dialog_box.current_spd = letter_delay
 	if blip_sound:
@@ -76,15 +74,15 @@ func dialog(dialog_command:Command) -> void:
 	dialog_box.display_text(dialog, showname, additive)
 	
 	scene_manager.current_character = speaking_character
-	var char = scene_manager.get_char(speaking_character)
-	if char:
-		char.talk()
+	var character = scene_manager.get_char(speaking_character)
+	if character:
+		character.talk()
 
 	# If we wait until finished, remember tell the timeline to continue
 	if wait_until_finished:
 		await dialog_finished
-	if char:
-		char.no_talk()
+	if character:
+		character.no_talk()
 	if hide_dialog:
 		dialog_box.hide()
 	scene_manager.current_character = ""

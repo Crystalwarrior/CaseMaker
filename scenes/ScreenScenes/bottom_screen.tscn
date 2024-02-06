@@ -48,6 +48,23 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r33mk"]
 
+[sub_resource type="Animation" id="Animation_wo6yc"]
+resource_name = "RESET"
+length = 0.001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_50b6q"]
 resource_name = "next"
 length = 0.366668
@@ -64,23 +81,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-6.0, 6.0]
-}
-
-[sub_resource type="Animation" id="Animation_wo6yc"]
-resource_name = "RESET"
-length = 0.001
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_80vhx"]
@@ -114,6 +114,21 @@ font_color = Color(1, 0.682353, 0.0941176, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_42r32"]
 font = ExtResource("15_3ly27")
 
+[sub_resource type="Animation" id="Animation_bkxbw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3, -6)]
+}
+
 [sub_resource type="Animation" id="Animation_24lkq"]
 resource_name = "next"
 length = 0.366668
@@ -130,21 +145,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-2, -6), Vector2(-6, -6)]
-}
-
-[sub_resource type="Animation" id="Animation_bkxbw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-3, -6)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_whbkt"]
@@ -1813,9 +1813,9 @@ layout_mode = 2
 anchor_top = -1.0
 anchor_bottom = -1.0
 offset_left = 15.0
-offset_top = 239.0
+offset_top = 47.0
 offset_right = 248.0
-offset_bottom = 354.001
+offset_bottom = 162.001
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 script = ExtResource("9_0f6by")

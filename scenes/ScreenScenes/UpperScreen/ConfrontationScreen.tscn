@@ -50,3 +50,4 @@ script = ExtResource("6_8sm7n")
 
 [node name="DialogBox" parent="." instance=ExtResource("3_h7lsh")]
 unique_name_in_owner = true
+visible = false
