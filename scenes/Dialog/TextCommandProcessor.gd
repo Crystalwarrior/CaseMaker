@@ -60,6 +60,11 @@ func process_command(index:int):
 			cmdvs.handle_effect(cmd[0], cmd[1])
 		else:
 			cmdvs.handle_effect(cmd[0])
+		if cmd[0] == CmdValues.PAUSE:
+			var param: float = 0.2
+			if cmd.size() > 1:
+				param = float(cmd[1])
+			await CommandValues.pause_for(param)
 
 func end_command_processing():
 	cmd_dict.clear()
