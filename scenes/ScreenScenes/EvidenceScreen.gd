@@ -20,8 +20,6 @@ func _ready():
 	page_left_button.pressed.connect(previous_page)
 	page_right_button.pressed.connect(next_page)
 
-	load_evidence(GameData.evidence_list)
-
 
 func _on_evidence_pressed(evi_button):
 	evidence_pressed.emit()

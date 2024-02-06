@@ -1,0 +1,194 @@
+[gd_resource type="Resource" script_class="CommandCollection" load_steps=23 format=3 uid="uid://cpb4gmtpcu4ff"]
+
+[ext_resource type="Script" path="res://addons/blockflow/command_collection.gd" id="1_8br4l"]
+[ext_resource type="Script" path="res://addons/blockflow/commands/command_animate.gd" id="1_n88ca"]
+[ext_resource type="Script" path="res://addons/blockflow/commands/command_goto.gd" id="2_cnbow"]
+[ext_resource type="Resource" uid="uid://c50mrddlht0kk" path="res://timelines/evidence.tres" id="3_0801f"]
+[ext_resource type="Script" path="res://addons/textalog/commands/command_dialog.gd" id="4_lde2g"]
+[ext_resource type="Texture2D" uid="uid://fx77e6dgtssx" path="res://icon.png" id="5_fvill"]
+[ext_resource type="Script" path="res://scenes/evidence.gd" id="6_8rgc2"]
+[ext_resource type="Script" path="res://addons/textalog/commands/command_evidence.gd" id="6_tf3hm"]
+[ext_resource type="Resource" uid="uid://bb2vay207xme5" path="res://evidence/attorney_badge.tres" id="8_54src"]
+
+[sub_resource type="Resource" id="Resource_nachm"]
+script = ExtResource("1_n88ca")
+animation = "court_record_available"
+custom_blend = -1.0
+custom_speed = 1.0
+play_backwards = false
+wait_until_finished = true
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("BottomScreen/AnimationPlayer")
+collection = []
+
+[sub_resource type="Resource" id="Resource_y1c62"]
+script = ExtResource("2_cnbow")
+condition = ""
+use_bookmark = false
+command_index = 0
+target_collection = ExtResource("3_0801f")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_2r3yd"]
+script = ExtResource("4_lde2g")
+showname = ""
+dialog = "Evidence List initialized."
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_njkqx"]
+script = ExtResource("6_8rgc2")
+name = "Generic Object"
+short_desc = "Short Description Here"
+long_desc = "Long Description Here"
+image = ExtResource("5_fvill")
+
+[sub_resource type="Resource" id="Resource_k0ryt"]
+script = ExtResource("6_tf3hm")
+do_what = 2
+evidence = SubResource("Resource_njkqx")
+at_index = 0
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_cusv0"]
+script = ExtResource("4_lde2g")
+showname = ""
+dialog = "You've Got Mail!"
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_witkg"]
+script = ExtResource("6_tf3hm")
+do_what = 1
+evidence = SubResource("Resource_njkqx")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_db5bb"]
+script = ExtResource("4_lde2g")
+showname = ""
+dialog = "You've Lost Mail!"
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_ra8mo"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("8_54src")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_dq8ou"]
+script = ExtResource("4_lde2g")
+showname = ""
+dialog = "Two Badges?!"
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_b2tbh"]
+script = ExtResource("6_tf3hm")
+do_what = 1
+evidence = ExtResource("8_54src")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_ncqld"]
+script = ExtResource("6_tf3hm")
+do_what = 1
+evidence = ExtResource("8_54src")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_srb3j"]
+script = ExtResource("4_lde2g")
+showname = ""
+dialog = "NO badges..."
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[resource]
+resource_name = "evidence_test.tres"
+script = ExtResource("1_8br4l")
+collection = [SubResource("Resource_nachm"), SubResource("Resource_y1c62"), SubResource("Resource_2r3yd"), SubResource("Resource_k0ryt"), SubResource("Resource_cusv0"), SubResource("Resource_witkg"), SubResource("Resource_db5bb"), SubResource("Resource_ra8mo"), SubResource("Resource_dq8ou"), SubResource("Resource_b2tbh"), SubResource("Resource_ncqld"), SubResource("Resource_srb3j")]

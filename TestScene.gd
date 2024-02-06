@@ -14,6 +14,8 @@ extends Control
 const SFXFOLDER = "res://assets/sounds/general/"
 const MUSICFOLDER = "res://assets/music/"
 
+const EvidenceCommand = preload("res://addons/textalog/commands/command_evidence.gd")
+
 var finished: bool = false
 var waiting_on_input: bool = true
 
@@ -137,6 +139,19 @@ func character(character_command:Command) -> void:
 		character_command.go_to_next_command()
 	if delete:
 		scene_manager.remove_char(character_name)
+
+
+func evidence(evidence_command:EvidenceCommand) -> void:
+	match evidence_command.do_what:
+		EvidenceCommand.Action.ADD_EVIDENCE:
+			GameData.evidence_list.append(evidence_command.evidence)
+		EvidenceCommand.Action.ERASE_EVIDENCE:
+			GameData.evidence_list.erase(evidence_command.evidence)
+		EvidenceCommand.Action.INSERT_AT_INDEX:
+			GameData.evidence_list.insert(evidence_command.at_index, evidence_command.evidence)
+		EvidenceCommand.Action.REMOVE_AT_INDEX:
+			GameData.evidence_list.remove_at(evidence_command.at_index)
+	bottom_screen.evidence_screen.load_evidence(GameData.evidence_list)
 
 
 func set_dialog_visible(toggle: bool = true):

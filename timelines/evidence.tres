@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="CommandCollection" load_steps=11 format=3 uid="uid://c50mrddlht0kk"]
+
+[ext_resource type="Script" path="res://addons/blockflow/command_collection.gd" id="1_a8gwg"]
+[ext_resource type="Resource" uid="uid://bb2vay207xme5" path="res://evidence/attorney_badge.tres" id="1_h4v8u"]
+[ext_resource type="Script" path="res://addons/textalog/commands/command_evidence.gd" id="2_pv5cu"]
+[ext_resource type="Resource" uid="uid://durc6pd7owxxa" path="res://evidence/letter.tres" id="3_23645"]
+[ext_resource type="Script" path="res://addons/blockflow/commands/branch.gd" id="4_cpd62"]
+[ext_resource type="Script" path="res://addons/blockflow/commands/command_return.gd" id="6_kfm10"]
+
+[sub_resource type="Resource" id="Resource_mfyfl"]
+script = ExtResource("2_pv5cu")
+do_what = 0
+evidence = ExtResource("1_h4v8u")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_3eg3y"]
+script = ExtResource("2_pv5cu")
+do_what = 0
+evidence = ExtResource("3_23645")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_0yq42"]
+script = ExtResource("4_cpd62")
+condition = ""
+branch_name = &""
+bookmark = &""
+continue_at_end = true
+background_color = 3
+target = NodePath("")
+collection = [SubResource("Resource_3eg3y")]
+
+[sub_resource type="Resource" id="Resource_r73gr"]
+script = ExtResource("6_kfm10")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[resource]
+resource_name = "evidence.tres"
+script = ExtResource("1_a8gwg")
+collection = [SubResource("Resource_mfyfl"), SubResource("Resource_0yq42"), SubResource("Resource_r73gr")]

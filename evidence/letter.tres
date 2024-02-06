@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Evidence" load_steps=3 format=3 uid="uid://durc6pd7owxxa"]
+
+[ext_resource type="Texture2D" uid="uid://d1iou5e86dy6" path="res://assets/evidence/letter.png" id="1_f2k6m"]
+[ext_resource type="Script" path="res://scenes/evidence.gd" id="2_usrss"]
+
+[resource]
+script = ExtResource("2_usrss")
+name = "Letter"
+short_desc = "Type:Other
+Received tonight."
+long_desc = "It reads:
+\"ah ah fecal funny\""
+image = ExtResource("1_f2k6m")
