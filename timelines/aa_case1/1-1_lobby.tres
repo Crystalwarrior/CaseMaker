@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="CommandCollection" load_steps=79 format=3 uid="uid://b2uvbyr3l6a84"]
+[gd_resource type="Resource" script_class="CommandCollection" load_steps=94 format=3 uid="uid://b2uvbyr3l6a84"]
 
 [ext_resource type="Script" path="res://addons/textalog/commands/command_dialog.gd" id="1_pri7v"]
+[ext_resource type="AudioStream" uid="uid://cb485p8r1fh2e" path="res://assets/music/bgm008.ogg" id="2_6b5kb"]
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_call.gd" id="2_7m4qb"]
+[ext_resource type="Script" path="res://addons/textalog/commands/command_music.gd" id="3_3a4nr"]
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_wait.gd" id="5_uc2u8"]
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_animate.gd" id="6_d1b7r"]
 [ext_resource type="PackedScene" uid="uid://dt6c18aeo3wal" path="res://Art Assets/Characters/Mia Fey/Mia.tscn" id="6_vat1v"]
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_print.gd" id="7_phcgd"]
 [ext_resource type="Script" path="res://addons/textalog/commands/command_character.gd" id="7_s0i6j"]
 [ext_resource type="Script" path="res://addons/blockflow/command_collection.gd" id="8_0rc1k"]
-[ext_resource type="PackedScene" uid="uid://nholet7cnebr" path="res://Art Assets/Characters/sans/Sans.tscn" id="8_shger"]
-[ext_resource type="Script" path="res://addons/blockflow/commands/command_end.gd" id="9_bhig5"]
+[ext_resource type="PackedScene" uid="uid://cxdab1s0b31jt" path="res://Art Assets/Characters/Larry Butz/Larry.tscn" id="8_1nh8l"]
 
 [sub_resource type="Resource" id="Resource_jj2gc"]
 script = ExtResource("1_pri7v")
@@ -51,16 +52,17 @@ background_color = 0
 target = NodePath("")
 collection = []
 
-[sub_resource type="Resource" id="Resource_yur3b"]
-script = ExtResource("2_7m4qb")
-method = "play_music"
-args = ["bgm008"]
+[sub_resource type="Resource" id="Resource_at5mj"]
+script = ExtResource("3_3a4nr")
+do_what = 0
+fade_duration = 0.0
+music = ExtResource("2_6b5kb")
+fade_volume = 0.0
 bookmark = &""
 continue_at_end = true
 background_color = 0
 target = NodePath("")
 collection = []
-metadata/__editor_override_property__ = false
 
 [sub_resource type="Resource" id="Resource_44hdp"]
 script = ExtResource("5_uc2u8")
@@ -587,16 +589,15 @@ background_color = 0
 target = NodePath("")
 collection = []
 
-[sub_resource type="Resource" id="Resource_i25d6"]
-script = ExtResource("2_7m4qb")
-method = "play_music"
-args = []
+[sub_resource type="Resource" id="Resource_rabrh"]
+script = ExtResource("3_3a4nr")
+do_what = 1
+fade_duration = 0.0
 bookmark = &""
 continue_at_end = true
 background_color = 0
 target = NodePath("")
 collection = []
-metadata/__editor_override_property__ = false
 
 [sub_resource type="Resource" id="Resource_2m3gm"]
 script = ExtResource("7_s0i6j")
@@ -860,9 +861,11 @@ background_color = 0
 target = NodePath("")
 collection = []
 
-[sub_resource type="Resource" id="Resource_vflrd"]
-script = ExtResource("7_phcgd")
-comment = "todo: the rest of this lol"
+[sub_resource type="Resource" id="Resource_ehpst"]
+script = ExtResource("3_3a4nr")
+do_what = 3
+fade_duration = 1.0
+fade_volume = 0.0
 bookmark = &""
 continue_at_end = true
 background_color = 0
@@ -893,9 +896,9 @@ collection = []
 
 [sub_resource type="Resource" id="Resource_1f11e"]
 script = ExtResource("7_s0i6j")
-character = ExtResource("8_shger")
-character_name = "sans"
-emote = "bouncy"
+character = ExtResource("8_1nh8l")
+character_name = "Butz"
+emote = "nervous"
 delete = false
 add_position = true
 to_position = Vector2(0, 0)
@@ -913,74 +916,6 @@ background_color = 0
 target = NodePath("")
 collection = []
 
-[sub_resource type="Resource" id="Resource_o3m1m"]
-script = ExtResource("2_7m4qb")
-method = "fadeout"
-args = [0.5]
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("UpperScreen/BackgroundFade")
-collection = []
-metadata/__editor_override_property__ = false
-
-[sub_resource type="Resource" id="Resource_u6f2l"]
-script = ExtResource("1_pri7v")
-showname = "sans"
-dialog = "{sfx realization}[font=res://assets/fonts/Comic Sans/comicbd.ttf][font_size=13]hey."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "sans"
-wait_until_finished = true
-speaking_character = "sans"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = false
-bookmark = &""
-continue_at_end = false
-background_color = 0
-target = NodePath("")
-collection = []
-
-[sub_resource type="Resource" id="Resource_8jucs"]
-script = ExtResource("2_7m4qb")
-method = "play_music"
-args = ["mus_zz_megalovania"]
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
-collection = []
-metadata/__editor_override_property__ = false
-
-[sub_resource type="Resource" id="Resource_4x4w8"]
-script = ExtResource("1_pri7v")
-showname = "sans"
-dialog = "{f}[font=res://assets/fonts/Comic Sans/comicbd.ttf][font_size=13]you wanna have a bad time?"
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "sans"
-wait_until_finished = true
-speaking_character = "sans"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = false
-bookmark = &""
-continue_at_end = false
-background_color = 0
-target = NodePath("")
-collection = []
-
-[sub_resource type="Resource" id="Resource_vt1dv"]
-script = ExtResource("9_bhig5")
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
-collection = []
-
 [sub_resource type="Resource" id="Resource_4nii8"]
 script = ExtResource("1_pri7v")
 showname = "Butz"
@@ -990,7 +925,7 @@ text_speed = 0
 letter_delay = 0.034
 blip_sound = "male"
 wait_until_finished = true
-speaking_character = "Edgeworth"
+speaking_character = "Butz"
 bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
@@ -1023,14 +958,14 @@ collection = []
 [sub_resource type="Resource" id="Resource_6a6vl"]
 script = ExtResource("1_pri7v")
 showname = "Butz"
-dialog = "{s 2}{f}{sfx supershock}{e normal}Dude, I'm so guilty!!{p 0.2}
+dialog = "{s 2}{f}{sfx supershock}{e thumbsup}Dude,{p 0.2} I'm so guilty!!{p 0.2}
 {f}Tell them I'm guilty!!!"
 additive = false
 text_speed = 3
 letter_delay = 0.017
 blip_sound = "male"
 wait_until_finished = true
-speaking_character = "Edgeworth"
+speaking_character = "Butz"
 bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
@@ -1044,13 +979,13 @@ collection = []
 script = ExtResource("1_pri7v")
 showname = "Butz"
 dialog = "Gimme the death sentence!{p 0.2}
-{e hmm}I ain't afraid to die!"
+I ain't afraid to die!"
 additive = false
 text_speed = 3
 letter_delay = 0.017
 blip_sound = "male"
 wait_until_finished = true
-speaking_character = "Edgeworth"
+speaking_character = "Butz"
 bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
@@ -1063,8 +998,8 @@ collection = []
 [sub_resource type="Resource" id="Resource_ugvem"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
-dialog = "{spd_fast}What!?
-{spd_normal}What's wrong, Larry?"
+dialog = "What!?{p 0.2}
+What's wrong, Larry?"
 additive = false
 text_speed = 0
 letter_delay = 0.034
@@ -1083,14 +1018,14 @@ collection = []
 [sub_resource type="Resource" id="Resource_scnmy"]
 script = ExtResource("1_pri7v")
 showname = "Butz"
-dialog = "Oh,{p 0.2} it's all over...{p 0.33}
-I... I'm finished.{p 0.33}{spd_fast} Finished! "
+dialog = "{e nervous}Oh,{p 0.2} it's all over...{p 0.33}
+I... I'm finished.{p 0.33} {spd_fast}Finished! "
 additive = false
 text_speed = 1
 letter_delay = 0.05
 blip_sound = "male"
 wait_until_finished = true
-speaking_character = "Edgeworth"
+speaking_character = "Butz"
 bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
@@ -1110,7 +1045,7 @@ text_speed = 3
 letter_delay = 0.017
 blip_sound = "male"
 wait_until_finished = true
-speaking_character = "Edgeworth"
+speaking_character = "Butz"
 bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
@@ -1123,14 +1058,14 @@ collection = []
 [sub_resource type="Resource" id="Resource_wukhk"]
 script = ExtResource("1_pri7v")
 showname = "Butz"
-dialog = "{spd_slow}Who...{p 0.33}{spd_normal} who took her away
+dialog = "Who...{p 0.33}{spd_normal} who took her away
 from me, Nick?{p 0.33}{spd_fast} Who did this!?"
 additive = false
-text_speed = 3
-letter_delay = 0.017
+text_speed = 1
+letter_delay = 0.05
 blip_sound = "male"
 wait_until_finished = true
-speaking_character = "Edgeworth"
+speaking_character = "Butz"
 bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
@@ -1143,14 +1078,14 @@ collection = []
 [sub_resource type="Resource" id="Resource_dd6wv"]
 script = ExtResource("1_pri7v")
 showname = "Butz"
-dialog = "{s}Aww,{p} Nick,{p} ya gotta tell me!{p 0.33}
+dialog = "{s 4}{sfx supershock}Aww,{p} Nick,{p} ya gotta tell me!{p 0.33}
 Who took my baby away!?"
 additive = false
 text_speed = 0
 letter_delay = 0.034
 blip_sound = "male"
 wait_until_finished = true
-speaking_character = "Edgeworth"
+speaking_character = "Butz"
 bump_speaker = false
 highlight_speaker = false
 hide_dialog = false
@@ -1183,8 +1118,8 @@ collection = []
 [sub_resource type="Resource" id="Resource_sxene"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
-dialog = "[color=#6bc6f7ff](The newspapers say
-{p 0.33}it was{p 0.33} [color=#f77339ff]{f}you[/color]...)[/color]"
+dialog = "[color=#6bc6f7ff](The newspapers say{p 0.33}
+it was{p 0.33} [color=#f77339ff]{sfx realization}{f}you[/color]...)[/color]"
 additive = false
 text_speed = 1
 letter_delay = 0.05
@@ -1200,10 +1135,323 @@ background_color = 0
 target = NodePath("")
 collection = []
 
+[sub_resource type="Resource" id="Resource_8vyx5"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = ""
+additive = false
+text_speed = 1
+letter_delay = 0.05
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = true
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_tm5pi"]
+script = ExtResource("5_uc2u8")
+wait_for = 0
+wait_time = 0.5
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_y5t7i"]
+script = ExtResource("2_7m4qb")
+method = "fadeout"
+args = [1.0]
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("UpperScreen/ForegroundFade")
+collection = []
+metadata/__editor_override_property__ = false
+
+[sub_resource type="Resource" id="Resource_aacc2"]
+script = ExtResource("5_uc2u8")
+wait_for = 0
+wait_time = 1.0
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_6xxxu"]
+script = ExtResource("3_3a4nr")
+do_what = 1
+fade_duration = 1.0
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
 [sub_resource type="Resource" id="Resource_2qydy"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
-dialog = "My name is Phoenix Wright. Here's the story: My first case is a fairly simple one. A young woman was killed in her apartment. The guy they arrested was the unlucky sap dating her: Larry Butz... my best friend since grade school. Our school had a saying: \"When something smells, it's usually the Butz.\" In the 23 years I've known him, it's usually been true. He has a knack for getting himself in trouble. One thing I can say though: it's usually not his fault. He just has terrible luck. But I know better than anyone, that he's a good guy at heart. That and I owe him one. Which is why I took the case... to clear his name. And that's just what I'm going to do! "
+dialog = "My name is Phoenix Wright."
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_j2p68"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "Here's the story:"
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_kh6hw"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "My first case is
+a fairly simple one."
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_jw5sv"]
+script = ExtResource("7_phcgd")
+comment = "fade in death cg"
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_aicsg"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "A young woman was killed
+in her apartment."
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_e7krp"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "The guy they arrested was
+the unlucky sap dating her:"
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_3f0fh"]
+script = ExtResource("7_phcgd")
+comment = "swap, show butz with thumbs up"
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_1mmli"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "Larry Butz... my best
+friend since grade school. "
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_ckkom"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "Our school had a saying:{p 0.5} \"[color=#f77339ff]When something smells,
+it's usually the Butz.[/color]\" "
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_kbwmk"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "In the 23 years I've known
+him, it's usually been true."
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_w4vk8"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "He has a knack for getting himself in trouble."
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_hp8eh"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "One thing I can say though:{p 0.5} it's usually not his fault.{p 0.2}
+He just has terrible luck."
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_rni74"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "But I know better than anyone, that he's a good guy at heart."
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_wkwl1"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "That and I owe him one. Which is why I took the case... to clear his name."
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_biofi"]
+script = ExtResource("1_pri7v")
+showname = "Phoenix"
+dialog = "{f}{s}And that's just what I'm going to do! "
 additive = false
 text_speed = 0
 letter_delay = 0.034
@@ -1222,4 +1470,4 @@ collection = []
 [resource]
 resource_name = "lobby.tres"
 script = ExtResource("8_0rc1k")
-collection = [SubResource("Resource_jj2gc"), SubResource("Resource_as7w4"), SubResource("Resource_yur3b"), SubResource("Resource_44hdp"), SubResource("Resource_fqg3q"), SubResource("Resource_lk2po"), SubResource("Resource_q22o8"), SubResource("Resource_dx04t"), SubResource("Resource_drie3"), SubResource("Resource_kt2s1"), SubResource("Resource_fugpg"), SubResource("Resource_burih"), SubResource("Resource_0knig"), SubResource("Resource_q75dd"), SubResource("Resource_5l5eo"), SubResource("Resource_r8jdm"), SubResource("Resource_m3i10"), SubResource("Resource_kpfpg"), SubResource("Resource_i50t3"), SubResource("Resource_qoohk"), SubResource("Resource_ote5x"), SubResource("Resource_mgmm7"), SubResource("Resource_5s3ec"), SubResource("Resource_b8w00"), SubResource("Resource_2ml4e"), SubResource("Resource_acr1i"), SubResource("Resource_15tkm"), SubResource("Resource_i471l"), SubResource("Resource_2vdmu"), SubResource("Resource_haotu"), SubResource("Resource_3u36i"), SubResource("Resource_qtkwu"), SubResource("Resource_sua6o"), SubResource("Resource_o3lao"), SubResource("Resource_i25d6"), SubResource("Resource_2m3gm"), SubResource("Resource_p6ops"), SubResource("Resource_pumkr"), SubResource("Resource_wxeb1"), SubResource("Resource_apuv7"), SubResource("Resource_r5uf2"), SubResource("Resource_qvgg5"), SubResource("Resource_t1hvy"), SubResource("Resource_ix4kh"), SubResource("Resource_g0heb"), SubResource("Resource_5bjq5"), SubResource("Resource_gy8vv"), SubResource("Resource_q7n84"), SubResource("Resource_vflrd"), SubResource("Resource_gf7yr"), SubResource("Resource_1f11e"), SubResource("Resource_o3m1m"), SubResource("Resource_u6f2l"), SubResource("Resource_8jucs"), SubResource("Resource_4x4w8"), SubResource("Resource_vt1dv"), SubResource("Resource_4nii8"), SubResource("Resource_35l8h"), SubResource("Resource_6a6vl"), SubResource("Resource_scbni"), SubResource("Resource_ugvem"), SubResource("Resource_scnmy"), SubResource("Resource_q74ct"), SubResource("Resource_wukhk"), SubResource("Resource_dd6wv"), SubResource("Resource_arbkl"), SubResource("Resource_sxene"), SubResource("Resource_2qydy")]
+collection = [SubResource("Resource_jj2gc"), SubResource("Resource_as7w4"), SubResource("Resource_at5mj"), SubResource("Resource_44hdp"), SubResource("Resource_fqg3q"), SubResource("Resource_lk2po"), SubResource("Resource_q22o8"), SubResource("Resource_dx04t"), SubResource("Resource_drie3"), SubResource("Resource_kt2s1"), SubResource("Resource_fugpg"), SubResource("Resource_burih"), SubResource("Resource_0knig"), SubResource("Resource_q75dd"), SubResource("Resource_5l5eo"), SubResource("Resource_r8jdm"), SubResource("Resource_m3i10"), SubResource("Resource_kpfpg"), SubResource("Resource_i50t3"), SubResource("Resource_qoohk"), SubResource("Resource_ote5x"), SubResource("Resource_mgmm7"), SubResource("Resource_5s3ec"), SubResource("Resource_b8w00"), SubResource("Resource_2ml4e"), SubResource("Resource_acr1i"), SubResource("Resource_15tkm"), SubResource("Resource_i471l"), SubResource("Resource_2vdmu"), SubResource("Resource_haotu"), SubResource("Resource_3u36i"), SubResource("Resource_qtkwu"), SubResource("Resource_sua6o"), SubResource("Resource_o3lao"), SubResource("Resource_rabrh"), SubResource("Resource_2m3gm"), SubResource("Resource_p6ops"), SubResource("Resource_pumkr"), SubResource("Resource_wxeb1"), SubResource("Resource_apuv7"), SubResource("Resource_r5uf2"), SubResource("Resource_qvgg5"), SubResource("Resource_t1hvy"), SubResource("Resource_ix4kh"), SubResource("Resource_g0heb"), SubResource("Resource_5bjq5"), SubResource("Resource_gy8vv"), SubResource("Resource_q7n84"), SubResource("Resource_ehpst"), SubResource("Resource_gf7yr"), SubResource("Resource_1f11e"), SubResource("Resource_4nii8"), SubResource("Resource_35l8h"), SubResource("Resource_6a6vl"), SubResource("Resource_scbni"), SubResource("Resource_ugvem"), SubResource("Resource_scnmy"), SubResource("Resource_q74ct"), SubResource("Resource_wukhk"), SubResource("Resource_dd6wv"), SubResource("Resource_arbkl"), SubResource("Resource_sxene"), SubResource("Resource_8vyx5"), SubResource("Resource_tm5pi"), SubResource("Resource_y5t7i"), SubResource("Resource_aacc2"), SubResource("Resource_6xxxu"), SubResource("Resource_2qydy"), SubResource("Resource_j2p68"), SubResource("Resource_kh6hw"), SubResource("Resource_jw5sv"), SubResource("Resource_aicsg"), SubResource("Resource_e7krp"), SubResource("Resource_3f0fh"), SubResource("Resource_1mmli"), SubResource("Resource_ckkom"), SubResource("Resource_kbwmk"), SubResource("Resource_w4vk8"), SubResource("Resource_hp8eh"), SubResource("Resource_rni74"), SubResource("Resource_wkwl1"), SubResource("Resource_biofi")]

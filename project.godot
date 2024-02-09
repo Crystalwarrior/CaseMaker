@@ -22,7 +22,7 @@ GameData="*res://scenes/game_data.gd"
 
 [blockflow]
 
-settings/commands/custom_commands=["res://addons/textalog/commands/command_character.gd", "res://addons/textalog/commands/command_choice.gd", "res://addons/textalog/commands/command_choice_list.gd", "res://addons/textalog/commands/command_dialog.gd", "res://addons/textalog/commands/command_testimony.gd", "res://addons/textalog/commands/command_testimony_statement.gd", "res://addons/textalog/commands/command_evidence.gd"]
+settings/commands/custom_commands=["res://addons/textalog/commands/command_character.gd", "res://addons/textalog/commands/command_choice.gd", "res://addons/textalog/commands/command_choice_list.gd", "res://addons/textalog/commands/command_dialog.gd", "res://addons/textalog/commands/command_testimony.gd", "res://addons/textalog/commands/command_testimony_statement.gd", "res://addons/textalog/commands/command_evidence.gd", "res://addons/textalog/commands/command_music.gd"]
 
 [display]
 

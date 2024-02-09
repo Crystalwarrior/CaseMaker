@@ -50,6 +50,8 @@ func _execution_steps() -> void:
 
 
 func _get_name() -> StringName:
+	if not get_command_owner():
+		return "Evidence"
 	match do_what:
 		Action.ADD_EVIDENCE:
 			return "Add Evidence"

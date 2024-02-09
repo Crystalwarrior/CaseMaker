@@ -15,6 +15,7 @@ const SFXFOLDER = "res://assets/sounds/general/"
 const MUSICFOLDER = "res://assets/music/"
 
 const EvidenceCommand = preload("res://addons/textalog/commands/command_evidence.gd")
+const MusicCommand = preload("res://addons/textalog/commands/command_music.gd")
 
 var finished: bool = false
 var waiting_on_input: bool = true
@@ -121,7 +122,7 @@ func character(character_command:Command) -> void:
 			scene_manager.add_char(target, character_name)
 
 	if emote != "":
-		target.set_animation(emote, target.is_talking)
+		target.set_animation(emote)
 	if shaking:
 		target.shake()
 	if fade_out:
@@ -151,6 +152,18 @@ func evidence(evidence_command:EvidenceCommand) -> void:
 		EvidenceCommand.Action.REMOVE_AT_INDEX:
 			GameData.evidence_list.remove_at(evidence_command.at_index)
 	bottom_screen.evidence_screen.load_evidence(GameData.evidence_list)
+
+
+func music(music_command:MusicCommand):
+	match music_command.do_what:
+		music_command.Action.PLAY_MUSIC:
+			music_player.play_track(music_command.music, music_command.fade_volume, music_command.fade_duration)
+		music_command.Action.STOP_MUSIC:
+			music_player.stop_track(music_command.fade_duration)
+		music_command.Action.SET_VOLUME:
+			music_player.fade(music_command.fade_volume, music_command.fade_duration)
+		music_command.Action.RESUME_MUSIC:
+			music_player.unpause_track(music_command.fade_volume, music_command.fade_duration)
 
 
 func set_dialog_visible(toggle: bool = true):
