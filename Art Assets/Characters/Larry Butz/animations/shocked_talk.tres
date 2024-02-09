@@ -1,0 +1,32 @@
+[gd_resource type="Animation" load_steps=12 format=3]
+
+[ext_resource type="Texture" uid="uid://8b7hsija6gfh" path="res://Art Assets/Characters/Larry Butz/animations/shocked_talk/0.png" id="1"]
+[ext_resource type="Texture" uid="uid://bqdq3qu5k31n7" path="res://Art Assets/Characters/Larry Butz/animations/shocked_talk/1.png" id="2"]
+[ext_resource type="Texture" uid="uid://bfhosuyvip2j1" path="res://Art Assets/Characters/Larry Butz/animations/shocked_talk/2.png" id="3"]
+[ext_resource type="Texture" uid="uid://bqdq3qu5k31n7" path="res://Art Assets/Characters/Larry Butz/animations/shocked_talk/1.png" id="4"]
+[ext_resource type="Texture" uid="uid://dotqvlow02vy7" path="res://Art Assets/Characters/Larry Butz/animations/shocked_talk/4.png" id="5"]
+[ext_resource type="Texture" uid="uid://bqdq3qu5k31n7" path="res://Art Assets/Characters/Larry Butz/animations/shocked_talk/1.png" id="6"]
+[ext_resource type="Texture" uid="uid://bfhosuyvip2j1" path="res://Art Assets/Characters/Larry Butz/animations/shocked_talk/2.png" id="7"]
+[ext_resource type="Texture" uid="uid://bqdq3qu5k31n7" path="res://Art Assets/Characters/Larry Butz/animations/shocked_talk/1.png" id="8"]
+[ext_resource type="Texture" uid="uid://dotqvlow02vy7" path="res://Art Assets/Characters/Larry Butz/animations/shocked_talk/4.png" id="9"]
+[ext_resource type="Texture" uid="uid://bqdq3qu5k31n7" path="res://Art Assets/Characters/Larry Butz/animations/shocked_talk/1.png" id="10"]
+[ext_resource type="Texture" uid="uid://bfhosuyvip2j1" path="res://Art Assets/Characters/Larry Butz/animations/shocked_talk/2.png" id="11"]
+
+
+[resource]
+resource_name = "shocked_talk"
+length = 1.0999999999999999
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = 
+{
+"times": PoolRealArray( 0, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.00 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ]
+}

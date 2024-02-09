@@ -1,0 +1,32 @@
+[gd_resource type="Animation" load_steps=12 format=3]
+
+[ext_resource type="Texture" uid="uid://b21382x32uynr" path="res://Art Assets/Characters/Larry Butz/animations/sweat_idle/0.png" id="1"]
+[ext_resource type="Texture" uid="uid://dfvvclc53ip4d" path="res://Art Assets/Characters/Larry Butz/animations/sweat_idle/1.png" id="2"]
+[ext_resource type="Texture" uid="uid://du6543tktmh7p" path="res://Art Assets/Characters/Larry Butz/animations/sweat_idle/2.png" id="3"]
+[ext_resource type="Texture" uid="uid://bcjl4vy83uyqw" path="res://Art Assets/Characters/Larry Butz/animations/sweat_idle/3.png" id="4"]
+[ext_resource type="Texture" uid="uid://cr6b5x063kypj" path="res://Art Assets/Characters/Larry Butz/animations/sweat_idle/4.png" id="5"]
+[ext_resource type="Texture" uid="uid://b7b22f8ygd5rf" path="res://Art Assets/Characters/Larry Butz/animations/sweat_idle/5.png" id="6"]
+[ext_resource type="Texture" uid="uid://bkwxqxnvcdvw5" path="res://Art Assets/Characters/Larry Butz/animations/sweat_idle/6.png" id="7"]
+[ext_resource type="Texture" uid="uid://dfvvclc53ip4d" path="res://Art Assets/Characters/Larry Butz/animations/sweat_idle/1.png" id="8"]
+[ext_resource type="Texture" uid="uid://du6543tktmh7p" path="res://Art Assets/Characters/Larry Butz/animations/sweat_idle/2.png" id="9"]
+[ext_resource type="Texture" uid="uid://bcjl4vy83uyqw" path="res://Art Assets/Characters/Larry Butz/animations/sweat_idle/3.png" id="10"]
+[ext_resource type="Texture" uid="uid://cr6b5x063kypj" path="res://Art Assets/Characters/Larry Butz/animations/sweat_idle/4.png" id="11"]
+
+
+[resource]
+resource_name = "sweat_idle"
+length = 1.2999999999999998
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = 
+{
+"times": PoolRealArray( 0, 0.13, 0.26, 0.39, 0.52, 0.65, 0.75, 0.78, 0.91, 1.04, 1.17 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ]
+}

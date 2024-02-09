@@ -1,0 +1,31 @@
+[gd_resource type="Animation" load_steps=11 format=3]
+
+[ext_resource type="Texture" uid="uid://c1vao1w640tc8" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_talk/0.png" id="1"]
+[ext_resource type="Texture" uid="uid://ce3333mln8t3v" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_talk/1.png" id="2"]
+[ext_resource type="Texture" uid="uid://bivrcym57bghw" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_talk/2.png" id="3"]
+[ext_resource type="Texture" uid="uid://cuapm63j2q7or" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_talk/3.png" id="4"]
+[ext_resource type="Texture" uid="uid://du3lhn8185ufn" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_talk/4.png" id="5"]
+[ext_resource type="Texture" uid="uid://cla3u3sjw5c8t" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_talk/5.png" id="6"]
+[ext_resource type="Texture" uid="uid://bxuj8kvm0of8v" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_talk/6.png" id="7"]
+[ext_resource type="Texture" uid="uid://bxlva72trwx0e" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_talk/7.png" id="8"]
+[ext_resource type="Texture" uid="uid://deefj7xr2yf4l" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_talk/8.png" id="9"]
+[ext_resource type="Texture" uid="uid://j4lwnkv7djyw" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_talk/9.png" id="10"]
+
+
+[resource]
+resource_name = "thumbsup_talk"
+length = 1.0300000000000002
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = 
+{
+"times": PoolRealArray( 0, 0.13, 0.26, 0.41, 0.54, 0.67, 0.72, 0.78, 0.84, 0.90 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ]
+}

@@ -1,0 +1,22 @@
+[gd_resource type="Animation" load_steps=2 format=3]
+
+[ext_resource type="Texture" uid="uid://cbambwvnbldkk" path="res://Art Assets/Characters/Larry Butz/animations/smile_idle/0.png" id="1"]
+
+
+[resource]
+resource_name = "smile_idle"
+length = 0.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = 
+{
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ) ]
+}

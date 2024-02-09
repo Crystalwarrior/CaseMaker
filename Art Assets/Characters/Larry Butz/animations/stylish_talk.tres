@@ -1,0 +1,39 @@
+[gd_resource type="Animation" load_steps=19 format=3]
+
+[ext_resource type="Texture" uid="uid://cuctfm23cdrc1" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/0.png" id="1"]
+[ext_resource type="Texture" uid="uid://dmaytyipnobk0" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/1.png" id="2"]
+[ext_resource type="Texture" uid="uid://68fl0nhqr6dt" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/2.png" id="3"]
+[ext_resource type="Texture" uid="uid://dmaytyipnobk0" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/1.png" id="4"]
+[ext_resource type="Texture" uid="uid://be3l75br4nfwr" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/4.png" id="5"]
+[ext_resource type="Texture" uid="uid://dmaytyipnobk0" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/1.png" id="6"]
+[ext_resource type="Texture" uid="uid://68fl0nhqr6dt" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/2.png" id="7"]
+[ext_resource type="Texture" uid="uid://dmaytyipnobk0" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/1.png" id="8"]
+[ext_resource type="Texture" uid="uid://jgy3lotqtq1f" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/8.png" id="9"]
+[ext_resource type="Texture" uid="uid://dhr2wx8o2kw5y" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/9.png" id="10"]
+[ext_resource type="Texture" uid="uid://big6ciiw8ycfv" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/10.png" id="11"]
+[ext_resource type="Texture" uid="uid://dmaytyipnobk0" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/1.png" id="12"]
+[ext_resource type="Texture" uid="uid://68fl0nhqr6dt" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/2.png" id="13"]
+[ext_resource type="Texture" uid="uid://dmaytyipnobk0" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/1.png" id="14"]
+[ext_resource type="Texture" uid="uid://be3l75br4nfwr" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/4.png" id="15"]
+[ext_resource type="Texture" uid="uid://dmaytyipnobk0" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/1.png" id="16"]
+[ext_resource type="Texture" uid="uid://68fl0nhqr6dt" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/2.png" id="17"]
+[ext_resource type="Texture" uid="uid://dmaytyipnobk0" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk/1.png" id="18"]
+
+
+[resource]
+resource_name = "stylish_talk"
+length = 2.18
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = 
+{
+"times": PoolRealArray( 0, 0.13, 0.26, 0.42, 0.55, 0.68, 0.81, 0.97, 1.10, 1.16, 1.22, 1.28, 1.34, 1.50, 1.63, 1.76, 1.89, 2.05 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ]
+}

@@ -1,0 +1,29 @@
+[gd_resource type="Animation" load_steps=9 format=3]
+
+[ext_resource type="Texture" uid="uid://ch0nuxewn6p2c" path="res://Art Assets/Characters/Larry Butz/animations/nervous_talk/0.png" id="1"]
+[ext_resource type="Texture" uid="uid://bi2duhu2rn500" path="res://Art Assets/Characters/Larry Butz/animations/nervous_talk/1.png" id="2"]
+[ext_resource type="Texture" uid="uid://w0i0vwbhqgwl" path="res://Art Assets/Characters/Larry Butz/animations/nervous_talk/2.png" id="3"]
+[ext_resource type="Texture" uid="uid://bi2duhu2rn500" path="res://Art Assets/Characters/Larry Butz/animations/nervous_talk/1.png" id="4"]
+[ext_resource type="Texture" uid="uid://dqkbaohimaw53" path="res://Art Assets/Characters/Larry Butz/animations/nervous_talk/4.png" id="5"]
+[ext_resource type="Texture" uid="uid://bi2duhu2rn500" path="res://Art Assets/Characters/Larry Butz/animations/nervous_talk/1.png" id="6"]
+[ext_resource type="Texture" uid="uid://w0i0vwbhqgwl" path="res://Art Assets/Characters/Larry Butz/animations/nervous_talk/2.png" id="7"]
+[ext_resource type="Texture" uid="uid://bi2duhu2rn500" path="res://Art Assets/Characters/Larry Butz/animations/nervous_talk/1.png" id="8"]
+
+
+[resource]
+resource_name = "nervous_talk"
+length = 0.96
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = 
+{
+"times": PoolRealArray( 0, 0.11, 0.22, 0.37, 0.48, 0.59, 0.70, 0.85 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ]
+}

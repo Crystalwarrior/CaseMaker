@@ -1,0 +1,25 @@
+[gd_resource type="Animation" load_steps=5 format=3]
+
+[ext_resource type="Texture" uid="uid://b1mae4mn2tkdr" path="res://Art Assets/Characters/Larry Butz/animations/smile_talk/0.png" id="1"]
+[ext_resource type="Texture" uid="uid://cdawyhw7b0gf6" path="res://Art Assets/Characters/Larry Butz/animations/smile_talk/1.png" id="2"]
+[ext_resource type="Texture" uid="uid://cu581jrfpphvp" path="res://Art Assets/Characters/Larry Butz/animations/smile_talk/2.png" id="3"]
+[ext_resource type="Texture" uid="uid://b5coj0k3rl6ux" path="res://Art Assets/Characters/Larry Butz/animations/smile_talk/3.png" id="4"]
+
+
+[resource]
+resource_name = "smile_talk"
+length = 0.52
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = 
+{
+"times": PoolRealArray( 0, 0.13, 0.26, 0.39 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
+}

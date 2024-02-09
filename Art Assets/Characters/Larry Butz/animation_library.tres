@@ -1,0 +1,63 @@
+[gd_resource type="AnimationLibrary" load_steps=29 format=3]
+
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_talk.tres" id="1"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/annoyed_idle.tres" id="2"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/annoyed_talk.tres" id="3"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/grin_idle.tres" id="4"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/grin_talk.tres" id="5"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/head_idle.tres" id="6"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/head_talk.tres" id="7"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/hello_idle.tres" id="8"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/hello_talk.tres" id="9"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/nervous_idle.tres" id="10"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/nervous_talk.tres" id="11"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/normal_idle.tres" id="12"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/normal_talk.tres" id="13"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/sad_idle.tres" id="14"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/sad_talk.tres" id="15"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/scratch_idle.tres" id="16"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/scratch_talk.tres" id="17"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/shocked_idle.tres" id="18"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/shocked_talk.tres" id="19"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/smile_idle.tres" id="20"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/smile_talk.tres" id="21"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/stylish_idle.tres" id="22"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/stylish_talk.tres" id="23"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/sweat_idle.tres" id="24"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/sweat_talk.tres" id="25"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/thinking_idle.tres" id="26"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/thinking_talk.tres" id="27"]
+[ext_resource type="Texture" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_idle.tres" id="28"]
+
+
+[resource]
+_data = {
+"thumbsup_talk": ExtResource( 1 ),
+"annoyed_idle": ExtResource( 2 ),
+"annoyed_talk": ExtResource( 3 ),
+"grin_idle": ExtResource( 4 ),
+"grin_talk": ExtResource( 5 ),
+"head_idle": ExtResource( 6 ),
+"head_talk": ExtResource( 7 ),
+"hello_idle": ExtResource( 8 ),
+"hello_talk": ExtResource( 9 ),
+"nervous_idle": ExtResource( 10 ),
+"nervous_talk": ExtResource( 11 ),
+"normal_idle": ExtResource( 12 ),
+"normal_talk": ExtResource( 13 ),
+"sad_idle": ExtResource( 14 ),
+"sad_talk": ExtResource( 15 ),
+"scratch_idle": ExtResource( 16 ),
+"scratch_talk": ExtResource( 17 ),
+"shocked_idle": ExtResource( 18 ),
+"shocked_talk": ExtResource( 19 ),
+"smile_idle": ExtResource( 20 ),
+"smile_talk": ExtResource( 21 ),
+"stylish_idle": ExtResource( 22 ),
+"stylish_talk": ExtResource( 23 ),
+"sweat_idle": ExtResource( 24 ),
+"sweat_talk": ExtResource( 25 ),
+"thinking_idle": ExtResource( 26 ),
+"thinking_talk": ExtResource( 27 ),
+"thumbsup_idle": ExtResource( 28 )
+}

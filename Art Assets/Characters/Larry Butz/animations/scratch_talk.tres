@@ -1,0 +1,25 @@
+[gd_resource type="Animation" load_steps=5 format=3]
+
+[ext_resource type="Texture" uid="uid://16pyyy63v2oj" path="res://Art Assets/Characters/Larry Butz/animations/scratch_talk/0.png" id="1"]
+[ext_resource type="Texture" uid="uid://bh1j8b4mx3bq0" path="res://Art Assets/Characters/Larry Butz/animations/scratch_talk/1.png" id="2"]
+[ext_resource type="Texture" uid="uid://by0tthquiisib" path="res://Art Assets/Characters/Larry Butz/animations/scratch_talk/2.png" id="3"]
+[ext_resource type="Texture" uid="uid://dhgjvd71mjbkm" path="res://Art Assets/Characters/Larry Butz/animations/scratch_talk/3.png" id="4"]
+
+
+[resource]
+resource_name = "scratch_talk"
+length = 0.64
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = 
+{
+"times": PoolRealArray( 0, 0.16, 0.32, 0.48 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
+}

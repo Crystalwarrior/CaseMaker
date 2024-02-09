@@ -1,0 +1,35 @@
+[gd_resource type="Animation" load_steps=15 format=3]
+
+[ext_resource type="Texture" uid="uid://qqxagr053wtm" path="res://Art Assets/Characters/Larry Butz/animations/thinking_talk/0.png" id="1"]
+[ext_resource type="Texture" uid="uid://bvkxpepv7y272" path="res://Art Assets/Characters/Larry Butz/animations/thinking_talk/1.png" id="2"]
+[ext_resource type="Texture" uid="uid://dpwag88simwuf" path="res://Art Assets/Characters/Larry Butz/animations/thinking_talk/2.png" id="3"]
+[ext_resource type="Texture" uid="uid://bvkxpepv7y272" path="res://Art Assets/Characters/Larry Butz/animations/thinking_talk/1.png" id="4"]
+[ext_resource type="Texture" uid="uid://c1fyec2p6ht4c" path="res://Art Assets/Characters/Larry Butz/animations/thinking_talk/4.png" id="5"]
+[ext_resource type="Texture" uid="uid://cgcd4u0fa0wcf" path="res://Art Assets/Characters/Larry Butz/animations/thinking_talk/5.png" id="6"]
+[ext_resource type="Texture" uid="uid://d3cml5xg5ii64" path="res://Art Assets/Characters/Larry Butz/animations/thinking_talk/6.png" id="7"]
+[ext_resource type="Texture" uid="uid://bvkxpepv7y272" path="res://Art Assets/Characters/Larry Butz/animations/thinking_talk/1.png" id="8"]
+[ext_resource type="Texture" uid="uid://dpwag88simwuf" path="res://Art Assets/Characters/Larry Butz/animations/thinking_talk/2.png" id="9"]
+[ext_resource type="Texture" uid="uid://bvkxpepv7y272" path="res://Art Assets/Characters/Larry Butz/animations/thinking_talk/1.png" id="10"]
+[ext_resource type="Texture" uid="uid://c2wo6jyeglmiu" path="res://Art Assets/Characters/Larry Butz/animations/thinking_talk/10.png" id="11"]
+[ext_resource type="Texture" uid="uid://bd2qi0gk8b7rh" path="res://Art Assets/Characters/Larry Butz/animations/thinking_talk/11.png" id="12"]
+[ext_resource type="Texture" uid="uid://erk3ktg6kcyb" path="res://Art Assets/Characters/Larry Butz/animations/thinking_talk/12.png" id="13"]
+[ext_resource type="Texture" uid="uid://bd2qi0gk8b7rh" path="res://Art Assets/Characters/Larry Butz/animations/thinking_talk/11.png" id="14"]
+
+
+[resource]
+resource_name = "thinking_talk"
+length = 1.9199999999999995
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = 
+{
+"times": PoolRealArray( 0, 0.16, 0.32, 0.48, 0.64, 0.72, 0.80, 0.88, 0.96, 1.12, 1.28, 1.44, 1.60, 1.76 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ]
+}

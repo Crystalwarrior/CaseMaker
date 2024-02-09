@@ -1,0 +1,37 @@
+[gd_resource type="Animation" load_steps=17 format=3]
+
+[ext_resource type="Texture" uid="uid://6yrx10ur5jmf" path="res://Art Assets/Characters/Larry Butz/animations/hello_idle/0.png" id="1"]
+[ext_resource type="Texture" uid="uid://b6i3vs2q6csd8" path="res://Art Assets/Characters/Larry Butz/animations/hello_idle/1.png" id="2"]
+[ext_resource type="Texture" uid="uid://dcykxlh61emir" path="res://Art Assets/Characters/Larry Butz/animations/hello_idle/2.png" id="3"]
+[ext_resource type="Texture" uid="uid://b6i3vs2q6csd8" path="res://Art Assets/Characters/Larry Butz/animations/hello_idle/1.png" id="4"]
+[ext_resource type="Texture" uid="uid://c7gomc0td0e63" path="res://Art Assets/Characters/Larry Butz/animations/hello_idle/4.png" id="5"]
+[ext_resource type="Texture" uid="uid://c6ata4ge4277f" path="res://Art Assets/Characters/Larry Butz/animations/hello_idle/5.png" id="6"]
+[ext_resource type="Texture" uid="uid://d4id6wqg68cde" path="res://Art Assets/Characters/Larry Butz/animations/hello_idle/6.png" id="7"]
+[ext_resource type="Texture" uid="uid://dx837rc42k6hm" path="res://Art Assets/Characters/Larry Butz/animations/hello_idle/7.png" id="8"]
+[ext_resource type="Texture" uid="uid://3g1ddhroc34x" path="res://Art Assets/Characters/Larry Butz/animations/hello_idle/8.png" id="9"]
+[ext_resource type="Texture" uid="uid://24suw7dxx2dp" path="res://Art Assets/Characters/Larry Butz/animations/hello_idle/9.png" id="10"]
+[ext_resource type="Texture" uid="uid://b3015g2st0shd" path="res://Art Assets/Characters/Larry Butz/animations/hello_idle/10.png" id="11"]
+[ext_resource type="Texture" uid="uid://24suw7dxx2dp" path="res://Art Assets/Characters/Larry Butz/animations/hello_idle/9.png" id="12"]
+[ext_resource type="Texture" uid="uid://b3kuc7e7fge28" path="res://Art Assets/Characters/Larry Butz/animations/hello_idle/12.png" id="13"]
+[ext_resource type="Texture" uid="uid://w8ydspgiayi6" path="res://Art Assets/Characters/Larry Butz/animations/hello_idle/13.png" id="14"]
+[ext_resource type="Texture" uid="uid://bnlh8j3xuviu7" path="res://Art Assets/Characters/Larry Butz/animations/hello_idle/14.png" id="15"]
+[ext_resource type="Texture" uid="uid://w8ydspgiayi6" path="res://Art Assets/Characters/Larry Butz/animations/hello_idle/13.png" id="16"]
+
+
+[resource]
+resource_name = "hello_idle"
+length = 2.72
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = 
+{
+"times": PoolRealArray( 0, 0.13, 0.29, 0.52, 0.68, 0.81, 0.97, 1.20, 1.36, 1.49, 1.65, 1.88, 2.04, 2.17, 2.33, 2.56 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ]
+}
