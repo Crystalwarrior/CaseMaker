@@ -1,10 +1,6 @@
 [gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://bcam3b88u82st"]
 
-[ext_resource type="FontFile" uid="uid://bpmqn2kw4vgn4" path="res://assets/fonts/igiari-cyrillic-plus.ttf" id="1_tlcsq"]
+[ext_resource type="FontFile" uid="uid://qcbedu5h0j2u" path="res://assets/fonts/Arial/arial.ttf" id="1_03ejj"]
 
 [resource]
-base_font = ExtResource("1_tlcsq")
-variation_transform = Transform2D(0.75, 0, 0, 0.75, 0, 0)
-spacing_glyph = -1
-spacing_space = -7
-spacing_top = -1
+base_font = ExtResource("1_03ejj")
