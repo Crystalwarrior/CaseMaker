@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://dk35s1lwj1pmj"]
+[gd_scene load_steps=78 format=3 uid="uid://dk35s1lwj1pmj"]
 
 [ext_resource type="Script" path="res://scenes/ScreenScenes/bottom_screen.gd" id="1_jnl3y"]
 [ext_resource type="Texture2D" uid="uid://53q1jwxccl18" path="res://assets/ui/AAIBackdrop.png" id="1_p337t"]
@@ -29,6 +29,7 @@
 [ext_resource type="StyleBox" uid="uid://bcrue0nfqa4ux" path="res://assets/ui/themes/stylebox/aa/evi_name_label.tres" id="17_trh8q"]
 [ext_resource type="Texture2D" uid="uid://cfts032xmbv0l" path="res://assets/ui/evi_strip.png" id="17_wr2vo"]
 [ext_resource type="Texture2D" uid="uid://b3vhfde0byt0a" path="res://assets/ui/evidence_button_pressed.png" id="18_6w0y4"]
+[ext_resource type="FontFile" uid="uid://dchunqgv5queu" path="res://assets/fonts/basis33.regular.ttf" id="18_ad6mg"]
 [ext_resource type="Texture2D" uid="uid://cq4puwqd644yi" path="res://assets/ui/profiles_button.png" id="19_kc76s"]
 [ext_resource type="StyleBox" uid="uid://dxhkmewvn13nm" path="res://assets/ui/themes/stylebox/aa/evi_desc.tres" id="19_yi7ry"]
 [ext_resource type="FontFile" uid="uid://bpmqn2kw4vgn4" path="res://assets/fonts/igiari-cyrillic-plus.ttf" id="20_djmbd"]
@@ -108,7 +109,7 @@ texture_margin_right = 1.0
 texture_margin_bottom = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_42r32"]
-font = ExtResource("15_3ly27")
+font = ExtResource("18_ad6mg")
 
 [sub_resource type="LabelSettings" id="LabelSettings_gf2dm"]
 font = ExtResource("15_3ly27")
@@ -2479,13 +2480,14 @@ expand_mode = 1
 
 [node name="PageLabel" type="Label" parent="EvidenceScreen"]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 0
-offset_left = 84.0
-offset_top = 155.0
-offset_right = 172.0
-offset_bottom = 174.0
+offset_left = 81.0
+offset_top = 170.0
+offset_right = 175.0
+offset_bottom = 192.0
 theme_override_styles/normal = ExtResource("17_trh8q")
-text = "Page 1/1"
+text = "Entry 32/32"
 label_settings = SubResource("LabelSettings_42r32")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -2523,6 +2525,7 @@ expand_mode = 1
 stretch_mode = 1
 
 [node name="EvidenceIcon" type="TextureRect" parent="EvidenceScreen"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 0
 offset_left = 21.0
@@ -2530,6 +2533,7 @@ offset_top = 40.0
 offset_right = 85.0
 offset_bottom = 104.0
 texture = ExtResource("22_tmfmq")
+expand_mode = 1
 
 [node name="EvidenceIconBorder" type="Panel" parent="EvidenceScreen"]
 visible = false
@@ -2677,6 +2681,7 @@ autoplay = "next"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="EvidenceScreen"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EvidenceScreen"]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_3qt5q")
 }

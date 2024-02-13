@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CommandCollection" load_steps=23 format=3 uid="uid://cpb4gmtpcu4ff"]
+[gd_resource type="Resource" script_class="CommandCollection" load_steps=42 format=3 uid="uid://cpb4gmtpcu4ff"]
 
 [ext_resource type="Script" path="res://addons/blockflow/command_collection.gd" id="1_8br4l"]
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_animate.gd" id="1_n88ca"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scenes/evidence.gd" id="6_8rgc2"]
 [ext_resource type="Script" path="res://addons/textalog/commands/command_evidence.gd" id="6_tf3hm"]
 [ext_resource type="Resource" uid="uid://bb2vay207xme5" path="res://evidence/attorney_badge.tres" id="8_54src"]
+[ext_resource type="Resource" uid="uid://durc6pd7owxxa" path="res://evidence/letter.tres" id="9_jhmty"]
 
 [sub_resource type="Resource" id="Resource_nachm"]
 script = ExtResource("1_n88ca")
@@ -188,7 +189,196 @@ background_color = 0
 target = NodePath("")
 collection = []
 
+[sub_resource type="Resource" id="Resource_muypw"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("9_jhmty")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_n3xwm"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("8_54src")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_fpxg5"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("9_jhmty")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_35ju3"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("8_54src")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_6ib4j"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("9_jhmty")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_qrddb"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("8_54src")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_vst0g"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("9_jhmty")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_1yr7o"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("8_54src")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_so071"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("9_jhmty")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_bmucn"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("8_54src")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_juykg"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("9_jhmty")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_b7hnf"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("8_54src")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_dyosl"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("9_jhmty")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_vhceb"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("8_54src")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_hmmfr"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("9_jhmty")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_qiwvp"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("8_54src")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_u6uqm"]
+script = ExtResource("6_tf3hm")
+do_what = 0
+evidence = ExtResource("9_jhmty")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_pyyhr"]
+script = ExtResource("4_lde2g")
+showname = ""
+dialog = "Big page count test"
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
 [resource]
 resource_name = "evidence_test.tres"
 script = ExtResource("1_8br4l")
-collection = [SubResource("Resource_nachm"), SubResource("Resource_y1c62"), SubResource("Resource_2r3yd"), SubResource("Resource_k0ryt"), SubResource("Resource_cusv0"), SubResource("Resource_witkg"), SubResource("Resource_db5bb"), SubResource("Resource_ra8mo"), SubResource("Resource_dq8ou"), SubResource("Resource_b2tbh"), SubResource("Resource_ncqld"), SubResource("Resource_srb3j")]
+collection = [SubResource("Resource_nachm"), SubResource("Resource_y1c62"), SubResource("Resource_2r3yd"), SubResource("Resource_k0ryt"), SubResource("Resource_cusv0"), SubResource("Resource_witkg"), SubResource("Resource_db5bb"), SubResource("Resource_ra8mo"), SubResource("Resource_dq8ou"), SubResource("Resource_b2tbh"), SubResource("Resource_ncqld"), SubResource("Resource_srb3j"), SubResource("Resource_muypw"), SubResource("Resource_n3xwm"), SubResource("Resource_fpxg5"), SubResource("Resource_35ju3"), SubResource("Resource_6ib4j"), SubResource("Resource_qrddb"), SubResource("Resource_vst0g"), SubResource("Resource_1yr7o"), SubResource("Resource_so071"), SubResource("Resource_bmucn"), SubResource("Resource_juykg"), SubResource("Resource_b7hnf"), SubResource("Resource_dyosl"), SubResource("Resource_vhceb"), SubResource("Resource_hmmfr"), SubResource("Resource_qiwvp"), SubResource("Resource_u6uqm"), SubResource("Resource_pyyhr")]

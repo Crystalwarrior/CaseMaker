@@ -12,26 +12,34 @@ func _ready():
 	%ToProfilesButton.pressed.connect(_on_profiles_button_pressed)
 	%ToEvidenceButton.pressed.connect(_on_evidence_button_pressed)
 	%BackButton.pressed.connect(_on_back_button_pressed)
+	evidence_screen.evidence_pressed.connect(_on_evidence_pressed)
 	choice_container.choice_selected.connect(_on_choice_selected)
 
 
 func _on_court_record_button_pressed():
 	animation_player.play("court_record_pressed")
-	evidence_screen.focus_evidence(0)
 
 
 func _on_profiles_button_pressed():
 	animation_player.play("to_profiles")
-	evidence_screen.focus_evidence(0)
+	evidence_screen.focus_evidence(evidence_screen.current_evidence_index)
 
 
 func _on_evidence_button_pressed():
 	animation_player.play("to_evidence")
-	evidence_screen.focus_evidence(0)
+	evidence_screen.focus_evidence(evidence_screen.current_evidence_index)
 
 
 func _on_back_button_pressed():
-	animation_player.play("back_pressed")
+	if evidence_screen.zoomed_in:
+		evidence_screen.zoom_evidence(false)
+		%BackButton.button_pressed = false
+	else:
+		animation_player.play("back_pressed")
+
+
+func _on_evidence_pressed():
+	evidence_screen.zoom_evidence(true)
 
 
 func _on_choice_selected(index):
