@@ -161,7 +161,7 @@ func _get_icon() -> Texture:
 		var _emote = emote
 		if _emote == "":
 			_emote = "idle"
-		var path = character.resource_path.get_basename() + "/icons/" + _emote + ".png"
+		var path = character.resource_path.get_base_dir() + "/icons/" + _emote + ".png"
 		if ResourceLoader.exists(path):
 			return load(path)
 	return load("res://addons/textalog/commands/icons/character.svg")
