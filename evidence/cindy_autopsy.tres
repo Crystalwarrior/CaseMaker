@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Evidence" load_steps=3 format=3 uid="uid://dff3yuxeugmtb"]
+
+[ext_resource type="Texture2D" uid="uid://bsb6ud7ubymhj" path="res://assets/evidence/report.png" id="1_a0jiw"]
+[ext_resource type="Script" path="res://scenes/evidence.gd" id="2_n3ean"]
+
+[resource]
+script = ExtResource("2_n3ean")
+name = "Cindy's autopsy report"
+short_desc = "Type: Reports
+Obtained: Received from Mia Fey."
+long_desc = "Time of death: 7/31, 4PM-5PM. Cause of death: loss of blood due to blunt trauma."
+image = ExtResource("1_a0jiw")

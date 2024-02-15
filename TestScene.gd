@@ -166,6 +166,14 @@ func music(music_command:MusicCommand):
 			music_player.unpause_track(music_command.fade_volume, music_command.fade_duration)
 
 
+# can be used by the conditionals from the timeline
+func has_evidence(evi_name: String):
+	for evi in GameData.evidence_list:
+		if evi.name == evi_name:
+			return true
+	return false
+
+
 func set_dialog_visible(toggle: bool = true):
 	dialog_box.set_visible(toggle)
 

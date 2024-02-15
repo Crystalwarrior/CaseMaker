@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_c4yts")
 name = "Attorney's Badge"
-short_desc = "Type:Other
+short_desc = "Type: Other
 One of my possessions."
 long_desc = "No one would believe I
 was a defense attorney
