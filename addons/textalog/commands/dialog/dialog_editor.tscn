@@ -19,16 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cverj5su8dwjw" path="res://addons/textalog/commands/icons/bucket.svg" id="13_uli47"]
 [ext_resource type="Texture2D" uid="uid://1n2qab0bsww4" path="res://addons/textalog/commands/icons/fade.svg" id="14_nm1y5"]
 [ext_resource type="Texture2D" uid="uid://c71514cgg6mqs" path="res://addons/textalog/commands/icons/rainbow.svg" id="15_dxa0j"]
-
-[sub_resource type="CodeHighlighter" id="CodeHighlighter_lcghf"]
-number_color = Color(0.878431, 0.878431, 0.878431, 1)
-symbol_color = Color(0.878431, 0.878431, 0.878431, 1)
-function_color = Color(0.878431, 0.878431, 0.878431, 1)
-member_variable_color = Color(0.878431, 0.878431, 0.878431, 1)
-color_regions = {
-"[ ]": Color(0.556863, 0.827451, 0.643137, 1),
-"{ }": Color(0.752941, 0.556863, 0.831373, 1)
-}
+[ext_resource type="CodeHighlighter" uid="uid://dk1l8aw0ts77l" path="res://addons/textalog/commands/dialog/dialog_highlighter.tres" id="20_v2xey"]
 
 [node name="dialog_editor" type="Control"]
 layout_mode = 3
@@ -245,7 +236,7 @@ size_flags_vertical = 3
 placeholder_text = "Type your dialog here!"
 deselect_on_focus_loss_enabled = false
 wrap_mode = 1
-syntax_highlighter = SubResource("CodeHighlighter_lcghf")
+syntax_highlighter = ExtResource("20_v2xey")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="canceled" from="ColorPickerDialog" to="." method="_on_color_picker_dialog_canceled"]
