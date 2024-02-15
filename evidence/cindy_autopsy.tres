@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Evidence" load_steps=3 format=3 uid="uid://dff3yuxeugmtb"]
 
 [ext_resource type="Texture2D" uid="uid://bsb6ud7ubymhj" path="res://assets/evidence/report.png" id="1_a0jiw"]
-[ext_resource type="Script" path="res://scenes/evidence.gd" id="2_n3ean"]
+[ext_resource type="Script" path="res://addons/textalog/resources/evidence.gd" id="2_n3ean"]
 
 [resource]
 script = ExtResource("2_n3ean")

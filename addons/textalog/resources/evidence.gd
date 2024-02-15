@@ -2,6 +2,12 @@
 extends Resource
 class_name Evidence
 
+@export var image: Texture = preload("res://icon.png"):
+	set(value):
+		image = value
+		emit_changed()
+	get:
+		return image
 @export var name: String = "Generic Object":
 	set(value):
 		name = value
@@ -20,9 +26,3 @@ class_name Evidence
 		emit_changed()
 	get:
 		return long_desc
-@export var image: Texture = preload("res://icon.png"):
-	set(value):
-		image = value
-		emit_changed()
-	get:
-		return image

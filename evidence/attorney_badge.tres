@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Evidence" load_steps=3 format=3 uid="uid://bb2vay207xme5"]
 
 [ext_resource type="Texture2D" uid="uid://dmwwuoeqa8f4k" path="res://assets/evidence/attorney_badge.png" id="1_s2wwb"]
-[ext_resource type="Script" path="res://scenes/evidence.gd" id="2_c4yts"]
+[ext_resource type="Script" path="res://addons/textalog/resources/evidence.gd" id="2_c4yts"]
 
 [resource]
 script = ExtResource("2_c4yts")

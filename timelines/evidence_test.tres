@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://c50mrddlht0kk" path="res://timelines/evidence.tres" id="3_0801f"]
 [ext_resource type="Script" path="res://addons/textalog/commands/command_dialog.gd" id="4_lde2g"]
 [ext_resource type="Texture2D" uid="uid://fx77e6dgtssx" path="res://icon.png" id="5_fvill"]
-[ext_resource type="Script" path="res://scenes/evidence.gd" id="6_8rgc2"]
+[ext_resource type="Script" path="res://addons/textalog/resources/evidence.gd" id="6_8rgc2"]
 [ext_resource type="Script" path="res://addons/textalog/commands/command_evidence.gd" id="6_tf3hm"]
 [ext_resource type="Resource" uid="uid://bb2vay207xme5" path="res://evidence/attorney_badge.tres" id="8_54src"]
 [ext_resource type="Resource" uid="uid://durc6pd7owxxa" path="res://evidence/letter.tres" id="9_jhmty"]
