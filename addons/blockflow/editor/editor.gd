@@ -1,6 +1,20 @@
 @tool
 extends PanelContainer
 
+class StateLayout:
+	var folded_commands:Array[int] = []
+	var last_selected_command_position:int = -1
+	
+	func to_dict() -> Dictionary:
+		return {
+			"folded_commands":folded_commands,
+			"last_selected_command_position":last_selected_command_position,
+		}
+	
+	func from_dict(val:Dictionary) -> void:
+		folded_commands = val.get("folded_commands", [])
+		last_selected_command_position = val.get("last_selected_command_position", -1)
+
 const Blockflow = preload("res://addons/blockflow/blockflow.gd")
 const CollectionDisplayer = preload("res://addons/blockflow/editor/displayer.gd")
 const CommandList = preload("res://addons/blockflow/editor/command_list.gd")
@@ -54,6 +68,8 @@ var history:Dictionary = {}
 
 var edited_object:Object
 
+var state:StateLayout
+
 # https://github.com/godotengine/godot/blob/4.0-stable/editor/editor_inspector.cpp#L3977
 var command_clipboard:Blockflow.CommandClass:
 	get:
@@ -85,6 +101,7 @@ func enable() -> void:
 	propagate_notification(Constants.NOTIFICATION_EDITOR_ENABLED)
 
 func close() -> void:
+	save_layout()
 	collection_displayer.build_tree(null)
 	_file_menu.set_item_disabled(
 		_file_menu.get_item_index(ToolbarFileMenu.CLOSE_COLLECTION),
@@ -118,22 +135,30 @@ func edit_collection(collection:Blockflow.CollectionClass) -> void:
 		disable()
 		return
 		
-	var load_function:Callable = collection_displayer.build_tree
 	var path_hint:String = ""
 	if edited_object:
-		if edited_object.changed.is_connected(load_function):
-			edited_object.changed.disconnect(load_function)
+		if edited_object.changed.is_connected(_current_collection_modified):
+			edited_object.changed.disconnect(_current_collection_modified)
+		
+		for command in edited_object._command_list:
+			if command.collection_changed.is_connected(_current_collection_modified):
+				command.collection_changed.disconnect(_current_collection_modified)
+		
+		save_layout()
+		
 	
 	_current_collection = collection
 	edited_object = collection
 	
-	if not _current_collection.changed.is_connected(load_function):
-		_current_collection.changed.connect(
-			load_function.bind(_current_collection),
-			CONNECT_DEFERRED
-		)
+	if not _current_collection.changed.is_connected(_current_collection_modified):
+		_current_collection.changed.connect(_current_collection_modified)
+	
+	for command in _current_collection._command_list:
+		if not command.collection_changed.is_connected(_current_collection_modified):
+			command.collection_changed.connect(_current_collection_modified)
 		
 	path_hint = _current_collection.resource_path
+	restore_layout()
 	hide_help_panel()
 	enable()
 	_file_menu.set_item_disabled(_file_menu.get_item_index(ToolbarFileMenu.CLOSE_COLLECTION), false)
@@ -142,7 +167,8 @@ func edit_collection(collection:Blockflow.CollectionClass) -> void:
 	update_history()
 	
 	title_label.text = path_hint
-	load_function.call(_current_collection)
+#	Blockflow.generate_tree(edited_object)
+	collection_displayer.build_tree(_current_collection)
 
 func edit_timeline(timeline:Object) -> void:
 	timeline = timeline as Blockflow.TimelineClass
@@ -180,7 +206,8 @@ func add_command(command:Blockflow.CommandClass, at_position:int = -1, to_collec
 	
 	
 	var action_name:String = "Add command '%s'" % [command.command_name]
-	
+	collection_displayer.last_selected_command = command
+	state.last_selected_command_position = at_position
 	if Engine.is_editor_hint():
 		editor_undoredo.create_action(action_name)
 		
@@ -236,6 +263,7 @@ func move_command(command:Blockflow.CommandClass, to_position:int, from_collecti
 
 	var from_position:int = from_collection.get_command_position(command)
 	var action_name:String = "Move command '%s'" % [command.command_name]
+	collection_displayer.last_selected_command = command
 	if Engine.is_editor_hint():
 		if from_collection == to_collection:
 			editor_undoredo.create_action(action_name, 0, from_collection)
@@ -278,9 +306,8 @@ func duplicate_command(command:Blockflow.CommandClass, to_index:int) -> void:
 	
 	var action_name:String = "Duplicate command '%s'" % [command.command_name]
 	var duplicated_command = command.get_duplicated()
-	collection_displayer.last_selected_command = command
+	collection_displayer.last_selected_command = duplicated_command
 	var idx = to_index if to_index > -1 else command_collection.size()
-	
 	if Engine.is_editor_hint():
 		editor_undoredo.create_action(action_name)
 		editor_undoredo.add_do_method(command_collection, "insert", duplicated_command, idx)
@@ -350,6 +377,54 @@ func update_history() -> void:
 			_history_node.set_item_text(i, history_key + " (Current)")
 			_history_node.set_item_disabled(i, true)
 
+
+func save_layout() -> void:
+	if not _current_collection: return
+	
+	var layout:ConfigFile = ConfigFile.new()
+	
+	var data := Blockflow.generate_tree(_current_collection)
+	
+	for command in data.command_list:
+		if command.editor_state.get("folded", false):
+			state.folded_commands.append(command.position)
+	
+	layout.set_value(_current_collection.resource_path, "state", state.to_dict())
+	
+	var error:Error = layout.save(Constants.DEFAULT_LAYOUT_FILE)
+	if error:
+		push_error(error)
+
+
+func restore_layout() -> void:
+	if not _current_collection: return
+	
+	var layout:ConfigFile = ConfigFile.new()
+	
+	var error:Error = layout.load(Constants.DEFAULT_LAYOUT_FILE)
+	state = StateLayout.new()
+	
+	if error == ERR_FILE_NOT_FOUND:
+		return
+	
+	if error:
+		push_error(error)
+		return
+	
+	if not layout.has_section(_current_collection.resource_path):
+		return
+	
+	state.from_dict(layout.get_value(_current_collection.resource_path, "state", {}))
+
+	for pos in state.folded_commands:
+		var command = _current_collection.get_command(pos)
+		command.editor_state["folded"] = true
+	
+	if state.last_selected_command_position > -1:
+		var command = _current_collection.get_command(state.last_selected_command_position)
+		# FIXME: Selection should be by position, not by using the command directly
+	
+
 func _request_open() -> void:
 	var __file_dialog := _get_file_dialog()
 	__file_dialog.current_dir = ""
@@ -412,7 +487,7 @@ func _command_button_list_pressed(command:Blockflow.CommandClass) -> void:
 				command_idx = selected.index + 1
 				in_collection = selected.get_command_owner()
 			
-			collection_displayer.last_selected_command = new_command
+	collection_displayer.last_selected_command = new_command
 	add_command(new_command, command_idx, in_collection)
 
 
@@ -428,20 +503,26 @@ func _collection_displayer_item_mouse_selected(_position:Vector2, button_index:i
 			can_move_down = c_pos < c_max_size - 1
 		_item_popup.clear()
 		_item_popup.add_item("Move up", _ItemPopup.MOVE_UP)
+		_item_popup.set_item_shortcut(_item_popup.get_item_index(_ItemPopup.MOVE_UP), Constants.SHORTCUT_MOVE_UP)
 		_item_popup.set_item_disabled(0, !can_move_up)
 		_item_popup.add_item("Move down", _ItemPopup.MOVE_DOWN)
+		_item_popup.set_item_shortcut(_item_popup.get_item_index(_ItemPopup.MOVE_DOWN), Constants.SHORTCUT_MOVE_DOWN)
 		_item_popup.set_item_disabled(1, !can_move_down)
 		_item_popup.add_separator()
 		_item_popup.add_item("Duplicate", _ItemPopup.DUPLICATE)
+		_item_popup.set_item_shortcut(_item_popup.get_item_index(_ItemPopup.DUPLICATE), Constants.SHORTCUT_DUPLICATE)
 		_item_popup.add_item("Remove", _ItemPopup.REMOVE)
+		_item_popup.set_item_shortcut(_item_popup.get_item_index(_ItemPopup.REMOVE), Constants.SHORTCUT_DELETE)
 		_item_popup.add_separator()
 		
 		_item_popup.add_item("Copy", _ItemPopup.COPY)
 		_item_popup.set_item_icon(_item_popup.get_item_index(_ItemPopup.COPY), get_theme_icon("ActionCopy", "EditorIcons"))
+		_item_popup.set_item_shortcut(_item_popup.get_item_index(_ItemPopup.COPY), Constants.SHORTCUT_COPY)
 		
 		_item_popup.add_item("Paste", _ItemPopup.PASTE)
 		_item_popup.set_item_icon(_item_popup.get_item_index(_ItemPopup.PASTE), get_theme_icon("ActionPaste", "EditorIcons"))
 		_item_popup.set_item_disabled(_item_popup.get_item_index(_ItemPopup.PASTE), command_clipboard == null)
+		_item_popup.set_item_shortcut(_item_popup.get_item_index(_ItemPopup.PASTE), Constants.SHORTCUT_PASTE)
 		
 		_item_popup.reset_size()
 		_item_popup.position = DisplayServer.mouse_get_position()
@@ -454,7 +535,9 @@ func _collection_displayer_item_selected() -> void:
 		return
 	
 	var selected_command = collection_displayer.get_selected().get_metadata(0)
+	state.last_selected_command_position = selected_command.position
 	edit_callback.bind(selected_command).call_deferred()
+	print(state.last_selected_command_position)
 
 
 func _collection_displayer_button_clicked(item: TreeItem, column: int, id: int, mouse_button_index: int) -> void:
@@ -618,6 +701,70 @@ func _history_node_item_selected(index:int) -> void:
 	var res:Resource = load(_history_node.get_item_tooltip(index))
 	if not res: return
 	edit(res)
+
+
+func _current_collection_modified() -> void:
+	var data := Blockflow.generate_tree(_current_collection)
+	for command in data.command_list:
+		if not command.collection_changed.is_connected(_current_collection_modified):
+			command.collection_changed.connect(_current_collection_modified)
+		
+		command.editor_state = {
+			"folded": false
+		}
+		if is_instance_valid(command.editor_block):
+			command.editor_state["folded"] = command.editor_block.collapsed
+	
+	collection_displayer.build_tree(_current_collection)
+
+func _shortcut_input(event: InputEvent) -> void:
+	var focus_owner:Control = get_viewport().gui_get_focus_owner()
+	if not is_instance_valid(focus_owner):
+		return
+	
+	if not (collection_displayer.is_ancestor_of(focus_owner) or collection_displayer == focus_owner):
+		return
+	
+	if not is_instance_valid(collection_displayer.get_selected()):
+		return
+	
+	var command:Blockflow.CommandClass = collection_displayer.get_selected().get_metadata(0)
+	if not command:
+		return
+	
+	var command_idx:int = command.index
+	
+	if Constants.SHORTCUT_MOVE_UP.matches_event(event) and event.is_pressed():
+		move_command(command, max(0, command_idx - 1))
+		accept_event()
+		return
+
+	if Constants.SHORTCUT_MOVE_DOWN.matches_event(event) and event.is_pressed():
+		move_command(command, command_idx + 1)
+		accept_event()
+		return
+
+	if Constants.SHORTCUT_DUPLICATE.matches_event(event) and event.is_pressed():
+		duplicate_command(command, command_idx + 1)
+		accept_event()
+		return
+	
+	if Constants.SHORTCUT_DELETE.matches_event(event) and event.is_pressed():
+		remove_command(command)
+		accept_event()
+		return
+	
+	if Constants.SHORTCUT_COPY.matches_event(event) and event.is_pressed():
+		copy_command(command)
+	
+	if Constants.SHORTCUT_PASTE.matches_event(event) and event.is_pressed():
+		if not command_clipboard:
+			return
+		
+		add_command(command_clipboard.get_duplicated(), command_idx + 1, command.get_command_owner())
+	
+	
+	
 
 func _notification(what: int) -> void:
 	match what:
