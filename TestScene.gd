@@ -14,11 +14,16 @@ extends Control
 const SFXFOLDER = "res://assets/sounds/general/"
 const MUSICFOLDER = "res://assets/music/"
 
+const DialogCommand = preload("res://addons/textalog/commands/command_dialog.gd")
+const CharacterCommand = preload("res://addons/textalog/commands/command_character.gd")
 const EvidenceCommand = preload("res://addons/textalog/commands/command_evidence.gd")
 const MusicCommand = preload("res://addons/textalog/commands/command_music.gd")
 
 var finished: bool = false
 var waiting_on_input: bool = true
+var hide_dialog_after_input: bool = false
+
+var debug: bool = true
 
 var scene_manager: SceneManager
 var dialog_box
@@ -39,13 +44,17 @@ func _ready():
 
 
 func next():
+	if finished:
+		return
 	#get_window().gui_release_focus()
 	# TODO: implement skipping
-	if not finished:
-		if not command_processor.main_collection:
-			command_processor.start()
-		else:
-			command_processor.go_to_next_command()
+
+	if not command_processor.main_collection:
+		command_processor.start()
+	else:
+		if hide_dialog_after_input:
+			dialog_box.hide()
+		command_processor.go_to_next_command()
 
 
 func set_waiting_on_input(tog: bool):
@@ -54,12 +63,13 @@ func set_waiting_on_input(tog: bool):
 	upper_screen.set_chat_arrow_visible(waiting_on_input)
 
 
-func dialog(dialog_command:Command) -> void:
+func dialog(dialog_command:DialogCommand) -> void:
 	var showname = dialog_command.showname
 	var dialog = dialog_command.dialog
 	var letter_delay = dialog_command.letter_delay
 	var blip_sound = dialog_command.blip_sound
 	var hide_dialog = dialog_command.hide_dialog
+	var HideDialog = dialog_command.HideDialog
 	var wait_until_finished = dialog_command.wait_until_finished
 	var speaking_character = dialog_command.speaking_character
 	var additive = dialog_command.additive
@@ -79,19 +89,28 @@ func dialog(dialog_command:Command) -> void:
 	if character:
 		character.talk()
 
-	# If we wait until finished, remember tell the timeline to continue
+	if hide_dialog == HideDialog.INSTANTLY:
+		dialog_box.hide()
+
+	hide_dialog_after_input = hide_dialog == HideDialog.AFTER_INPUT
+
+	# Pause until dialog finishes processing
 	if wait_until_finished:
 		await dialog_finished
+
 	if character:
 		character.no_talk()
-	if hide_dialog:
+
+	if hide_dialog == HideDialog.AT_END:
 		dialog_box.hide()
+
 	scene_manager.current_character = ""
+	# If we wait until finished, remember tell the timeline to continue
 	if wait_until_finished:
 		dialog_command.go_to_next_command()
 
 
-func character(character_command:Command) -> void:
+func character(character_command:CharacterCommand) -> void:
 	var character: PackedScene = character_command.character
 	var character_name: String = character_command.character_name
 	var emote: String = character_command.emote

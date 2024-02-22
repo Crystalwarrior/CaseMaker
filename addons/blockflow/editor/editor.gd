@@ -537,7 +537,6 @@ func _collection_displayer_item_selected() -> void:
 	var selected_command = collection_displayer.get_selected().get_metadata(0)
 	state.last_selected_command_position = selected_command.position
 	edit_callback.bind(selected_command).call_deferred()
-	print(state.last_selected_command_position)
 
 
 func _collection_displayer_button_clicked(item: TreeItem, column: int, id: int, mouse_button_index: int) -> void:

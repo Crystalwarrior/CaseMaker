@@ -98,7 +98,7 @@ func _get_name() -> StringName:
 func _get_hint() -> String:
 	var hint_str = "if " + condition
 	if condition.is_empty():
-		hint_str = "if true"
+		hint_str = ""
 	if target != NodePath():
 		hint_str += " on " + str(target)
 	return hint_str
