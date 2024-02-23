@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://kv6pxmfyclh1"]
+[gd_scene load_steps=13 format=3 uid="uid://kv6pxmfyclh1"]
 
 [ext_resource type="Script" path="res://TestScene.gd" id="1_j7ny0"]
 [ext_resource type="PackedScene" uid="uid://o014t0ve6be8" path="res://scenes/ScreenScenes/UpperScreen/ConfrontationScreen.tscn" id="2_m22fg"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://scenes/MusicPlayer.gd" id="7_xgyak"]
 [ext_resource type="FontFile" uid="uid://bpmqn2kw4vgn4" path="res://assets/fonts/igiari-cyrillic-plus.ttf" id="8_2jqp0"]
 [ext_resource type="Script" path="res://scenes/delta_label.gd" id="9_vpdrc"]
+[ext_resource type="Theme" uid="uid://b5nk0n700x2ge" path="res://assets/ui/themes/aa.tres" id="10_b6ns2"]
+[ext_resource type="Script" path="res://JumpToConfirmationDialog.gd" id="11_fsqxb"]
 [ext_resource type="AudioStream" uid="uid://cb485p8r1fh2e" path="res://assets/music/bgm008.ogg" id="13_ssudg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pod4v"]
@@ -63,7 +65,41 @@ label_settings = SubResource("LabelSettings_pod4v")
 clip_text = true
 script = ExtResource("9_vpdrc")
 
+[node name="JumpToButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 361.0
+offset_right = 158.0
+offset_bottom = 383.0
+focus_mode = 0
+theme = ExtResource("10_b6ns2")
+theme_override_font_sizes/font_size = 14
+text = "Jump To"
+
+[node name="JumpToConfirmationDialog" type="ConfirmationDialog" parent="JumpToButton"]
+unique_name_in_owner = true
+title = "Jump to where?"
+initial_position = 1
+exclusive = false
+unresizable = true
+popup_window = true
+ok_button_text = "Jump!"
+script = ExtResource("11_fsqxb")
+
+[node name="IndexLineEdit" type="LineEdit" parent="JumpToButton/JumpToConfirmationDialog"]
+unique_name_in_owner = true
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 192.0
+offset_bottom = 55.0
+size_flags_horizontal = 3
+placeholder_text = "command index"
+
 [connection signal="collection_finished" from="CommandProcessor" to="." method="_on_command_processor_collection_finished"]
 [connection signal="collection_started" from="CommandProcessor" to="." method="_on_command_processor_collection_started"]
 [connection signal="command_finished" from="CommandProcessor" to="." method="_on_command_processor_command_finished"]
 [connection signal="command_started" from="CommandProcessor" to="." method="_on_command_processor_command_started"]
+[connection signal="pressed" from="JumpToButton" to="." method="_on_jump_to_button_pressed"]
+[connection signal="confirmed" from="JumpToButton/JumpToConfirmationDialog" to="JumpToButton/JumpToConfirmationDialog" method="_on_confirmed"]
+[connection signal="jump_to" from="JumpToButton/JumpToConfirmationDialog" to="." method="_on_jump_to"]
+[connection signal="text_submitted" from="JumpToButton/JumpToConfirmationDialog/IndexLineEdit" to="JumpToButton/JumpToConfirmationDialog" method="_on_index_line_edit_text_submitted"]

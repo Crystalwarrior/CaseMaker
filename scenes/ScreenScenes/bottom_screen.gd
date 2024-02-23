@@ -53,4 +53,4 @@ func multiple_choice(choices: PackedStringArray):
 	animation_player.play("to_choices")
 
 func clear_choices():
-	animation_player.play("to_choices")
+	choice_container.clear_choices()

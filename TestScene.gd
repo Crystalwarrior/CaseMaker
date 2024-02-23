@@ -276,3 +276,17 @@ func _on_next_button_down():
 func _on_choice_selected(index):
 	upper_screen.select_your_answer(false)
 	choice_selected.emit(index)
+
+
+# DEBUG STUFF
+func _on_jump_to_button_pressed():
+	%JumpToConfirmationDialog.popup_centered()
+
+
+func _on_jump_to(text):
+	if bottom_screen.choice_container.visible:
+		upper_screen.select_your_answer(false)
+		var anim = bottom_screen.animation_player
+		anim.play("choice_given")
+		anim.advance(anim.current_animation_length)
+	command_processor.go_to_command(int(text))
