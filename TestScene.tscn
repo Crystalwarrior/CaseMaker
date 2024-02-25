@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://kv6pxmfyclh1"]
 
 [ext_resource type="Script" path="res://TestScene.gd" id="1_j7ny0"]
-[ext_resource type="PackedScene" uid="uid://o014t0ve6be8" path="res://scenes/ScreenScenes/UpperScreen/ConfrontationScreen.tscn" id="2_m22fg"]
+[ext_resource type="PackedScene" uid="uid://o014t0ve6be8" path="res://scenes/ScreenScenes/UpperScreen/UpperScreen.tscn" id="2_m22fg"]
 [ext_resource type="Script" path="res://addons/blockflow/command_processor.gd" id="2_rnwqy"]
 [ext_resource type="Resource" uid="uid://b2uvbyr3l6a84" path="res://timelines/aa_case1/1-1_lobby.tres" id="3_ta4wc"]
 [ext_resource type="PackedScene" uid="uid://dk35s1lwj1pmj" path="res://scenes/ScreenScenes/bottom_screen.tscn" id="4_0dqr4"]
@@ -33,13 +33,12 @@ command_node_fallback_path = NodePath("..")
 
 [node name="UpperScreen" parent="." instance=ExtResource("2_m22fg")]
 unique_name_in_owner = true
-layout_mode = 1
 
 [node name="BottomScreen" parent="." instance=ExtResource("4_0dqr4")]
 unique_name_in_owner = true
 layout_mode = 1
+anchors_preset = -1
 anchor_top = 0.5
-anchor_bottom = 1.0
 metadata/_edit_use_anchors_ = true
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
