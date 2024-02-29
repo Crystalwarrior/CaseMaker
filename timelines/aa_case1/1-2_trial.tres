@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CommandCollection" load_steps=22 format=3 uid="uid://1215nv63i6x5"]
+[gd_resource type="Resource" script_class="CommandCollection" load_steps=30 format=3 uid="uid://1215nv63i6x5"]
 
 [ext_resource type="Script" path="res://addons/blockflow/command_collection.gd" id="1_0prwl"]
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_print.gd" id="1_07ipa"]
@@ -11,6 +11,17 @@
 [ext_resource type="PackedScene" uid="uid://cxdab1s0b31jt" path="res://Art Assets/Characters/Larry Butz/Larry.tscn" id="7_vv56e"]
 [ext_resource type="Script" path="res://addons/textalog/commands/command_character.gd" id="8_qmr37"]
 [ext_resource type="PackedScene" uid="uid://nholet7cnebr" path="res://Art Assets/Characters/sans/Sans.tscn" id="9_na44w"]
+
+[sub_resource type="Resource" id="Resource_vpd16"]
+script = ExtResource("5_opip0")
+method = "fadeout"
+args = [0.0]
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("UpperScreen/HudLayer/ForegroundFade")
+collection = []
+metadata/__editor_override_property__ = false
 
 [sub_resource type="Resource" id="Resource_xkh0a"]
 script = ExtResource("1_vsrx6")
@@ -97,6 +108,8 @@ collection = []
 [sub_resource type="Resource" id="Resource_ho4ku"]
 script = ExtResource("6_jryv1")
 background = ExtResource("5_ih1h3")
+campoint = 0
+pan_duration = 0.0
 bookmark = &""
 continue_at_end = true
 background_color = 0
@@ -158,7 +171,113 @@ target = NodePath("UpperScreen/HudLayer/ForegroundFade")
 collection = []
 metadata/__editor_override_property__ = false
 
+[sub_resource type="Resource" id="Resource_rkm42"]
+script = ExtResource("1_vsrx6")
+showname = ""
+dialog = ". . ."
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = 0
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_nw1vp"]
+script = ExtResource("6_jryv1")
+campoint = 1
+pan_duration = 0.75
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_wiguu"]
+script = ExtResource("1_vsrx6")
+showname = ""
+dialog = "larryster"
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = 0
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_ldg6a"]
+script = ExtResource("6_jryv1")
+campoint = 2
+pan_duration = 0.75
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_uq7ml"]
+script = ExtResource("1_vsrx6")
+showname = ""
+dialog = "nobod here"
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = 0
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_7m3ys"]
+script = ExtResource("6_jryv1")
+campoint = 5
+pan_duration = 0.0
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_f0xf7"]
+script = ExtResource("1_vsrx6")
+showname = ""
+dialog = "o shid sans undertale"
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = 0
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
 [resource]
 resource_name = "1-2_trial.tres"
 script = ExtResource("1_0prwl")
-collection = [SubResource("Resource_xkh0a"), SubResource("Resource_8ky5r"), SubResource("Resource_ywn1c"), SubResource("Resource_p72wg"), SubResource("Resource_op7oy"), SubResource("Resource_2m1qm"), SubResource("Resource_ho4ku"), SubResource("Resource_20d24"), SubResource("Resource_ur74e"), SubResource("Resource_dgivt")]
+collection = [SubResource("Resource_vpd16"), SubResource("Resource_xkh0a"), SubResource("Resource_8ky5r"), SubResource("Resource_ywn1c"), SubResource("Resource_p72wg"), SubResource("Resource_op7oy"), SubResource("Resource_2m1qm"), SubResource("Resource_ho4ku"), SubResource("Resource_20d24"), SubResource("Resource_ur74e"), SubResource("Resource_dgivt"), SubResource("Resource_rkm42"), SubResource("Resource_nw1vp"), SubResource("Resource_wiguu"), SubResource("Resource_ldg6a"), SubResource("Resource_uq7ml"), SubResource("Resource_7m3ys"), SubResource("Resource_f0xf7")]

@@ -60,6 +60,7 @@ unique_name_in_owner = true
 
 [node name="defense" type="Marker2D" parent="PointCollection"]
 position = Vector2(128, 96)
+metadata/_edit_group_ = true
 
 [node name="ReferenceRect" type="ReferenceRect" parent="PointCollection/defense"]
 offset_left = -128.0
@@ -68,10 +69,10 @@ offset_right = 128.0
 offset_bottom = 96.0
 border_color = Color(0, 0, 1, 0.498039)
 border_width = 2.0
-metadata/_edit_lock_ = true
 
 [node name="witness" type="Marker2D" parent="PointCollection"]
 position = Vector2(648, 96)
+metadata/_edit_group_ = true
 
 [node name="ReferenceRect" type="ReferenceRect" parent="PointCollection/witness"]
 offset_left = -128.0
@@ -80,10 +81,10 @@ offset_right = 128.0
 offset_bottom = 96.0
 border_color = Color(1, 0, 1, 0.498039)
 border_width = 2.0
-metadata/_edit_lock_ = true
 
 [node name="prosecution" type="Marker2D" parent="PointCollection"]
 position = Vector2(1168, 96)
+metadata/_edit_group_ = true
 
 [node name="ReferenceRect" type="ReferenceRect" parent="PointCollection/prosecution"]
 offset_left = -128.0
@@ -92,10 +93,10 @@ offset_right = 128.0
 offset_bottom = 96.0
 border_color = Color(1, 0, 0, 0.498039)
 border_width = 2.0
-metadata/_edit_lock_ = true
 
 [node name="defhelper" type="Marker2D" parent="PointCollection"]
 position = Vector2(128, 304)
+metadata/_edit_group_ = true
 
 [node name="ReferenceRect" type="ReferenceRect" parent="PointCollection/defhelper"]
 offset_left = -128.0
@@ -104,10 +105,10 @@ offset_right = 128.0
 offset_bottom = 96.0
 border_color = Color(0, 0, 1, 0.498039)
 border_width = 2.0
-metadata/_edit_lock_ = true
 
 [node name="prohelper" type="Marker2D" parent="PointCollection"]
 position = Vector2(1168, 304)
+metadata/_edit_group_ = true
 
 [node name="ReferenceRect" type="ReferenceRect" parent="PointCollection/prohelper"]
 offset_left = -128.0
@@ -116,10 +117,10 @@ offset_right = 128.0
 offset_bottom = 96.0
 border_color = Color(1, 0, 0, 0.498039)
 border_width = 2.0
-metadata/_edit_lock_ = true
 
 [node name="judge" type="Marker2D" parent="PointCollection"]
 position = Vector2(648, -112)
+metadata/_edit_group_ = true
 
 [node name="ReferenceRect" type="ReferenceRect" parent="PointCollection/judge"]
 offset_left = -128.0
@@ -128,10 +129,10 @@ offset_right = 128.0
 offset_bottom = 96.0
 border_color = Color(1, 1, 0, 0.498039)
 border_width = 2.0
-metadata/_edit_lock_ = true
 
 [node name="zoomout" type="Marker2D" parent="PointCollection"]
 position = Vector2(648, 304)
+metadata/_edit_group_ = true
 
 [node name="ReferenceRect" type="ReferenceRect" parent="PointCollection/zoomout"]
 offset_left = -128.0
@@ -140,10 +141,19 @@ offset_right = 128.0
 offset_bottom = 96.0
 border_color = Color(1, 1, 0, 0.498039)
 border_width = 2.0
-metadata/_edit_lock_ = true
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("point_collection")]
+[node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("point_collection")]
+unique_name_in_owner = true
 position = Vector2(128, 96)
 editor_draw_screen = false
 script = ExtResource("7_e53xs")
 point_collection = NodePath("../PointCollection")
+metadata/_edit_group_ = true
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Camera"]
+offset_left = -128.0
+offset_top = -96.0
+offset_right = 128.0
+offset_bottom = 96.0
+border_color = Color(0, 1, 1, 1)
+border_width = 0.5

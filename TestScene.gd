@@ -33,6 +33,7 @@ signal dialog_finished
 signal choice_selected(index)
 
 func _ready():
+	RenderingServer.set_default_clear_color(Color.BLACK)
 	CommandValues.instance().eff_flash.connect(eff_flash)
 	CommandValues.instance().sound_sfx.connect(play_sfx)
 	CommandValues.instance().sound_music.connect(play_music)
@@ -187,7 +188,14 @@ func music(music_command:MusicCommand):
 
 
 func background(background_command:BackgroundCommand):
-	upper_screen.change_background(background_command.background)
+	var bg = background_command.background
+	var campoint = background_command.campoint
+	var pan_duration = background_command.pan_duration
+	if bg:
+		upper_screen.change_background(bg)
+	var cam = upper_screen.viewport.get_camera_2d()
+	if cam != null and cam.has_method(&"set_campoint"):
+		cam.set_campoint(campoint, pan_duration)
 
 
 # can be used by the conditionals from the timeline

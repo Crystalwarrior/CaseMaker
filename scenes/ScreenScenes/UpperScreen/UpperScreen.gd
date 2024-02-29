@@ -4,6 +4,7 @@ extends Control
 @onready var foreground_fade = get_node("%ForegroundFade")
 @onready var character_container = get_node("%CharacterContainer")
 @onready var background = get_node("%Background")
+@onready var viewport = get_node("%SubViewport")
 
 func create_scene_manager() -> SceneManager:
 	var scene_manager = SceneManager.new(dialog_box)

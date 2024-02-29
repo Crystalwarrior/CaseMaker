@@ -33,7 +33,7 @@ func _process(delta):
 		global_position = get_node(target).global_position
 
 
-func set_campoint(point):
+func set_campoint(point, duration: float = 0.75):
 	if not point_collection:
 		return
 
@@ -41,7 +41,7 @@ func set_campoint(point):
 		point = point_collection.get_child(point)
 	current_point = point
 	var scale_to = Vector2(1,1) / current_point.scale
-	zoom_to(current_point.global_position, scale_to, 0.75)
+	zoom_to(current_point.global_position, scale_to, duration)
 
 
 func zoom_to(target_pos: Vector2, target_zoom: Vector2 = Vector2(1, 1), duration: float = 1.0):
