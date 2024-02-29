@@ -18,6 +18,7 @@ const DialogCommand = preload("res://addons/textalog/commands/command_dialog.gd"
 const CharacterCommand = preload("res://addons/textalog/commands/command_character.gd")
 const EvidenceCommand = preload("res://addons/textalog/commands/command_evidence.gd")
 const MusicCommand = preload("res://addons/textalog/commands/command_music.gd")
+const BackgroundCommand = preload("res://addons/textalog/commands/command_background.gd")
 
 var finished: bool = false
 var waiting_on_input: bool = true
@@ -85,9 +86,9 @@ func dialog(dialog_command:DialogCommand) -> void:
 	dialog_box.display_text(dialog, showname, additive)
 	
 	scene_manager.current_character = speaking_character
-	var character = scene_manager.get_char(speaking_character)
-	if character:
-		character.talk()
+	var chara = scene_manager.get_char(speaking_character)
+	if chara:
+		chara.talk()
 
 	if hide_dialog == HideDialog.INSTANTLY:
 		dialog_box.hide()
@@ -98,8 +99,8 @@ func dialog(dialog_command:DialogCommand) -> void:
 	if wait_until_finished:
 		await dialog_finished
 
-	if character:
-		character.no_talk()
+	if chara:
+		chara.no_talk()
 
 	if hide_dialog == HideDialog.AT_END:
 		dialog_box.hide()
@@ -183,6 +184,10 @@ func music(music_command:MusicCommand):
 			music_player.fade(music_command.fade_volume, music_command.fade_duration)
 		music_command.Action.RESUME_MUSIC:
 			music_player.unpause_track(music_command.fade_volume, music_command.fade_duration)
+
+
+func background(background_command:BackgroundCommand):
+	upper_screen.change_background(background_command.background)
 
 
 # can be used by the conditionals from the timeline

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/ScreenScenes/UpperScreen/UpperScreen.gd" id="1_6kxfj"]
 [ext_resource type="PackedScene" uid="uid://c2aekiuvsvmxj" path="res://scenes/Dialog/DialogBox.tscn" id="3_h7lsh"]
 [ext_resource type="Texture2D" uid="uid://bdg3mp3xp75mj" path="res://assets/backgrounds/courtroomHall.png" id="4_ccitq"]
-[ext_resource type="Script" path="res://scenes/ScreenScenes/UpperScreen/Shake2D.gd" id="4_p1b8u"]
+[ext_resource type="Script" path="res://scenes/ScreenScenes/UpperScreen/Background.gd" id="4_liitk"]
 [ext_resource type="Script" path="res://scenes/ScreenScenes/UpperScreen/ColorFade.gd" id="6_8sm7n"]
 
 [node name="UpperScreen" type="Control"]
@@ -15,6 +15,17 @@ script = ExtResource("1_6kxfj")
 
 [node name="HudLayer" type="CanvasLayer" parent="."]
 
+[node name="ForegroundFade" type="ColorRect" parent="HudLayer"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+script = ExtResource("6_8sm7n")
+metadata/_edit_use_anchors_ = true
+
 [node name="DialogBox" parent="HudLayer" instance=ExtResource("3_h7lsh")]
 unique_name_in_owner = true
 anchors_preset = -1
@@ -25,41 +36,30 @@ offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="Node2D" parent="."]
-z_index = -1
-script = ExtResource("4_p1b8u")
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CourtroomHall" type="Sprite2D" parent="Background"]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(256, 192)
+size_2d_override = Vector2i(256, 192)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Background" type="Node2D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+z_index = -1
+script = ExtResource("4_liitk")
+
+[node name="CourtroomHall" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background"]
 texture = ExtResource("4_ccitq")
 centered = false
 
-[node name="CharacterContainer" type="Node2D" parent="."]
+[node name="CharacterContainer" type="Node2D" parent="SubViewportContainer/SubViewport"]
 unique_name_in_owner = true
-
-[node name="BackgroundFade" type="ColorRect" parent="."]
-unique_name_in_owner = true
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0)
-script = ExtResource("6_8sm7n")
-
-[node name="ForegroundFade" type="ColorRect" parent="."]
-unique_name_in_owner = true
-z_index = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0)
-script = ExtResource("6_8sm7n")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(128, 192)
-ignore_rotation = false

@@ -1,9 +1,9 @@
 extends Control
 
 @onready var dialog_box = get_node("%DialogBox")
-@onready var background_fade = get_node("%BackgroundFade")
 @onready var foreground_fade = get_node("%ForegroundFade")
 @onready var character_container = get_node("%CharacterContainer")
+@onready var background = get_node("%Background")
 
 func create_scene_manager() -> SceneManager:
 	var scene_manager = SceneManager.new(dialog_box)
@@ -22,3 +22,6 @@ func select_your_answer(toggle: bool = true):
 	else:
 		foreground_fade.fadein(0.1)
 	dialog_box.select_answer_graphic(toggle)
+
+func change_background(background_res):
+	background.change_to(background_res)

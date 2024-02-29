@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://TestScene.gd" id="1_j7ny0"]
 [ext_resource type="PackedScene" uid="uid://o014t0ve6be8" path="res://scenes/ScreenScenes/UpperScreen/UpperScreen.tscn" id="2_m22fg"]
 [ext_resource type="Script" path="res://addons/blockflow/command_processor.gd" id="2_rnwqy"]
-[ext_resource type="Resource" uid="uid://b2uvbyr3l6a84" path="res://timelines/aa_case1/1-1_lobby.tres" id="3_ta4wc"]
+[ext_resource type="Resource" uid="uid://1215nv63i6x5" path="res://timelines/aa_case1/1-2_trial.tres" id="3_2qt1b"]
 [ext_resource type="PackedScene" uid="uid://dk35s1lwj1pmj" path="res://scenes/ScreenScenes/bottom_screen.tscn" id="4_0dqr4"]
 [ext_resource type="Script" path="res://scenes/MusicPlayer.gd" id="7_xgyak"]
 [ext_resource type="FontFile" uid="uid://bpmqn2kw4vgn4" path="res://assets/fonts/igiari-cyrillic-plus.ttf" id="8_2jqp0"]
@@ -28,11 +28,12 @@ script = ExtResource("1_j7ny0")
 [node name="CommandProcessor" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_rnwqy")
-initial_collection = ExtResource("3_ta4wc")
+initial_collection = ExtResource("3_2qt1b")
 command_node_fallback_path = NodePath("..")
 
 [node name="UpperScreen" parent="." instance=ExtResource("2_m22fg")]
 unique_name_in_owner = true
+layout_mode = 1
 
 [node name="BottomScreen" parent="." instance=ExtResource("4_0dqr4")]
 unique_name_in_owner = true

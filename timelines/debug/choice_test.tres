@@ -2,24 +2,23 @@
 
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_call.gd" id="1_0g2xi"]
 [ext_resource type="Script" path="res://addons/textalog/commands/command_dialog.gd" id="1_04smc"]
-[ext_resource type="Script" path="res://addons/blockflow/commands/command_set.gd" id="1_kawqq"]
 [ext_resource type="Script" path="res://addons/blockflow/command_collection.gd" id="1_qfflg"]
 [ext_resource type="Script" path="res://addons/textalog/commands/command_choice.gd" id="2_05ybh"]
 [ext_resource type="Texture2D" uid="uid://0ov6kk3wmjr6" path="res://assets/backgrounds/castle.png" id="2_lv33n"]
+[ext_resource type="Script" path="res://addons/textalog/commands/command_background.gd" id="2_wjbe8"]
 [ext_resource type="Script" path="res://addons/textalog/commands/command_choice_list.gd" id="3_2wnh8"]
 [ext_resource type="AudioStream" uid="uid://jliaijtutnfk" path="res://assets/music/bgm137.ogg" id="4_j3no3"]
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_goto.gd" id="5_3b3yk"]
+[ext_resource type="Script" path="res://addons/textalog/commands/command_music.gd" id="5_73xtp"]
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_end.gd" id="5_xcq54"]
 
-[sub_resource type="Resource" id="Resource_4h4og"]
-script = ExtResource("1_kawqq")
-property = "texture"
-value_type = 24
-value = ExtResource("2_lv33n")
+[sub_resource type="Resource" id="Resource_ph3i8"]
+script = ExtResource("2_wjbe8")
+background = ExtResource("2_lv33n")
 bookmark = &""
 continue_at_end = true
 background_color = 0
-target = NodePath("UpperScreen/Background/CourtroomHall")
+target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_u3sh2"]
@@ -29,28 +28,20 @@ args = []
 bookmark = &""
 continue_at_end = true
 background_color = 0
-target = NodePath("UpperScreen/ForegroundFade")
-collection = []
-
-[sub_resource type="Resource" id="Resource_hgdgb"]
-script = ExtResource("1_0g2xi")
-method = "set_stream"
-args = [ExtResource("4_j3no3")]
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("MusicPlayer")
+target = NodePath("UpperScreen/HudLayer/ForegroundFade")
 collection = []
 metadata/__editor_override_property__ = false
 
-[sub_resource type="Resource" id="Resource_udm53"]
-script = ExtResource("1_0g2xi")
-method = "play"
-args = []
+[sub_resource type="Resource" id="Resource_iiffi"]
+script = ExtResource("5_73xtp")
+do_what = 0
+fade_duration = 0.0
+music = ExtResource("4_j3no3")
+fade_volume = 0.0
 bookmark = &""
 continue_at_end = true
 background_color = 0
-target = NodePath("MusicPlayer")
+target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_q8nn7"]
@@ -69,7 +60,7 @@ wait_until_finished = true
 speaking_character = ""
 bump_speaker = false
 highlight_speaker = false
-hide_dialog = false
+hide_dialog = 0
 bookmark = &""
 continue_at_end = false
 background_color = 0
@@ -88,7 +79,7 @@ wait_until_finished = true
 speaking_character = ""
 bump_speaker = false
 highlight_speaker = false
-hide_dialog = false
+hide_dialog = 0
 bookmark = &""
 continue_at_end = false
 background_color = 0
@@ -107,7 +98,7 @@ wait_until_finished = true
 speaking_character = ""
 bump_speaker = false
 highlight_speaker = false
-hide_dialog = false
+hide_dialog = 0
 bookmark = &"bridge"
 continue_at_end = true
 background_color = 0
@@ -127,7 +118,7 @@ wait_until_finished = true
 speaking_character = ""
 bump_speaker = false
 highlight_speaker = false
-hide_dialog = false
+hide_dialog = 0
 bookmark = &""
 continue_at_end = false
 background_color = 0
@@ -166,7 +157,7 @@ wait_until_finished = true
 speaking_character = ""
 bump_speaker = false
 highlight_speaker = false
-hide_dialog = false
+hide_dialog = 0
 bookmark = &""
 continue_at_end = false
 background_color = 0
@@ -194,7 +185,7 @@ wait_until_finished = true
 speaking_character = ""
 bump_speaker = false
 highlight_speaker = false
-hide_dialog = false
+hide_dialog = 0
 bookmark = &""
 continue_at_end = false
 background_color = 0
@@ -213,7 +204,7 @@ wait_until_finished = true
 speaking_character = ""
 bump_speaker = false
 highlight_speaker = false
-hide_dialog = false
+hide_dialog = 0
 bookmark = &""
 continue_at_end = false
 background_color = 0
@@ -259,4 +250,4 @@ collection = []
 [resource]
 resource_name = "choice_test.tres"
 script = ExtResource("1_qfflg")
-collection = [SubResource("Resource_4h4og"), SubResource("Resource_u3sh2"), SubResource("Resource_hgdgb"), SubResource("Resource_udm53"), SubResource("Resource_q8nn7"), SubResource("Resource_3lhtr"), SubResource("Resource_l8mb8"), SubResource("Resource_giina"), SubResource("Resource_bcer5")]
+collection = [SubResource("Resource_ph3i8"), SubResource("Resource_u3sh2"), SubResource("Resource_iiffi"), SubResource("Resource_q8nn7"), SubResource("Resource_3lhtr"), SubResource("Resource_l8mb8"), SubResource("Resource_giina"), SubResource("Resource_bcer5")]

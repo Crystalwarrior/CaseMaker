@@ -10,10 +10,6 @@ var zoomtween: Tween
 
 var current_point: Node2D
 
-var trauma = 0.0  # Current shake strength.
-var trauma_power = 2  # Trauma exponent. Use [2, 3].
-
-
 func _unhandled_input(event):
 	if not point_collection:
 		return
@@ -35,9 +31,6 @@ func _ready():
 func _process(delta):
 	if target:
 		global_position = get_node(target).global_position
-	if trauma:
-		trauma = max(trauma - decay * delta, 0)
-		shake()
 
 
 func set_campoint(point):
@@ -51,25 +44,14 @@ func set_campoint(point):
 	zoom_to(current_point.global_position, scale_to, 0.75)
 
 
-func shake():
-	var amount = pow(trauma, trauma_power)
-	rotation = max_roll * amount * randf_range(-1, 1)
-	offset.x = max_offset.x * amount * randf_range(-1, 1)
-	offset.y = max_offset.y * amount * randf_range(-1, 1)
-
-
-func set_shake(amount):
-	trauma = amount
-
-
-func add_shake(amount):
-	set_shake(trauma + amount)
-
-
 func zoom_to(target_pos: Vector2, target_zoom: Vector2 = Vector2(1, 1), duration: float = 1.0):
 	if zoomtween:
 #		zoomtween.custom_step(9999)
 		zoomtween.kill()
+	if duration <= 0:
+		global_position = target_pos
+		zoom = target_zoom
+		return
 	zoomtween = create_tween()
 	zoomtween.tween_property(self, "global_position", target_pos, duration).set_trans(Tween.TRANS_QUINT)
 	zoomtween.parallel().tween_property(self, "zoom", target_zoom, duration).set_trans(Tween.TRANS_QUINT)

@@ -1,10 +1,16 @@
-[gd_resource type="Resource" script_class="CommandCollection" load_steps=12 format=3 uid="uid://1215nv63i6x5"]
+[gd_resource type="Resource" script_class="CommandCollection" load_steps=22 format=3 uid="uid://1215nv63i6x5"]
 
 [ext_resource type="Script" path="res://addons/blockflow/command_collection.gd" id="1_0prwl"]
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_print.gd" id="1_07ipa"]
 [ext_resource type="Script" path="res://addons/textalog/commands/command_dialog.gd" id="1_vsrx6"]
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_animate.gd" id="2_cdd2t"]
 [ext_resource type="Script" path="res://addons/blockflow/commands/command_wait.gd" id="3_pi4gt"]
+[ext_resource type="PackedScene" uid="uid://ti5yud2rrnot" path="res://scenes/Backgrounds/courtroom_ds.tscn" id="5_ih1h3"]
+[ext_resource type="Script" path="res://addons/blockflow/commands/command_call.gd" id="5_opip0"]
+[ext_resource type="Script" path="res://addons/textalog/commands/command_background.gd" id="6_jryv1"]
+[ext_resource type="PackedScene" uid="uid://cxdab1s0b31jt" path="res://Art Assets/Characters/Larry Butz/Larry.tscn" id="7_vv56e"]
+[ext_resource type="Script" path="res://addons/textalog/commands/command_character.gd" id="8_qmr37"]
+[ext_resource type="PackedScene" uid="uid://nholet7cnebr" path="res://Art Assets/Characters/sans/Sans.tscn" id="9_na44w"]
 
 [sub_resource type="Resource" id="Resource_xkh0a"]
 script = ExtResource("1_vsrx6")
@@ -88,7 +94,71 @@ background_color = 0
 target = NodePath("")
 collection = []
 
+[sub_resource type="Resource" id="Resource_ho4ku"]
+script = ExtResource("6_jryv1")
+background = ExtResource("5_ih1h3")
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_20d24"]
+script = ExtResource("8_qmr37")
+character = ExtResource("7_vv56e")
+character_name = ""
+emote = ""
+delete = false
+add_position = false
+to_position = Vector2(520, 0)
+zoom_duration = 0.0
+flipped = false
+flip_duration = 0.15
+shaking = false
+set_z_index = 0
+wait_until_finished = true
+fade_out = false
+fade_duration = 0.0
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_ur74e"]
+script = ExtResource("8_qmr37")
+character = ExtResource("9_na44w")
+character_name = ""
+emote = ""
+delete = false
+add_position = true
+to_position = Vector2(520, -208)
+zoom_duration = 0.0
+flipped = false
+flip_duration = 0.15
+shaking = false
+set_z_index = 0
+wait_until_finished = true
+fade_out = false
+fade_duration = 0.0
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_dgivt"]
+script = ExtResource("5_opip0")
+method = "fadein"
+args = [0.5]
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("UpperScreen/HudLayer/ForegroundFade")
+collection = []
+metadata/__editor_override_property__ = false
+
 [resource]
 resource_name = "1-2_trial.tres"
 script = ExtResource("1_0prwl")
-collection = [SubResource("Resource_xkh0a"), SubResource("Resource_8ky5r"), SubResource("Resource_ywn1c"), SubResource("Resource_p72wg"), SubResource("Resource_op7oy"), SubResource("Resource_2m1qm")]
+collection = [SubResource("Resource_xkh0a"), SubResource("Resource_8ky5r"), SubResource("Resource_ywn1c"), SubResource("Resource_p72wg"), SubResource("Resource_op7oy"), SubResource("Resource_2m1qm"), SubResource("Resource_ho4ku"), SubResource("Resource_20d24"), SubResource("Resource_ur74e"), SubResource("Resource_dgivt")]

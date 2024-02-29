@@ -122,9 +122,12 @@ func move_to(target_pos: Vector2, target_scale: Vector2 = Vector2(1, 1), duratio
 		target_pos = position + target_pos
 	if duration <= 0:
 		position = target_pos
+		shake_effect.default_position = target_pos
+		scale = target_scale
 		return
 	movetween = create_tween()
 	movetween.tween_property(self, "position", target_pos, duration).set_trans(Tween.TRANS_CUBIC)
+	movetween.tween_property(shake_effect, "default_position", target_pos, duration).set_trans(Tween.TRANS_CUBIC)
 	movetween.parallel().tween_property(self, "scale", target_scale, duration).set_trans(Tween.TRANS_CUBIC)
 	waiting_on_animations += 1
 	await movetween.finished

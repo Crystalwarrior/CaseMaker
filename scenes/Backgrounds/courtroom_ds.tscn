@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ti5yud2rrnot"]
+[gd_scene load_steps=10 format=3 uid="uid://ti5yud2rrnot"]
 
 [ext_resource type="Texture2D" uid="uid://daageeyolbi7l" path="res://assets/backgrounds/courtroom/courtroomfullDS.png" id="1_jcemg"]
 [ext_resource type="Script" path="res://scenes/Backgrounds/background.gd" id="1_rfqrr"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://nimuq87fexuu" path="res://assets/backgrounds/courtroom/desk_benches.png" id="5_b3nmo"]
 [ext_resource type="Texture2D" uid="uid://00pqcyugwv2p" path="res://assets/backgrounds/courtroom/desk_witness.png" id="6_rdqwf"]
 [ext_resource type="Script" path="res://addons/textalog/scripts/MainCamera.gd" id="7_e53xs"]
+[ext_resource type="Texture2D" uid="uid://gwnadfuntmhs" path="res://assets/backgrounds/courtroom/judgedesk.png" id="8_5i2yq"]
 
 [node name="CourtroomDS" type="Node2D"]
 script = ExtResource("1_rfqrr")
@@ -34,6 +35,7 @@ position = Vector2(648, -112)
 texture = ExtResource("4_fpmgk")
 
 [node name="desks" type="Node2D" parent="."]
+z_index = 2
 position = Vector2(648, 96)
 
 [node name="desk_def" type="Sprite2D" parent="desks"]
@@ -43,6 +45,10 @@ texture = ExtResource("5_b3nmo")
 [node name="desk_wit" type="Sprite2D" parent="desks"]
 position = Vector2(0, 79)
 texture = ExtResource("6_rdqwf")
+
+[node name="desk_jud" type="Sprite2D" parent="desks"]
+position = Vector2(0, -208)
+texture = ExtResource("8_5i2yq")
 
 [node name="desk_pro" type="Sprite2D" parent="desks"]
 position = Vector2(520, 74)
@@ -138,5 +144,6 @@ metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("point_collection")]
 position = Vector2(128, 96)
+editor_draw_screen = false
 script = ExtResource("7_e53xs")
 point_collection = NodePath("../PointCollection")
