@@ -8,12 +8,21 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Case Maker"
 run/main_scene="res://TestScene.tscn"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.png"
+
+[audio]
+
+buses/default_bus_layout="uid://b1eixj4qfcefg"
+driver/output_latency=10
 
 [autoload]
 

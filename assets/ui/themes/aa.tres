@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://b5nk0n700x2ge"]
+[gd_resource type="Theme" format=3 uid="uid://b5nk0n700x2ge"]
 
 [ext_resource type="FontFile" uid="uid://qcbedu5h0j2u" path="res://assets/fonts/Arial/arial.ttf" id="1_wm235"]
 [ext_resource type="StyleBox" uid="uid://eybfpl53y1yq" path="res://assets/ui/themes/stylebox/aa/aa_button_normal.tres" id="2_h1irn"]

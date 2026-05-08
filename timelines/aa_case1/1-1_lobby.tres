@@ -1,44 +1,39 @@
-[gd_resource type="Resource" script_class="CommandCollection" load_steps=137 format=3 uid="uid://b2uvbyr3l6a84"]
+[gd_resource type="Resource" script_class="CommandCollection" format=3 uid="uid://b2uvbyr3l6a84"]
 
-[ext_resource type="Script" path="res://addons/blockflow/commands/command_goto.gd" id="1_aru8v"]
+[ext_resource type="Script" uid="uid://c0duvos5wy14e" path="res://addons/blockflow/commands/command_goto.gd" id="1_aru8v"]
 [ext_resource type="Texture2D" uid="uid://bdg3mp3xp75mj" path="res://assets/backgrounds/courtroomHall.png" id="1_j7jbi"]
-[ext_resource type="Script" path="res://addons/textalog/commands/command_background.gd" id="1_m1isp"]
-[ext_resource type="Script" path="res://addons/textalog/commands/command_dialog.gd" id="1_pri7v"]
+[ext_resource type="Script" uid="uid://c8awp3ybvkyr3" path="res://addons/textalog/commands/command_background.gd" id="1_m1isp"]
+[ext_resource type="Script" uid="uid://bpc3q67mhrkgt" path="res://addons/textalog/commands/command_dialog.gd" id="1_pri7v"]
 [ext_resource type="Resource" uid="uid://bb2vay207xme5" path="res://evidence/attorney_badge.tres" id="1_vo7nt"]
 [ext_resource type="AudioStream" uid="uid://cb485p8r1fh2e" path="res://assets/music/bgm008.ogg" id="2_6b5kb"]
-[ext_resource type="Script" path="res://addons/blockflow/commands/command_call.gd" id="2_7m4qb"]
-[ext_resource type="Script" path="res://addons/textalog/commands/command_evidence.gd" id="2_gij8f"]
-[ext_resource type="Script" path="res://addons/textalog/commands/command_choice.gd" id="2_tptq0"]
-[ext_resource type="Script" path="res://addons/textalog/commands/command_music.gd" id="3_3a4nr"]
-[ext_resource type="Script" path="res://addons/textalog/commands/command_choice_list.gd" id="3_g6xng"]
-[ext_resource type="Script" path="res://addons/blockflow/commands/command_comment.gd" id="4_cg6e7"]
-[ext_resource type="Script" path="res://addons/blockflow/commands/command_wait.gd" id="5_uc2u8"]
-[ext_resource type="Script" path="res://addons/blockflow/commands/command_animate.gd" id="6_d1b7r"]
+[ext_resource type="Script" uid="uid://3t20t2jhin0x" path="res://addons/blockflow/commands/command_call.gd" id="2_7m4qb"]
+[ext_resource type="Script" uid="uid://dnfbrnklbmnox" path="res://addons/textalog/commands/command_evidence.gd" id="2_gij8f"]
+[ext_resource type="Script" uid="uid://du5j1t38ha5sh" path="res://addons/textalog/commands/command_choice.gd" id="2_tptq0"]
+[ext_resource type="Script" uid="uid://dojevc20yllqi" path="res://addons/textalog/commands/command_music.gd" id="3_3a4nr"]
+[ext_resource type="Script" uid="uid://chjxkfa6o21fo" path="res://addons/textalog/commands/command_choice_list.gd" id="3_g6xng"]
+[ext_resource type="Script" uid="uid://dprgq8isepiyl" path="res://addons/blockflow/commands/command_comment.gd" id="4_cg6e7"]
+[ext_resource type="Script" uid="uid://clu1u2dik62vg" path="res://addons/blockflow/commands/command_wait.gd" id="5_uc2u8"]
+[ext_resource type="Script" uid="uid://bx0n5yv0xk3v" path="res://addons/blockflow/commands/command_animate.gd" id="6_d1b7r"]
 [ext_resource type="PackedScene" uid="uid://dt6c18aeo3wal" path="res://Art Assets/Characters/Mia Fey/Mia.tscn" id="6_vat1v"]
-[ext_resource type="Script" path="res://addons/blockflow/commands/command_print.gd" id="7_phcgd"]
-[ext_resource type="Script" path="res://addons/textalog/commands/command_character.gd" id="7_s0i6j"]
-[ext_resource type="Script" path="res://addons/blockflow/command_collection.gd" id="8_0rc1k"]
+[ext_resource type="Script" uid="uid://be672rskxc4bn" path="res://addons/blockflow/commands/command_print.gd" id="7_phcgd"]
+[ext_resource type="Script" uid="uid://cbx5arp81ck7r" path="res://addons/textalog/commands/command_character.gd" id="7_s0i6j"]
+[ext_resource type="Script" uid="uid://d1hh31bnh3igw" path="res://addons/blockflow/command_collection.gd" id="8_0rc1k"]
 [ext_resource type="PackedScene" uid="uid://cxdab1s0b31jt" path="res://Art Assets/Characters/Larry Butz/Larry.tscn" id="8_1nh8l"]
 [ext_resource type="Resource" uid="uid://dff3yuxeugmtb" path="res://evidence/cindy_autopsy.tres" id="11_yl4l7"]
-[ext_resource type="Script" path="res://addons/blockflow/commands/branch.gd" id="12_5qrb1"]
+[ext_resource type="Script" uid="uid://bcn06r20w1w5c" path="res://addons/blockflow/commands/branch.gd" id="12_5qrb1"]
 [ext_resource type="Resource" uid="uid://1215nv63i6x5" path="res://timelines/aa_case1/1-2_trial.tres" id="19_cj1xn"]
 
 [sub_resource type="Resource" id="Resource_v4y0q"]
 script = ExtResource("1_m1isp")
 background = ExtResource("1_j7jbi")
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
+campoint = null
+pan_duration = 0.0
 collection = []
 
 [sub_resource type="Resource" id="Resource_s5jex"]
 script = ExtResource("4_cg6e7")
 comment = "Debug Jumps!"
-bookmark = &""
-continue_at_end = true
 background_color = 1
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_7ec52"]
@@ -46,31 +41,17 @@ script = ExtResource("1_aru8v")
 condition = ""
 use_bookmark = true
 command_bookmark = "begin"
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_uwo6o"]
 script = ExtResource("2_tptq0")
 text = "From the Beginning"
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = [SubResource("Resource_7ec52")]
 
 [sub_resource type="Resource" id="Resource_67dja"]
 script = ExtResource("3_3a4nr")
-do_what = 0
-fade_duration = 0.0
 music = ExtResource("2_6b5kb")
 fade_volume = 0.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_8w6gk"]
@@ -78,31 +59,17 @@ script = ExtResource("1_aru8v")
 condition = ""
 use_bookmark = true
 command_bookmark = "mia"
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_tdb04"]
 script = ExtResource("2_tptq0")
 text = "Mia appears"
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = [SubResource("Resource_67dja"), SubResource("Resource_8w6gk")]
 
 [sub_resource type="Resource" id="Resource_u6bsa"]
 script = ExtResource("3_3a4nr")
-do_what = 0
-fade_duration = 0.0
 music = ExtResource("2_6b5kb")
 fade_volume = 0.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_j4jax"]
@@ -110,31 +77,17 @@ script = ExtResource("1_aru8v")
 condition = ""
 use_bookmark = true
 command_bookmark = "screaming"
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_tc2nr"]
 script = ExtResource("2_tptq0")
 text = "Defendant screams"
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = [SubResource("Resource_u6bsa"), SubResource("Resource_j4jax")]
 
 [sub_resource type="Resource" id="Resource_d4yep"]
 script = ExtResource("3_3a4nr")
-do_what = 0
-fade_duration = 0.0
 music = ExtResource("2_6b5kb")
 fade_volume = 0.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_quc6n"]
@@ -142,31 +95,17 @@ script = ExtResource("1_aru8v")
 condition = ""
 use_bookmark = true
 command_bookmark = "butz"
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_yrb0f"]
 script = ExtResource("2_tptq0")
 text = "Butz appears"
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = [SubResource("Resource_d4yep"), SubResource("Resource_quc6n")]
 
 [sub_resource type="Resource" id="Resource_r8sh8"]
 script = ExtResource("3_3a4nr")
-do_what = 0
-fade_duration = 0.0
 music = ExtResource("2_6b5kb")
 fade_volume = 0.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_xr4wo"]
@@ -174,65 +113,40 @@ script = ExtResource("1_aru8v")
 condition = ""
 use_bookmark = true
 command_bookmark = "phoenix"
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_tu4ca"]
 script = ExtResource("2_tptq0")
 text = "Phoenix explanation"
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = [SubResource("Resource_r8sh8"), SubResource("Resource_xr4wo")]
 
 [sub_resource type="Resource" id="Resource_eskjs"]
 script = ExtResource("3_g6xng")
-bookmark = &""
-continue_at_end = true
 background_color = 1
-target = NodePath("")
 collection = [SubResource("Resource_uwo6o"), SubResource("Resource_tdb04"), SubResource("Resource_tc2nr"), SubResource("Resource_yrb0f"), SubResource("Resource_tu4ca")]
 
 [sub_resource type="Resource" id="Resource_jxsrc"]
 script = ExtResource("12_5qrb1")
 condition = "debug == true"
-branch_name = &""
-bookmark = &""
-continue_at_end = true
 background_color = 1
-target = NodePath("")
 collection = [SubResource("Resource_s5jex"), SubResource("Resource_eskjs")]
 
 [sub_resource type="Resource" id="Resource_qwyxs"]
 script = ExtResource("4_cg6e7")
 comment = "Begin Defendant Lobby"
 bookmark = &"begin"
-continue_at_end = true
 background_color = 2
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_nqh28"]
 script = ExtResource("2_gij8f")
-do_what = 0
 evidence = ExtResource("1_vo7nt")
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_d448q"]
 script = ExtResource("2_7m4qb")
 method = "fadeout"
 args = [0.0]
-bookmark = &""
-continue_at_end = true
-background_color = 0
 target = NodePath("UpperScreen/HudLayer/ForegroundFade")
 collection = []
 metadata/__editor_override_property__ = false
@@ -240,184 +154,98 @@ metadata/__editor_override_property__ = false
 [sub_resource type="Resource" id="Resource_lmf36"]
 script = ExtResource("7_phcgd")
 comment = "Conditional evidence test"
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_vc7m8"]
 script = ExtResource("2_gij8f")
-do_what = 0
 evidence = ExtResource("11_yl4l7")
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_47gym"]
 script = ExtResource("12_5qrb1")
 condition = "has_evidence(\"Attorney's Badge\")"
-branch_name = &""
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = [SubResource("Resource_vc7m8")]
 
 [sub_resource type="Resource" id="Resource_jj2gc"]
 script = ExtResource("1_pri7v")
-showname = ""
 dialog = "[center][color=green]August 3, 9:47 AM
 District Court
 Defendant Lobby No. 2"
-additive = false
 text_speed = 2
 letter_delay = 0.08
 blip_sound = "typewriter"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
 hide_dialog = 2
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_at5mj"]
 script = ExtResource("3_3a4nr")
-do_what = 0
-fade_duration = 0.0
 music = ExtResource("2_6b5kb")
 fade_volume = 0.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_44hdp"]
 script = ExtResource("5_uc2u8")
-wait_for = 0
 wait_time = 1.2
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_fqg3q"]
 script = ExtResource("2_7m4qb")
 method = "fadein"
 args = [0.5]
-bookmark = &""
-continue_at_end = true
-background_color = 0
 target = NodePath("UpperScreen/HudLayer/ForegroundFade")
 collection = []
 metadata/__editor_override_property__ = false
 
 [sub_resource type="Resource" id="Resource_lk2po"]
 script = ExtResource("5_uc2u8")
-wait_for = 0
 wait_time = 1.2
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_cgsd2"]
 script = ExtResource("12_5qrb1")
-condition = ""
 branch_name = &"Fade In and Play Music"
-bookmark = &""
-continue_at_end = true
 background_color = 5
-target = NodePath("")
 collection = [SubResource("Resource_at5mj"), SubResource("Resource_44hdp"), SubResource("Resource_fqg3q"), SubResource("Resource_lk2po")]
 
 [sub_resource type="Resource" id="Resource_q22o8"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "{s}[color=#6db6f7ff](Boy am I nervous!)[/color]"
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
 hide_dialog = 2
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
+continue_at_end = false
 collection = []
 
 [sub_resource type="Resource" id="Resource_dx04t"]
 script = ExtResource("6_d1b7r")
 animation = "court_record_available"
-custom_blend = -1.0
-custom_speed = 1.0
-play_backwards = false
-wait_until_finished = false
-bookmark = &""
 continue_at_end = false
-background_color = 0
 target = NodePath("BottomScreen/AnimationPlayer")
 collection = []
 
 [sub_resource type="Resource" id="Resource_kt2s1"]
 script = ExtResource("5_uc2u8")
-wait_for = 0
 wait_time = 0.7
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_ec35h"]
 script = ExtResource("4_cg6e7")
 comment = "Mia enters the scene"
 bookmark = &"mia"
-continue_at_end = true
 background_color = 3
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_fugpg"]
 script = ExtResource("1_pri7v")
 showname = "Mia"
 dialog = "{f}Wright!"
-additive = false
-text_speed = 0
-letter_delay = 0.034
 blip_sound = "female"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_burih"]
 script = ExtResource("5_uc2u8")
-wait_for = 0
 wait_time = 0.5
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_0knig"]
@@ -425,50 +253,19 @@ script = ExtResource("7_s0i6j")
 character = ExtResource("6_vat1v")
 character_name = "Mia"
 emote = "normal"
-delete = false
-add_position = true
-to_position = Vector2(0, 0)
-zoom_duration = 0.0
-flipped = false
-flip_duration = 0.15
-shaking = false
-set_z_index = 0
-wait_until_finished = true
-fade_out = false
 fade_duration = 0.5
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_q75dd"]
 script = ExtResource("5_uc2u8")
-wait_for = 0
 wait_time = 0.5
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_5l5eo"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "{f}{sfx lightbulb}Oh,{p} h{s 1}-{p 0.15}hi{s 1}ya, Chief."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_r8jdm"]
@@ -476,38 +273,18 @@ script = ExtResource("1_pri7v")
 showname = "Mia"
 dialog = "Whew,{p 0.5}
 I'm glad I made it on time. "
-additive = false
-text_speed = 0
-letter_delay = 0.034
 blip_sound = "female"
-wait_until_finished = true
 speaking_character = "Mia"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_m3i10"]
 script = ExtResource("1_pri7v")
 showname = "Mia"
 dialog = "Well,{p 0.33} I have to say Phoenix,{p 0.33} I'm impressed!"
-additive = false
-text_speed = 0
-letter_delay = 0.034
 blip_sound = "female"
-wait_until_finished = true
 speaking_character = "Mia"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_fghhv"]
@@ -515,40 +292,16 @@ script = ExtResource("7_s0i6j")
 character = ExtResource("6_vat1v")
 character_name = "Mia"
 emote = "smile"
-delete = false
-add_position = true
-to_position = Vector2(0, 0)
-zoom_duration = 0.0
-flipped = false
-flip_duration = 0.15
-shaking = false
-set_z_index = 0
 wait_until_finished = false
-fade_out = false
-fade_duration = 0.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_kpfpg"]
 script = ExtResource("1_pri7v")
 showname = "Mia"
 dialog = "Not everyone takes on a murder trial right off the bat like this."
-additive = false
-text_speed = 0
-letter_delay = 0.034
 blip_sound = "female"
-wait_until_finished = true
 speaking_character = "Mia"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_i50t3"]
@@ -556,67 +309,27 @@ script = ExtResource("1_pri7v")
 showname = "Mia"
 dialog = "It says a lot about{p 0.4}
 you... and your client as well."
-additive = false
-text_speed = 0
-letter_delay = 0.034
 blip_sound = "female"
-wait_until_finished = true
 speaking_character = "Mia"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_qoohk"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "Um... thanks."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_xvfmd"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
-dialog = ""
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
+continue_at_end = false
 collection = []
 
 [sub_resource type="Resource" id="Resource_mgmm7"]
 script = ExtResource("5_uc2u8")
-wait_for = 0
 wait_time = 0.5
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_5s3ec"]
@@ -624,76 +337,32 @@ script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "Actually, it's because
 I owe him a favor."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_b8w00"]
 script = ExtResource("1_pri7v")
 showname = "Mia"
 dialog = "{f}{sfx lightbulb}{e ohmy}A favor?"
-additive = false
-text_speed = 0
-letter_delay = 0.034
 blip_sound = "female"
-wait_until_finished = true
 speaking_character = "Mia"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_2ml4e"]
 script = ExtResource("1_pri7v")
 showname = "Mia"
 dialog = "You mean, you knew the defendant before this case?"
-additive = false
-text_speed = 0
-letter_delay = 0.034
 blip_sound = "female"
-wait_until_finished = true
 speaking_character = "Mia"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_acr1i"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "Yes."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_15tkm"]
@@ -701,19 +370,7 @@ script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "Actually, I kind of owe
 my current job to him."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_i471l"]
@@ -721,19 +378,7 @@ script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "He's one of the reasons{p 0.1}
 I became an attorney."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_acr4r"]
@@ -741,40 +386,16 @@ script = ExtResource("7_s0i6j")
 character = ExtResource("6_vat1v")
 character_name = "Mia"
 emote = "smile"
-delete = false
-add_position = true
-to_position = Vector2(0, 0)
-zoom_duration = 0.0
-flipped = false
-flip_duration = 0.15
-shaking = false
-set_z_index = 0
 wait_until_finished = false
-fade_out = false
-fade_duration = 0.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_2vdmu"]
 script = ExtResource("1_pri7v")
 showname = "Mia"
 dialog = "Well, that's news to me!"
-additive = false
-text_speed = 0
-letter_delay = 0.034
 blip_sound = "female"
-wait_until_finished = true
 speaking_character = "Mia"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_haotu"]
@@ -782,21 +403,7 @@ script = ExtResource("7_s0i6j")
 character = ExtResource("6_vat1v")
 character_name = "Mia"
 emote = "normal"
-delete = false
-add_position = true
-to_position = Vector2(0, 0)
-zoom_duration = 0.0
-flipped = false
-flip_duration = 0.15
-shaking = false
-set_z_index = 0
 wait_until_finished = false
-fade_out = false
-fade_duration = 0.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_3u36i"]
@@ -804,19 +411,7 @@ script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "I want to help him out
 any way I can!"
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_qtkwu"]
@@ -824,67 +419,30 @@ script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "I just... really want to help
 him. I owe him that much."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_sua6o"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
-dialog = ""
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
+continue_at_end = false
 collection = []
 
 [sub_resource type="Resource" id="Resource_o3lao"]
 script = ExtResource("5_uc2u8")
-wait_for = 0
 wait_time = 0.2
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_gm2q8"]
 script = ExtResource("4_cg6e7")
 comment = "The defendant starts screaming"
 bookmark = &"screaming"
-continue_at_end = true
 background_color = 4
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_rabrh"]
 script = ExtResource("3_3a4nr")
 do_what = 1
-fade_duration = 0.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_2m3gm"]
@@ -892,40 +450,14 @@ script = ExtResource("7_s0i6j")
 character = ExtResource("6_vat1v")
 character_name = "Mia"
 emote = "ohmy"
-delete = false
-add_position = true
-to_position = Vector2(0, 0)
-zoom_duration = 0.0
-flipped = false
-flip_duration = 0.15
-shaking = false
-set_z_index = 0
 wait_until_finished = false
-fade_out = false
-fade_duration = 0.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_p6ops"]
 script = ExtResource("1_pri7v")
 showname = "???"
 dialog = "[color=#00ff00ff]{s 3}{f}{sfx supershock}(It's over!)[/color]"
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_pumkr"]
@@ -933,38 +465,16 @@ script = ExtResource("1_pri7v")
 showname = "???"
 dialog = "[color=#00ff00ff]{s 3}{f}{sfx supershock}(My life, everything,
 it's all over!)[/color]"
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_wxeb1"]
 script = ExtResource("1_pri7v")
 showname = "Mia"
 dialog = "..."
-additive = false
-text_speed = 0
-letter_delay = 0.034
 blip_sound = "female"
-wait_until_finished = true
 speaking_character = "Mia"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_apuv7"]
@@ -972,19 +482,9 @@ script = ExtResource("1_pri7v")
 showname = "Mia"
 dialog = "Isn't that your client{p 0.33}
 screaming over there?"
-additive = false
-text_speed = 0
-letter_delay = 0.034
 blip_sound = "female"
-wait_until_finished = true
 speaking_character = "Mia"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_r5uf2"]
@@ -992,59 +492,21 @@ script = ExtResource("7_s0i6j")
 character = ExtResource("6_vat1v")
 character_name = "Mia"
 emote = "normal"
-delete = false
-add_position = true
-to_position = Vector2(0, 0)
-zoom_duration = 0.0
-flipped = false
-flip_duration = 0.15
-shaking = false
-set_z_index = 0
 wait_until_finished = false
-fade_out = false
-fade_duration = 0.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_qvgg5"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "Yeah... {s 1}that's him."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_t1hvy"]
 script = ExtResource("1_pri7v")
 showname = "???"
 dialog = "[color=#00ff00ff]{s 4}{f}{sfx supershock}(Death! Despair! Ohhhh!)[/color]"
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_ix4kh"]
@@ -1052,40 +514,14 @@ script = ExtResource("7_s0i6j")
 character = ExtResource("6_vat1v")
 character_name = "Mia"
 emote = "ohmy"
-delete = false
-add_position = true
-to_position = Vector2(0, 0)
-zoom_duration = 0.0
-flipped = false
-flip_duration = 0.15
-shaking = false
-set_z_index = 0
 wait_until_finished = false
-fade_out = false
-fade_duration = 0.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_g0heb"]
 script = ExtResource("1_pri7v")
 showname = "???"
 dialog = "[color=#00ff00ff]{s 3}{f}{sfx supershock}(I'm gonna do it,{p 0.2} {s 5}{f}I'm gonna {f}die!!!)[/color]"
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_5bjq5"]
@@ -1093,19 +529,9 @@ script = ExtResource("1_pri7v")
 showname = "Mia"
 dialog = "It sounds like
 he wants to die..."
-additive = false
-text_speed = 0
-letter_delay = 0.034
 blip_sound = "female"
-wait_until_finished = true
 speaking_character = "Mia"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_gy8vv"]
@@ -1113,49 +539,21 @@ script = ExtResource("7_s0i6j")
 character = ExtResource("6_vat1v")
 character_name = "Mia"
 emote = "smile"
-delete = false
-add_position = true
-to_position = Vector2(0, 0)
-zoom_duration = 0.0
-flipped = false
-flip_duration = 0.15
-shaking = false
-set_z_index = 0
 wait_until_finished = false
-fade_out = false
-fade_duration = 0.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_q7n84"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "Um,{p 0.1}{spd_slow} yeah. *sigh*"
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_if5ka"]
 script = ExtResource("4_cg6e7")
 comment = "It's usually the Butz"
 bookmark = &"butz"
-continue_at_end = true
 background_color = 5
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_ehpst"]
@@ -1163,32 +561,14 @@ script = ExtResource("3_3a4nr")
 do_what = 3
 fade_duration = 1.0
 fade_volume = 0.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_gf7yr"]
 script = ExtResource("7_s0i6j")
 character = ExtResource("6_vat1v")
 character_name = "Mia"
-emote = ""
-delete = false
-add_position = true
-to_position = Vector2(0, 0)
-zoom_duration = 0.0
-flipped = false
-flip_duration = 0.15
-shaking = false
-set_z_index = 0
-wait_until_finished = true
 fade_out = true
 fade_duration = 0.5
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_1f11e"]
@@ -1196,40 +576,15 @@ script = ExtResource("7_s0i6j")
 character = ExtResource("8_1nh8l")
 character_name = "Butz"
 emote = "nervous"
-delete = false
-add_position = true
-to_position = Vector2(0, 0)
-zoom_duration = 0.0
-flipped = false
-flip_duration = 0.15
-shaking = false
-set_z_index = 0
-wait_until_finished = true
-fade_out = false
 fade_duration = 0.5
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_4nii8"]
 script = ExtResource("1_pri7v")
 showname = "Butz"
 dialog = "{sfx realization}Nick!!!"
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
 speaking_character = "Butz"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_35l8h"]
@@ -1237,19 +592,7 @@ script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "Hey.{p 0.2}
 {s 1}Hey there, Larry."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_ka8yk"]
@@ -1257,21 +600,6 @@ script = ExtResource("7_s0i6j")
 character = ExtResource("8_1nh8l")
 character_name = "Butz"
 emote = "thumbsup"
-delete = false
-add_position = true
-to_position = Vector2(0, 0)
-zoom_duration = 0.0
-flipped = false
-flip_duration = 0.15
-shaking = false
-set_z_index = 0
-wait_until_finished = true
-fade_out = false
-fade_duration = 0.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_6a6vl"]
@@ -1279,19 +607,10 @@ script = ExtResource("1_pri7v")
 showname = "Butz"
 dialog = "{s 2}{f}{sfx supershock}Dude,{p 0.2} I'm so guilty!!{p 0.2}
 {f}Tell them I'm guilty!!!"
-additive = false
 text_speed = 3
 letter_delay = 0.017
-blip_sound = "male"
-wait_until_finished = true
 speaking_character = "Butz"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_scbni"]
@@ -1299,19 +618,10 @@ script = ExtResource("1_pri7v")
 showname = "Butz"
 dialog = "Gimme the death sentence!{p 0.2}
 I ain't afraid to die!"
-additive = false
 text_speed = 3
 letter_delay = 0.017
-blip_sound = "male"
-wait_until_finished = true
 speaking_character = "Butz"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_ugvem"]
@@ -1319,19 +629,7 @@ script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "What!?{p 0.2}
 What's wrong, Larry?"
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_mk2vw"]
@@ -1339,21 +637,6 @@ script = ExtResource("7_s0i6j")
 character = ExtResource("8_1nh8l")
 character_name = "Butz"
 emote = "nervous"
-delete = false
-add_position = true
-to_position = Vector2(0, 0)
-zoom_duration = 0.0
-flipped = false
-flip_duration = 0.15
-shaking = false
-set_z_index = 0
-wait_until_finished = true
-fade_out = false
-fade_duration = 0.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_scnmy"]
@@ -1361,19 +644,10 @@ script = ExtResource("1_pri7v")
 showname = "Butz"
 dialog = "Oh,{p 0.2} it's all over...{p 0.33}
 I... I'm finished.{p 0.33} {spd_fast}Finished! "
-additive = false
 text_speed = 1
 letter_delay = 0.05
-blip_sound = "male"
-wait_until_finished = true
 speaking_character = "Butz"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_q74ct"]
@@ -1381,19 +655,10 @@ script = ExtResource("1_pri7v")
 showname = "Butz"
 dialog = "I can't live in a world
 without her!{p 0.33} I can't!"
-additive = false
 text_speed = 3
 letter_delay = 0.017
-blip_sound = "male"
-wait_until_finished = true
 speaking_character = "Butz"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_wukhk"]
@@ -1401,19 +666,10 @@ script = ExtResource("1_pri7v")
 showname = "Butz"
 dialog = "Who...{p 0.33}{spd_normal} who took her away
 from me, Nick?{p 0.33}{spd_fast} Who did this!?"
-additive = false
 text_speed = 1
 letter_delay = 0.05
-blip_sound = "male"
-wait_until_finished = true
 speaking_character = "Butz"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_dd6wv"]
@@ -1421,19 +677,8 @@ script = ExtResource("1_pri7v")
 showname = "Butz"
 dialog = "{s 4}{sfx supershock}Aww,{p} Nick,{p} ya gotta tell me!{p 0.33}
 Who took my baby away!?"
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
 speaking_character = "Butz"
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_arbkl"]
@@ -1441,19 +686,9 @@ script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "[color=#6bc6f7ff](Hmm... The person responsible
 for your girlfriend's death?)[/color]"
-additive = false
 text_speed = 1
 letter_delay = 0.05
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_sxene"]
@@ -1461,126 +696,63 @@ script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "[color=#6bc6f7ff](The newspapers say{p 0.33}
 it was{p 0.33} [color=#f77339ff]{sfx realization}{f}you[/color]...)[/color]"
-additive = false
 text_speed = 1
 letter_delay = 0.05
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_8vyx5"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
-dialog = ""
-additive = false
 text_speed = 1
 letter_delay = 0.05
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
 hide_dialog = 1
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
+continue_at_end = false
 collection = []
 
 [sub_resource type="Resource" id="Resource_tm5pi"]
 script = ExtResource("5_uc2u8")
-wait_for = 0
 wait_time = 0.5
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_n33la"]
 script = ExtResource("4_cg6e7")
 comment = "Phoenix explains what's going on"
 bookmark = &"phoenix"
-continue_at_end = true
 background_color = 6
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_y5t7i"]
 script = ExtResource("2_7m4qb")
 method = "fadeout"
 args = [1.0]
-bookmark = &""
-continue_at_end = true
-background_color = 0
 target = NodePath("UpperScreen/HudLayer/ForegroundFade")
 collection = []
 metadata/__editor_override_property__ = false
 
 [sub_resource type="Resource" id="Resource_aacc2"]
 script = ExtResource("5_uc2u8")
-wait_for = 0
 wait_time = 1.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_6xxxu"]
 script = ExtResource("3_3a4nr")
 do_what = 1
 fade_duration = 1.0
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_2qydy"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "My name is Phoenix Wright."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_j2p68"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "Here's the story:"
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_kh6hw"]
@@ -1588,28 +760,13 @@ script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "My first case is
 a fairly simple one."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_jw5sv"]
 script = ExtResource("7_phcgd")
 comment = "fade in death cg"
-bookmark = &""
-continue_at_end = true
 background_color = 1
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_aicsg"]
@@ -1617,19 +774,7 @@ script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "A young woman was killed
 in her apartment."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_e7krp"]
@@ -1637,28 +782,13 @@ script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "The guy they arrested was
 the unlucky sap dating her:"
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_3f0fh"]
 script = ExtResource("7_phcgd")
 comment = "swap, show butz with thumbs up"
-bookmark = &""
-continue_at_end = true
 background_color = 1
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_1mmli"]
@@ -1666,19 +796,7 @@ script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "Larry Butz... my best
 friend since grade school. "
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_ckkom"]
@@ -1686,19 +804,7 @@ script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "Our school had a saying:{p 0.5} \"[color=#f77339ff]When something smells,
 it's usually the Butz.[/color]\" "
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_kbwmk"]
@@ -1706,38 +812,14 @@ script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "In the 23 years I've known
 him, it's usually been true."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_w4vk8"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "He has a knack for getting himself in trouble."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_hp8eh"]
@@ -1745,76 +827,28 @@ script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "One thing I can say though:{p 0.5} it's usually not his fault.{p 0.2}
 He just has terrible luck."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_rni74"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "But I know better than anyone, that he's a good guy at heart."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_wkwl1"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "That and I owe him one. Which is why I took the case... to clear his name."
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_biofi"]
 script = ExtResource("1_pri7v")
 showname = "Phoenix"
 dialog = "{f}{s}And that's just what I'm going to do! "
-additive = false
-text_speed = 0
-letter_delay = 0.034
-blip_sound = "male"
-wait_until_finished = true
-speaking_character = ""
-bump_speaker = false
-highlight_speaker = false
-hide_dialog = 0
-bookmark = &""
 continue_at_end = false
-background_color = 0
-target = NodePath("")
 collection = []
 
 [sub_resource type="Resource" id="Resource_v1tkm"]
@@ -1823,10 +857,6 @@ condition = ""
 use_bookmark = false
 command_index = 0
 target_collection = ExtResource("19_cj1xn")
-bookmark = &""
-continue_at_end = true
-background_color = 0
-target = NodePath("")
 collection = []
 
 [resource]

@@ -57,4 +57,3 @@ func get_next_command_position() -> int:
 
 func _get_category() -> StringName:
 	return &"Textalog"
-

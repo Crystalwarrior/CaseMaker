@@ -23,9 +23,8 @@
 
 [node name="dialog_editor" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 3.95313
+anchor_bottom = 2.09635
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jdxpf")
@@ -191,11 +190,10 @@ text = "Text Commands:"
 [node name="spd_button" type="OptionButton" parent="ScrollContainer/VBoxContainer/VBoxContainer/ButtonBar"]
 unique_name_in_owner = true
 layout_mode = 2
-item_count = 7
 selected = 0
 allow_reselect = true
+item_count = 7
 popup/item_0/text = "normal"
-popup/item_0/id = 0
 popup/item_1/text = "slow"
 popup/item_1/id = 1
 popup/item_2/text = "typewriter"

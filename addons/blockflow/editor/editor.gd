@@ -733,30 +733,30 @@ func _shortcut_input(event: InputEvent) -> void:
 	
 	var command_idx:int = command.index
 	
-	if Constants.SHORTCUT_MOVE_UP.matches_event(event) and event.is_pressed():
+	if Constants.SHORTCUT_MOVE_UP.matches_event(event):
 		move_command(command, max(0, command_idx - 1))
 		accept_event()
 		return
 
-	if Constants.SHORTCUT_MOVE_DOWN.matches_event(event) and event.is_pressed():
+	if Constants.SHORTCUT_MOVE_DOWN.matches_event(event):
 		move_command(command, command_idx + 1)
 		accept_event()
 		return
 
-	if Constants.SHORTCUT_DUPLICATE.matches_event(event) and event.is_pressed():
+	if Constants.SHORTCUT_DUPLICATE.matches_event(event):
 		duplicate_command(command, command_idx + 1)
 		accept_event()
 		return
 	
-	if Constants.SHORTCUT_DELETE.matches_event(event) and event.is_pressed():
+	if Constants.SHORTCUT_DELETE.matches_event(event):
 		remove_command(command)
 		accept_event()
 		return
 	
-	if Constants.SHORTCUT_COPY.matches_event(event) and event.is_pressed():
+	if Constants.SHORTCUT_COPY.matches_event(event):
 		copy_command(command)
 	
-	if Constants.SHORTCUT_PASTE.matches_event(event) and event.is_pressed():
+	if Constants.SHORTCUT_PASTE.matches_event(event):
 		if not command_clipboard:
 			return
 		
@@ -793,6 +793,7 @@ func _init() -> void:
 	name = "CollectionEditor"
 	size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	size_flags_vertical = Control.SIZE_EXPAND_FILL
+	theme = load(Constants.DEFAULT_THEME_PATH) as Theme
 	
 	var vb = VBoxContainer.new()
 	vb.size_flags_horizontal = Control.SIZE_EXPAND_FILL

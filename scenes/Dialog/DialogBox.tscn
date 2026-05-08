@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2aekiuvsvmxj"]
+[gd_scene format=3 uid="uid://c2aekiuvsvmxj"]
 
-[ext_resource type="Script" path="res://scenes/Dialog/DialogBox.gd" id="1_cc5yw"]
+[ext_resource type="Script" uid="uid://br3cbm57rvqvr" path="res://scenes/Dialog/DialogBox.gd" id="1_cc5yw"]
 [ext_resource type="AudioStream" uid="uid://coi23da85koq4" path="res://assets/sounds/blips/male.wav" id="2_wg70w"]
 [ext_resource type="Texture2D" uid="uid://bjnovt8uqfx7m" path="res://assets/ui/select_your_answer.png" id="5_hvysg"]
 [ext_resource type="Texture2D" uid="uid://kww8iw0uxg7r" path="res://assets/ui/down_arrow.png" id="6_o482i"]
@@ -65,11 +65,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_410ho"]
 _data = {
-"RESET": SubResource("Animation_2dxd5"),
-"loop": SubResource("Animation_ntol4")
+&"RESET": SubResource("Animation_2dxd5"),
+&"loop": SubResource("Animation_ntol4")
 }
 
-[node name="DialogBox" type="Control"]
+[node name="DialogBox" type="Control" unique_id=1242762871]
 custom_minimum_size = Vector2(256, 192)
 layout_mode = 3
 anchors_preset = 0
@@ -77,18 +77,19 @@ offset_right = 256.0
 offset_bottom = 192.0
 script = ExtResource("1_cc5yw")
 
-[node name="BlipPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BlipPlayer" type="AudioStreamPlayer" parent="." unique_id=1847294637]
 unique_name_in_owner = true
 stream = ExtResource("2_wg70w")
+max_polyphony = 5
 bus = &"blips"
 
-[node name="DialogContainer" parent="." instance=ExtResource("8_5ictp")]
+[node name="DialogContainer" parent="." unique_id=1480348018 instance=ExtResource("8_5ictp")]
 unique_name_in_owner = true
 layout_mode = 1
 offset_top = 135.0
 offset_bottom = 192.0
 
-[node name="SelectYourAnswer" type="TextureRect" parent="."]
+[node name="SelectYourAnswer" type="TextureRect" parent="." unique_id=1132555350]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -97,7 +98,7 @@ offset_right = 256.0
 offset_bottom = 216.0
 texture = ExtResource("5_hvysg")
 
-[node name="DownArrow" type="TextureRect" parent="SelectYourAnswer"]
+[node name="DownArrow" type="TextureRect" parent="SelectYourAnswer" unique_id=298017563]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 6.0
@@ -105,7 +106,7 @@ offset_right = 17.0
 offset_bottom = 17.0
 texture = ExtResource("6_o482i")
 
-[node name="DownArrow2" type="TextureRect" parent="SelectYourAnswer"]
+[node name="DownArrow2" type="TextureRect" parent="SelectYourAnswer" unique_id=89702670]
 layout_mode = 0
 offset_left = 240.0
 offset_top = 6.0
@@ -113,8 +114,6 @@ offset_right = 249.0
 offset_bottom = 17.0
 texture = ExtResource("6_o482i")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SelectYourAnswer"]
-libraries = {
-"": SubResource("AnimationLibrary_410ho")
-}
-autoplay = "loop"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SelectYourAnswer" unique_id=575846929]
+libraries/ = SubResource("AnimationLibrary_410ho")
+autoplay = &"loop"
