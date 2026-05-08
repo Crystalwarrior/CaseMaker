@@ -1,0 +1,125 @@
+[gd_resource type="Resource" script_class="CommandCollection" load_steps=12 format=3 uid="uid://0wrpy0kdbwtu"]
+
+[ext_resource type="Script" path="res://addons/blockflow/command_collection.gd" id="1_rghow"]
+[ext_resource type="Script" path="res://addons/blockflow/commands/command_call.gd" id="1_vtdg7"]
+[ext_resource type="PackedScene" uid="uid://dpsblssy6fu6b" path="res://Art Assets/Characters/Edgeworth/Edgeworth.tscn" id="2_t2d28"]
+[ext_resource type="Script" path="res://addons/textalog/commands/command_character.gd" id="3_sxlp0"]
+[ext_resource type="Script" path="res://addons/textalog/commands/command_dialog.gd" id="4_2tjnp"]
+
+[sub_resource type="Resource" id="Resource_q1qo2"]
+script = ExtResource("1_vtdg7")
+method = "fadein"
+args = []
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("UpperScreen/ForegroundFade")
+collection = []
+
+[sub_resource type="Resource" id="Resource_pleqc"]
+script = ExtResource("3_sxlp0")
+character = ExtResource("2_t2d28")
+character_name = ""
+emote = ""
+delete = false
+add_position = true
+to_position = Vector2(0, 0)
+zoom_duration = 0.0
+flipped = false
+flip_duration = 0.15
+shaking = false
+set_z_index = 0
+wait_until_finished = true
+fade_out = false
+fade_duration = 0.0
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_keqg7"]
+script = ExtResource("4_2tjnp")
+showname = "Edgeworth"
+dialog = "[color=6db6f7](It's hard to believe that
+I've been away from my
+office for a [color=#f77339ff]whole month[/color].)[/color]"
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_i5s2j"]
+script = ExtResource("4_2tjnp")
+showname = "Edgeworth"
+dialog = "{e hmm}I am speaking, right now. {e normal}
+And I just {e hmm}[wave]styled upon you.[/wave]"
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = "Edgeworth"
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_soasl"]
+script = ExtResource("4_2tjnp")
+showname = "Edgeworth"
+dialog = "
+[bgcolor=#00002f9e][center][rainbow]Does Edgeworth is gay?[/rainbow][/center][/bgcolor]"
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = "Edgeworth"
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_4sv8m"]
+script = ExtResource("4_2tjnp")
+showname = "Edgeworth"
+dialog = "[color=#00ff00ff][shake][center]Godot Rules![/center][/shake][/color]
+[fade length=30 start=1]Not the prosecutor, though..."
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = "Edgeworth"
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = false
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[resource]
+resource_name = "dialog_test.tres"
+script = ExtResource("1_rghow")
+collection = [SubResource("Resource_q1qo2"), SubResource("Resource_pleqc"), SubResource("Resource_keqg7"), SubResource("Resource_i5s2j"), SubResource("Resource_soasl"), SubResource("Resource_4sv8m")]

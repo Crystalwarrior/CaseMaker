@@ -1,0 +1,28 @@
+[gd_resource type="Animation" load_steps=10 format=3 uid="uid://boj1te8wiw4sj"]
+
+[ext_resource type="Texture2D" uid="uid://bu5arsc8i2e4i" path="res://Art Assets/Characters/Mia Fey/animations/stern_idle/0.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bkmiuvamwt757" path="res://Art Assets/Characters/Mia Fey/animations/stern_idle/1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dhyx2ic5wstkn" path="res://Art Assets/Characters/Mia Fey/animations/stern_idle/2.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c8yg5kdia16a0" path="res://Art Assets/Characters/Mia Fey/animations/stern_idle/3.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://b2nf1xeff3xc" path="res://Art Assets/Characters/Mia Fey/animations/stern_idle/4.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bbgjerui3djuh" path="res://Art Assets/Characters/Mia Fey/animations/stern_idle/5.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://be0axexfgh8g" path="res://Art Assets/Characters/Mia Fey/animations/stern_idle/6.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://cumylmx2wu1xc" path="res://Art Assets/Characters/Mia Fey/animations/stern_idle/7.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://ct7qj37xvj5um" path="res://Art Assets/Characters/Mia Fey/animations/stern_idle/8.png" id="9"]
+
+[resource]
+resource_name = "stern_idle"
+length = 6.52
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.25, 1.38, 1.48, 1.63, 3.79, 3.94, 4.04, 4.19),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1"), ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9")]
+}

@@ -1,0 +1,29 @@
+[gd_resource type="Animation" load_steps=9 format=3]
+
+[ext_resource type="Texture" uid="uid://b7e6a5txsbtxt" path="res://Art Assets/Characters/Larry Butz/animations/hello_talk/0.png" id="1"]
+[ext_resource type="Texture" uid="uid://dolhl0cphhmkq" path="res://Art Assets/Characters/Larry Butz/animations/hello_talk/1.png" id="2"]
+[ext_resource type="Texture" uid="uid://b8sjsd7dh5k3i" path="res://Art Assets/Characters/Larry Butz/animations/hello_talk/2.png" id="3"]
+[ext_resource type="Texture" uid="uid://dolhl0cphhmkq" path="res://Art Assets/Characters/Larry Butz/animations/hello_talk/1.png" id="4"]
+[ext_resource type="Texture" uid="uid://b4vqujwt6b1jx" path="res://Art Assets/Characters/Larry Butz/animations/hello_talk/4.png" id="5"]
+[ext_resource type="Texture" uid="uid://crvvkoxhw5mx5" path="res://Art Assets/Characters/Larry Butz/animations/hello_talk/5.png" id="6"]
+[ext_resource type="Texture" uid="uid://daxudba7sirw5" path="res://Art Assets/Characters/Larry Butz/animations/hello_talk/6.png" id="7"]
+[ext_resource type="Texture" uid="uid://cnmad8foc8g4m" path="res://Art Assets/Characters/Larry Butz/animations/hello_talk/7.png" id="8"]
+
+
+[resource]
+resource_name = "hello_talk"
+length = 1.46
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = 
+{
+"times": PoolRealArray( 0, 0.16, 0.34, 0.55, 0.73, 0.89, 1.07, 1.28 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ]
+}

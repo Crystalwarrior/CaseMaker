@@ -1,0 +1,41 @@
+[gd_resource type="Animation" load_steps=23 format=3 uid="uid://bl54ng4syrcly"]
+
+[ext_resource type="Texture2D" uid="uid://cvchow8rvi8pu" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/0.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cd6hhlsa6sqs3" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dce7vpumfu1nh" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/2.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c76bxxairg2a2" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/3.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://c8v7f0i17ohh3" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/4.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://btxaqwherlpym" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/5.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://c7t8vojefqt8m" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/6.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://cqr8tdf4q1gqk" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/7.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bboit5u5ojljv" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/8.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://eebrmripufpw" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/9.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://bo42siapllice" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/10.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://5c6oi4pnyxge" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/11.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://b731nqt1ffd34" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/12.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://bbwjgq3xax0hl" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/13.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://c5jmhiqwhj3fu" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/14.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://cl501b6bum57b" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/15.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://83hmydfytjeb" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/16.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://btfgdv4b2hts6" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/17.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://c0gusedb4ngkr" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/18.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://6lidc4dwrlkr" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/19.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://c2lfy7k0var6" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/20.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://dtt8cq3sf2u6y" path="res://Art Assets/Characters/Mia Fey/animations/normal_talk/21.png" id="22"]
+
+[resource]
+resource_name = "normal_talk"
+length = 3.01
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2, 1.3, 1.36, 1.46, 1.51, 1.66, 1.81, 1.96, 2.11, 2.26, 2.41, 2.56, 2.71, 2.86),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1"), ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9"), ExtResource("10"), ExtResource("11"), ExtResource("12"), ExtResource("13"), ExtResource("14"), ExtResource("15"), ExtResource("16"), ExtResource("17"), ExtResource("18"), ExtResource("19"), ExtResource("20"), ExtResource("21"), ExtResource("22")]
+}

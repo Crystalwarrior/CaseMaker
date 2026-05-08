@@ -1,0 +1,32 @@
+[gd_resource type="Animation" load_steps=14 format=3 uid="uid://0jf0du3weuf"]
+
+[ext_resource type="Texture2D" uid="uid://76on8law3hqp" path="res://Art Assets/Characters/Mia Fey/animations/wut_idle/0.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dc5l52265r6se" path="res://Art Assets/Characters/Mia Fey/animations/wut_idle/1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://doa0umeplktk7" path="res://Art Assets/Characters/Mia Fey/animations/wut_idle/2.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://csxs02tq6wshu" path="res://Art Assets/Characters/Mia Fey/animations/wut_idle/3.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://2ocy6o4p6pk5" path="res://Art Assets/Characters/Mia Fey/animations/wut_idle/4.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://d2dbqs5cs6kqk" path="res://Art Assets/Characters/Mia Fey/animations/wut_idle/5.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://b26s2ve2wtn87" path="res://Art Assets/Characters/Mia Fey/animations/wut_idle/6.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://doorvq3liewr5" path="res://Art Assets/Characters/Mia Fey/animations/wut_idle/7.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bjubdvhspeliv" path="res://Art Assets/Characters/Mia Fey/animations/wut_idle/8.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://ckcmi1jpxcxbd" path="res://Art Assets/Characters/Mia Fey/animations/wut_idle/9.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://cjebd1gph3i02" path="res://Art Assets/Characters/Mia Fey/animations/wut_idle/10.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://ywhx17cqadfq" path="res://Art Assets/Characters/Mia Fey/animations/wut_idle/11.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://biaudiufnsm78" path="res://Art Assets/Characters/Mia Fey/animations/wut_idle/12.png" id="13"]
+
+[resource]
+resource_name = "wut_idle"
+length = 6.38
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.16, 1.24, 1.29, 1.39, 3.55, 3.63, 3.69, 3.77, 3.88, 3.94, 3.99, 4.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1"), ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9"), ExtResource("10"), ExtResource("11"), ExtResource("12"), ExtResource("13")]
+}

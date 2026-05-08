@@ -1,0 +1,39 @@
+[gd_resource type="Animation" load_steps=21 format=3 uid="uid://c011j6ulnphly"]
+
+[ext_resource type="Texture2D" uid="uid://cdqg4s8usahb2" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/0.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://buq0gx3y6ehfi" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dn5fs3il2a3kb" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/2.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dk7wyt8et0mpi" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/3.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bh4v8u3aka863" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/4.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://b5gh5pjt1sobt" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/5.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://ceq88l2hr6blm" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/6.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://6slh1gu1d2ps" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/7.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bgsfkln6oknro" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/8.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://f0uo35ubghqd" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/9.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://bwog7jbctsa7j" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/10.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://b64esb1fw7f2n" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/11.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://buefx0nciyddg" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/12.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://kn1odu5my6mu" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/13.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://cv3b8d3pdqadf" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/14.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://b7tjc1m16gbqt" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/15.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://b2ln6p8ykomvp" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/16.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://cj8swnmgniwci" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/17.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://bw4sil75ohbpv" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/18.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://coshh8or64hm7" path="res://Art Assets/Characters/Mia Fey/animations/wut_talk/19.png" id="20"]
+
+[resource]
+resource_name = "wut_talk"
+length = 2.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13, 0.26, 0.39, 0.52, 0.65, 0.78, 0.81, 0.86, 0.89, 1, 1.11, 1.22, 1.33, 1.44, 1.55, 1.66, 1.77, 1.88, 1.99),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1"), ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9"), ExtResource("10"), ExtResource("11"), ExtResource("12"), ExtResource("13"), ExtResource("14"), ExtResource("15"), ExtResource("16"), ExtResource("17"), ExtResource("18"), ExtResource("19"), ExtResource("20")]
+}

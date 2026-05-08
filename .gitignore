@@ -1,7 +1,2 @@
-.import/
-res/Characters/
-res/Background/
-res/Evidence/
-res/Music/
-res/Fonts/
-res/Sounds/
+# Godot 4+ specific ignores
+.godot/

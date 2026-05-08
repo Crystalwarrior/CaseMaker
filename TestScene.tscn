@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://kv6pxmfyclh1"]
+
+[ext_resource type="Script" uid="uid://b5t4oc77hxqgb" path="res://TestScene.gd" id="1_j7ny0"]
+[ext_resource type="PackedScene" uid="uid://o014t0ve6be8" path="res://scenes/ScreenScenes/UpperScreen/UpperScreen.tscn" id="2_m22fg"]
+[ext_resource type="Script" uid="uid://d0p1nop07posq" path="res://addons/blockflow/command_processor.gd" id="2_rnwqy"]
+[ext_resource type="Resource" uid="uid://b2uvbyr3l6a84" path="res://timelines/aa_case1/1-1_lobby.tres" id="3_7tcvf"]
+[ext_resource type="PackedScene" uid="uid://dk35s1lwj1pmj" path="res://scenes/ScreenScenes/bottom_screen.tscn" id="4_0dqr4"]
+[ext_resource type="Script" uid="uid://caqjww4hgmbl2" path="res://scenes/MusicPlayer.gd" id="7_xgyak"]
+[ext_resource type="FontFile" uid="uid://bpmqn2kw4vgn4" path="res://assets/fonts/igiari-cyrillic-plus.ttf" id="8_2jqp0"]
+[ext_resource type="Script" uid="uid://ca7ysbapa2ir6" path="res://scenes/delta_label.gd" id="9_vpdrc"]
+[ext_resource type="Theme" uid="uid://b5nk0n700x2ge" path="res://assets/ui/themes/aa.tres" id="10_b6ns2"]
+[ext_resource type="Script" uid="uid://ceju5aaafcvi4" path="res://JumpToConfirmationDialog.gd" id="11_fsqxb"]
+[ext_resource type="AudioStream" uid="uid://cb485p8r1fh2e" path="res://assets/music/bgm008.ogg" id="13_ssudg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pod4v"]
+font = ExtResource("8_2jqp0")
+font_color = Color(0, 1, 0, 1)
+
+[node name="TestScene" type="Control" unique_id=1415171990]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j7ny0")
+
+[node name="CommandProcessor" type="Node" parent="." unique_id=731986759]
+unique_name_in_owner = true
+script = ExtResource("2_rnwqy")
+initial_collection = ExtResource("3_7tcvf")
+command_node_fallback_path = NodePath("..")
+
+[node name="UpperScreen" parent="." unique_id=1325030953 instance=ExtResource("2_m22fg")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="BottomScreen" parent="." unique_id=32128491 instance=ExtResource("4_0dqr4")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+metadata/_edit_use_anchors_ = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1709071593]
+unique_name_in_owner = true
+stream = ExtResource("13_ssudg")
+bus = &"music"
+script = ExtResource("7_xgyak")
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=976602011]
+unique_name_in_owner = true
+
+[node name="delta_label" type="Label" parent="." unique_id=1261434439]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -52.0
+offset_bottom = 16.0
+grow_horizontal = 0
+text = "00.000ms"
+label_settings = SubResource("LabelSettings_pod4v")
+clip_text = true
+script = ExtResource("9_vpdrc")
+
+[node name="JumpToButton" type="Button" parent="." unique_id=1549837376]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 361.0
+offset_right = 158.0
+offset_bottom = 383.0
+focus_mode = 0
+theme = ExtResource("10_b6ns2")
+theme_override_font_sizes/font_size = 14
+text = "Jump To"
+
+[node name="JumpToConfirmationDialog" type="ConfirmationDialog" parent="JumpToButton" unique_id=254117083]
+unique_name_in_owner = true
+title = "Jump to where?"
+initial_position = 1
+exclusive = false
+unresizable = true
+popup_window = true
+ok_button_text = "Jump!"
+script = ExtResource("11_fsqxb")
+
+[node name="IndexLineEdit" type="LineEdit" parent="JumpToButton/JumpToConfirmationDialog" unique_id=2089650110]
+unique_name_in_owner = true
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 192.0
+offset_bottom = 55.0
+size_flags_horizontal = 3
+placeholder_text = "command index"
+
+[connection signal="collection_finished" from="CommandProcessor" to="." method="_on_command_processor_collection_finished"]
+[connection signal="collection_started" from="CommandProcessor" to="." method="_on_command_processor_collection_started"]
+[connection signal="command_finished" from="CommandProcessor" to="." method="_on_command_processor_command_finished"]
+[connection signal="command_started" from="CommandProcessor" to="." method="_on_command_processor_command_started"]
+[connection signal="pressed" from="JumpToButton" to="." method="_on_jump_to_button_pressed"]
+[connection signal="confirmed" from="JumpToButton/JumpToConfirmationDialog" to="JumpToButton/JumpToConfirmationDialog" method="_on_confirmed"]
+[connection signal="jump_to" from="JumpToButton/JumpToConfirmationDialog" to="." method="_on_jump_to"]
+[connection signal="text_submitted" from="JumpToButton/JumpToConfirmationDialog/IndexLineEdit" to="JumpToButton/JumpToConfirmationDialog" method="_on_index_line_edit_text_submitted"]

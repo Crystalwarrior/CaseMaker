@@ -1,0 +1,283 @@
+[gd_resource type="Resource" script_class="CommandCollection" load_steps=30 format=3 uid="uid://brscfigpm1pii"]
+
+[ext_resource type="Script" path="res://addons/blockflow/commands/command_call.gd" id="1_h1w7d"]
+[ext_resource type="Script" path="res://addons/textalog/commands/command_dialog.gd" id="2_8wwb8"]
+[ext_resource type="Script" path="res://addons/blockflow/commands/command_animate.gd" id="3_6lpub"]
+[ext_resource type="Script" path="res://addons/blockflow/commands/command_wait.gd" id="4_yfo1j"]
+[ext_resource type="Script" path="res://addons/blockflow/commands/command_print.gd" id="5_5h5jr"]
+[ext_resource type="PackedScene" uid="uid://ti5yud2rrnot" path="res://scenes/Backgrounds/courtroom_ds.tscn" id="6_yr3rt"]
+[ext_resource type="Script" path="res://addons/textalog/commands/command_background.gd" id="7_m5b4m"]
+[ext_resource type="PackedScene" uid="uid://cxdab1s0b31jt" path="res://Art Assets/Characters/Larry Butz/Larry.tscn" id="8_f6x4c"]
+[ext_resource type="Script" path="res://addons/textalog/commands/command_character.gd" id="9_31dmf"]
+[ext_resource type="PackedScene" uid="uid://nholet7cnebr" path="res://Art Assets/Characters/sans/Sans.tscn" id="10_h3ws2"]
+[ext_resource type="Script" path="res://addons/blockflow/command_collection.gd" id="11_ru4i7"]
+
+[sub_resource type="Resource" id="Resource_vpd16"]
+script = ExtResource("1_h1w7d")
+method = "fadeout"
+args = [0.0]
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("UpperScreen/HudLayer/ForegroundFade")
+collection = []
+metadata/__editor_override_property__ = false
+
+[sub_resource type="Resource" id="Resource_xkh0a"]
+script = ExtResource("2_8wwb8")
+showname = ""
+dialog = ""
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = 3
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_8ky5r"]
+script = ExtResource("3_6lpub")
+animation = "court_record_available"
+custom_blend = -1.0
+custom_speed = 1.0
+play_backwards = true
+wait_until_finished = false
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("BottomScreen/AnimationPlayer")
+collection = []
+
+[sub_resource type="Resource" id="Resource_ywn1c"]
+script = ExtResource("4_yfo1j")
+wait_for = 0
+wait_time = 2.0
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_p72wg"]
+script = ExtResource("2_8wwb8")
+showname = ""
+dialog = "[center][color=green]August 3, 10:00 AM
+District Court
+Courtroom No. 2"
+additive = false
+text_speed = 2
+letter_delay = 0.08
+blip_sound = "typewriter"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = 2
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_op7oy"]
+script = ExtResource("4_yfo1j")
+wait_for = 0
+wait_time = 0.5
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_2m1qm"]
+script = ExtResource("5_5h5jr")
+comment = "todo: this"
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_ho4ku"]
+script = ExtResource("7_m5b4m")
+background = ExtResource("6_yr3rt")
+campoint = 0
+pan_duration = 0.0
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_20d24"]
+script = ExtResource("9_31dmf")
+character = ExtResource("8_f6x4c")
+character_name = ""
+emote = ""
+delete = false
+add_position = false
+to_position = Vector2(520, 0)
+zoom_duration = 0.0
+flipped = false
+flip_duration = 0.15
+shaking = false
+set_z_index = 0
+wait_until_finished = true
+fade_out = false
+fade_duration = 0.0
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_ur74e"]
+script = ExtResource("9_31dmf")
+character = ExtResource("10_h3ws2")
+character_name = ""
+emote = ""
+delete = false
+add_position = true
+to_position = Vector2(520, -208)
+zoom_duration = 0.0
+flipped = false
+flip_duration = 0.15
+shaking = false
+set_z_index = 0
+wait_until_finished = true
+fade_out = false
+fade_duration = 0.0
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_dgivt"]
+script = ExtResource("1_h1w7d")
+method = "fadein"
+args = [0.5]
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("UpperScreen/HudLayer/ForegroundFade")
+collection = []
+metadata/__editor_override_property__ = false
+
+[sub_resource type="Resource" id="Resource_rkm42"]
+script = ExtResource("2_8wwb8")
+showname = ""
+dialog = ". . ."
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = 0
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_nw1vp"]
+script = ExtResource("7_m5b4m")
+campoint = 1
+pan_duration = 0.75
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_wiguu"]
+script = ExtResource("2_8wwb8")
+showname = ""
+dialog = "larryster"
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = 0
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_ldg6a"]
+script = ExtResource("7_m5b4m")
+campoint = 2
+pan_duration = 0.75
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_uq7ml"]
+script = ExtResource("2_8wwb8")
+showname = ""
+dialog = "nobod here"
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = 0
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_7m3ys"]
+script = ExtResource("7_m5b4m")
+campoint = 5
+pan_duration = 0.0
+bookmark = &""
+continue_at_end = true
+background_color = 0
+target = NodePath("")
+collection = []
+
+[sub_resource type="Resource" id="Resource_f0xf7"]
+script = ExtResource("2_8wwb8")
+showname = ""
+dialog = "o shid sans undertale"
+additive = false
+text_speed = 0
+letter_delay = 0.034
+blip_sound = "male"
+wait_until_finished = true
+speaking_character = ""
+bump_speaker = false
+highlight_speaker = false
+hide_dialog = 0
+bookmark = &""
+continue_at_end = false
+background_color = 0
+target = NodePath("")
+collection = []
+
+[resource]
+resource_name = "1-2_trial.tres"
+script = ExtResource("11_ru4i7")
+collection = [SubResource("Resource_vpd16"), SubResource("Resource_xkh0a"), SubResource("Resource_8ky5r"), SubResource("Resource_ywn1c"), SubResource("Resource_p72wg"), SubResource("Resource_op7oy"), SubResource("Resource_2m1qm"), SubResource("Resource_ho4ku"), SubResource("Resource_20d24"), SubResource("Resource_ur74e"), SubResource("Resource_dgivt"), SubResource("Resource_rkm42"), SubResource("Resource_nw1vp"), SubResource("Resource_wiguu"), SubResource("Resource_ldg6a"), SubResource("Resource_uq7ml"), SubResource("Resource_7m3ys"), SubResource("Resource_f0xf7")]

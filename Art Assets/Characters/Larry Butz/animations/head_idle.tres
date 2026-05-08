@@ -1,0 +1,25 @@
+[gd_resource type="Animation" load_steps=5 format=3]
+
+[ext_resource type="Texture" uid="uid://djqf5n8mb0h8e" path="res://Art Assets/Characters/Larry Butz/animations/head_idle/0.png" id="1"]
+[ext_resource type="Texture" uid="uid://bkpq3jivvrpgx" path="res://Art Assets/Characters/Larry Butz/animations/head_idle/1.png" id="2"]
+[ext_resource type="Texture" uid="uid://i5fosakvq5j5" path="res://Art Assets/Characters/Larry Butz/animations/head_idle/2.png" id="3"]
+[ext_resource type="Texture" uid="uid://bkpq3jivvrpgx" path="res://Art Assets/Characters/Larry Butz/animations/head_idle/1.png" id="4"]
+
+
+[resource]
+resource_name = "head_idle"
+length = 3.1599999999999997
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = 
+{
+"times": PoolRealArray( 0, 3.00, 3.05, 3.11 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
+}

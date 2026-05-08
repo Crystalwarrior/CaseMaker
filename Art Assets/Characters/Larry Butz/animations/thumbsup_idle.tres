@@ -1,0 +1,35 @@
+[gd_resource type="Animation" load_steps=15 format=3]
+
+[ext_resource type="Texture" uid="uid://dffcun4r0r6g7" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_idle/0.png" id="1"]
+[ext_resource type="Texture" uid="uid://c0yonsi7qbreq" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_idle/1.png" id="2"]
+[ext_resource type="Texture" uid="uid://ovh8r7noulgi" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_idle/2.png" id="3"]
+[ext_resource type="Texture" uid="uid://cmjh88oiiiuv7" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_idle/3.png" id="4"]
+[ext_resource type="Texture" uid="uid://d0e3pjjr0gbgs" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_idle/4.png" id="5"]
+[ext_resource type="Texture" uid="uid://bgwapt7pad7mc" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_idle/5.png" id="6"]
+[ext_resource type="Texture" uid="uid://bxhr5o80os71r" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_idle/6.png" id="7"]
+[ext_resource type="Texture" uid="uid://1hyvti2wcbyp" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_idle/7.png" id="8"]
+[ext_resource type="Texture" uid="uid://xd0g047a4kgy" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_idle/8.png" id="9"]
+[ext_resource type="Texture" uid="uid://d183hh6bquo24" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_idle/9.png" id="10"]
+[ext_resource type="Texture" uid="uid://cpa8dmhrfui11" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_idle/10.png" id="11"]
+[ext_resource type="Texture" uid="uid://y1qs7xay2i1o" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_idle/11.png" id="12"]
+[ext_resource type="Texture" uid="uid://rglug6hshe4j" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_idle/12.png" id="13"]
+[ext_resource type="Texture" uid="uid://dyc7rj5bhejd5" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_idle/13.png" id="14"]
+
+
+[resource]
+resource_name = "thumbsup_idle"
+length = 1.52
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = 
+{
+"times": PoolRealArray( 0, 0.13, 0.26, 0.39, 0.52, 0.57, 0.63, 0.68, 0.74, 0.87, 1.00, 1.13, 1.26, 1.39 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ]
+}

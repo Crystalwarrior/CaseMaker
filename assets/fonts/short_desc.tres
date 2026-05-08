@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://bcam3b88u82st"]
+
+[ext_resource type="FontFile" uid="uid://qcbedu5h0j2u" path="res://assets/fonts/Arial/arial.ttf" id="1_03ejj"]
+
+[resource]
+base_font = ExtResource("1_03ejj")

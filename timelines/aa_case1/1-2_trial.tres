@@ -1,0 +1,208 @@
+[gd_resource type="Resource" script_class="CommandCollection" format=3 uid="uid://1215nv63i6x5"]
+
+[ext_resource type="Script" uid="uid://d1hh31bnh3igw" path="res://addons/blockflow/command_collection.gd" id="1_0prwl"]
+[ext_resource type="Script" uid="uid://be672rskxc4bn" path="res://addons/blockflow/commands/command_print.gd" id="1_07ipa"]
+[ext_resource type="Script" uid="uid://bpc3q67mhrkgt" path="res://addons/textalog/commands/command_dialog.gd" id="1_vsrx6"]
+[ext_resource type="Script" uid="uid://bx0n5yv0xk3v" path="res://addons/blockflow/commands/command_animate.gd" id="2_cdd2t"]
+[ext_resource type="Script" uid="uid://clu1u2dik62vg" path="res://addons/blockflow/commands/command_wait.gd" id="3_pi4gt"]
+[ext_resource type="PackedScene" uid="uid://ti5yud2rrnot" path="res://scenes/Backgrounds/courtroom_ds.tscn" id="5_ih1h3"]
+[ext_resource type="Script" uid="uid://3t20t2jhin0x" path="res://addons/blockflow/commands/command_call.gd" id="5_opip0"]
+[ext_resource type="Script" uid="uid://c8awp3ybvkyr3" path="res://addons/textalog/commands/command_background.gd" id="6_jryv1"]
+[ext_resource type="PackedScene" uid="uid://cxdab1s0b31jt" path="res://Art Assets/Characters/Larry Butz/Larry.tscn" id="7_vv56e"]
+[ext_resource type="Script" uid="uid://cbx5arp81ck7r" path="res://addons/textalog/commands/command_character.gd" id="8_qmr37"]
+[ext_resource type="PackedScene" uid="uid://nholet7cnebr" path="res://Art Assets/Characters/sans/Sans.tscn" id="9_na44w"]
+[ext_resource type="Script" uid="uid://dprgq8isepiyl" path="res://addons/blockflow/commands/command_comment.gd" id="11_aluov"]
+[ext_resource type="Script" uid="uid://bpcywd12lyvf0" path="res://addons/textalog/commands/command_testimony_statement.gd" id="11_nwjp7"]
+[ext_resource type="Script" uid="uid://bfx80264uqe5v" path="res://addons/textalog/commands/command_testimony.gd" id="12_r50vn"]
+
+[sub_resource type="Resource" id="Resource_vpd16"]
+script = ExtResource("5_opip0")
+method = "fadeout"
+args = [0.0]
+target = NodePath("UpperScreen/HudLayer/ForegroundFade")
+collection = []
+metadata/__editor_override_property__ = false
+
+[sub_resource type="Resource" id="Resource_xkh0a"]
+script = ExtResource("1_vsrx6")
+hide_dialog = 3
+continue_at_end = false
+collection = []
+
+[sub_resource type="Resource" id="Resource_8ky5r"]
+script = ExtResource("2_cdd2t")
+animation = "court_record_available"
+play_backwards = true
+target = NodePath("BottomScreen/AnimationPlayer")
+collection = []
+
+[sub_resource type="Resource" id="Resource_ywn1c"]
+script = ExtResource("3_pi4gt")
+wait_time = 2.0
+collection = []
+
+[sub_resource type="Resource" id="Resource_p72wg"]
+script = ExtResource("1_vsrx6")
+dialog = "[center][color=green]August 3, 10:00 AM
+District Court
+Courtroom No. 2"
+text_speed = 2
+letter_delay = 0.08
+blip_sound = "typewriter"
+hide_dialog = 2
+continue_at_end = false
+collection = []
+
+[sub_resource type="Resource" id="Resource_op7oy"]
+script = ExtResource("3_pi4gt")
+wait_time = 0.5
+collection = []
+
+[sub_resource type="Resource" id="Resource_2m1qm"]
+script = ExtResource("1_07ipa")
+comment = "todo: this"
+collection = []
+
+[sub_resource type="Resource" id="Resource_ho4ku"]
+script = ExtResource("6_jryv1")
+background = ExtResource("5_ih1h3")
+campoint = 0
+pan_duration = 0.0
+collection = []
+
+[sub_resource type="Resource" id="Resource_20d24"]
+script = ExtResource("8_qmr37")
+character = ExtResource("7_vv56e")
+add_position = false
+to_position = Vector2(520, 0)
+collection = []
+
+[sub_resource type="Resource" id="Resource_ur74e"]
+script = ExtResource("8_qmr37")
+character = ExtResource("9_na44w")
+to_position = Vector2(520, -208)
+collection = []
+
+[sub_resource type="Resource" id="Resource_dgivt"]
+script = ExtResource("5_opip0")
+method = "fadein"
+args = [0.5]
+target = NodePath("UpperScreen/HudLayer/ForegroundFade")
+collection = []
+metadata/__editor_override_property__ = false
+
+[sub_resource type="Resource" id="Resource_rkm42"]
+script = ExtResource("1_vsrx6")
+dialog = ". . ."
+continue_at_end = false
+collection = []
+
+[sub_resource type="Resource" id="Resource_nw1vp"]
+script = ExtResource("6_jryv1")
+campoint = 1
+pan_duration = 0.75
+collection = []
+
+[sub_resource type="Resource" id="Resource_wiguu"]
+script = ExtResource("1_vsrx6")
+dialog = "larryster"
+continue_at_end = false
+collection = []
+
+[sub_resource type="Resource" id="Resource_ldg6a"]
+script = ExtResource("6_jryv1")
+campoint = 2
+pan_duration = 0.75
+collection = []
+
+[sub_resource type="Resource" id="Resource_uq7ml"]
+script = ExtResource("1_vsrx6")
+dialog = "nobod here"
+continue_at_end = false
+collection = []
+
+[sub_resource type="Resource" id="Resource_7m3ys"]
+script = ExtResource("6_jryv1")
+campoint = 5
+pan_duration = 0.0
+collection = []
+
+[sub_resource type="Resource" id="Resource_f0xf7"]
+script = ExtResource("1_vsrx6")
+dialog = "o shid sans undertale"
+continue_at_end = false
+collection = []
+
+[sub_resource type="Resource" id="Resource_k5gbv"]
+script = ExtResource("11_aluov")
+comment = "Testimony Starts Here"
+collection = []
+
+[sub_resource type="Resource" id="Resource_7ymr2"]
+script = ExtResource("8_qmr37")
+character = ExtResource("7_vv56e")
+emote = "normal"
+collection = []
+
+[sub_resource type="Resource" id="Resource_3o7hd"]
+script = ExtResource("1_vsrx6")
+showname = "Larry"
+dialog = "This is statement 1"
+speaking_character = "Larry"
+continue_at_end = false
+collection = []
+
+[sub_resource type="Resource" id="Resource_y0q42"]
+script = ExtResource("11_nwjp7")
+title = "Morning"
+collection = [SubResource("Resource_7ymr2"), SubResource("Resource_3o7hd")]
+
+[sub_resource type="Resource" id="Resource_greer"]
+script = ExtResource("8_qmr37")
+character = ExtResource("7_vv56e")
+emote = "nervous"
+collection = []
+
+[sub_resource type="Resource" id="Resource_o43h3"]
+script = ExtResource("1_vsrx6")
+dialog = "This is statement 2"
+continue_at_end = false
+collection = []
+
+[sub_resource type="Resource" id="Resource_kcu8h"]
+script = ExtResource("11_nwjp7")
+title = "Mid-day"
+condition = "get_flag(\"st3press\") == true"
+collection = [SubResource("Resource_greer"), SubResource("Resource_o43h3")]
+
+[sub_resource type="Resource" id="Resource_2gw0b"]
+script = ExtResource("8_qmr37")
+character = ExtResource("7_vv56e")
+emote = "scratch"
+collection = []
+
+[sub_resource type="Resource" id="Resource_kan53"]
+script = ExtResource("1_vsrx6")
+dialog = "This is statement 3"
+continue_at_end = false
+collection = []
+
+[sub_resource type="Resource" id="Resource_soihi"]
+script = ExtResource("11_nwjp7")
+title = "Evening"
+collection = [SubResource("Resource_2gw0b"), SubResource("Resource_kan53")]
+
+[sub_resource type="Resource" id="Resource_qshw7"]
+script = ExtResource("12_r50vn")
+title = "~~ Testimony Test ~~"
+collection = [SubResource("Resource_y0q42"), SubResource("Resource_kcu8h"), SubResource("Resource_soihi")]
+
+[sub_resource type="Resource" id="Resource_5i2so"]
+script = ExtResource("11_aluov")
+comment = "Testimony Ends Here"
+collection = []
+
+[resource]
+resource_name = "1-2_trial.tres"
+script = ExtResource("1_0prwl")
+collection = [SubResource("Resource_vpd16"), SubResource("Resource_xkh0a"), SubResource("Resource_8ky5r"), SubResource("Resource_ywn1c"), SubResource("Resource_p72wg"), SubResource("Resource_op7oy"), SubResource("Resource_2m1qm"), SubResource("Resource_ho4ku"), SubResource("Resource_20d24"), SubResource("Resource_ur74e"), SubResource("Resource_dgivt"), SubResource("Resource_rkm42"), SubResource("Resource_nw1vp"), SubResource("Resource_wiguu"), SubResource("Resource_ldg6a"), SubResource("Resource_uq7ml"), SubResource("Resource_7m3ys"), SubResource("Resource_f0xf7"), SubResource("Resource_k5gbv"), SubResource("Resource_qshw7"), SubResource("Resource_5i2so")]

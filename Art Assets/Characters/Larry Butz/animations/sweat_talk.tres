@@ -1,0 +1,30 @@
+[gd_resource type="Animation" load_steps=10 format=3]
+
+[ext_resource type="Texture" uid="uid://q54ndx2tucdj" path="res://Art Assets/Characters/Larry Butz/animations/sweat_talk/0.png" id="1"]
+[ext_resource type="Texture" uid="uid://cygqut6swwnwr" path="res://Art Assets/Characters/Larry Butz/animations/sweat_talk/1.png" id="2"]
+[ext_resource type="Texture" uid="uid://bd84n78yqnqbj" path="res://Art Assets/Characters/Larry Butz/animations/sweat_talk/2.png" id="3"]
+[ext_resource type="Texture" uid="uid://7f0rb8t7n1gr" path="res://Art Assets/Characters/Larry Butz/animations/sweat_talk/3.png" id="4"]
+[ext_resource type="Texture" uid="uid://faxee3svbpud" path="res://Art Assets/Characters/Larry Butz/animations/sweat_talk/4.png" id="5"]
+[ext_resource type="Texture" uid="uid://7f0rb8t7n1gr" path="res://Art Assets/Characters/Larry Butz/animations/sweat_talk/3.png" id="6"]
+[ext_resource type="Texture" uid="uid://dli8n5wumkrau" path="res://Art Assets/Characters/Larry Butz/animations/sweat_talk/6.png" id="7"]
+[ext_resource type="Texture" uid="uid://dqi3ulbt3y3on" path="res://Art Assets/Characters/Larry Butz/animations/sweat_talk/7.png" id="8"]
+[ext_resource type="Texture" uid="uid://dli8n5wumkrau" path="res://Art Assets/Characters/Larry Butz/animations/sweat_talk/6.png" id="9"]
+
+
+[resource]
+resource_name = "sweat_talk"
+length = 1.17
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = 
+{
+"times": PoolRealArray( 0, 0.13, 0.26, 0.39, 0.52, 0.65, 0.78, 0.91, 1.04 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ]
+}

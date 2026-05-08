@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://chhywebs25sh8"]
+
+[ext_resource type="Script" path="res://scenes/ScreenScenes/UpperScreen/Effects/FlashEffect.gd" id="1_kvbwf"]
+
+[node name="FlashEffect" type="ColorRect"]
+offset_right = 256.0
+offset_bottom = 192.0
+script = ExtResource("1_kvbwf")

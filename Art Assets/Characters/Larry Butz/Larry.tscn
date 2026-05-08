@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxdab1s0b31jt"]
+
+[ext_resource type="Script" path="res://Art Assets/Characters/Character.gd" id="1_bnrmm"]
+[ext_resource type="Texture2D" uid="uid://dyc7rj5bhejd5" path="res://Art Assets/Characters/Larry Butz/animations/thumbsup_idle/13.png" id="2_2058e"]
+[ext_resource type="AnimationLibrary" path="res://Art Assets/Characters/Larry Butz/animation_library.tres" id="2_iwsru"]
+
+[node name="Larry" type="CanvasGroup"]
+script = ExtResource("1_bnrmm")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_2058e")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": ExtResource("2_iwsru")
+}
+autoplay = "normal_idle"
